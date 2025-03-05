@@ -4,13 +4,22 @@
 #include <vector>
 #include <cmath>
 #include <Eigen/Dense>
+#include <string>
+
+#include "Chessboard.cpp"
 
 using namespace ur_rtde;
 using namespace std;
 using namespace Eigen;
 
+using ChessboardMatrix = vector<vector<char>>;
+
 #define DEG_TO_RAD(angle) ((angle) * M_PI / 180.0)
 
+
+/*============================================================
+			  FUNCTIONS
+============================================================*/
 // Function to create a rotation matrix in degrees around Z-axis
 Matrix3d getRotationMatrixZ(double angleDeg) {
     double angleRad = DEG_TO_RAD(angleDeg);
@@ -20,22 +29,6 @@ Matrix3d getRotationMatrixZ(double angleDeg) {
    	sin(angleRad), 	cos(angleRad), 	0,
         0,              0,             	1;
     return Rotation;
-}
-
-// Function to create a rotation matrix in degrees around Y-axis
-Matrix3d getRotationMatrixY(double angleDeg) {
-    double angleRad = DEG_TO_RAD(angleDeg);
-    Matrix3d Rotation;
-    Rotation << 
-    	cos(angleRad), 	0,	sin(angleRad),
-   	0, 		1, 	0,
-        -sin(angleRad), 0,     	cos(angleRad);
-    return Rotation;
-}
-
-// Convert from Base Frame to Chessboard Frame
-Vector3d baseToChessboard(const Vector3d &basePoint, const Vector3d &chessboardOrigin, const Matrix3d &R) {
-    return R.transpose() * (basePoint - chessboardOrigin);
 }
 
 // Convert from Chessboard Frame to Base Frame
@@ -69,8 +62,53 @@ void moveToChessboardPoint(RTDEControlInterface &rtde_control, RTDEReceiveInterf
     rtde_control.moveL(tcpPose, 1.0, 0.3); // Move with 0.5 m/s speed and 0.3 acceleration
 }
 
+// Placeholder: Simulate camera data retrieval.
+ChessboardMatrix getCameraData() {
+    ChessboardMatrix camBoard(8, vector<char>(8, 'e'));
+    // Example simulation: Place a white (W) piece at A2 and a black (B) piece at A7.
+    camBoard[1][0] = 'W'; // Row 1, Col 0 => A2
+    camBoard[6][0] = 'B'; // Row 6, Col 0 => A7
+    return camBoard;
+}
+
+// Compare last and new camera data to determine which cell changed.
+// Returns a pair: {from (row, col), to (row, col)}.
+pair<pair<int, int>, pair<int, int>> determinePlayerMove(const ChessboardMatrix &lastPositions, const ChessboardMatrix &newPositions) {
+    pair<int, int> from = {-1, -1};
+    pair<int, int> to = {-1, -1};
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            if (lastPositions[i][j] != 'e' && newPositions[i][j] == 'e') {
+                from = {i, j}; // Piece moved away from here.
+            }
+            if (lastPositions[i][j] == 'e' && newPositions[i][j] != 'e') {
+                to = {i, j}; // Piece moved into here.
+            }
+        }
+    }
+    return {from, to};
+}
+
+// Placeholder: Check if any king is dead (to end the game)
+bool anyKingIsDead() {
+    // Logic for checking kings (to be implemented)
+    return false;
+}
+
+// Returns a move string in chess notation, e.g., \"A2A4\".
+string stockfishMove() {
+    cout << "Stockfish is calculating the best move..." << endl;
+    string move = "A2A4"; // Dummy move
+    cout << "Stockfish move: " << move << endl;
+    return move;
+}
+
+
+/*============================================================
+			MAIN CODE START
+============================================================*/
 int main() {
-    /*   -----   SETUP UR5 CONNECTION   -----   */
+    /*   ==========   SETUP UR5 CONNECTION   ==========   */
     string robotIp = "192.168.1.54";
     int robotPort = 50002;
     RTDEControlInterface rtde_control(robotIp, robotPort);
@@ -83,12 +121,12 @@ int main() {
     }
     
     
-    /*   -----   SET TCP OFFSET   -----   */
+    /*   ==========   SET TCP OFFSET   ==========   */
     vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0};
     rtde_control.setTcp(tcpOffset);
     
     
-    /*   -----   SET CHESSBOARD ORIGIN   -----   */
+    /*   ==========   SET CHESSBOARD ORIGIN   ==========   */
     rtde_control.teachMode(); // Enable freemove mode
     
     cout << "Freemove mode enabled. Move the robot pointer to the chessboard A1 corner and press ENTER." << endl;
@@ -107,8 +145,7 @@ int main() {
     cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
 
 
-    /*   -----   BEGIN MAIN CODE   -----   */
-    // Test move 1: Move to a specific point in chessboard frame
+    /*   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   */
     moveToAwaitPosition(rtde_control);
     
     Vector3d chessboardTarget(0.0, 0.0, 0.0);
@@ -121,39 +158,75 @@ int main() {
     moveToChessboardPoint(rtde_control, rtde_receive, chessboardTarget2, chessboardOrigin, RotationChess);
 
 
-    /*   -----   BEGIN CHESS GAME   -----   */
-    // Wait for user input
+    /*   ==========   BEGIN CHESS GAME   ==========   */
+    Chessboard board;
     cout << "Press ENTER to start chess game..." << endl;
-    cin.get();
-    
-    // Setup chess matrix
-    chessboard
-    
+    cin.get();    
     cout << "CHESS GAME STARTED" << endl;
     
     while (true) {
-        lastPositions = getCameraData(); // Get the image data from the camera. The data include the positions of all of the pieces. 
+        // Retrieve camera data before and after player's move. Get the image data from the camera. The data include the positions of all of the pieces. 
+        ChessboardMatrix lastPositions = getCameraData();
         cout << "Make your move and press ENTER..." << endl;
         cin.get();
-        newPositions = getCameraData(); // Get the image data from the camera. The data include the positions of all of the pieces. 
-        determinePlayerMove(); // Algorithm to determine the diffrence in the two images. Hereby the moved piece. 
-        if (anyKingDied()) {
+        ChessboardMatrix newPositions = getCameraData();
+        
+        // Determine the player's move (returns from and to index in the 8x8 matrix). Algorithm to determine the diffrence in the two images. Hereby the moved piece. 
+        auto moveIndices = determinePlayerMove(lastPositions, newPositions); 
+        int fromRow = moveIndices.first.first;
+        int fromCol = moveIndices.first.second;
+        int toRow   = moveIndices.second.first;
+        int toCol   = moveIndices.second.second;
+        
+        // Update our internal chessboard with the player's move.
+        board.updateMove(fromRow, fromCol, toRow, toCol);
+        board.printBoard(); 
+        
+        if (anyKingIsDead()) {
             moveToAwaitPosition(rtde_control);
             cout << "Game has ended" << endl;
             return 0;
         }
-        updateChessboard(); // Update the chessboard matrix.
+
+        // Get the move from Stockfish (in chess notation, e.g., \"A2A4\")
+        string stockfishMoveStr = stockfishMove();
+
+        // Convert Stockfish move to from- and to- notations.
+        string fromNotation = stockfishMoveStr.substr(0, 2);
+        string toNotation   = stockfishMoveStr.substr(2, 2);
         
-        stockfishMove(); // Send the player move to Stockfish and recieve a counter move. 
-        updateChessooard(); // Update the chessboard matrix.
+        // Get the physical coordinates for these cells.
+        vector<double> fromCoordinate = board.getPhysicalCoordinates(fromNotation);
+        vector<double> toCoordinate   = board.getPhysicalCoordinates(toNotation);
         
-        fromCoordinate, toCoordinate = getChessPieceCoordinates(); // Get the coresponding XYZ coordinates from the chessboard matrix.
-        moveChessPiece(); // Move 0.1m above the <fromCoordinate>, Open gripper, Move down to the piece, Close the gripper, Move up 0.1m, Move 0.1m above the <toCoordinate>, Move down to the location, Open the gripper, Move up 0.1m. (If the <toCoordinate> is already occupied, then first move that piece to the <deadPieceLocation>).
-        if (anyKingDied()) {
+        // Check if the destination cell is already occupied.
+        bool toOccupied = false;
+        for (int i = 0; i < 8; ++i) {
+            for (int j = 0; j < 8; ++j) {
+                if (board.board[i][j].notation == toNotation && board.board[i][j].piece != "0") {
+                    toOccupied = true;
+                }
+            }
+        }
+        
+        // Move the chess piece using the robot.
+        moveChessPiece(rtde_control, fromCoordinate, toCoordinate, toOccupied);
+        
+        if (anyKingIsDead()) {
             moveToAwaitPosition(rtde_control);
             cout << "Game has ended" << endl;
             return 0;
         }
+        
+        // After robot move, update the board accordingly.
+        // Convert chess notation (e.g., 'A2') to indices: row = rank - 1, col = file - 'A'
+        int fromRowIdx = fromNotation[1] - '1';
+        int fromColIdx = fromNotation[0] - 'A';
+        int toRowIdx   = toNotation[1] - '1';
+        int toColIdx   = toNotation[0] - 'A';
+        board.updateMove(fromRowIdx, fromColIdx, toRowIdx, toColIdx);
+        board.printBoard();
+        
         moveToAwaitPosition(rtde_control);
     }
 
