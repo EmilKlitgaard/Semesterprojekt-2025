@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_rtde.dir/test_rtde.cpp.o -o test_rtde   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lrtde -lpthread 
