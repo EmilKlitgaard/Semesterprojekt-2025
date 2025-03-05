@@ -67,6 +67,23 @@ void Chessboard::printBoard() {
     }
 }
 
+// Check if any king is missing (dead), to end the game.
+bool Chessboard::anyKingIsDead() {
+    int kingCount = 0;
+    for (const auto& row : board) {
+        for (const auto& cell : row) {
+            if (cell == "6B" || cell == "6W") {
+                kingCount++;
+            }
+        }
+    }
+    if (kingCount < 2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // Get the current board state
 std::vector<std::vector<std::string>> Chessboard::getBoardState() {
     return board;
@@ -82,4 +99,3 @@ std::vector<double> Chessboard::getPhysicalCoordinates(const std::string &notati
     // For simplicity, use fixed z and orientation values.
     return {x, y, 0.1, 0, M_PI, 0};
 }
-

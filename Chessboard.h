@@ -24,6 +24,7 @@ public:
     // Update board state using a move from one cell to another
     void updateChessboard(std::pair<int, int> from, std::pair<int, int> to);
     void printBoard();
+    bool anyKingIsDead();
     std::string getChessNotation(std::pair<int, int> position);
     std::pair<int, int> getMatrixIndex(const std::string& notation);
     std::vector<std::vector<std::string>> getBoardState();

@@ -16,6 +16,9 @@ using ChessboardMatrix = vector<vector<char>>;
 
 #define DEG_TO_RAD(angle) ((angle) * M_PI / 180.0)
 
+/*============================================================
+            		   FUNCTIONS
+============================================================*/
 // Function to create a rotation matrix in degrees around Z-axis
 Matrix3d getRotationMatrixZ(double angleDeg) {
     double angleRad = DEG_TO_RAD(angleDeg);
@@ -61,11 +64,15 @@ void moveToChessboardPoint(RTDEControlInterface &rtde_control, RTDEReceiveInterf
 }
 
 // Placeholder: Simulate camera data retrieval.
-ChessboardMatrix getCameraData() {
+ChessboardMatrix getCameraData(int i) {
     ChessboardMatrix camBoard(8, vector<char>(8, 'e'));
-    // Example simulation: Place a white (W) piece at A2 and a black (B) piece at A7.
-    camBoard[1][0] = 'W'; // Row 1, Col 0 => A2
-    camBoard[6][0] = 'B'; // Row 6, Col 0 => A7
+    // Example simulation:
+    if (i == 1) {
+    camBoard[1][0] = 'B'; // Row 1, Col 0 => A2
+    camBoard[6][0] = 'W'; // Row 1, Col 0 => A2
+    } else {
+    camBoard[6][0] = 'B'; // Row 2, Col 0 => A3
+    }
     return camBoard;
 }
 
@@ -79,24 +86,19 @@ pair<pair<int, int>, pair<int, int>> determinePlayerMove(const ChessboardMatrix 
             if (lastPositions[i][j] != 'e' && newPositions[i][j] == 'e') {
                 from = {i, j}; // Piece moved away from here.
             }
-            if (lastPositions[i][j] == 'e' && newPositions[i][j] != 'e') {
+            if (lastPositions[i][j] == 'e' && newPositions[i][j] != 'e' || lastPositions[i][j] == 'W' && newPositions[i][j] == 'B' || lastPositions[i][j] == 'B' && newPositions[i][j] == 'W') {
                 to = {i, j}; // Piece moved into here.
             }
         }
     }
+    cout << "Player moved from: (" << from.first << "," << from.second << "), to: (" << to.first << "," << to.second << ")." << endl;
     return {from, to};
-}
-
-// Placeholder: Check if any king is dead (to end the game)
-bool anyKingIsDead() {
-    // Logic for checking kings (to be implemented)
-    return false;
 }
 
 // Returns a move string in chess notation, e.g., "A2A4".
 string stockfishMove() {
     cout << "Stockfish is calculating the best move..." << endl;
-    string move = "A2A4"; // Dummy move
+    string move = "B2B4"; // Dummy move
     cout << "Stockfish move: " << move << endl;
     return move;
 }
@@ -133,11 +135,11 @@ void moveChessPiece(RTDEControlInterface &rtde_control, const vector<double> &fr
 }
 
 /*============================================================
-            MAIN START
+            		MAIN START
 ============================================================*/
 int main() {
-    /*   ==========   SETUP UR5 CONNECTION   ==========   */
-    string robotIp = "192.168.1.54";
+    //   ==========   SETUP UR5 CONNECTION   ==========   //
+    /*string robotIp = "192.168.1.54";
     int robotPort = 50002;
     RTDEControlInterface rtde_control(robotIp, robotPort);
     RTDEReceiveInterface rtde_receive(robotIp, robotPort);
@@ -148,11 +150,11 @@ int main() {
         return -1;
     }
     
-    /*   ==========   SET TCP OFFSET   ==========   */
+    //   ==========   SET TCP OFFSET   ==========   //
     vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0};
     rtde_control.setTcp(tcpOffset);
     
-    /*   ==========   SET CHESSBOARD ORIGIN   ==========   */
+    //   ==========   SET CHESSBOARD ORIGIN   ==========   //
     rtde_control.teachMode(); // Enable freemove mode
     cout << "Freemove mode enabled. Move the robot pointer to the chessboard A1 corner and press ENTER." << endl;
     cin.get(); // Wait for user input
@@ -165,7 +167,7 @@ int main() {
     Matrix3d RotationChess = getRotationMatrixZ(22.5 - 90);
     cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
     
-    /*   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   */
+    //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition(rtde_control);
     
     Vector3d chessboardTarget(0.0, 0.0, 0.0);
@@ -176,8 +178,8 @@ int main() {
     
     Vector3d chessboardTarget2(0.1, 0.0, 0.1);
     moveToChessboardPoint(rtde_control, rtde_receive, chessboardTarget2, chessboardOrigin, RotationChess);
-    
-    /*   ==========   BEGIN CHESS GAME   ==========   */
+    */
+    //   ==========   BEGIN CHESS GAME   ==========   //
     Chessboard board;
     cout << "Press ENTER to start chess game..." << endl;
     cin.get();    
@@ -185,10 +187,10 @@ int main() {
     
     while (true) {
         // Retrieve camera data before and after player's move.
-        ChessboardMatrix lastPositions = getCameraData();
+        ChessboardMatrix lastPositions = getCameraData(1);
         cout << "Make your move and press ENTER..." << endl;
         cin.get();
-        ChessboardMatrix newPositions = getCameraData();
+        ChessboardMatrix newPositions = getCameraData(2);
         
         // Determine the player's move.
         auto moveIndices = determinePlayerMove(lastPositions, newPositions); 
@@ -201,8 +203,8 @@ int main() {
         board.updateChessboard({fromRow, fromCol}, {toRow, toCol});
         board.printBoard(); 
         
-        if (anyKingIsDead()) {
-            moveToAwaitPosition(rtde_control);
+        if (board.anyKingIsDead()) {
+            //moveToAwaitPosition(rtde_control);
             cout << "Game has ended" << endl;
             return 0;
         }
@@ -230,10 +232,10 @@ int main() {
         }
         
         // Move the chess piece using the robot.
-        moveChessPiece(rtde_control, fromCoordinate, toCoordinate, toOccupied);
+        //moveChessPiece(rtde_control, fromCoordinate, toCoordinate, toOccupied);
         
-        if (anyKingIsDead()) {
-            moveToAwaitPosition(rtde_control);
+        if (board.anyKingIsDead()) {
+            //moveToAwaitPosition(rtde_control);
             cout << "Game has ended" << endl;
             return 0;
         }
@@ -246,7 +248,7 @@ int main() {
         board.updateChessboard({fromRowIdx, fromColIdx}, {toRowIdx, toColIdx});
         board.printBoard();
         
-        moveToAwaitPosition(rtde_control);
+        //moveToAwaitPosition(rtde_control);
     }
     
     return 0;
