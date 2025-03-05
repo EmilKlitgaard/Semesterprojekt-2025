@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/Workspace/test_rtde/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/test_rtde.dir/all
+all: CMakeFiles/ChessRobot.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/test_rtde.dir/clean
+clean: CMakeFiles/ChessRobot.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/test_rtde.dir
+# Target rules for target CMakeFiles/ChessRobot.dir
 
 # All Build rule for target.
-CMakeFiles/test_rtde.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rtde.dir/build.make CMakeFiles/test_rtde.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rtde.dir/build.make CMakeFiles/test_rtde.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=1,2 "Built target test_rtde"
-.PHONY : CMakeFiles/test_rtde.dir/all
+CMakeFiles/ChessRobot.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=1,2,3 "Built target ChessRobot"
+.PHONY : CMakeFiles/ChessRobot.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/test_rtde.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_rtde.dir/all
+CMakeFiles/ChessRobot.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ChessRobot.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 0
-.PHONY : CMakeFiles/test_rtde.dir/rule
+.PHONY : CMakeFiles/ChessRobot.dir/rule
 
 # Convenience name for target.
-test_rtde: CMakeFiles/test_rtde.dir/rule
-.PHONY : test_rtde
+ChessRobot: CMakeFiles/ChessRobot.dir/rule
+.PHONY : ChessRobot
 
 # clean rule for target.
-CMakeFiles/test_rtde.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rtde.dir/build.make CMakeFiles/test_rtde.dir/clean
-.PHONY : CMakeFiles/test_rtde.dir/clean
+CMakeFiles/ChessRobot.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/clean
+.PHONY : CMakeFiles/ChessRobot.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

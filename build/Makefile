@@ -117,41 +117,65 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_rtde
+# Target rules for targets named ChessRobot
 
 # Build rule for target.
-test_rtde: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_rtde
-.PHONY : test_rtde
+ChessRobot: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ChessRobot
+.PHONY : ChessRobot
 
 # fast build rule for target.
-test_rtde/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rtde.dir/build.make CMakeFiles/test_rtde.dir/build
-.PHONY : test_rtde/fast
+ChessRobot/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/build
+.PHONY : ChessRobot/fast
 
-test_rtde.o: test_rtde.cpp.o
-.PHONY : test_rtde.o
+Chessboard.o: Chessboard.cpp.o
+.PHONY : Chessboard.o
 
 # target to build an object file
-test_rtde.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rtde.dir/build.make CMakeFiles/test_rtde.dir/test_rtde.cpp.o
-.PHONY : test_rtde.cpp.o
+Chessboard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.o
+.PHONY : Chessboard.cpp.o
 
-test_rtde.i: test_rtde.cpp.i
-.PHONY : test_rtde.i
+Chessboard.i: Chessboard.cpp.i
+.PHONY : Chessboard.i
 
 # target to preprocess a source file
-test_rtde.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rtde.dir/build.make CMakeFiles/test_rtde.dir/test_rtde.cpp.i
-.PHONY : test_rtde.cpp.i
+Chessboard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.i
+.PHONY : Chessboard.cpp.i
 
-test_rtde.s: test_rtde.cpp.s
-.PHONY : test_rtde.s
+Chessboard.s: Chessboard.cpp.s
+.PHONY : Chessboard.s
 
 # target to generate assembly for a file
-test_rtde.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_rtde.dir/build.make CMakeFiles/test_rtde.dir/test_rtde.cpp.s
-.PHONY : test_rtde.cpp.s
+Chessboard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.s
+.PHONY : Chessboard.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -161,10 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_rtde"
-	@echo "... test_rtde.o"
-	@echo "... test_rtde.i"
-	@echo "... test_rtde.s"
+	@echo "... ChessRobot"
+	@echo "... Chessboard.o"
+	@echo "... Chessboard.i"
+	@echo "... Chessboard.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ubuntu/Workspace/test_rtde/Chessboard.cpp" "CMakeFiles/test_rtde.dir/Chessboard.cpp.o" "gcc" "CMakeFiles/test_rtde.dir/Chessboard.cpp.o.d"
-  "/home/ubuntu/Workspace/test_rtde/test_rtde.cpp" "CMakeFiles/test_rtde.dir/test_rtde.cpp.o" "gcc" "CMakeFiles/test_rtde.dir/test_rtde.cpp.o.d"
+  "/home/ubuntu/Workspace/test_rtde/Chessboard.cpp" "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o.d"
+  "/home/ubuntu/Workspace/test_rtde/main.cpp" "CMakeFiles/ChessRobot.dir/main.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.

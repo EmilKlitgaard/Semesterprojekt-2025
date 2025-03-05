@@ -1,6 +1,5 @@
-CMakeFiles/test_rtde.dir/test_rtde.cpp.o: \
- /home/ubuntu/Workspace/test_rtde/test_rtde.cpp \
- /usr/include/stdc-predef.h \
+CMakeFiles/ChessRobot.dir/main.cpp.o: \
+ /home/ubuntu/Workspace/test_rtde/main.cpp /usr/include/stdc-predef.h \
  /usr/local/include/ur_rtde/rtde_control_interface.h \
  /usr/local/include/ur_rtde/rtde.h \
  /usr/local/include/ur_rtde/rtde_export.h \
