@@ -43,15 +43,21 @@ Vector3d chessboardToBase(const Vector3d &chessPoint, const Vector3d &chessboard
     return R * chessPoint + chessboardOrigin;
 }
 
+// Move TCP to a the awaiting position
+void moveToAwaitPosition(RTDEControlInterface &rtde_control) {
+    vector<double> awaitPosition = {-1.11701, -0.89012, -1.78024, -0.52360, 1.57080, 0.71558}; 
+    rtde_control.moveJ(awaitPosition, 1.0, 0.3);
+}
+
 // Move TCP to a specific chessboard coordinate
-void moveToChessboardPoint(RTDEControlInterface &rtde_control, const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &R) {
+void moveToChessboardPoint(RTDEControlInterface &rtde_control, RTDEReceiveInterface &rtde_receive, const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &R) {
     // Convert chessboard target to base frame
     Vector3d baseTarget = chessboardToBase(chessboardTarget, chessboardOrigin, R);
 
     // Get current TCP pose
-    vector<double> tcpPose = rtde_control.getForwardKinematics();
+    vector<double> tcpPose = rtde_receive.getActualTCPPose();
 
-    // Set new XYZ but keep current orientation
+    // Set new XYZ and orientation
     tcpPose[0] = baseTarget[0];
     tcpPose[1] = baseTarget[1];
     tcpPose[2] = baseTarget[2];
@@ -60,42 +66,32 @@ void moveToChessboardPoint(RTDEControlInterface &rtde_control, const Vector3d &c
     tcpPose[5] = 0;
     
     cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
-    rtde_control.moveL(tcpPose, 0.5, 0.3); // Move with 0.5 m/s speed and 0.3 acceleration
-}
-
-// Move TCP by an offset in the chessboard frame
-void moveRelativeInChessboard(RTDEControlInterface &rtde_control, RTDEReceiveInterface &rtde_receive, 
-                              const Vector3d &chessboardOrigin, const Matrix3d &R, const Vector3d &offset) {
-    // Get current TCP pose
-    vector<double> tcpPose = rtde_receive.getActualTCPPose();
-    Vector3d basePosition(tcpPose[0], tcpPose[1], tcpPose[2]);
-
-    // Convert base position to chessboard frame
-    Vector3d chessboardPosition = baseToChessboard(basePosition, chessboardOrigin, R);
-
-    // Apply movement in chessboard frame
-    Vector3d newChessboardPosition = chessboardPosition + offset;
-
-    // Convert back to base frame
-    Vector3d newBasePosition = chessboardToBase(newChessboardPosition, chessboardOrigin, R);
-
-    // Keep current orientation
-    tcpPose[0] = newBasePosition[0];
-    tcpPose[1] = newBasePosition[1];
-    tcpPose[2] = newBasePosition[2];
-
-    cout << "Moving TCP by offset [" << offset.transpose() << "] in Chessboard Frame" << endl;
-    rtde_control.moveL(tcpPose, 0.5, 0.3);
+    rtde_control.moveL(tcpPose, 1.0, 0.3); // Move with 0.5 m/s speed and 0.3 acceleration
 }
 
 int main() {
+    /*   -----   SETUP UR5 CONNECTION   -----   */
     string robotIp = "192.168.1.54";
     int robotPort = 50002;
     RTDEControlInterface rtde_control(robotIp, robotPort);
     RTDEReceiveInterface rtde_receive(robotIp, robotPort);
-
+    
+    // Check if the connection is successful
+    if (!rtde_control.isConnected() || !rtde_receive.isConnected()) {
+        cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;
+        return -1;
+    }
+    
+    
+    /*   -----   SET TCP OFFSET   -----   */
+    vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0};
+    rtde_control.setTcp(tcpOffset);
+    
+    
+    /*   -----   SET CHESSBOARD ORIGIN   -----   */
     rtde_control.teachMode(); // Enable freemove mode
-    cout << "Freemove mode enabled. Move the robot to the chessboard A1 corner and press Enter." << endl;
+    
+    cout << "Freemove mode enabled. Move the robot pointer to the chessboard A1 corner and press ENTER." << endl;
     cin.get(); // Wait for user input
     rtde_control.endTeachMode(); // Disable freemove mode
     cout << "Freemove mode disabled. Saving chessboard frame origin." << endl;
@@ -110,26 +106,56 @@ int main() {
     // Print chessboard frame information
     cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
 
+
+    /*   -----   BEGIN MAIN CODE   -----   */
     // Test move 1: Move to a specific point in chessboard frame
-    Vector3d chessboardTarget(0.1, 0.0, 0.0);
-    moveToChessboardPoint(rtde_control, chessboardTarget, chessboardOrigin, RotationChess);
+    moveToAwaitPosition(rtde_control);
     
-    Vector3d chessboardTarget1(0.1, 0.1, 0.0);
-    moveToChessboardPoint(rtde_control, chessboardTarget1, chessboardOrigin, RotationChess);
+    Vector3d chessboardTarget(0.0, 0.0, 0.0);
+    moveToChessboardPoint(rtde_control, rtde_receive, chessboardTarget, chessboardOrigin, RotationChess);
     
-    Vector3d chessboardTarget2(0.1, 0.1, 0.1);
-    moveToChessboardPoint(rtde_control, chessboardTarget2, chessboardOrigin, RotationChess);
+    Vector3d chessboardTarget1(0.1, 0.0, 0.0);
+    moveToChessboardPoint(rtde_control, rtde_receive, chessboardTarget1, chessboardOrigin, RotationChess);
+    
+    Vector3d chessboardTarget2(0.1, 0.0, 0.1);
+    moveToChessboardPoint(rtde_control, rtde_receive, chessboardTarget2, chessboardOrigin, RotationChess);
 
-    // Wait for user input before next move
-    cout << "Press Enter for relative movement in chessboard frame..." << endl;
+
+    /*   -----   BEGIN CHESS GAME   -----   */
+    // Wait for user input
+    cout << "Press ENTER to start chess game..." << endl;
     cin.get();
-
-    // Test move 2: Move relatively in chessboard frame
-    Vector3d chessboardOffset(0.05, -0.05, 0.0); // Move 5cm right, 5cm back in chessboard frame
-    moveRelativeInChessboard(rtde_control, rtde_receive, chessboardOrigin, RotationChess, chessboardOffset);
     
-    Vector3d chessboardOffset2(0.0, 0.0, 0.1); // Move 5cm right, 5cm back in chessboard frame
-    moveRelativeInChessboard(rtde_control, rtde_receive, chessboardOrigin, RotationChess, chessboardOffset2);
+    // Setup chess matrix
+    chessboard
+    
+    cout << "CHESS GAME STARTED" << endl;
+    
+    while (true) {
+        lastPositions = getCameraData(); // Get the image data from the camera. The data include the positions of all of the pieces. 
+        cout << "Make your move and press ENTER..." << endl;
+        cin.get();
+        newPositions = getCameraData(); // Get the image data from the camera. The data include the positions of all of the pieces. 
+        determinePlayerMove(); // Algorithm to determine the diffrence in the two images. Hereby the moved piece. 
+        if (anyKingDied()) {
+            moveToAwaitPosition(rtde_control);
+            cout << "Game has ended" << endl;
+            return 0;
+        }
+        updateChessboard(); // Update the chessboard matrix.
+        
+        stockfishMove(); // Send the player move to Stockfish and recieve a counter move. 
+        updateChessooard(); // Update the chessboard matrix.
+        
+        fromCoordinate, toCoordinate = getChessPieceCoordinates(); // Get the coresponding XYZ coordinates from the chessboard matrix.
+        moveChessPiece(); // Move 0.1m above the <fromCoordinate>, Open gripper, Move down to the piece, Close the gripper, Move up 0.1m, Move 0.1m above the <toCoordinate>, Move down to the location, Open the gripper, Move up 0.1m. (If the <toCoordinate> is already occupied, then first move that piece to the <deadPieceLocation>).
+        if (anyKingDied()) {
+            moveToAwaitPosition(rtde_control);
+            cout << "Game has ended" << endl;
+            return 0;
+        }
+        moveToAwaitPosition(rtde_control);
+    }
 
     return 0;
 }
