@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/Workspace/test_rtde/Chessboard.cpp" "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o.d"
+  "/home/ubuntu/Workspace/test_rtde/Stockfish.cpp" "CMakeFiles/ChessRobot.dir/Stockfish.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/Stockfish.cpp.o.d"
   "/home/ubuntu/Workspace/test_rtde/main.cpp" "CMakeFiles/ChessRobot.dir/main.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/main.cpp.o.d"
   )
 

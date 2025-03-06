@@ -6,13 +6,21 @@
 #include <cmath>
 #include <utility>
 #include <unordered_map>
+#include <sstream>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <Eigen/Dense>
 
-// Custom hash for std::pair<int, int>
+using namespace std;
+using namespace Eigen;
+
+// Custom hash for pair<int, int>
 struct PairHash {
     template <class T1, class T2>
-    std::size_t operator()(const std::pair<T1, T2>& p) const {
-         auto h1 = std::hash<T1>{}(p.first);
-         auto h2 = std::hash<T2>{}(p.second);
+    size_t operator()(const pair<T1, T2>& p) const {
+         auto h1 = hash<T1>{}(p.first);
+         auto h2 = hash<T2>{}(p.second);
          return h1 ^ (h2 << 1);
     }
 };
@@ -22,21 +30,21 @@ public:
     Chessboard();
 
     // Update board state using a move from one cell to another
-    void updateChessboard(std::pair<int, int> from, std::pair<int, int> to);
+    void updateChessboard(pair<int, int> from, pair<int, int> to);
     void printBoard();
     bool anyKingIsDead();
-    std::string getChessNotation(std::pair<int, int> position);
-    std::pair<int, int> getMatrixIndex(const std::string& notation);
-    std::vector<std::vector<std::string>> getBoardState();
+    string getChessNotation(pair<int, int> position);
+    pair<int, int> getMatrixIndex(const string& notation);
+    vector<vector<string>> getBoardState();
 
     // Retrieve physical coordinates for a given cell in chess notation.
-    std::vector<double> getPhysicalCoordinates(const std::string &notation);
+    Vector3d getPhysicalCoordinates(const string &notation);
 
 private:
-    std::vector<std::vector<std::string>> board;
-    std::vector<std::vector<std::pair<double, double>>> physicalCoordinates;
-    std::unordered_map<std::string, std::pair<int, int>> notationToIndex;
-    std::unordered_map<std::pair<int, int>, std::string, PairHash> indexToNotation;
+    vector<vector<string>> board;
+    vector<vector<pair<double, double>>> physicalCoordinates;
+    unordered_map<string, pair<int, int>> notationToIndex;
+    unordered_map<pair<int, int>, string, PairHash> indexToNotation;
 
     void initializeBoard();
     void initializeMappings();

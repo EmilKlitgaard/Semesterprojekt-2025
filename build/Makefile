@@ -153,6 +153,30 @@ Chessboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.s
 .PHONY : Chessboard.cpp.s
 
+Stockfish.o: Stockfish.cpp.o
+.PHONY : Stockfish.o
+
+# target to build an object file
+Stockfish.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Stockfish.cpp.o
+.PHONY : Stockfish.cpp.o
+
+Stockfish.i: Stockfish.cpp.i
+.PHONY : Stockfish.i
+
+# target to preprocess a source file
+Stockfish.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Stockfish.cpp.i
+.PHONY : Stockfish.cpp.i
+
+Stockfish.s: Stockfish.cpp.s
+.PHONY : Stockfish.s
+
+# target to generate assembly for a file
+Stockfish.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Stockfish.cpp.s
+.PHONY : Stockfish.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... Chessboard.o"
 	@echo "... Chessboard.i"
 	@echo "... Chessboard.s"
+	@echo "... Stockfish.o"
+	@echo "... Stockfish.i"
+	@echo "... Stockfish.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

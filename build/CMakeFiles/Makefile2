@@ -81,12 +81,12 @@ clean: CMakeFiles/ChessRobot.dir/clean
 CMakeFiles/ChessRobot.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=1,2,3 "Built target ChessRobot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=1,2,3,4 "Built target ChessRobot"
 .PHONY : CMakeFiles/ChessRobot.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ChessRobot.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ChessRobot.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 0
 .PHONY : CMakeFiles/ChessRobot.dir/rule

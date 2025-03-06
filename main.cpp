@@ -7,6 +7,7 @@
 #include <string>
 
 #include "Chessboard.h"
+#include "Stockfish.h"
 
 using namespace ur_rtde;
 using namespace std;
@@ -68,10 +69,10 @@ ChessboardMatrix getCameraData(int i) {
     ChessboardMatrix camBoard(8, vector<char>(8, 'e'));
     // Example simulation:
     if (i == 1) {
-    camBoard[1][0] = 'B'; // Row 1, Col 0 => A2
-    camBoard[6][0] = 'W'; // Row 1, Col 0 => A2
+    camBoard[6][2] = 'W';
+    //camBoard[6][0] = 'B';
     } else {
-    camBoard[6][0] = 'B'; // Row 2, Col 0 => A3
+    camBoard[4][2] = 'W';
     }
     return camBoard;
 }
@@ -95,16 +96,16 @@ pair<pair<int, int>, pair<int, int>> determinePlayerMove(const ChessboardMatrix 
     return {from, to};
 }
 
-// Returns a move string in chess notation, e.g., "A2A4".
-string stockfishMove() {
+// Returns a move string in chess notation, e.g., "e2e4".
+string stockfishMove(Stockfish &engine) {
+    string latestMove = "c2c4"; // Example move
     cout << "Stockfish is calculating the best move..." << endl;
-    string move = "B2B4"; // Dummy move
-    cout << "Stockfish move: " << move << endl;
-    return move;
+    string bestMove = engine.getBestMove(latestMove);
+    cout << "Stockfish best move: " << bestMove << endl;
+    return bestMove;
 }
 
-void moveChessPiece(RTDEControlInterface &rtde_control, const vector<double> &fromCoordinate, 
-                    const vector<double> &toCoordinate, bool toOccupied) {
+void moveChessPiece(RTDEControlInterface &rtde_control, const vector<double> &fromCoordinate, const vector<double> &toCoordinate, bool toOccupied) {
     // If the destination cell is occupied, move the piece there first to a dead piece location.
     if (toOccupied) {
         vector<double> deadPieceLocation = {0.5, 0.5, 0.1, 0, M_PI, 0}; // Dummy dead-piece location
@@ -132,6 +133,20 @@ void moveChessPiece(RTDEControlInterface &rtde_control, const vector<double> &fr
     // rtde_control.openGripper(); // Placeholder for actual gripper command
     cout << "Lifting piece 0.1m after release..." << endl;
     rtde_control.moveL(aboveDest, 0.5, 0.3);
+}
+
+bool isOccupied(string &toNotation, Chessboard &board) {
+    auto boardState = board.getBoardState();
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+    	    cout << board.getChessNotation({i, j}) << "\t";
+            if (board.getChessNotation({i, j}) == toNotation && boardState[i][j] != "0") {
+                return true;
+            }
+        }
+        cout << endl;
+    }
+    return false;
 }
 
 /*============================================================
@@ -179,10 +194,13 @@ int main() {
     Vector3d chessboardTarget2(0.1, 0.0, 0.1);
     moveToChessboardPoint(rtde_control, rtde_receive, chessboardTarget2, chessboardOrigin, RotationChess);
     */
+    
+    
     //   ==========   BEGIN CHESS GAME   ==========   //
-    Chessboard board;
     cout << "Press ENTER to start chess game..." << endl;
-    cin.get();    
+    cin.get();  
+    Chessboard board;
+    Stockfish engine("/home/ubuntu/Stockfish/src/stockfish");  
     cout << "CHESS GAME STARTED" << endl;
     
     while (true) {
@@ -210,26 +228,22 @@ int main() {
         }
         
         // Get the move from Stockfish (in chess notation, e.g., "A2A4")
-        string stockfishMoveStr = stockfishMove();
-        
+	string stockfisBesthMove = stockfishMove(engine);
+
         // Convert Stockfish move to from- and to- notations.
-        string fromNotation = stockfishMoveStr.substr(0, 2);
-        string toNotation   = stockfishMoveStr.substr(2, 2);
+        string fromNotation = stockfisBesthMove.substr(0, 2);
+        string toNotation   = stockfisBesthMove.substr(2, 2);
         
         // Get the physical coordinates for these cells.
-        vector<double> fromCoordinate = board.getPhysicalCoordinates(fromNotation);
-        vector<double> toCoordinate   = board.getPhysicalCoordinates(toNotation);
+        Eigen::Vector3d fromCoordinate = board.getPhysicalCoordinates(fromNotation);
+        Eigen::Vector3d toCoordinate = board.getPhysicalCoordinates(toNotation);
+	
+	// Print the robot moves
+	cout << "Robot move piece from Coordinate: (" << fromCoordinate.transpose() << "), to Coordinate: (" << toCoordinate.transpose() << ")." << endl;
         
         // Check if the destination cell is already occupied.
-        bool toOccupied = false;
-        auto boardState = board.getBoardState();
-        for (int i = 0; i < 8; ++i) {
-            for (int j = 0; j < 8; ++j) {
-                if (board.getChessNotation({i, j}) == toNotation && boardState[i][j] != "0") {
-                    toOccupied = true;
-                }
-            }
-        }
+        bool toOccupied = isOccupied(toNotation, board);
+        cout << "Is occupied: " << toOccupied << endl;
         
         // Move the chess piece using the robot.
         //moveChessPiece(rtde_control, fromCoordinate, toCoordinate, toOccupied);
@@ -242,9 +256,9 @@ int main() {
         
         // After robot move, update the board accordingly.
         int fromRowIdx = fromNotation[1] - '1';
-        int fromColIdx = fromNotation[0] - 'A';
+        int fromColIdx = fromNotation[0] - 'a';
         int toRowIdx   = toNotation[1] - '1';
-        int toColIdx   = toNotation[0] - 'A';
+        int toColIdx   = toNotation[0] - 'a';
         board.updateChessboard({fromRowIdx, fromColIdx}, {toRowIdx, toColIdx});
         board.printBoard();
         
