@@ -31,7 +31,7 @@ public:
 
     // Update board state using a move from one cell to another
     void updateChessboard(pair<int, int> from, pair<int, int> to);
-    void printBoard();
+    void printBoard(const string &mode = "Default");
     bool anyKingIsDead();
     string getChessNotation(pair<int, int> position);
     pair<int, int> getMatrixIndex(const string& notation);

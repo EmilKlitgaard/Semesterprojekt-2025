@@ -139,12 +139,10 @@ bool isOccupied(string &toNotation, Chessboard &board) {
     auto boardState = board.getBoardState();
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
-    	    cout << board.getChessNotation({i, j}) << "\t";
-            if (board.getChessNotation({i, j}) == toNotation && boardState[i][j] != "0") {
-                return true;
-            }
+    	    //cout << board.getChessNotation({i, j}) << "\t";
+            if (board.getChessNotation({i, j}) == toNotation && boardState[i][j] != "0") { return true; }
         }
-        cout << endl;
+        //cout << endl;
     }
     return false;
 }
@@ -255,11 +253,9 @@ int main() {
         }
         
         // After robot move, update the board accordingly.
-        int fromRowIdx = fromNotation[1] - '1';
-        int fromColIdx = fromNotation[0] - 'a';
-        int toRowIdx   = toNotation[1] - '1';
-        int toColIdx   = toNotation[0] - 'a';
-        board.updateChessboard({fromRowIdx, fromColIdx}, {toRowIdx, toColIdx});
+        pair<int, int> fromIdx = board.getMatrixIndex(fromNotation);
+	pair<int, int> toIdx   = board.getMatrixIndex(toNotation);
+	board.updateChessboard(fromIdx, toIdx);
         board.printBoard();
         
         //moveToAwaitPosition(rtde_control);

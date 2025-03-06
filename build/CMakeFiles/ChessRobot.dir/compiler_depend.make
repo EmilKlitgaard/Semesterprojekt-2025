@@ -663,6 +663,9 @@ CMakeFiles/ChessRobot.dir/Stockfish.cpp.o: ../Stockfish.cpp \
   /usr/include/aarch64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/11/bits/charconv.h \
   /usr/include/c++/11/bits/basic_string.tcc \
+  /usr/include/c++/11/cstring \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/c++/11/stdexcept \
   /usr/include/c++/11/exception \
   /usr/include/c++/11/bits/exception_ptr.h \
@@ -748,7 +751,12 @@ CMakeFiles/ChessRobot.dir/Stockfish.cpp.o: ../Stockfish.cpp \
   /usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/linux/falloc.h \
   /usr/include/aarch64-linux-gnu/bits/stat.h \
-  /usr/include/aarch64-linux-gnu/bits/struct_stat.h
+  /usr/include/aarch64-linux-gnu/bits/struct_stat.h \
+  /usr/include/c++/11/vector \
+  /usr/include/c++/11/bits/stl_uninitialized.h \
+  /usr/include/c++/11/bits/stl_vector.h \
+  /usr/include/c++/11/bits/stl_bvector.h \
+  /usr/include/c++/11/bits/vector.tcc
 
 CMakeFiles/ChessRobot.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \

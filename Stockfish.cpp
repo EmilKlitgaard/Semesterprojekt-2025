@@ -91,9 +91,30 @@ string Stockfish::readResponse(const string& findString) {
     return response;
 }
 
-string Stockfish::getBestMove(const string& latestMove) {
-    // Send the position commands
-    sendCommand("position startpos moves " + latestMove);
+// Update the current move history
+void Stockfish::addMoveToHistory(const string& move) {
+    moveHistory.push_back(move);
+}
+
+// Get the current move history
+vector<string> Stockfish::getMoveHistory() const {
+    return moveHistory;
+}
+
+// Get the current move history from the Chessboard
+string Stockfish::getBestMove(const string& latestMove) {    
+    addMoveToHistory(latestMove);
+
+     // Construct the position command
+    string positionCommand = "position startpos moves";
+    if (!moveHistory.empty()) {
+        for (const string& move : moveHistory) {
+            positionCommand += " " + move;
+        }
+    }
+
+    // Send the position command
+    sendCommand(positionCommand);
     sendCommand("go movetime 1000");
 
     string response = readResponse("bestmove");
@@ -109,5 +130,9 @@ string Stockfish::getBestMove(const string& latestMove) {
 
     // Extract the move (e.g., "bestmove e7e5")
     string move = response.substr(bestmovePos + 9, 4);
+    
+    // Update the move history in the Chessboard
+    addMoveToHistory(move);
+    
     return move;
 }

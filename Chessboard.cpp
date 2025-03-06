@@ -22,7 +22,7 @@ void Chessboard::initializeBoard() {
     for (int i = 0; i < 8; i++) {
         vector<pair<double, double>> row;
         for (int j = 0; j < 8; j++) {
-            row.emplace_back((j*0.05)-0.025, (i*0.05)-0.025);
+            row.emplace_back((j*0.05)+0.025, (i*0.05)+0.025);
         }
         physicalCoordinates.push_back(row);
     }
@@ -57,13 +57,29 @@ void Chessboard::updateChessboard(pair<int, int> from, pair<int, int> to) {
     board[to.first][to.second] = movedPiece; // Move piece to new position
 }
 
-// Print the chessboard in a readable format
-void Chessboard::printBoard() {
-    for (const auto& row : board) {
-        for (const auto& cell : row) {
-            cout << cell << "\t";
+void Chessboard::printBoard(const string &mode) {
+    if (mode == "ChessNotation") {
+        for (int i = 0; i < board.size(); i++) {
+            for (int j = 0; j < board[i].size(); j++) {
+                cout << getChessNotation({i, j}) << "\t";
+            }
+            cout << endl;
         }
-        cout << endl;
+    } else if (mode == "CoordinateNotation") {
+        for (int i = 0; i < physicalCoordinates.size(); i++) {
+            for (int j = 0; j < physicalCoordinates[i].size(); j++) {
+                auto coord = physicalCoordinates[i][j];
+                cout << "(" << coord.first << "," << coord.second << ")\t";
+            }
+            cout << endl;
+        }
+    } else {
+        for (const auto &row : board) {
+            for (const auto &cell : row) {
+                cout << cell << "\t";
+            }
+            cout << endl;
+        }
     }
 }
 
@@ -91,11 +107,13 @@ vector<vector<string>> Chessboard::getBoardState() {
 
 // Convert chess notation (e.g., "A2") to physical coordinates (XYZ).
 Eigen::Vector3d Chessboard::getPhysicalCoordinates(const std::string& notation) {
-    auto indices = getMatrixIndex(notation);
+    auto indices = getMatrixIndex(notation); // returns {i, j} with i=0 for rank 8, i=7 for rank 1
     int i = indices.first;
     int j = indices.second;
-    double x = physicalCoordinates[i][j].first;
-    double y = physicalCoordinates[i][j].second;
-    double z = 0.1;
+    int inverted_i = 7 - i;
+    double x = physicalCoordinates[inverted_i][j].first;
+    double y = physicalCoordinates[inverted_i][j].second;
+    double z = 0.1;  // constant z height
     return Eigen::Vector3d(x, y, z);
 }
+
