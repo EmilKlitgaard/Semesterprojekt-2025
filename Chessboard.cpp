@@ -41,23 +41,28 @@ void Chessboard::initializeMappings() {
 }
 
 // Convert matrix index to chess notation (e.g., (0,0) -> "a8")
-string Chessboard::getChessNotation(pair<int, int> position) {
+string Chessboard::getChessNotation(MatrixIndex position) {
     return indexToNotation[position];
+}
+// Convert matrix index to chess notation (e.g., ({0,0}, {0,4}) -> "a8a5")
+string Chessboard::getChessNotation(MatrixIndex position1, MatrixIndex position2) {
+    return indexToNotation[position1] + indexToNotation[position2];
 }
 
 // Convert chess notation to matrix index (e.g., "a1" -> (0,0))
-pair<int, int> Chessboard::getMatrixIndex(const string& notation) {
+MatrixIndex Chessboard::getMatrixIndex(const string& notation) {
     return notationToIndex[notation];
 }
 
 // Update the board state after a move
-void Chessboard::updateChessboard(pair<int, int> from, pair<int, int> to) {
+void Chessboard::updateChessboard(MatrixIndex from, MatrixIndex to) {
     string movedPiece = board[from.first][from.second];
     board[from.first][from.second] = "0"; // Empty original position
     board[to.first][to.second] = movedPiece; // Move piece to new position
 }
 
 void Chessboard::printBoard(const string &mode) {
+    cout << "\n" << "Printing current chessboard:" << endl;
     if (mode == "ChessNotation") {
         for (int i = 0; i < board.size(); i++) {
             for (int j = 0; j < board[i].size(); j++) {
@@ -81,6 +86,7 @@ void Chessboard::printBoard(const string &mode) {
             cout << endl;
         }
     }
+    cout << endl;
 }
 
 // Check if any king is missing (dead), to end the game.
@@ -106,14 +112,14 @@ vector<vector<string>> Chessboard::getBoardState() {
 }
 
 // Convert chess notation (e.g., "A2") to physical coordinates (XYZ).
-Eigen::Vector3d Chessboard::getPhysicalCoordinates(const std::string& notation) {
+Vector3d Chessboard::getPhysicalCoordinates(const string& notation) {
     auto indices = getMatrixIndex(notation); // returns {i, j} with i=0 for rank 8, i=7 for rank 1
     int i = indices.first;
     int j = indices.second;
     int inverted_i = 7 - i;
     double x = physicalCoordinates[inverted_i][j].first;
     double y = physicalCoordinates[inverted_i][j].second;
-    double z = 0.1;  // constant z height
+    double z = 0.0;  // constant z height
     return Eigen::Vector3d(x, y, z);
 }
 

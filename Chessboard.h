@@ -15,7 +15,9 @@
 using namespace std;
 using namespace Eigen;
 
-// Custom hash for pair<int, int>
+using MatrixIndex = pair<int, int>;
+
+// Custom hash for MatrixIndex
 struct PairHash {
     template <class T1, class T2>
     size_t operator()(const pair<T1, T2>& p) const {
@@ -30,21 +32,23 @@ public:
     Chessboard();
 
     // Update board state using a move from one cell to another
-    void updateChessboard(pair<int, int> from, pair<int, int> to);
+    void updateChessboard(MatrixIndex from, MatrixIndex to);
     void printBoard(const string &mode = "Default");
-    bool anyKingIsDead();
-    string getChessNotation(pair<int, int> position);
-    pair<int, int> getMatrixIndex(const string& notation);
-    vector<vector<string>> getBoardState();
 
-    // Retrieve physical coordinates for a given cell in chess notation.
+    bool anyKingIsDead();
+
+    string getChessNotation(MatrixIndex position);
+    string getChessNotation(MatrixIndex position1, MatrixIndex position2);
+    MatrixIndex getMatrixIndex(const string& notation);
     Vector3d getPhysicalCoordinates(const string &notation);
+
+    vector<vector<string>> getBoardState();
 
 private:
     vector<vector<string>> board;
     vector<vector<pair<double, double>>> physicalCoordinates;
-    unordered_map<string, pair<int, int>> notationToIndex;
-    unordered_map<pair<int, int>, string, PairHash> indexToNotation;
+    unordered_map<string, MatrixIndex> notationToIndex;
+    unordered_map<MatrixIndex, string, PairHash> indexToNotation;
 
     void initializeBoard();
     void initializeMappings();

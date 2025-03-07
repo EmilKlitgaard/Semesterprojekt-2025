@@ -70,7 +70,7 @@ void Stockfish::sendCommand(const string& command) {
     if (engine_pid == -1) {
         throw runtime_error("Engine not running");
     }
-    cout << "Sending command: " << command << endl; // Debugging line
+    // cout << "Sending command: " << command << endl; // Debugging line
     write(engine_stdin, (command + "\n").c_str(), command.size() + 1);
 }
 

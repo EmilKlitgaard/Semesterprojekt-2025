@@ -16,4 +16,3 @@ add_executable(ChessRobot main.cpp Chessboard.cpp Stockfish.cpp)
 
 # Link against the installed UR RTDE library
 target_link_libraries(ChessRobot rtde pthread)
-
