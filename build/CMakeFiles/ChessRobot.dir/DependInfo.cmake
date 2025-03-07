@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/Workspace/test_rtde/Chessboard.cpp" "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o.d"
   "/home/ubuntu/Workspace/test_rtde/Stockfish.cpp" "CMakeFiles/ChessRobot.dir/Stockfish.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/Stockfish.cpp.o.d"
+  "/home/ubuntu/Workspace/test_rtde/Vision.cpp" "CMakeFiles/ChessRobot.dir/Vision.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/Vision.cpp.o.d"
   "/home/ubuntu/Workspace/test_rtde/main.cpp" "CMakeFiles/ChessRobot.dir/main.cpp.o" "gcc" "CMakeFiles/ChessRobot.dir/main.cpp.o.d"
   )
 

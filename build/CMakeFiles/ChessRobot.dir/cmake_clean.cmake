@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o.d"
   "CMakeFiles/ChessRobot.dir/Stockfish.cpp.o"
   "CMakeFiles/ChessRobot.dir/Stockfish.cpp.o.d"
+  "CMakeFiles/ChessRobot.dir/Vision.cpp.o"
+  "CMakeFiles/ChessRobot.dir/Vision.cpp.o.d"
   "CMakeFiles/ChessRobot.dir/main.cpp.o"
   "CMakeFiles/ChessRobot.dir/main.cpp.o.d"
   "ChessRobot"

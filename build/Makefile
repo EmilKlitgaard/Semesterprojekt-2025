@@ -129,12 +129,26 @@ ChessRobot/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/build
 .PHONY : ChessRobot/fast
 
+#=============================================================================
+# Target rules for targets named TestExecutable
+
+# Build rule for target.
+TestExecutable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestExecutable
+.PHONY : TestExecutable
+
+# fast build rule for target.
+TestExecutable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/build
+.PHONY : TestExecutable/fast
+
 Chessboard.o: Chessboard.cpp.o
 .PHONY : Chessboard.o
 
 # target to build an object file
 Chessboard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Chessboard.cpp.o
 .PHONY : Chessboard.cpp.o
 
 Chessboard.i: Chessboard.cpp.i
@@ -143,6 +157,7 @@ Chessboard.i: Chessboard.cpp.i
 # target to preprocess a source file
 Chessboard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Chessboard.cpp.i
 .PHONY : Chessboard.cpp.i
 
 Chessboard.s: Chessboard.cpp.s
@@ -151,6 +166,7 @@ Chessboard.s: Chessboard.cpp.s
 # target to generate assembly for a file
 Chessboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Chessboard.cpp.s
 .PHONY : Chessboard.cpp.s
 
 Stockfish.o: Stockfish.cpp.o
@@ -177,6 +193,33 @@ Stockfish.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Stockfish.cpp.s
 .PHONY : Stockfish.cpp.s
 
+Vision.o: Vision.cpp.o
+.PHONY : Vision.o
+
+# target to build an object file
+Vision.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Vision.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Vision.cpp.o
+.PHONY : Vision.cpp.o
+
+Vision.i: Vision.cpp.i
+.PHONY : Vision.i
+
+# target to preprocess a source file
+Vision.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Vision.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Vision.cpp.i
+.PHONY : Vision.cpp.i
+
+Vision.s: Vision.cpp.s
+.PHONY : Vision.s
+
+# target to generate assembly for a file
+Vision.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Vision.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Vision.cpp.s
+.PHONY : Vision.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -201,6 +244,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test.o: test.cpp.o
+.PHONY : test.o
+
+# target to build an object file
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/test.cpp.o
+.PHONY : test.cpp.o
+
+test.i: test.cpp.i
+.PHONY : test.i
+
+# target to preprocess a source file
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/test.cpp.i
+.PHONY : test.cpp.i
+
+test.s: test.cpp.s
+.PHONY : test.s
+
+# target to generate assembly for a file
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/test.cpp.s
+.PHONY : test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -210,15 +277,22 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ChessRobot"
+	@echo "... TestExecutable"
 	@echo "... Chessboard.o"
 	@echo "... Chessboard.i"
 	@echo "... Chessboard.s"
 	@echo "... Stockfish.o"
 	@echo "... Stockfish.i"
 	@echo "... Stockfish.s"
+	@echo "... Vision.o"
+	@echo "... Vision.i"
+	@echo "... Vision.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 .PHONY : help
 
 

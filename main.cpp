@@ -5,9 +5,11 @@
 #include <cmath>
 #include <Eigen/Dense>
 #include <string>
+#include <opencv2/highgui/highgui.hpp>
 
 #include "Chessboard.h"
 #include "Stockfish.h"
+#include "Vision.h"
 
 using namespace ur_rtde;
 using namespace std;
@@ -39,6 +41,34 @@ Matrix3d getRotationMatrixZ(double angleDeg) {
     return Rotation;
 }
 
+void showBoardState(const ChessboardMatrix& board) {
+    Mat display(400, 400, CV_8UC3, Scalar(255, 255, 255));
+    float squareSize = 400.0f / 8;
+    
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            Point2f topLeft(j*squareSize, i*squareSize);
+            Point2f bottomRight((j+1)*squareSize, (i+1)*squareSize);
+            
+            // Draw square
+            rectangle(display, topLeft, bottomRight, Scalar(0, 0, 0), 1);
+            
+            // Draw piece
+            if (board[i][j] == 'W') {
+                circle(display, Point(topLeft.x + squareSize/2, topLeft.y + squareSize/2), 
+                       15, Scalar(255, 0, 0), FILLED); // Blue for white
+            }
+            else if (board[i][j] == 'B') {
+                circle(display, Point(topLeft.x + squareSize/2, topLeft.y + squareSize/2), 
+                       15, Scalar(0, 0, 255), FILLED); // Red for black
+            }
+        }
+    }
+    
+    imshow("Detected Board State", display);
+    waitKey(1);
+}
+
 // Convert from Chessboard Frame to Base Frame
 Vector3d chessboardToBase(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
     return RotationMatrix * chessboardTarget + chessboardOrigin;
@@ -61,7 +91,7 @@ void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &che
 }
 
 // Placeholder: Simulate camera data retrieval.
-ChessboardMatrix getCameraData(int i) {
+/*ChessboardMatrix getCameraData(int i) {
     ChessboardMatrix cameraBoard(8, vector<char>(8, 'e'));
     // Example simulation:
     if (i == 1) {
@@ -71,6 +101,12 @@ ChessboardMatrix getCameraData(int i) {
         cameraBoard[4][2] = 'W';
     }
     return cameraBoard;
+}*/
+ChessboardMatrix getCameraData() {
+    static ChessVision vision(0);
+    auto detectedBoard = vision.detectBoardState();
+    showBoardState(detectedBoard);
+    return detectedBoard;
 }
 
 // Compare camera data to determine which cell changed. Returns a pair: {from (row, col), to (row, col)}.
@@ -191,17 +227,37 @@ int main() {
     // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
     Matrix3d RotationChess = getRotationMatrixZ(22.5 - 90);
     cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
+
+    //   ==========   INITIALIZE COMPUTER VISION   ==========   //
+    ChessVision vision(0);
+    cout << "Calibrating camera... Point camera at chessboard and press any key" << endl;
+    Mat frame;
+    while (true) {
+        frame = vision.captureFrame();
+        if (frame.empty()) {
+            cerr << "Failed to capture frame!" << endl;
+            return -1;
+        }
+        
+        try {
+            vision.calibratePerspective(frame);
+            break;
+        } catch (const exception& e) {
+            putText(frame, "Adjust camera to see full chessboard", Point(10, 30),
+                    FONT_HERSHEY_SIMPLEX, 0.7, Scalar(0, 0, 255), 2);
+            imshow("Calibration", frame);
+            if (waitKey(100) == 27) break; // ESC to exit
+        }
+    }
+    destroyAllWindows();
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition();
-    
-    Vector3d chessboardTarget(0.0, 0.0, 0.0);
-    moveToChessboardPoint(chessboardTarget, chessboardOrigin, RotationChess);
-    
-    Vector3d chessboardTarget1(0.1, 0.0, 0.0);
+
+    Vector3d chessboardTarget1(0.0, 0.0, 0.0);
     moveToChessboardPoint(chessboardTarget1, chessboardOrigin, RotationChess);
     
-    Vector3d chessboardTarget2(0.1, 0.0, 0.1);
+    Vector3d chessboardTarget2(0.4, 0.4, 0.0);
     moveToChessboardPoint(chessboardTarget2, chessboardOrigin, RotationChess);
     
     //   ==========   BEGIN CHESS GAME   ==========   //
@@ -212,10 +268,24 @@ int main() {
     
     while (true) {
         // Retrieve camera data before and after player's move.
-        ChessboardMatrix lastPositions = getCameraData(1);
+        /*ChessboardMatrix lastPositions = getCameraData(1);
         cout << "Make your move and press ENTER..." << endl;
         cin.get();
-        ChessboardMatrix newPositions = getCameraData(2);
+        ChessboardMatrix newPositions = getCameraData(2);*/
+
+
+        ChessboardMatrix lastPositions = getCameraData();
+        cout << "Make your move (ensure piece is visible) and press ENTER..." << endl;
+        cin.get();
+
+        // Add visual countdown
+        for (int i = 3; i > 0; i--) {
+            cout << "Capturing in " << i << "..." << endl;
+            this_thread::sleep_for(chrono::seconds(1));
+        }
+
+
+        ChessboardMatrix newPositions = getCameraData();
         
         // Determine the player's move.
         auto moveIndices = determinePlayerMove(lastPositions, newPositions);

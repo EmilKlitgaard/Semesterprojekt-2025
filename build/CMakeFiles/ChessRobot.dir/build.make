@@ -111,11 +111,26 @@ CMakeFiles/ChessRobot.dir/Stockfish.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChessRobot.dir/Stockfish.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Workspace/test_rtde/Stockfish.cpp -o CMakeFiles/ChessRobot.dir/Stockfish.cpp.s
 
+CMakeFiles/ChessRobot.dir/Vision.cpp.o: CMakeFiles/ChessRobot.dir/flags.make
+CMakeFiles/ChessRobot.dir/Vision.cpp.o: ../Vision.cpp
+CMakeFiles/ChessRobot.dir/Vision.cpp.o: CMakeFiles/ChessRobot.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ChessRobot.dir/Vision.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChessRobot.dir/Vision.cpp.o -MF CMakeFiles/ChessRobot.dir/Vision.cpp.o.d -o CMakeFiles/ChessRobot.dir/Vision.cpp.o -c /home/ubuntu/Workspace/test_rtde/Vision.cpp
+
+CMakeFiles/ChessRobot.dir/Vision.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ChessRobot.dir/Vision.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/Workspace/test_rtde/Vision.cpp > CMakeFiles/ChessRobot.dir/Vision.cpp.i
+
+CMakeFiles/ChessRobot.dir/Vision.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChessRobot.dir/Vision.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Workspace/test_rtde/Vision.cpp -o CMakeFiles/ChessRobot.dir/Vision.cpp.s
+
 # Object files for target ChessRobot
 ChessRobot_OBJECTS = \
 "CMakeFiles/ChessRobot.dir/main.cpp.o" \
 "CMakeFiles/ChessRobot.dir/Chessboard.cpp.o" \
-"CMakeFiles/ChessRobot.dir/Stockfish.cpp.o"
+"CMakeFiles/ChessRobot.dir/Stockfish.cpp.o" \
+"CMakeFiles/ChessRobot.dir/Vision.cpp.o"
 
 # External object files for target ChessRobot
 ChessRobot_EXTERNAL_OBJECTS =
@@ -123,9 +138,64 @@ ChessRobot_EXTERNAL_OBJECTS =
 ChessRobot: CMakeFiles/ChessRobot.dir/main.cpp.o
 ChessRobot: CMakeFiles/ChessRobot.dir/Chessboard.cpp.o
 ChessRobot: CMakeFiles/ChessRobot.dir/Stockfish.cpp.o
+ChessRobot: CMakeFiles/ChessRobot.dir/Vision.cpp.o
 ChessRobot: CMakeFiles/ChessRobot.dir/build.make
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_stitching.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_alphamat.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_aruco.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_barcode.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_bgsegm.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_bioinspired.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_ccalib.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_dnn_objdetect.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_dnn_superres.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_dpm.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_face.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_freetype.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_fuzzy.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_hdf.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_hfs.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_img_hash.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_intensity_transform.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_line_descriptor.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_mcc.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_quality.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_rapid.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_reg.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_rgbd.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_saliency.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_shape.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_stereo.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_structured_light.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_superres.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_surface_matching.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_tracking.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_videostab.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_viz.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_wechat_qrcode.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_xobjdetect.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_xphoto.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_highgui.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_datasets.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_plot.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_text.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_ml.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_phase_unwrapping.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_optflow.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_ximgproc.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_video.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_videoio.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_imgcodecs.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_objdetect.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_calib3d.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_dnn.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_features2d.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_flann.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.5.4d
+ChessRobot: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.5.4d
 ChessRobot: CMakeFiles/ChessRobot.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ChessRobot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ChessRobot"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ChessRobot.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

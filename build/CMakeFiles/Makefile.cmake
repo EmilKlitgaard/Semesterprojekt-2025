@@ -11,6 +11,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/opencv4/OpenCVModules.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
@@ -23,6 +27,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.22/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.22/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU-CXX.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake"
@@ -47,4 +53,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ChessRobot.dir/DependInfo.cmake"
+  "CMakeFiles/TestExecutable.dir/DependInfo.cmake"
   )
