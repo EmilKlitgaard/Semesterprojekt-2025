@@ -1,0 +1,12 @@
+communcate with robot (Again)
+Move robot to specific location
+control the pico
+control the gripper
+- test gripper
+- measure the power
+
+grab a piece with the gripper
+Implement grabber on the arm
+Connect to stockfish
+Implement computer vision
+Play chess
