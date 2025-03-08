@@ -1,6 +1,4 @@
 /home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/CMakeFiles/blink.dir
-/home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/CMakeFiles/picotoolForceReconfigure.dir
-/home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/CMakeFiles/picotoolBuild.dir
 /home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/CMakeFiles/edit_cache.dir
 /home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/CMakeFiles/rebuild_cache.dir
 /home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/pico-sdk/CMakeFiles/edit_cache.dir

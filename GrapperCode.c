@@ -14,9 +14,9 @@ int main() {
 
         //blink LED
         gpio_put(led_pin,true);
-        sleep_ms(1000);
+        sleep_ms(200);
         gpio_put(led_pin,false);
-        sleep_ms(1000);
+        sleep_ms(200);
     }
 }
 
