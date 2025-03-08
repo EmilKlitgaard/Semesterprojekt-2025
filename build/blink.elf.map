@@ -2628,7 +2628,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x10000100                        __boot2_end__ = .
                 0x00000001                        ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x10000100     0x1724
+.text           0x10000100     0x172c
                 0x10000100                        __logical_binary_start = .
  *(.vectors)
  .vectors       0x10000100       0xd4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
@@ -2691,197 +2691,198 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .text*)
  .text          0x10000288       0x98 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .text.startup.main
-                0x10000320       0x24 CMakeFiles/blink.dir/GrapperCode.c.o
+                0x10000320       0x28 CMakeFiles/blink.dir/GrapperCode.c.o
                 0x10000320                main
  .text.gpio_init
-                0x10000344       0x40 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
-                0x10000344                gpio_init
- .text.panic    0x10000384       0x30 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
-                0x10000384                panic
+                0x10000348       0x40 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
+                0x10000348                gpio_init
+ .text.panic    0x10000388       0x30 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x10000388                panic
  .text.hw_claim_or_assert
-                0x100003b4       0x44 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/hardware_claim/claim.c.o
-                0x100003b4                hw_claim_or_assert
+                0x100003b8       0x44 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/hardware_claim/claim.c.o
+                0x100003b8                hw_claim_or_assert
  .text.next_striped_spin_lock_num
-                0x100003f8       0x18 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
-                0x100003f8                next_striped_spin_lock_num
+                0x100003fc       0x18 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+                0x100003fc                next_striped_spin_lock_num
  .text.spin_locks_reset
-                0x10000410       0x1c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
-                0x10000410                spin_locks_reset
+                0x10000414       0x1c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+                0x10000414                spin_locks_reset
  .text.runtime_init_per_core_irq_priorities
-                0x1000042c       0x24 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x1000042c                runtime_init_per_core_irq_priorities
+                0x10000430       0x24 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x10000430                runtime_init_per_core_irq_priorities
  .text.irq_set_enabled
-                0x10000450       0x24 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x10000450                irq_set_enabled
+                0x10000454       0x24 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x10000454                irq_set_enabled
  .text.irq_set_exclusive_handler
-                0x10000474       0x54 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x10000474                irq_set_exclusive_handler
+                0x10000478       0x54 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x10000478                irq_set_exclusive_handler
  .text.lock_init
-                0x100004c8       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/lock_core.c.o
-                0x100004c8                lock_init
+                0x100004cc       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/lock_core.c.o
+                0x100004cc                lock_init
  .text.runtime_init_mutex
-                0x100004d8       0x50 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/mutex.c.o
-                0x100004d8                runtime_init_mutex
+                0x100004dc       0x50 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x100004dc                runtime_init_mutex
  .text.sleep_until_callback
-                0x10000528       0x30 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x1000052c       0x30 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
  .text.alarm_pool_irq_handler
-                0x10000558      0x2fc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x1000055c      0x2fc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
  .text.runtime_init_default_alarm_pool
-                0x10000854       0xdc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
-                0x10000854                runtime_init_default_alarm_pool
+                0x10000858       0xdc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x10000858                runtime_init_default_alarm_pool
  .text.alarm_pool_add_alarm_at_force_in_context
-                0x10000930       0xb0 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
-                0x10000930                alarm_pool_add_alarm_at_force_in_context
+                0x10000934       0xb0 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x10000934                alarm_pool_add_alarm_at_force_in_context
  .text.alarm_pool_cancel_alarm
-                0x100009e0       0x74 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
-                0x100009e0                alarm_pool_cancel_alarm
+                0x100009e4       0x74 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x100009e4                alarm_pool_cancel_alarm
  .text.sleep_until
-                0x10000a54       0xd8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
-                0x10000a54                sleep_until
+                0x10000a58       0xd8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x10000a58                sleep_until
  .text.sleep_ms
-                0x10000b2c       0x38 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
-                0x10000b2c                sleep_ms
+                0x10000b30       0x38 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x10000b30                sleep_ms
  .text.best_effort_wfe_or_timeout
-                0x10000b64       0xf8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
-                0x10000b64                best_effort_wfe_or_timeout
+                0x10000b68       0xf8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x10000b68                best_effort_wfe_or_timeout
  .text.timer_hardware_alarm_claim
-                0x10000c5c       0x14 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-                0x10000c5c                timer_hardware_alarm_claim
+                0x10000c60       0x14 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x10000c60                timer_hardware_alarm_claim
  .text.timer_time_us_64
-                0x10000c70       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-                0x10000c70                timer_time_us_64
+                0x10000c74       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x10000c74                timer_time_us_64
  .text.time_us_64
-                0x10000c80       0x14 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-                0x10000c80                time_us_64
+                0x10000c84       0x14 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x10000c84                time_us_64
  .text.busy_wait_until
-                0x10000c94       0x20 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
-                0x10000c94                busy_wait_until
+                0x10000c98       0x20 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x10000c98                busy_wait_until
  .text.clock_configure_int_divider
-                0x10000cb4       0xf4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-                0x10000cb4                clock_configure_int_divider
+                0x10000cb8       0xf4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x10000cb8                clock_configure_int_divider
  .text.clock_configure_undivided
-                0x10000da8       0xe8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-                0x10000da8                clock_configure_undivided
+                0x10000dac       0xe8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x10000dac                clock_configure_undivided
  .text.clock_get_hz
-                0x10000e90        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
-                0x10000e90                clock_get_hz
+                0x10000e94        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+                0x10000e94                clock_get_hz
  .text.pll_init
-                0x10000e9c       0xa4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
-                0x10000e9c                pll_init
+                0x10000ea0       0xa4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+                0x10000ea0                pll_init
  .text.tick_start
-                0x10000f40       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
-                0x10000f40                tick_start
+                0x10000f44       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+                0x10000f44                tick_start
  .text.rom_func_lookup
-                0x10000f50       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-                0x10000f50                rom_func_lookup
+                0x10000f54       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x10000f54                rom_func_lookup
  .text.rom_data_lookup
-                0x10000f60       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-                0x10000f60                rom_data_lookup
+                0x10000f64       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x10000f64                rom_data_lookup
  .text.rom_funcs_lookup
-                0x10000f70       0x44 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
-                0x10000f70                rom_funcs_lookup
+                0x10000f74       0x44 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+                0x10000f74                rom_funcs_lookup
  .text.xosc_init
-                0x10000fb4       0x28 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
-                0x10000fb4                xosc_init
+                0x10000fb8       0x28 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+                0x10000fb8                xosc_init
  .text.first_per_core_initializer
-                0x10000fdc        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x10000fe0        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .text.hard_assertion_failure
-                0x10000fe0        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-                0x10000fe0                hard_assertion_failure
+                0x10000fe4        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x10000fe4                hard_assertion_failure
  .text.runtime_run_initializers
-                0x10000fec       0x28 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-                0x10000fec                runtime_run_initializers
+                0x10000ff0       0x28 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x10000ff0                runtime_run_initializers
  .text.runtime_init_early_resets
-                0x10001014       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001014                runtime_init_early_resets
+                0x10001018       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001018                runtime_init_early_resets
  .text.runtime_init_usb_power_down
-                0x10001040       0x1c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001040                runtime_init_usb_power_down
+                0x10001044       0x1c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001044                runtime_init_usb_power_down
  .text.runtime_init_post_clock_resets
-                0x1000105c       0x20 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x1000105c                runtime_init_post_clock_resets
+                0x10001060       0x20 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001060                runtime_init_post_clock_resets
  .text.runtime_init_rp2040_gpio_ie_disable
-                0x1000107c       0x14 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x1000107c                runtime_init_rp2040_gpio_ie_disable
+                0x10001080       0x14 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001080                runtime_init_rp2040_gpio_ie_disable
  .text.runtime_init_spin_locks_reset
-                0x10001090        0x8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001090                runtime_init_spin_locks_reset
+                0x10001094        0x8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001094                runtime_init_spin_locks_reset
  .text.runtime_init_install_ram_vector_table
-                0x10001098       0x1c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001098                runtime_init_install_ram_vector_table
+                0x1000109c       0x1c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x1000109c                runtime_init_install_ram_vector_table
  .text.runtime_init_clocks
-                0x100010b4       0xd8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
-                0x100010b4                runtime_init_clocks
- .text          0x1000118c       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+                0x100010b8       0xd8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+                0x100010b8                runtime_init_clocks
+ .text          0x10001190       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
  .text.__wrap___aeabi_uidiv
-                0x1000119c       0x4c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
-                0x1000119c                __wrap___aeabi_uidiv
-                0x1000119c                __wrap___aeabi_uidivmod
-                0x1000119c                div_u32u32
-                0x1000119c                divmod_u32u32
-                0x100011a4                divmod_u32u32_unsafe
-                0x100011cc                divmod_u32u32_savestate
+                0x100011a0       0x4c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+                0x100011a0                __wrap___aeabi_uidiv
+                0x100011a0                __wrap___aeabi_uidivmod
+                0x100011a0                div_u32u32
+                0x100011a0                divmod_u32u32
+                0x100011a8                divmod_u32u32_unsafe
+                0x100011d0                divmod_u32u32_savestate
  .text.__aeabi_double_init
-                0x100011e8       0xa4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
-                0x100011e8                __aeabi_double_init
+                0x100011ec       0xa4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+                0x100011ec                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x1000128c       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
-                0x1000128c                double_table_shim_on_use_helper
+                0x10001290       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+                0x10001290                double_table_shim_on_use_helper
  .text.__aeabi_lmul
-                0x100012b8       0x32 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
-                0x100012b8                __wrap___aeabi_lmul
- *fill*         0x100012ea        0x2 
+                0x100012bc       0x32 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
+                0x100012bc                __wrap___aeabi_lmul
+ *fill*         0x100012ee        0x2 
  .text.__aeabi_float_init
-                0x100012ec       0x64 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
-                0x100012ec                __aeabi_float_init
+                0x100012f0       0x64 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+                0x100012f0                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x10001350       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
-                0x10001350                float_table_shim_on_use_helper
- .text          0x1000137c       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-                0x1000137c                __aeabi_mem_init
- .text.memcpy   0x1000138c        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
-                0x1000138c                __wrap___aeabi_memcpy
-                0x1000138c                __wrap_memcpy
+                0x10001354       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+                0x10001354                float_table_shim_on_use_helper
+ .text          0x10001380       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x10001380                __aeabi_mem_init
+ .text.memcpy   0x10001390        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x10001390                __wrap___aeabi_memcpy
+                0x10001390                __wrap_memcpy
  .text._out_char
-                0x10001398       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x1000139c       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_printf/printf.c.o
  .text.weak_raw_vprintf
-                0x100013a8       0x30 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_printf/printf.c.o
-                0x100013a8                weak_raw_vprintf
- .text._exit    0x100013d8        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-                0x100013d8                _exit
- .text.exit     0x100013dc        0x8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-                0x100013dc                exit
+                0x100013ac       0x30 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+                0x100013ac                weak_raw_vprintf
+ .text._exit    0x100013dc        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x100013dc                _exit
+ .text.exit     0x100013e0        0x8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x100013e0                exit
  .text.runtime_init
-                0x100013e4       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
-                0x100013e4                runtime_init
+                0x100013e8       0x2c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+                0x100013e8                runtime_init
  .text.stdio_out_chars_no_crlf
-                0x10001410       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x10001414       0x10 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .text.stdio_out_chars_crlf
-                0x10001420       0x94 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x10001424       0x94 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
  .text.stdio_put_string
-                0x100014b4      0x100 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x100014b4                stdio_put_string
+                0x100014b8      0x100 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x100014b8                stdio_put_string
  .text.__wrap_putchar
-                0x100015b4       0x98 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x100015b4                stdio_putchar
-                0x100015b4                __wrap_putchar
+                0x100015b8       0x98 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x100015b8                stdio_putchar
+                0x100015b8                __wrap_putchar
  .text.__wrap_puts
-                0x1000164c       0x3c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x1000164c                __wrap_puts
-                0x1000164c                stdio_puts
- .text          0x10001688       0x10 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-atexit.o)
-                0x10001688                atexit
- .text          0x10001698       0x5c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
-                0x10001698                strlen
- .text          0x100016f4       0x28 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-fini.o)
-                0x100016f4                __libc_fini_array
- .text          0x1000171c       0x78 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__atexit.o)
-                0x1000171c                __register_exitproc
- .text.startup  0x10001794       0x18 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__call_atexit.o)
+                0x10001650       0x3c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x10001650                __wrap_puts
+                0x10001650                stdio_puts
+ .text          0x1000168c       0x10 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-atexit.o)
+                0x1000168c                atexit
+ .text          0x1000169c       0x5c /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+                0x1000169c                strlen
+ .text          0x100016f8       0x28 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-fini.o)
+                0x100016f8                __libc_fini_array
+ .text          0x10001720       0x78 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__atexit.o)
+                0x10001720                __register_exitproc
+ .text.startup  0x10001798       0x18 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__call_atexit.o)
  *(.fini)
- .fini          0x100017ac        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
-                0x100017ac                _fini
- .fini.__stub   0x100017b0       0x30 linker stubs
+ .fini          0x100017b0        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crti.o
+                0x100017b0                _fini
+ *fill*         0x100017b4        0x4 
+ .fini.__stub   0x100017b8       0x30 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -2892,148 +2893,148 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
-                0x100017e0                        . = ALIGN (0x4)
-                0x100017e0                        PROVIDE (__preinit_array_start = .)
+                0x100017e8                        . = ALIGN (0x4)
+                0x100017e8                        PROVIDE (__preinit_array_start = .)
  *(SORT_BY_NAME(.preinit_array.*))
  .preinit_array.00100
-                0x100017e0        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x100017e0                __pre_init_runtime_init_early_resets
+                0x100017e8        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x100017e8                __pre_init_runtime_init_early_resets
  .preinit_array.00101
-                0x100017e4        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x100017e4                __pre_init_runtime_init_usb_power_down
+                0x100017ec        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x100017ec                __pre_init_runtime_init_usb_power_down
  .preinit_array.00275
-                0x100017e8        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+                0x100017f0        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
  .preinit_array.00300
-                0x100017ec        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+                0x100017f4        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
  .preinit_array.00350
-                0x100017f0        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+                0x100017f8        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
  .preinit_array.00350
-                0x100017f4        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+                0x100017fc        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
  .preinit_array.00500
-                0x100017f8        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x100017f8                __pre_init_runtime_init_clocks
- .preinit_array.00600
-                0x100017fc        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x100017fc                __pre_init_runtime_init_post_clock_resets
- .preinit_array.00700
                 0x10001800        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001800                __pre_init_runtime_init_rp2040_gpio_ie_disable
- .preinit_array.01000
+                0x10001800                __pre_init_runtime_init_clocks
+ .preinit_array.00600
                 0x10001804        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x10001804                __pre_init_runtime_init_spin_locks_reset
- .preinit_array.01100
-                0x10001808        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/mutex.c.o
-                0x10001808                __pre_init_runtime_init_mutex
- .preinit_array.10080
+                0x10001804                __pre_init_runtime_init_post_clock_resets
+ .preinit_array.00700
+                0x10001808        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001808                __pre_init_runtime_init_rp2040_gpio_ie_disable
+ .preinit_array.01000
                 0x1000180c        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
-                0x1000180c                __pre_init_runtime_init_install_ram_vector_table
+                0x1000180c                __pre_init_runtime_init_spin_locks_reset
+ .preinit_array.01100
+                0x10001810        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/mutex.c.o
+                0x10001810                __pre_init_runtime_init_mutex
+ .preinit_array.10080
+                0x10001814        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+                0x10001814                __pre_init_runtime_init_install_ram_vector_table
  .preinit_array.11000
-                0x10001810        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
-                0x10001810                __pre_init_runtime_init_default_alarm_pool
+                0x10001818        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+                0x10001818                __pre_init_runtime_init_default_alarm_pool
  .preinit_array.YYYYY
-                0x10001814        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
-                0x10001814                __pre_init_first_per_core_initializer
+                0x1000181c        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x1000181c                __pre_init_first_per_core_initializer
  .preinit_array.ZZZZZ.01200
-                0x10001818        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
-                0x10001818                __pre_init_runtime_init_per_core_irq_priorities
+                0x10001820        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+                0x10001820                __pre_init_runtime_init_per_core_irq_priorities
  *(.preinit_array)
-                0x1000181c                        PROVIDE (__preinit_array_end = .)
-                0x1000181c                        . = ALIGN (0x4)
-                0x1000181c                        PROVIDE (__init_array_start = .)
+                0x10001824                        PROVIDE (__preinit_array_end = .)
+                0x10001824                        . = ALIGN (0x4)
+                0x10001824                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x1000181c        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__call_atexit.o)
+                0x10001824        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__call_atexit.o)
  *(.init_array)
- .init_array    0x10001820        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10001824                        PROVIDE (__init_array_end = .)
-                0x10001824                        . = ALIGN (0x4)
-                0x10001824                        PROVIDE (__fini_array_start = .)
+ .init_array    0x10001828        0x4 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x1000182c                        PROVIDE (__init_array_end = .)
+                0x1000182c                        . = ALIGN (0x4)
+                0x1000182c                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
-                0x10001824                        PROVIDE (__fini_array_end = .)
+                0x1000182c                        PROVIDE (__fini_array_end = .)
  *(.eh_frame*)
- .eh_frame      0x10001824        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10001824                        . = ALIGN (0x4)
+ .eh_frame      0x1000182c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x1000182c                        . = ALIGN (0x4)
 
-.glue_7         0x10001824        0x0
- .glue_7        0x10001824        0x0 linker stubs
+.glue_7         0x1000182c        0x0
+ .glue_7        0x1000182c        0x0 linker stubs
 
-.glue_7t        0x10001824        0x0
- .glue_7t       0x10001824        0x0 linker stubs
+.glue_7t        0x1000182c        0x0
+ .glue_7t       0x1000182c        0x0 linker stubs
 
-.vfp11_veneer   0x10001824        0x0
- .vfp11_veneer  0x10001824        0x0 linker stubs
+.vfp11_veneer   0x1000182c        0x0
+ .vfp11_veneer  0x1000182c        0x0 linker stubs
 
-.v4_bx          0x10001824        0x0
- .v4_bx         0x10001824        0x0 linker stubs
+.v4_bx          0x1000182c        0x0
+ .v4_bx         0x1000182c        0x0 linker stubs
 
-.iplt           0x10001824        0x0
- .iplt          0x10001824        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x1000182c        0x0
+ .iplt          0x1000182c        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x10001824       0xd8
+.rodata         0x1000182c       0xd8
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.panic.str1.4
-                0x10001824       0x80 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+                0x1000182c       0x80 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
                                  0x12 (size before relaxing)
  .rodata.timer_hardware_alarm_claim.str1.4
-                0x100018a4       0x22 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+                0x100018ac       0x22 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
  .rodata.hard_assertion_failure.str1.4
-                0x100018a4        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+                0x100018ac        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
  .rodata.str1.4
-                0x100018a4       0x3c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018ac       0x3c CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_84
-                0x100018a4        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018ac        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_78
-                0x100018b0        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018b8        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_54
-                0x100018bc        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018c4        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_48
-                0x100018c8        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018d0        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_42
-                0x100018d4        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018dc        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_34
-                0x100018e0        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018e8        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.__bi_26
-                0x100018ec        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+                0x100018f4        0xc CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  .rodata.crlf_str.0
-                0x100018f8        0x2 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
-                0x100018fc                        . = ALIGN (0x4)
- *fill*         0x100018fa        0x2 
+                0x10001900        0x2 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+                0x10001904                        . = ALIGN (0x4)
+ *fill*         0x10001902        0x2 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x100018fc                        . = ALIGN (0x4)
+                0x10001904                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x100018fc                        __exidx_start = .
+                0x10001904                        __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x100018fc                        __exidx_end = .
-                0x100018fc                        . = ALIGN (0x4)
-                0x100018fc                        __binary_info_start = .
+                0x10001904                        __exidx_end = .
+                0x10001904                        . = ALIGN (0x4)
+                0x10001904                        __binary_info_start = .
 
-.binary_info    0x100018fc       0x1c
+.binary_info    0x10001904       0x1c
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr84
-                0x100018fc        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .binary_info.keep.__bi_ptr78
-                0x10001900        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .binary_info.keep.__bi_ptr54
                 0x10001904        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .binary_info.keep.__bi_ptr48
+ .binary_info.keep.__bi_ptr78
                 0x10001908        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .binary_info.keep.__bi_ptr42
+ .binary_info.keep.__bi_ptr54
                 0x1000190c        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .binary_info.keep.__bi_ptr34
+ .binary_info.keep.__bi_ptr48
                 0x10001910        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .binary_info.keep.__bi_ptr26
+ .binary_info.keep.__bi_ptr42
                 0x10001914        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .binary_info.keep.__bi_ptr34
+                0x10001918        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .binary_info.keep.__bi_ptr26
+                0x1000191c        0x4 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
  *(.binary_info.*)
-                0x10001918                        __binary_info_end = .
+                0x10001920                        __binary_info_end = .
 
-.rel.dyn        0x10001918        0x0
- .rel.iplt      0x10001918        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
-                0x10001918                        . = ALIGN (0x4)
+.rel.dyn        0x10001920        0x0
+ .rel.iplt      0x10001920        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
+                0x10001920                        . = ALIGN (0x4)
 
 .ram_vector_table
                 0x20000000       0xc0
@@ -3047,7 +3048,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x200000c0                        . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.data           0x200000c0      0x128 load address 0x10001918
+.data           0x200000c0      0x128 load address 0x10001920
                 0x200000c0                        __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -3093,23 +3094,23 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x200001e8                        . = ALIGN (0x4)
 
 .tm_clone_table
-                0x200001e8        0x0 load address 0x10001a40
+                0x200001e8        0x0 load address 0x10001a48
  .tm_clone_table
                 0x200001e8        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x200001e8        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x200001e8        0x0 load address 0x10001a40
+.igot.plt       0x200001e8        0x0 load address 0x10001a48
  .igot.plt      0x200001e8        0x0 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtbegin.o
 
-.tdata          0x200001e8        0x0 load address 0x10001a40
+.tdata          0x200001e8        0x0 load address 0x10001a48
                 0x200001e8                        . = ALIGN (0x4)
  *(.tdata .tdata.* .gnu.linkonce.td.*)
                 0x200001e8                        __tdata_end = .
                 0x200001e8                        PROVIDE (__data_end__ = .)
-                0x10001918                        __etext = LOADADDR (.data)
+                0x10001920                        __etext = LOADADDR (.data)
 
-.tbss           0x200001e8        0x0 load address 0x10001a40
+.tbss           0x200001e8        0x0 load address 0x10001a48
                 0x200001e8                        . = ALIGN (0x4)
                 0x200001e8                        __bss_start__ = .
                 0x200001e8                        __tls_base = .
@@ -3117,7 +3118,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.tcommon)
                 0x200001e8                        __tls_end = .
 
-.bss            0x200001e8      0x580 load address 0x10001a40
+.bss            0x200001e8      0x580 load address 0x10001a48
                 0x200001e8                        . = ALIGN (0x4)
                 0x200001e8                        __tbss_end = .
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.bss*)))
@@ -3150,26 +3151,26 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x20000768                        . = ALIGN (0x4)
                 0x20000768                        __bss_end__ = .
 
-.heap           0x20000768      0x800 load address 0x10001a40
+.heap           0x20000768      0x800 load address 0x10001a48
                 0x20000768                        __end__ = .
                 0x20000768                        end = __end__
  *(.heap*)
  .heap          0x20000768      0x800 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
                 0x20040000                        __HeapLimit = (ORIGIN (RAM) + LENGTH (RAM))
 
-.scratch_x      0x20040000        0x0 load address 0x10001a40
+.scratch_x      0x20040000        0x0 load address 0x10001a48
                 0x20040000                        __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x20040000                        . = ALIGN (0x4)
                 0x20040000                        __scratch_x_end__ = .
-                0x10001a40                        __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x10001a48                        __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x20041000        0x0 load address 0x10001a40
+.scratch_y      0x20041000        0x0 load address 0x10001a48
                 0x20041000                        __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x20041000                        . = ALIGN (0x4)
                 0x20041000                        __scratch_y_end__ = .
-                0x10001a40                        __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x10001a48                        __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .stack1_dummy
  *(.stack1*)
@@ -3178,9 +3179,9 @@ LOAD /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.stack*)
  .stack         0x20041000      0x800 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
 
-.flash_end      0x10001a40        0x0
+.flash_end      0x10001a48        0x0
  *(.embedded_end_block*)
-                0x10001a40                        PROVIDE (__flash_binary_end = .)
+                0x10001a48                        PROVIDE (__flash_binary_end = .)
                 0x20040000                        __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x20041000                        __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x20042000                        __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -3397,47 +3398,47 @@ LOAD linker stubs
  .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__call_atexit.o)
  .comment       0x00000026       0x27 /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/crtend.o
 
-.debug_info     0x00000000    0x19beb
- .debug_info    0x00000000      0x5f7 CMakeFiles/blink.dir/GrapperCode.c.o
- .debug_info    0x000005f7     0x2405 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
- .debug_info    0x000029fc      0x1bf CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
- .debug_info    0x00002bbb      0x985 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/hardware_claim/claim.c.o
- .debug_info    0x00003540      0x440 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
- .debug_info    0x00003980      0x239 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
- .debug_info    0x00003bb9     0x21c5 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
- .debug_info    0x00005d7e      0x153 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/lock_core.c.o
- .debug_info    0x00005ed1     0x27c5 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/mutex.c.o
- .debug_info    0x00008696     0x4820 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
- .debug_info    0x0000ceb6     0x2ad7 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
- .debug_info    0x0000f98d     0x291e CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
- .debug_info    0x000122ab      0x4cd CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
- .debug_info    0x00012778      0x230 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
- .debug_info    0x000129a8      0x654 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
- .debug_info    0x00012ffc      0x1b8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
- .debug_info    0x000131b4      0x20e CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
- .debug_info    0x000133c2      0x77d CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
- .debug_info    0x00013b3f      0x768 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
- .debug_info    0x000142a7       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
- .debug_info    0x000142ca       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
- .debug_info    0x000142ed       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
- .debug_info    0x00014310      0x266 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
- .debug_info    0x00014576       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
- .debug_info    0x00014599       0x24 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
- .debug_info    0x000145bd       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
- .debug_info    0x000145e0      0x266 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
- .debug_info    0x00014846       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
- .debug_info    0x00014869       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
- .debug_info    0x0001488c      0x288 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
- .debug_info    0x00014b14     0x2102 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_printf/printf.c.o
- .debug_info    0x00016c16       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
- .debug_info    0x00016c39      0xb54 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
- .debug_info    0x0001778d     0x1ca1 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
- .debug_info    0x0001942e       0x3c /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
- .debug_info    0x0001946a      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-atexit.o)
- .debug_info    0x00019588       0xeb /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
- .debug_info    0x00019673       0xf7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-fini.o)
- .debug_info    0x0001976a      0x1fd /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__atexit.o)
- .debug_info    0x00019967      0x284 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__call_atexit.o)
+.debug_info     0x00000000    0x19bed
+ .debug_info    0x00000000      0x5f9 CMakeFiles/blink.dir/GrapperCode.c.o
+ .debug_info    0x000005f9     0x2405 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.o
+ .debug_info    0x000029fe      0x1bf CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_platform_panic/panic.c.o
+ .debug_info    0x00002bbd      0x985 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/hardware_claim/claim.c.o
+ .debug_info    0x00003542      0x440 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync/sync.c.o
+ .debug_info    0x00003982      0x239 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_sync_spin_lock/sync_spin_lock.c.o
+ .debug_info    0x00003bbb     0x21c5 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_irq/irq.c.o
+ .debug_info    0x00005d80      0x153 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/lock_core.c.o
+ .debug_info    0x00005ed3     0x27c5 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_sync/mutex.c.o
+ .debug_info    0x00008698     0x4820 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/common/pico_time/time.c.o
+ .debug_info    0x0000ceb8     0x2ad7 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_timer/timer.c.o
+ .debug_info    0x0000f98f     0x291e CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.o
+ .debug_info    0x000122ad      0x4cd CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_pll/pll.c.o
+ .debug_info    0x0001277a      0x230 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_ticks/ticks.c.o
+ .debug_info    0x000129aa      0x654 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.o
+ .debug_info    0x00012ffe      0x1b8 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.o
+ .debug_info    0x000131b6      0x20e CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime/runtime.c.o
+ .debug_info    0x000133c4      0x77d CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init.c.o
+ .debug_info    0x00013b41      0x768 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_runtime_init/runtime_init_clocks.c.o
+ .debug_info    0x000142a9       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.o
+ .debug_info    0x000142cc       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_divider/divider_hardware.S.o
+ .debug_info    0x000142ef       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_aeabi_rp2040.S.o
+ .debug_info    0x00014312      0x266 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_init_rom_rp2040.c.o
+ .debug_info    0x00014578       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim_rp2040.S.o
+ .debug_info    0x0001459b       0x24 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.o
+ .debug_info    0x000145bf       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_aeabi_rp2040.S.o
+ .debug_info    0x000145e2      0x266 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_init_rom_rp2040.c.o
+ .debug_info    0x00014848       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim_rp2040.S.o
+ .debug_info    0x0001486b       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.o
+ .debug_info    0x0001488e      0x288 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_standard_binary_info/standard_binary_info.c.o
+ .debug_info    0x00014b16     0x2102 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_printf/printf.c.o
+ .debug_info    0x00016c18       0x23 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_crt0/crt0.S.o
+ .debug_info    0x00016c3b      0xb54 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_clib_interface/newlib_interface.c.o
+ .debug_info    0x0001778f     0x1ca1 CMakeFiles/blink.dir/home/asmusrise/pico-sdk/src/rp2_common/pico_stdio/stdio.c.o
+ .debug_info    0x00019430       0x3c /usr/lib/gcc/arm-none-eabi/13.2.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0001946c      0x11e /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-atexit.o)
+ .debug_info    0x0001958a       0xeb /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-strlen-stub.o)
+ .debug_info    0x00019675       0xf7 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-fini.o)
+ .debug_info    0x0001976c      0x1fd /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__atexit.o)
+ .debug_info    0x00019969      0x284 /usr/lib/gcc/arm-none-eabi/13.2.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libg.a(libc_a-__call_atexit.o)
 
 .debug_abbrev   0x00000000     0x4ecf
  .debug_abbrev  0x00000000      0x1d1 CMakeFiles/blink.dir/GrapperCode.c.o
