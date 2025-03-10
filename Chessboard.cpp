@@ -22,7 +22,7 @@ void Chessboard::initializeBoard() {
     for (int i = 0; i < 8; i++) {
         vector<pair<double, double>> row;
         for (int j = 0; j < 8; j++) {
-            row.emplace_back((j*0.05)+0.025, (i*0.05)+0.025);
+            row.emplace_back((i*0.05)+0.025, (j*0.05)+0.025);
         }
         physicalCoordinates.push_back(row);
     }
@@ -116,10 +116,8 @@ Vector3d Chessboard::getPhysicalCoordinates(const string& notation) {
     auto indices = getMatrixIndex(notation); // returns {i, j} with i=0 for rank 8, i=7 for rank 1
     int i = indices.first;
     int j = indices.second;
-    int inverted_i = 7 - i;
-    double x = physicalCoordinates[inverted_i][j].first;
-    double y = physicalCoordinates[inverted_i][j].second;
+    double x = physicalCoordinates[i][j].first;
+    double y = physicalCoordinates[i][j].second;
     double z = 0.0;  // constant z height
     return Eigen::Vector3d(x, y, z);
 }
-

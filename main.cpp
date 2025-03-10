@@ -31,6 +31,10 @@ Chessboard board;
             		   FUNCTIONS
 ============================================================*/
 // Function to create a rotation matrix in degrees around Z-axis
+void printText(string text) {
+    //cout << text << endl;
+}
+
 Matrix3d getRotationMatrixZ(double angleDeg) {
     double angleRad = DEG_TO_RAD(angleDeg);
     Matrix3d Rotation;
@@ -90,18 +94,24 @@ void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &che
     rtde_control.moveL(tcpPose, speed, acceleration);
 }
 
+string inputPlayerMove() {
+    string playerMove;
+    cout << "Input your move e.g.: 'e2e4': " << endl; 
+    cin >> playerMove;
+    return playerMove;
+}
+
 // Placeholder: Simulate camera data retrieval.
-/*ChessboardMatrix getCameraData(int i) {
+ChessboardMatrix getCameraData(int i) {
     ChessboardMatrix cameraBoard(8, vector<char>(8, 'e'));
     // Example simulation:
     if (i == 1) {
         cameraBoard[6][2] = 'W';
-        //camBoard[6][0] = 'B';
     } else {
         cameraBoard[4][2] = 'W';
     }
     return cameraBoard;
-}*/
+}
 ChessboardMatrix getCameraData() {
     static ChessVision vision(0);
     auto detectedBoard = vision.detectBoardState();
@@ -123,7 +133,7 @@ pair<MatrixIndex, MatrixIndex> determinePlayerMove(const ChessboardMatrix &lastP
             }
         }
     }
-    //cout << "Player moved from: (" << from.first << "," << from.second << "), to: (" << to.first << "," << to.second << ")." << endl;
+    cout << "Player moved from: (" << from.first << "," << from.second << "), to: (" << to.first << "," << to.second << ")." << endl;
     return {from, to};
 }
 
@@ -140,11 +150,11 @@ bool isOccupied(string &toNotation) {
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
             if (board.getChessNotation({i, j}) == toNotation && boardState[i][j] != "0") { 
+                cout << "Destination cell is occupied." << endl;
                 return true; 
             }
         }
     }
-    cout << "Destination cell is occupied." << endl;
     return false;
 }
 
@@ -163,41 +173,41 @@ void moveChessPiece(string &fromNotation, string &toNotation, const Vector3d &ch
 
     // If the destination cell is occupied, move the piece there to a dead piece location.
     if (toOccupied) {
-        cout << "Moving occupying piece to dead piece location..." << endl;
+        printText("Moving occupying piece to dead piece location...");
         Vector3d deadPieceLocation(0.2, -0.1, 0.1);
-
-        cout << "Moving above toCoordinate..." << endl;
+    
+        printText("Moving above toCoordinate...");
         moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
-        cout << "Moving down..." << endl;
+        printText("Moving down...");
         moveToChessboardPoint(toCoordinate, chessboardOrigin, RotationMatrix);
-        cout << "Closing gripper to pick up piece..." << endl;
+        printText("Closing gripper to pick up piece...");
         // closeGripper();
-        cout << "Moving up..." << endl;
+        printText("Moving up...");
         moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
-        cout << "Move to dead piece location..." << endl;
+        printText("Move to dead piece location...");
         moveToChessboardPoint(deadPieceLocation, chessboardOrigin, RotationMatrix);
-        cout << "Opening gripper to let go of piece..." << endl;
+        printText("Opening gripper to let go of piece...");
         // openGripper();
     }
     
     // Sequence of movements for picking up the piece:
-    cout << "Moving above fromCoordinate..." << endl;
+    printText("Moving above fromCoordinate...");
     moveToChessboardPoint(fromCoordinate + transformVector, chessboardOrigin, RotationMatrix);
-    cout << "Moving down..." << endl;
+    printText("Moving down...");
     moveToChessboardPoint(fromCoordinate, chessboardOrigin, RotationMatrix);
-    cout << "Closing gripper to pick up piece..." << endl;
+    printText("Closing gripper to pick up piece...");
     // closeGripper();
-    cout << "Moving up..." << endl;
+    printText("Moving up...");
     moveToChessboardPoint(fromCoordinate + transformVector, chessboardOrigin, RotationMatrix);
-
+    
     // Sequence of movements for moving and placing the piece:
-    cout << "Moving above toCoordinate..." << endl;
+    printText("Moving above toCoordinate...");
     moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
-    cout << "Moving down..." << endl;
+    printText("Moving down...");
     moveToChessboardPoint(toCoordinate, chessboardOrigin, RotationMatrix);
-    cout << "Opening gripper to release piece..." << endl;
+    printText("Opening gripper to release piece...");
     // openGripper();
-    cout << "Moving up..." << endl;
+    printText("Moving up...");
     moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
 }
 
@@ -229,7 +239,7 @@ int main() {
     cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
 
     //   ==========   INITIALIZE COMPUTER VISION   ==========   //
-    ChessVision vision(0);
+    /*ChessVision vision(0);
     cout << "Calibrating camera... Point camera at chessboard and press any key" << endl;
     Mat frame;
     while (true) {
@@ -249,7 +259,7 @@ int main() {
             if (waitKey(100) == 27) break; // ESC to exit
         }
     }
-    destroyAllWindows();
+    destroyAllWindows();*/
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition();
@@ -259,7 +269,9 @@ int main() {
     
     Vector3d chessboardTarget2(0.4, 0.4, 0.0);
     moveToChessboardPoint(chessboardTarget2, chessboardOrigin, RotationChess);
-    
+
+    moveToAwaitPosition();
+
     //   ==========   BEGIN CHESS GAME   ==========   //
     cout << "Press ENTER to start chess game..." << endl;
     cin.get();  
@@ -271,21 +283,7 @@ int main() {
         /*ChessboardMatrix lastPositions = getCameraData(1);
         cout << "Make your move and press ENTER..." << endl;
         cin.get();
-        ChessboardMatrix newPositions = getCameraData(2);*/
-
-
-        ChessboardMatrix lastPositions = getCameraData();
-        cout << "Make your move (ensure piece is visible) and press ENTER..." << endl;
-        cin.get();
-
-        // Add visual countdown
-        for (int i = 3; i > 0; i--) {
-            cout << "Capturing in " << i << "..." << endl;
-            this_thread::sleep_for(chrono::seconds(1));
-        }
-
-
-        ChessboardMatrix newPositions = getCameraData();
+        ChessboardMatrix newPositions = getCameraData(2);
         
         // Determine the player's move.
         auto moveIndices = determinePlayerMove(lastPositions, newPositions);
@@ -293,11 +291,16 @@ int main() {
         MatrixIndex playerToIndex = moveIndices.second;
 
         // Convert into chess notation e.g "e2e4"
-        string playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
+        string playerMove = board.getChessNotation(playerFromIndex, playerToIndex);*/
+        string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
         cout << "Player move: " << playerMove << endl;
+        string playerFromNotation = playerMove.substr(0, 2);
+        string playerToNotation   = playerMove.substr(2, 2);
+        MatrixIndex playerFromIdx = board.getMatrixIndex(playerFromNotation);
+	    MatrixIndex playerToIdx   = board.getMatrixIndex(playerToNotation);
 
         // Update our internal chessboard with the player's move.
-        board.updateChessboard(playerFromIndex, playerToIndex);
+        board.updateChessboard(playerFromIdx, playerToIdx);
         board.printBoard();
         
         if (board.anyKingIsDead()) {

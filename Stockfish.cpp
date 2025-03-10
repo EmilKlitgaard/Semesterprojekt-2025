@@ -120,7 +120,7 @@ string Stockfish::getBestMove(const string& latestMove) {
     string response = readResponse("bestmove");
 
     // Debugging: Print the raw response
-    //cout << "Raw Stockfish response: " << response << endl;
+    cout << "Raw Stockfish response: " << response << endl;
 
     // Extract the best move from the response
     size_t bestmovePos = response.find("bestmove");
