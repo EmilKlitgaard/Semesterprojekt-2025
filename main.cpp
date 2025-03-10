@@ -303,14 +303,14 @@ int main() {
         board.updateChessboard(playerFromIdx, playerToIdx);
         board.printBoard();
         
-        if (board.anyKingIsDead()) {
+        // Get the move from Stockfish (in chess notation, e.g., "A2A4")
+	    string stockfisBesthMove = stockfishMove(engine, playerMove);
+
+        if (engine.isCheckmate()) {
             //moveToAwaitPosition(rtde_control);
             cout << "Game has ended" << endl;
             return 0;
         }
-        
-        // Get the move from Stockfish (in chess notation, e.g., "A2A4")
-	    string stockfisBesthMove = stockfishMove(engine, playerMove);
 
         // Convert Stockfish move to from- and to- notations.
         string fromNotation = stockfisBesthMove.substr(0, 2);
@@ -318,12 +318,6 @@ int main() {
         
         // Move the chess piece using the robot.
         moveChessPiece(fromNotation, toNotation, chessboardOrigin, RotationChess);
-        
-        if (board.anyKingIsDead()) {
-            //moveToAwaitPosition(rtde_control);
-            cout << "Game has ended" << endl;
-            return 0;
-        }
         
         // After robot move, update the board accordingly.
         MatrixIndex fromIdx = board.getMatrixIndex(fromNotation);

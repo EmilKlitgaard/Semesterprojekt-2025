@@ -130,17 +130,30 @@ ChessRobot/fast:
 .PHONY : ChessRobot/fast
 
 #=============================================================================
-# Target rules for targets named TestExecutable
+# Target rules for targets named visionTestExecutable
 
 # Build rule for target.
-TestExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TestExecutable
-.PHONY : TestExecutable
+visionTestExecutable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visionTestExecutable
+.PHONY : visionTestExecutable
 
 # fast build rule for target.
-TestExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/build
-.PHONY : TestExecutable/fast
+visionTestExecutable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/build
+.PHONY : visionTestExecutable/fast
+
+#=============================================================================
+# Target rules for targets named stockfishTestExecutable
+
+# Build rule for target.
+stockfishTestExecutable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stockfishTestExecutable
+.PHONY : stockfishTestExecutable
+
+# fast build rule for target.
+stockfishTestExecutable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/build
+.PHONY : stockfishTestExecutable/fast
 
 Chessboard.o: Chessboard.cpp.o
 .PHONY : Chessboard.o
@@ -148,7 +161,8 @@ Chessboard.o: Chessboard.cpp.o
 # target to build an object file
 Chessboard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Chessboard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o
 .PHONY : Chessboard.cpp.o
 
 Chessboard.i: Chessboard.cpp.i
@@ -157,7 +171,8 @@ Chessboard.i: Chessboard.cpp.i
 # target to preprocess a source file
 Chessboard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Chessboard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.i
 .PHONY : Chessboard.cpp.i
 
 Chessboard.s: Chessboard.cpp.s
@@ -166,7 +181,8 @@ Chessboard.s: Chessboard.cpp.s
 # target to generate assembly for a file
 Chessboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Chessboard.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Chessboard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.s
 .PHONY : Chessboard.cpp.s
 
 Stockfish.o: Stockfish.cpp.o
@@ -175,6 +191,7 @@ Stockfish.o: Stockfish.cpp.o
 # target to build an object file
 Stockfish.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Stockfish.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o
 .PHONY : Stockfish.cpp.o
 
 Stockfish.i: Stockfish.cpp.i
@@ -183,6 +200,7 @@ Stockfish.i: Stockfish.cpp.i
 # target to preprocess a source file
 Stockfish.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Stockfish.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.i
 .PHONY : Stockfish.cpp.i
 
 Stockfish.s: Stockfish.cpp.s
@@ -191,6 +209,7 @@ Stockfish.s: Stockfish.cpp.s
 # target to generate assembly for a file
 Stockfish.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Stockfish.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.s
 .PHONY : Stockfish.cpp.s
 
 Vision.o: Vision.cpp.o
@@ -199,7 +218,7 @@ Vision.o: Vision.cpp.o
 # target to build an object file
 Vision.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Vision.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Vision.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Vision.cpp.o
 .PHONY : Vision.cpp.o
 
 Vision.i: Vision.cpp.i
@@ -208,7 +227,7 @@ Vision.i: Vision.cpp.i
 # target to preprocess a source file
 Vision.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Vision.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Vision.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Vision.cpp.i
 .PHONY : Vision.cpp.i
 
 Vision.s: Vision.cpp.s
@@ -217,7 +236,7 @@ Vision.s: Vision.cpp.s
 # target to generate assembly for a file
 Vision.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/Vision.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/Vision.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Vision.cpp.s
 .PHONY : Vision.cpp.s
 
 main.o: main.cpp.o
@@ -244,29 +263,53 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-test.o: test.cpp.o
-.PHONY : test.o
+stockfishTest.o: stockfishTest.cpp.o
+.PHONY : stockfishTest.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/test.cpp.o
-.PHONY : test.cpp.o
+stockfishTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o
+.PHONY : stockfishTest.cpp.o
 
-test.i: test.cpp.i
-.PHONY : test.i
+stockfishTest.i: stockfishTest.cpp.i
+.PHONY : stockfishTest.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/test.cpp.i
-.PHONY : test.cpp.i
+stockfishTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.i
+.PHONY : stockfishTest.cpp.i
 
-test.s: test.cpp.s
-.PHONY : test.s
+stockfishTest.s: stockfishTest.cpp.s
+.PHONY : stockfishTest.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/test.cpp.s
-.PHONY : test.cpp.s
+stockfishTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.s
+.PHONY : stockfishTest.cpp.s
+
+visionTest.o: visionTest.cpp.o
+.PHONY : visionTest.o
+
+# target to build an object file
+visionTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o
+.PHONY : visionTest.cpp.o
+
+visionTest.i: visionTest.cpp.i
+.PHONY : visionTest.i
+
+# target to preprocess a source file
+visionTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/visionTest.cpp.i
+.PHONY : visionTest.cpp.i
+
+visionTest.s: visionTest.cpp.s
+.PHONY : visionTest.s
+
+# target to generate assembly for a file
+visionTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/visionTest.cpp.s
+.PHONY : visionTest.cpp.s
 
 # Help Target
 help:
@@ -277,7 +320,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ChessRobot"
-	@echo "... TestExecutable"
+	@echo "... stockfishTestExecutable"
+	@echo "... visionTestExecutable"
 	@echo "... Chessboard.o"
 	@echo "... Chessboard.i"
 	@echo "... Chessboard.s"
@@ -290,9 +334,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... stockfishTest.o"
+	@echo "... stockfishTest.i"
+	@echo "... stockfishTest.s"
+	@echo "... visionTest.o"
+	@echo "... visionTest.i"
+	@echo "... visionTest.s"
 .PHONY : help
 
 

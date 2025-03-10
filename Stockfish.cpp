@@ -42,15 +42,14 @@ void Stockfish::startEngine() {
 
         // Wait for Stockfish to start and print its initial output
         string response = readResponse("Stockfish");
-        cout << "Initial output: " << response << endl;
+        //cout << "Initial output: " << response << endl;
         
         sendCommand("uci");
-        cout << "Waiting for uciok..." << endl;
+        //cout << "Waiting for uciok..." << endl;
         string uciResponse = readResponse("uciok");
-        cout << "Received uciok." << endl;
         
         sendCommand("isready");
-        cout << "Waiting for readyok..." << endl;
+        //cout << "Waiting for readyok..." << endl;
         string readyResponse = readResponse("readyok");
         cout << "Stockfish engine started successfully." << endl;
     }
@@ -64,6 +63,16 @@ void Stockfish::stopEngine() {
         waitpid(engine_pid, NULL, 0);
         engine_pid = -1;
     }
+}
+
+// Update the current move history
+void Stockfish::addMoveToHistory(const string& move) {
+    moveHistory.push_back(move);
+}
+
+// Get the current move history
+vector<string> Stockfish::getMoveHistory() const {
+    return moveHistory;
 }
 
 void Stockfish::sendCommand(const string& command) {
@@ -91,14 +100,21 @@ string Stockfish::readResponse(const string& findString) {
     return response;
 }
 
-// Update the current move history
-void Stockfish::addMoveToHistory(const string& move) {
-    moveHistory.push_back(move);
-}
-
-// Get the current move history
-vector<string> Stockfish::getMoveHistory() const {
-    return moveHistory;
+// Method to check for checkmate
+bool Stockfish::isCheckmate() {    
+    // Set up current position
+    string positionCommand = "position startpos moves";
+    for (const string& move : moveHistory) {
+        positionCommand += " " + move;
+    }
+    sendCommand(positionCommand);
+    
+    // Request quick analysis
+    sendCommand("go depth 1");
+    string response = readResponse("bestmove");
+    
+    // Check for mate indicator
+    return response.find("score mate 0") != string::npos;
 }
 
 // Get the current move history from the Chessboard

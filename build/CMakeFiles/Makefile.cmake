@@ -53,5 +53,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ChessRobot.dir/DependInfo.cmake"
-  "CMakeFiles/TestExecutable.dir/DependInfo.cmake"
+  "CMakeFiles/visionTestExecutable.dir/DependInfo.cmake"
+  "CMakeFiles/stockfishTestExecutable.dir/DependInfo.cmake"
   )

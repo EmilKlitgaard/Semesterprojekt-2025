@@ -1,6 +1,7 @@
-CMakeFiles/TestExecutable.dir/test.cpp.o: \
- /home/ubuntu/Workspace/test_rtde/test.cpp /usr/include/stdc-predef.h \
- /home/ubuntu/Workspace/test_rtde/Stockfish.h /usr/include/c++/11/string \
+CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o: \
+ /home/ubuntu/Workspace/test_rtde/stockfishTest.cpp \
+ /usr/include/stdc-predef.h /home/ubuntu/Workspace/test_rtde/Stockfish.h \
+ /usr/include/c++/11/string \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

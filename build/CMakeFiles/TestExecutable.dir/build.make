@@ -83,24 +83,10 @@ CMakeFiles/TestExecutable.dir/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TestExecutable.dir/test.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Workspace/test_rtde/test.cpp -o CMakeFiles/TestExecutable.dir/test.cpp.s
 
-CMakeFiles/TestExecutable.dir/Vision.cpp.o: CMakeFiles/TestExecutable.dir/flags.make
-CMakeFiles/TestExecutable.dir/Vision.cpp.o: ../Vision.cpp
-CMakeFiles/TestExecutable.dir/Vision.cpp.o: CMakeFiles/TestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TestExecutable.dir/Vision.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TestExecutable.dir/Vision.cpp.o -MF CMakeFiles/TestExecutable.dir/Vision.cpp.o.d -o CMakeFiles/TestExecutable.dir/Vision.cpp.o -c /home/ubuntu/Workspace/test_rtde/Vision.cpp
-
-CMakeFiles/TestExecutable.dir/Vision.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TestExecutable.dir/Vision.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/Workspace/test_rtde/Vision.cpp > CMakeFiles/TestExecutable.dir/Vision.cpp.i
-
-CMakeFiles/TestExecutable.dir/Vision.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TestExecutable.dir/Vision.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Workspace/test_rtde/Vision.cpp -o CMakeFiles/TestExecutable.dir/Vision.cpp.s
-
 CMakeFiles/TestExecutable.dir/Chessboard.cpp.o: CMakeFiles/TestExecutable.dir/flags.make
 CMakeFiles/TestExecutable.dir/Chessboard.cpp.o: ../Chessboard.cpp
 CMakeFiles/TestExecutable.dir/Chessboard.cpp.o: CMakeFiles/TestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TestExecutable.dir/Chessboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TestExecutable.dir/Chessboard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TestExecutable.dir/Chessboard.cpp.o -MF CMakeFiles/TestExecutable.dir/Chessboard.cpp.o.d -o CMakeFiles/TestExecutable.dir/Chessboard.cpp.o -c /home/ubuntu/Workspace/test_rtde/Chessboard.cpp
 
 CMakeFiles/TestExecutable.dir/Chessboard.cpp.i: cmake_force
@@ -111,18 +97,48 @@ CMakeFiles/TestExecutable.dir/Chessboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TestExecutable.dir/Chessboard.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Workspace/test_rtde/Chessboard.cpp -o CMakeFiles/TestExecutable.dir/Chessboard.cpp.s
 
+CMakeFiles/TestExecutable.dir/Stockfish.cpp.o: CMakeFiles/TestExecutable.dir/flags.make
+CMakeFiles/TestExecutable.dir/Stockfish.cpp.o: ../Stockfish.cpp
+CMakeFiles/TestExecutable.dir/Stockfish.cpp.o: CMakeFiles/TestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TestExecutable.dir/Stockfish.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TestExecutable.dir/Stockfish.cpp.o -MF CMakeFiles/TestExecutable.dir/Stockfish.cpp.o.d -o CMakeFiles/TestExecutable.dir/Stockfish.cpp.o -c /home/ubuntu/Workspace/test_rtde/Stockfish.cpp
+
+CMakeFiles/TestExecutable.dir/Stockfish.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TestExecutable.dir/Stockfish.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/Workspace/test_rtde/Stockfish.cpp > CMakeFiles/TestExecutable.dir/Stockfish.cpp.i
+
+CMakeFiles/TestExecutable.dir/Stockfish.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TestExecutable.dir/Stockfish.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Workspace/test_rtde/Stockfish.cpp -o CMakeFiles/TestExecutable.dir/Stockfish.cpp.s
+
+CMakeFiles/TestExecutable.dir/Vision.cpp.o: CMakeFiles/TestExecutable.dir/flags.make
+CMakeFiles/TestExecutable.dir/Vision.cpp.o: ../Vision.cpp
+CMakeFiles/TestExecutable.dir/Vision.cpp.o: CMakeFiles/TestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TestExecutable.dir/Vision.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TestExecutable.dir/Vision.cpp.o -MF CMakeFiles/TestExecutable.dir/Vision.cpp.o.d -o CMakeFiles/TestExecutable.dir/Vision.cpp.o -c /home/ubuntu/Workspace/test_rtde/Vision.cpp
+
+CMakeFiles/TestExecutable.dir/Vision.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TestExecutable.dir/Vision.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/Workspace/test_rtde/Vision.cpp > CMakeFiles/TestExecutable.dir/Vision.cpp.i
+
+CMakeFiles/TestExecutable.dir/Vision.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TestExecutable.dir/Vision.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/Workspace/test_rtde/Vision.cpp -o CMakeFiles/TestExecutable.dir/Vision.cpp.s
+
 # Object files for target TestExecutable
 TestExecutable_OBJECTS = \
 "CMakeFiles/TestExecutable.dir/test.cpp.o" \
-"CMakeFiles/TestExecutable.dir/Vision.cpp.o" \
-"CMakeFiles/TestExecutable.dir/Chessboard.cpp.o"
+"CMakeFiles/TestExecutable.dir/Chessboard.cpp.o" \
+"CMakeFiles/TestExecutable.dir/Stockfish.cpp.o" \
+"CMakeFiles/TestExecutable.dir/Vision.cpp.o"
 
 # External object files for target TestExecutable
 TestExecutable_EXTERNAL_OBJECTS =
 
 TestExecutable: CMakeFiles/TestExecutable.dir/test.cpp.o
-TestExecutable: CMakeFiles/TestExecutable.dir/Vision.cpp.o
 TestExecutable: CMakeFiles/TestExecutable.dir/Chessboard.cpp.o
+TestExecutable: CMakeFiles/TestExecutable.dir/Stockfish.cpp.o
+TestExecutable: CMakeFiles/TestExecutable.dir/Vision.cpp.o
 TestExecutable: CMakeFiles/TestExecutable.dir/build.make
 TestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_stitching.so.4.5.4d
 TestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_alphamat.so.4.5.4d
@@ -179,7 +195,7 @@ TestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.5.4d
 TestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.5.4d
 TestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.5.4d
 TestExecutable: CMakeFiles/TestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable TestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable TestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -19,6 +19,9 @@ public:
     // Returns the best move given the latest move (in UCI notation)
     string getBestMove(const string& latestMove);
 
+    // Check for Checkmate. 
+    bool isCheckmate();
+
     // Update and get move history
     void addMoveToHistory(const string& move);
     vector<string> getMoveHistory() const;

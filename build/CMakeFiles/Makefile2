@@ -64,7 +64,8 @@ CMAKE_BINARY_DIR = /home/ubuntu/Workspace/test_rtde/build
 
 # The main recursive "all" target.
 all: CMakeFiles/ChessRobot.dir/all
-all: CMakeFiles/TestExecutable.dir/all
+all: CMakeFiles/visionTestExecutable.dir/all
+all: CMakeFiles/stockfishTestExecutable.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,7 +74,8 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/ChessRobot.dir/clean
-clean: CMakeFiles/TestExecutable.dir/clean
+clean: CMakeFiles/visionTestExecutable.dir/clean
+clean: CMakeFiles/stockfishTestExecutable.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -103,30 +105,56 @@ CMakeFiles/ChessRobot.dir/clean:
 .PHONY : CMakeFiles/ChessRobot.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/TestExecutable.dir
+# Target rules for target CMakeFiles/visionTestExecutable.dir
 
 # All Build rule for target.
-CMakeFiles/TestExecutable.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=6,7,8,9 "Built target TestExecutable"
-.PHONY : CMakeFiles/TestExecutable.dir/all
+CMakeFiles/visionTestExecutable.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=10,11,12,13 "Built target visionTestExecutable"
+.PHONY : CMakeFiles/visionTestExecutable.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/TestExecutable.dir/rule: cmake_check_build_system
+CMakeFiles/visionTestExecutable.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/TestExecutable.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/visionTestExecutable.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 0
-.PHONY : CMakeFiles/TestExecutable.dir/rule
+.PHONY : CMakeFiles/visionTestExecutable.dir/rule
 
 # Convenience name for target.
-TestExecutable: CMakeFiles/TestExecutable.dir/rule
-.PHONY : TestExecutable
+visionTestExecutable: CMakeFiles/visionTestExecutable.dir/rule
+.PHONY : visionTestExecutable
 
 # clean rule for target.
-CMakeFiles/TestExecutable.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TestExecutable.dir/build.make CMakeFiles/TestExecutable.dir/clean
-.PHONY : CMakeFiles/TestExecutable.dir/clean
+CMakeFiles/visionTestExecutable.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/clean
+.PHONY : CMakeFiles/visionTestExecutable.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/stockfishTestExecutable.dir
+
+# All Build rule for target.
+CMakeFiles/stockfishTestExecutable.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=6,7,8,9 "Built target stockfishTestExecutable"
+.PHONY : CMakeFiles/stockfishTestExecutable.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/stockfishTestExecutable.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/stockfishTestExecutable.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 0
+.PHONY : CMakeFiles/stockfishTestExecutable.dir/rule
+
+# Convenience name for target.
+stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/rule
+.PHONY : stockfishTestExecutable
+
+# clean rule for target.
+CMakeFiles/stockfishTestExecutable.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/clean
+.PHONY : CMakeFiles/stockfishTestExecutable.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

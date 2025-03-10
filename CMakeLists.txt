@@ -20,5 +20,7 @@ add_executable(ChessRobot main.cpp Chessboard.cpp Stockfish.cpp Vision.cpp)
 target_link_libraries(ChessRobot rtde pthread ${OpenCV_LIBS})
 
 # For testing
-add_executable(TestExecutable test.cpp Vision.cpp Chessboard.cpp) 
-target_link_libraries(TestExecutable ${OpenCV_LIBS})
+add_executable(visionTestExecutable visionTest.cpp Chessboard.cpp Vision.cpp) 
+target_link_libraries(visionTestExecutable ${OpenCV_LIBS})
+add_executable(stockfishTestExecutable stockfishTest.cpp Chessboard.cpp Stockfish.cpp) 
+target_link_libraries(stockfishTestExecutable ${OpenCV_LIBS})
