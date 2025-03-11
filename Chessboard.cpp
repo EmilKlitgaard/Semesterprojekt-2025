@@ -26,6 +26,31 @@ void Chessboard::initializeBoard() {
         }
         physicalCoordinates.push_back(row);
     }
+
+    // Generate deadPieceLocation coordinates
+    deadPieceLocationIndex = 0;
+    const double cellSize = 0.05; // Each cell is 0.05m x 0.05m
+    const double xStart = 0.375;
+    const double z = 0.0;
+    double y = -0.075;
+    for (int i = 0; i < 2; ++i) {
+        if (i == 1) { y -= cellSize; }
+        for (int j = 0; j < 8; ++j) {
+            double x = xStart - j * cellSize;
+            deadPieceLocations.push_back(Vector3d(x, y, z));
+        }
+    }
+}
+
+// Get the dead piece location at a specific index
+Vector3d Chessboard::getDeadPieceLocation() {
+    if (deadPieceLocationIndex < 0 || deadPieceLocationIndex >= deadPieceLocations.size()) {
+        throw out_of_range("Index out of range for deadPieceLocation");
+    }
+    Vector3d location = deadPieceLocations[deadPieceLocationIndex];
+    deadPieceLocationIndex++;
+    cout << "Current deadPieceLocationIndex: " << deadPieceLocationIndex << endl;
+    return location;
 }
 
 // Map chess notation (e.g. "a1") to matrix indices (row, col)
@@ -87,23 +112,6 @@ void Chessboard::printBoard(const string &mode) {
         }
     }
     cout << endl;
-}
-
-// Check if any king is missing (dead), to end the game.
-bool Chessboard::anyKingIsDead() {
-    int kingCount = 0;
-    for (const auto& row : board) {
-        for (const auto& cell : row) {
-            if (cell == "6B" || cell == "6W") {
-                kingCount++;
-            }
-        }
-    }
-    if (kingCount < 2) {
-        return true;
-    } else {
-        return false;
-    }
 }
 
 // Get the current board state

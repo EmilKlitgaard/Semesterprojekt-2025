@@ -174,7 +174,7 @@ void moveChessPiece(string &fromNotation, string &toNotation, const Vector3d &ch
     // If the destination cell is occupied, move the piece there to a dead piece location.
     if (toOccupied) {
         printText("Moving occupying piece to dead piece location...");
-        Vector3d deadPieceLocation(0.2, -0.1, 0.1);
+        Vector3d deadPieceLocation = board.getDeadPieceLocation();
     
         printText("Moving above toCoordinate...");
         moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
@@ -184,10 +184,14 @@ void moveChessPiece(string &fromNotation, string &toNotation, const Vector3d &ch
         // closeGripper();
         printText("Moving up...");
         moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
-        printText("Move to dead piece location...");
+        printText("Moving above deadPieceLocation...");
+        moveToChessboardPoint(deadPieceLocation + transformVector, chessboardOrigin, RotationMatrix);
+        printText("Moving down to place dead piece...");
         moveToChessboardPoint(deadPieceLocation, chessboardOrigin, RotationMatrix);
         printText("Opening gripper to let go of piece...");
         // openGripper();
+        printText("Moving up...");
+        moveToChessboardPoint(deadPieceLocation + transformVector, chessboardOrigin, RotationMatrix);
     }
     
     // Sequence of movements for picking up the piece:
@@ -215,6 +219,8 @@ void moveChessPiece(string &fromNotation, string &toNotation, const Vector3d &ch
             		    MAIN START
 ============================================================*/
 int main() {
+    for (int i=0; i<17; ++i) board.getDeadPieceLocation();
+
     //   ==========   VALIDATE UR5 CONNECTION   ==========   //
     if (!rtde_control.isConnected() || !rtde_receive.isConnected()) {
         cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;
@@ -222,7 +228,7 @@ int main() {
     }
     
     //   ==========   SET TCP OFFSET   ==========   //
-    vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0};
+    vector<double> tcpOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
     rtde_control.setTcp(tcpOffset);
     
     //   ==========   SET CHESSBOARD ORIGIN   ==========   //
@@ -274,7 +280,7 @@ int main() {
 
     //   ==========   BEGIN CHESS GAME   ==========   //
     cout << "Press ENTER to start chess game..." << endl;
-    cin.get();  
+    cin.get();
     Stockfish engine("/home/ubuntu/Stockfish/src/stockfish");  
     cout << "\n" << "----- CHESS GAME STARTED -----" << endl;
     
@@ -306,12 +312,6 @@ int main() {
         // Get the move from Stockfish (in chess notation, e.g., "A2A4")
 	    string stockfisBesthMove = stockfishMove(engine, playerMove);
 
-        if (engine.isCheckmate()) {
-            //moveToAwaitPosition(rtde_control);
-            cout << "Game has ended" << endl;
-            return 0;
-        }
-
         // Convert Stockfish move to from- and to- notations.
         string fromNotation = stockfisBesthMove.substr(0, 2);
         string toNotation   = stockfisBesthMove.substr(2, 2);
@@ -326,6 +326,12 @@ int main() {
         board.printBoard();
         
         moveToAwaitPosition();
+
+        if (engine.isCheckmate()) {
+            //moveToAwaitPosition(rtde_control);
+            cout << "Game has ended" << endl;
+            return 0;
+        }
     }
 
     return 0;

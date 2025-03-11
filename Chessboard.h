@@ -35,8 +35,6 @@ public:
     void updateChessboard(MatrixIndex from, MatrixIndex to);
     void printBoard(const string &mode = "Default");
 
-    bool anyKingIsDead();
-
     string getChessNotation(MatrixIndex position);
     string getChessNotation(MatrixIndex position1, MatrixIndex position2);
     MatrixIndex getMatrixIndex(const string& notation);
@@ -44,11 +42,15 @@ public:
 
     vector<vector<string>> getBoardState();
 
+    Vector3d getDeadPieceLocation();
+
 private:
     vector<vector<string>> board;
     vector<vector<pair<double, double>>> physicalCoordinates;
     unordered_map<string, MatrixIndex> notationToIndex;
     unordered_map<MatrixIndex, string, PairHash> indexToNotation;
+    vector<Vector3d> deadPieceLocations;
+    int deadPieceLocationIndex;
 
     void initializeBoard();
     void initializeMappings();
