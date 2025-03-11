@@ -3,12 +3,10 @@ project(ChessRobot)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Find the UR RTDE package
-include_directories(/usr/local/include/ur_rtde)
-
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 
+include_directories(/usr/local/include/ur_rtde)
 include_directories(${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
 
 link_directories(/usr/local/lib)

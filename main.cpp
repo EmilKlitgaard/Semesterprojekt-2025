@@ -134,12 +134,12 @@ ChessboardMatrix getCameraData(int i) {
     }
     return cameraBoard;
 }
-ChessboardMatrix getCameraData() {
+/*ChessboardMatrix getCameraData() {
     static ChessVision vision(0);
-    auto detectedBoard = vision.detectBoardState();
+    auto detectedBoard = vision.captureFrame();
     showBoardState(detectedBoard);
     return detectedBoard;
-}
+}*/
 
 // Compare camera data to determine which cell changed. Returns a pair: {from (row, col), to (row, col)}.
 pair<MatrixIndex, MatrixIndex> determinePlayerMove(const ChessboardMatrix &lastPositions, const ChessboardMatrix &newPositions) {

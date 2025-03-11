@@ -2,32 +2,30 @@
 
 #include <opencv2/opencv.hpp>
 #include <vector>
-#include "Chessboard.h"
+#include <algorithm>
+#include <iostream>
 
 using namespace cv;
 using namespace std;
 
 class ChessVision {
-    public:
-        ChessVision(int cameraIndex = 0);
-        vector<vector<char>> detectBoardState();
-        void calibratePerspective(Mat& frame);
-        Mat captureFrame() {
-            Mat frame;
-            cap >> frame;
-            return frame;
-        }
+public:
+    ChessVision(int cameraIndex = 0);
+    ~ChessVision();
+    bool processFrame(Mat& output);
+    void releaseCamera();
+
+private:
+    VideoCapture cap;
+    Size boardSize = Size(7, 7); // Inner corners for 8x8 board
+    vector<Point2f> corners;
+    const int targetSize = 600; // Warped output size
     
-        // Move this to public
-        vector<Point2f> detectChessboardCorners(Mat& frame);
-    
-    private:
-        VideoCapture cap;
-        Size boardSize = Size(8, 8);
-        vector<Point2f> boardCorners;
-        Mat cameraMatrix;
-        Mat distCoeffs;
-    
-        vector<Point2f> detectColorDots(Mat& frame, Scalar lower, Scalar upper);
-        char classifyPiece(Point2f position);
+    bool findChessboard(Mat& frame);
+    void drawOverlay(Mat& frame);
+    bool transformChessboard(Mat& frame);
+    vector<Point2f> getSquareCenters() const;
+    vector<Point2f> getOuterCorners() const;
+    bool checkCornersValid(const vector<Point2f>& corners);
+    Mat preprocessImage(Mat& input);
 };

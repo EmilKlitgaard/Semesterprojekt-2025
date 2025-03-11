@@ -233,6 +233,15 @@ test_rtde_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 test_rtde_SOURCE_DIR:STATIC=/home/ubuntu/Workspace/test_rtde
 
+//Value Computed by CMake
+visionTestExecutable_BINARY_DIR:STATIC=/home/ubuntu/Workspace/test_rtde/build
+
+//Value Computed by CMake
+visionTestExecutable_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+visionTestExecutable_SOURCE_DIR:STATIC=/home/ubuntu/Workspace/test_rtde
+
 
 ########################
 # INTERNAL cache entries

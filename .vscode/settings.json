@@ -5,6 +5,7 @@
         "*.tcc": "cpp",
         "deque": "cpp",
         "vector": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "*.ipp": "cpp"
     }
 }
