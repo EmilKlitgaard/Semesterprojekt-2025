@@ -78,6 +78,35 @@ Vector3d chessboardToBase(const Vector3d &chessboardTarget, const Vector3d &ches
     return RotationMatrix * chessboardTarget + chessboardOrigin;
 }
 
+bool isValidMoveFormat(const string& move) {
+    // Check length
+    if (move.length() != 4) return false;
+
+    // Check repeated input
+    if (move[0]+move[1] == move[2]+move[3]) return false;
+    
+    // Check characters
+    bool validFirst = islower(move[0]) && move[0] >= 'a' && move[0] <= 'h';
+    bool validSecond = isdigit(move[1]) && move[1] >= '1' && move[1] <= '8';
+    bool validThird = islower(move[2]) && move[2] >= 'a' && move[2] <= 'h';
+    bool validFourth = isdigit(move[3]) && move[3] >= '1' && move[3] <= '8';
+    
+    return validFirst && validSecond && validThird && validFourth;
+}
+
+string inputPlayerMove() {
+    string playerMove;
+    cout << "Input your move e.g.: 'e2e4': " << endl;
+    while (true) {
+        cin >> playerMove;
+        if (isValidMoveFormat(playerMove)) {
+            return playerMove;
+        } else {
+            cout << "Invalid move format. Please enter a move in the format 'e2e4': " << endl;
+        }
+    }
+}
+
 // Move TCP to the awaiting position
 void moveToAwaitPosition() {
     vector<double> awaitPosition = {-1.11701, -0.89012, -1.78024, -0.52360, 1.57080, 0.71558}; 
@@ -92,13 +121,6 @@ void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &che
 
     cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
     rtde_control.moveL(tcpPose, speed, acceleration);
-}
-
-string inputPlayerMove() {
-    string playerMove;
-    cout << "Input your move e.g.: 'e2e4': " << endl; 
-    cin >> playerMove;
-    return playerMove;
 }
 
 // Placeholder: Simulate camera data retrieval.
@@ -219,8 +241,6 @@ void moveChessPiece(string &fromNotation, string &toNotation, const Vector3d &ch
             		    MAIN START
 ============================================================*/
 int main() {
-    for (int i=0; i<17; ++i) board.getDeadPieceLocation();
-
     //   ==========   VALIDATE UR5 CONNECTION   ==========   //
     if (!rtde_control.isConnected() || !rtde_receive.isConnected()) {
         cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;
