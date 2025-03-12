@@ -122,7 +122,7 @@ bool ChessVision::transformChessboard(Mat& frame) {
     vector<Point2f> outerCorners = getOuterCorners();
     if (outerCorners.size() != 81) return false;
 
-    // Get outermost corners: TL, TR, BR, BL
+    // Get outermost corners
     vector<Point2f> srcCorners = {
         outerCorners.front(),                // Top-left
         outerCorners[8],                     // Top-right
@@ -140,6 +140,42 @@ bool ChessVision::transformChessboard(Mat& frame) {
     Mat warpMatrix = getPerspectiveTransform(srcCorners, dstCorners);
     warpPerspective(frame, frame, warpMatrix, Size(targetSize, targetSize));
     return true;
+}
+
+// Detect red and blue dots
+void ChessVision::detectDots(Mat& frame) {
+    Mat hsv;
+    cvtColor(frame, hsv, COLOR_BGR2HSV);
+
+    // Define HSV ranges for red and blue
+    Mat maskRed1, maskRed2, maskBlue;
+    inRange(hsv, Scalar(0, 100, 100), Scalar(10, 255, 255), maskRed1);
+    inRange(hsv, Scalar(170, 100, 100), Scalar(180, 255, 255), maskRed2);
+    inRange(hsv, Scalar(100, 150, 50), Scalar(140, 255, 255), maskBlue);
+
+    Mat maskRed = maskRed1 | maskRed2; // Combine red masks
+
+    vector<vector<Point>> contoursRed, contoursBlue;
+    findContours(maskRed, contoursRed, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+    findContours(maskBlue, contoursBlue, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+
+    for (const auto& contour : contoursRed) {
+        if (contourArea(contour) > 20) { // Minimum size threshold
+            Rect boundingBox = boundingRect(contour);
+            Point center = (boundingBox.tl() + boundingBox.br()) * 0.5;
+            circle(frame, center, 5, Scalar(0, 0, 255), -1); // Red dot
+            putText(frame, "Red", center, FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0, 0, 255), 1);
+        }
+    }
+
+    for (const auto& contour : contoursBlue) {
+        if (contourArea(contour) > 20) {
+            Rect boundingBox = boundingRect(contour);
+            Point center = (boundingBox.tl() + boundingBox.br()) * 0.5;
+            circle(frame, center, 5, Scalar(255, 0, 0), -1); // Blue dot
+            putText(frame, "Blue", center, FONT_HERSHEY_SIMPLEX, 0.5, Scalar(255, 0, 0), 1);
+        }
+    }
 }
 
 void ChessVision::drawOverlay(Mat& frame) {
