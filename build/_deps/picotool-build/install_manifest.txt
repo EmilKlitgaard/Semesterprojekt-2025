@@ -1,5 +1,0 @@
-/home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/_deps/picotool/picotool
-/home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/_deps/picotool/picotoolTargets.cmake
-/home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/_deps/picotool/picotoolTargets-release.cmake
-/home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/_deps/picotool/picotoolConfig.cmake
-/home/asmusrise/Documents/Rasperry_pico/GrapperCode/build/_deps/picotool/picotoolConfigVersion.cmake
