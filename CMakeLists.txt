@@ -1,6 +1,7 @@
 # Set minimum required version of cmake
 cmake_minimum_required(VERSION 3.12)
 
+set(PICO_SDK_PATH "/home/asmusrise/pico-sdk")  # Ensure CMake finds the correct SDK
 #include build functions from pico sdk
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
@@ -23,4 +24,5 @@ pico_add_extra_outputs(${PROJECT_NAME})
 #LINK TO pico_stdlib (gpio, time, etc. functions)
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
+    hardware_gpio
 )
