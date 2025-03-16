@@ -3,6 +3,10 @@
 
 #include "pico/stdlib.h"
 #include "hardware/gpio.h"
+#include "hardware/pwm.h"
+#include <stdio.h>
+
+
 
 //#include "hardware/irq.h"
 
@@ -24,6 +28,11 @@ volatile bool led_states = true;  //Track to turn the led's on or off.
 
 volatile int state = 0; //number to keep track of which if loops should rund in button interrupts (button_isr)
 volatile uint32_t last_press_time = 0; //timestamp for debounce:
+
+//pwm
+#define LED_PIN_green_pwm 5
+
+
 
 
 void button_isr(uint gpio, uint32_t events) {
@@ -57,6 +66,7 @@ void button_isr(uint gpio, uint32_t events) {
 
 int main() {
     volatile bool led_state_onboard = false;
+    volatile bool going_up = true;
     stdio_init_all();
 
     for(int i = 0; i<NUM_LEDS;i++){
@@ -72,13 +82,51 @@ int main() {
         gpio_set_irq_enabled_with_callback(BUTTON_PINS[i],GPIO_IRQ_EDGE_FALL, true, &button_isr);
     }
 
+    //pwm 
+    gpio_set_function(LED_PIN_green_pwm, GPIO_FUNC_PWM);
+    uint slice_num = pwm_gpio_to_slice_num(LED_PIN_green_pwm);
+    // Set period of x number of cycles
+    pwm_set_wrap(slice_num, 1000);
+    // Set channel A output high for x number of cycles before dropping
+    //pwm_set_chan_level(slice_num, PWM_CHAN_A, 1);
+    // Set initial B output high for x number of cycles before dropping 
+    //pwm_set_chan_level(slice_num, PWM_CHAN_B, 500);
+    // Set the PWM running
+    pwm_set_enabled(slice_num, true);
+    /// \end::setup_pwm[]
+
+    uint pwm_up_and_down = 0;
+  
+
     //loop forever
     while (true) {
         
         gpio_put(LED_PIN, led_state_onboard);
         led_state_onboard = !led_state_onboard;
+
+        if (going_up == true){
+            printf("Going up!! PWM is set to: %d\n", pwm_up_and_down);
+            pwm_up_and_down += 100;
+            if (pwm_up_and_down >= 1000){
+                pwm_up_and_down = 1000;
+                going_up = false;
+                printf("Changing from up to down\n");
+            }
+        }
+        if (going_up == false){
+            pwm_up_and_down -= 100;
+            printf("Going down!! PWM is set to: %d\n", pwm_up_and_down);
+            if (pwm_up_and_down <= 0){
+                pwm_up_and_down = 0;
+                going_up = true;
+                printf("Changing from down to up\n");
+            }
+        }
+
+        pwm_set_chan_level(slice_num, PWM_CHAN_B, pwm_up_and_down);
         
-        sleep_ms(1000);
+        
+        sleep_ms(200);
     }
 
     return 0;

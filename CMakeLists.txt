@@ -18,6 +18,12 @@ add_executable(${PROJECT_NAME}
     GrapperCode.c
 )
 
+
+#setting  the comms to usb: on Asmus pc, the usb on left is ACM0.
+pico_enable_stdio_usb(blink 1)
+pico_enable_stdio_uart(blink 0)
+
+
 #create map/bin/hex/uf2 files
 pico_add_extra_outputs(${PROJECT_NAME})
 
@@ -25,4 +31,5 @@ pico_add_extra_outputs(${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     hardware_gpio
+    hardware_pwm
 )
