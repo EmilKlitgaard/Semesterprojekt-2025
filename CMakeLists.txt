@@ -32,4 +32,5 @@ target_link_libraries(${PROJECT_NAME}
     pico_stdlib
     hardware_gpio
     hardware_pwm
+    hardware_adc
 )

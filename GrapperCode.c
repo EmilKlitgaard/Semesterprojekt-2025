@@ -5,22 +5,24 @@
 #include "hardware/gpio.h"
 #include "hardware/pwm.h"
 #include <stdio.h>
+#include "hardware/adc.h"
 
 
 
-//#include "hardware/irq.h"
+
+#include "hardware/irq.h"
 
 #define LED_PIN  25
-#define LED_PIN_red  22
-#define LED_PIN_green  26
-#define LED_PIN_white  27
+#define LED_PIN_red  12
+#define LED_PIN_green  11
+#define LED_PIN_white  10
 
 #define BUTTON_PIN 16
 
 #define NUM_LEDS 4  // Number of LEDs
 #define NUM_BUTTONS 1 // Number of Buttons
 
-const uint LED_PINS[NUM_LEDS] = {25, 22, 26, 27};  // LED GPIO pins
+const uint LED_PINS[NUM_LEDS] = {25, 12, 11, 10};  // LED GPIO pins
 const uint BUTTON_PINS[NUM_BUTTONS] = {16}; // Button GPIO pins
 
 volatile bool led_state = false;  // Track LED state
@@ -68,6 +70,7 @@ int main() {
     volatile bool led_state_onboard = false;
     volatile bool going_up = true;
     stdio_init_all();
+    adc_init();
 
     for(int i = 0; i<NUM_LEDS;i++){
         gpio_init(LED_PINS[i]);
@@ -82,6 +85,8 @@ int main() {
         gpio_set_irq_enabled_with_callback(BUTTON_PINS[i],GPIO_IRQ_EDGE_FALL, true, &button_isr);
     }
 
+
+    
     //pwm 
     gpio_set_function(LED_PIN_green_pwm, GPIO_FUNC_PWM);
     uint slice_num = pwm_gpio_to_slice_num(LED_PIN_green_pwm);
@@ -97,6 +102,12 @@ int main() {
 
     uint pwm_up_and_down = 0;
   
+
+    //ADC
+    // Make sure GPIO is high-impedance, no pullups etc
+    adc_gpio_init(26);
+    // Select ADC input 0 (GPIO26)
+    adc_select_input(0);
 
     //loop forever
     while (true) {
@@ -124,6 +135,12 @@ int main() {
         }
 
         pwm_set_chan_level(slice_num, PWM_CHAN_B, pwm_up_and_down);
+
+        //ADC
+        //12-bit conversion, assume max value == ADC_VREF == 3.3 V
+        const float conversion_factor = 3.3f / (1 << 12);
+        uint16_t result = adc_read();
+        printf("Raw value: 0x%03x, voltage: %f V\n", result, result * conversion_factor);
         
         
         sleep_ms(200);
