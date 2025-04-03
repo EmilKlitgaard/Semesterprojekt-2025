@@ -63,9 +63,10 @@ CMAKE_BINARY_DIR = /home/ubuntu/Workspace/test_rtde/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ChessRobot.dir/all
+all: CMakeFiles/chessRobotExecutable.dir/all
 all: CMakeFiles/visionTestExecutable.dir/all
 all: CMakeFiles/stockfishTestExecutable.dir/all
+all: CMakeFiles/chessTestExecutable.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,36 +74,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ChessRobot.dir/clean
+clean: CMakeFiles/chessRobotExecutable.dir/clean
 clean: CMakeFiles/visionTestExecutable.dir/clean
 clean: CMakeFiles/stockfishTestExecutable.dir/clean
+clean: CMakeFiles/chessTestExecutable.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/ChessRobot.dir
+# Target rules for target CMakeFiles/chessRobotExecutable.dir
 
 # All Build rule for target.
-CMakeFiles/ChessRobot.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target ChessRobot"
-.PHONY : CMakeFiles/ChessRobot.dir/all
+CMakeFiles/chessRobotExecutable.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target chessRobotExecutable"
+.PHONY : CMakeFiles/chessRobotExecutable.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ChessRobot.dir/rule: cmake_check_build_system
+CMakeFiles/chessRobotExecutable.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 5
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ChessRobot.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chessRobotExecutable.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 0
-.PHONY : CMakeFiles/ChessRobot.dir/rule
+.PHONY : CMakeFiles/chessRobotExecutable.dir/rule
 
 # Convenience name for target.
-ChessRobot: CMakeFiles/ChessRobot.dir/rule
-.PHONY : ChessRobot
+chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/rule
+.PHONY : chessRobotExecutable
 
 # clean rule for target.
-CMakeFiles/ChessRobot.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChessRobot.dir/build.make CMakeFiles/ChessRobot.dir/clean
-.PHONY : CMakeFiles/ChessRobot.dir/clean
+CMakeFiles/chessRobotExecutable.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/clean
+.PHONY : CMakeFiles/chessRobotExecutable.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/visionTestExecutable.dir
@@ -111,7 +113,7 @@ CMakeFiles/ChessRobot.dir/clean:
 CMakeFiles/visionTestExecutable.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=10,11,12,13 "Built target visionTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=14,15,16,17 "Built target visionTestExecutable"
 .PHONY : CMakeFiles/visionTestExecutable.dir/all
 
 # Build rule for subdir invocation for target.
@@ -137,7 +139,7 @@ CMakeFiles/visionTestExecutable.dir/clean:
 CMakeFiles/stockfishTestExecutable.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=6,7,8,9 "Built target stockfishTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=10,11,12,13 "Built target stockfishTestExecutable"
 .PHONY : CMakeFiles/stockfishTestExecutable.dir/all
 
 # Build rule for subdir invocation for target.
@@ -155,6 +157,32 @@ stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/rule
 CMakeFiles/stockfishTestExecutable.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/clean
 .PHONY : CMakeFiles/stockfishTestExecutable.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/chessTestExecutable.dir
+
+# All Build rule for target.
+CMakeFiles/chessTestExecutable.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/Workspace/test_rtde/build/CMakeFiles --progress-num=6,7,8,9 "Built target chessTestExecutable"
+.PHONY : CMakeFiles/chessTestExecutable.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/chessTestExecutable.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chessTestExecutable.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/Workspace/test_rtde/build/CMakeFiles 0
+.PHONY : CMakeFiles/chessTestExecutable.dir/rule
+
+# Convenience name for target.
+chessTestExecutable: CMakeFiles/chessTestExecutable.dir/rule
+.PHONY : chessTestExecutable
+
+# clean rule for target.
+CMakeFiles/chessTestExecutable.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/clean
+.PHONY : CMakeFiles/chessTestExecutable.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

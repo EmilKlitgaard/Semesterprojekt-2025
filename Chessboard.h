@@ -15,6 +15,7 @@
 using namespace std;
 using namespace Eigen;
 
+using ChessboardPieces = vector<vector<string>>;
 using MatrixIndex = pair<int, int>;
 
 // Custom hash for MatrixIndex
@@ -37,22 +38,38 @@ public:
 
     string getChessNotation(MatrixIndex position);
     string getChessNotation(MatrixIndex position1, MatrixIndex position2);
-    MatrixIndex getMatrixIndex(const string& notation);
-    Vector3d getPhysicalCoordinates(const string &notation);
+    pair<MatrixIndex, MatrixIndex> getMatrixIndex(string& notation);
+    pair<Vector3d, Vector3d> getPhysicalCoordinates(string &notation);
 
-    vector<vector<string>> getBoardState();
+    ChessboardPieces getBoardState();
 
-    Vector3d getDeadPieceLocation();
+    Vector3d getDeadPieceLocation(const string &pieceName, const string &origin);
+    Vector3d searchDeadPieceLocation(const string &pieceName);
+
+    vector<Vector3d> getAllPhysicalCoordinates();
 
 private:
-    vector<vector<string>> board;
-    vector<vector<pair<double, double>>> physicalCoordinates;
+    void initializeBoard();
+    void initializePhysicalCoordinates();
+    void initializeDeadPieceLocations();
+    void initializeReachabilityCheck();
+    void initializeMappings();
+
+    void addReachabilityPosition(double x, double y, double hoverOffset);
+    void generateDeadPieceLocations(vector<Vector3d>& locations, double xStart, double yStart, bool isRobot);
+
+    ChessboardPieces board;
+
     unordered_map<string, MatrixIndex> notationToIndex;
     unordered_map<MatrixIndex, string, PairHash> indexToNotation;
-    vector<Vector3d> deadPieceLocations;
-    int deadPieceLocationIndex;
 
-    void initializeBoard();
-    void initializeMappings();
+    vector<string> deadPieceNames;
+    vector<Vector3d> deadRobotPieceLocations;
+    vector<Vector3d> deadPlayerPieceLocations;
+    int deadRobotPieceLocationIndex;
+    int deadPlayerPieceLocationIndex;
+
+    vector<vector<pair<double, double>>> physicalCoordinates;
+    vector<Vector3d> allPhysicalCoordinates;
 };
 

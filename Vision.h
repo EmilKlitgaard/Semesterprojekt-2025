@@ -1,36 +1,35 @@
-#pragma once
+#ifndef CHESSVISION_H
+#define CHESSVISION_H
 
 #include <opencv2/opencv.hpp>
-#include <vector>
-#include <algorithm>
 #include <iostream>
 
 using namespace cv;
 using namespace std;
 
+using ChessboardMatrix = vector<vector<char>>;
+
 class ChessVision {
 public:
-    ChessVision(int cameraIndex = 0);
-    ~ChessVision();
-    
-    bool processFrame(Mat& output);
-    void releaseCamera();
+    ChessVision(int cameraIndex);  // Constructor
+    ~ChessVision();  // Destructor
+
+    bool detectChessboard(Mat& frame);  // Detects chessboard
+    bool transformChessboard(Mat& frame);  // Warps the board
+    void detectDots(Mat& frame);  // Detects red/blue dots
+    vector<Point2f> getSquareCenters() const;  // Calculates square centers
+    void showFrame();  // Captures and displays frames
+    void showLiveFeed();              // Live kamera
+    ChessboardMatrix processCurrentFrame();      // Én billed-behandling
+    ChessboardMatrix getBoardMatrix(const Mat& frame);  // Returnerer 8x8 matrix
+    void printBoard(Mat &frame, ChessboardMatrix &boardMatrix);
 
 private:
-    VideoCapture cap;
-    Size boardSize = Size(7, 7); // Inner corners for 8x8 board
-    vector<Point2f> corners;
-    const int targetSize = 600; // Warped output size
-
-    bool findChessboard(Mat& frame);
-    bool transformChessboard(Mat& frame);
-    bool checkCornersValid(const vector<Point2f>& corners);
-    
-    void drawOverlay(Mat& frame);
-    void detectDots(Mat& frame); 
-    
-    vector<Point2f> getSquareCenters() const;
-    vector<Point2f> getOuterCorners() const;
-    
-    Mat preprocessImage(Mat& input);
+    VideoCapture cap;  // Camera object
+    Size boardSize = Size(7, 7);  // Chessboard size (7x7 corners)
+    vector<Point2f> corners;  // Stores detected corners
+    const int targetSize = 1000;  // Target size for transformed board
+    Mat currentFrame;  // Gem seneste live-frame
 };
+
+#endif // CHESSVISION_H

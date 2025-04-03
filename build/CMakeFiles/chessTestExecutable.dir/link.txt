@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o -o chessTestExecutable   -L/usr/local/lib 

@@ -2580,15 +2580,18 @@ CMakeFiles/ChessRobot.dir/main.cpp.o: ../main.cpp \
   /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /usr/include/eigen3/Eigen/src/Eigenvalues/RealQZ.h \
   /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /usr/include/opencv4/opencv2/highgui/highgui.hpp \
-  /usr/include/opencv4/opencv2/highgui.hpp \
+  ../Chessboard.h \
+  /usr/include/aarch64-linux-gnu/sys/wait.h \
+  ../Stockfish.h \
+  ../Vision.h \
+  /usr/include/opencv4/opencv2/opencv.hpp \
+  /usr/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/opencv4/opencv2/core.hpp \
   /usr/include/opencv4/opencv2/core/cvdef.h \
   /usr/include/opencv4/opencv2/core/version.hpp \
   /usr/include/opencv4/opencv2/core/hal/interface.h \
   /usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
   /usr/include/opencv4/opencv2/core/base.hpp \
-  /usr/include/opencv4/opencv2/opencv_modules.hpp \
   /usr/include/opencv4/opencv2/core/cvstd.hpp \
   /usr/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
   /usr/include/opencv4/opencv2/core/neon_utils.hpp \
@@ -2611,13 +2614,6 @@ CMakeFiles/ChessRobot.dir/main.cpp.o: ../main.cpp \
   /usr/include/opencv4/opencv2/core/optim.hpp \
   /usr/include/opencv4/opencv2/core/ovx.hpp \
   /usr/include/opencv4/opencv2/core/cvdef.h \
-  /usr/include/opencv4/opencv2/imgcodecs.hpp \
-  /usr/include/opencv4/opencv2/videoio.hpp \
-  ../Chessboard.h \
-  /usr/include/aarch64-linux-gnu/sys/wait.h \
-  ../Stockfish.h \
-  ../Vision.h \
-  /usr/include/opencv4/opencv2/opencv.hpp \
   /usr/include/opencv4/opencv2/calib3d.hpp \
   /usr/include/opencv4/opencv2/features2d.hpp \
   /usr/include/opencv4/opencv2/flann/miniflann.hpp \
@@ -2668,6 +2664,9 @@ CMakeFiles/ChessRobot.dir/main.cpp.o: ../main.cpp \
   /usr/include/opencv4/opencv2/flann/index_testing.h \
   /usr/include/opencv4/opencv2/flann/timer.h \
   /usr/include/opencv4/opencv2/flann/sampling.h \
+  /usr/include/opencv4/opencv2/highgui.hpp \
+  /usr/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/include/opencv4/opencv2/videoio.hpp \
   /usr/include/opencv4/opencv2/imgproc.hpp \
   /usr/include/opencv4/opencv2/imgproc/segmentation.hpp \
   /usr/include/opencv4/opencv2/ml.hpp \
@@ -3208,8 +3207,6 @@ CMakeFiles/ChessRobot.dir/main.cpp.o: ../main.cpp \
 /usr/include/boost/preprocessor/logical/compl.hpp:
 
 /usr/include/boost/preprocessor/detail/check.hpp:
-
-/usr/include/opencv4/opencv2/highgui/highgui.hpp:
 
 /usr/include/boost/preprocessor/list/adt.hpp:
 

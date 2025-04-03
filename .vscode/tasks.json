@@ -7,7 +7,7 @@
             "command": "bash",
             "args": [
                 "-c",
-                "cd ${workspaceFolder}/build && cmake .. && make && ./ChessRobot"
+                "cd ${workspaceFolder}/build && cmake .. && make && ./chessRobotExecutable"
             ],
             "group": {
                 "kind": "build",

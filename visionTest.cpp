@@ -1,26 +1,23 @@
 #include "Vision.h"
-#include <iostream>
+#include <thread>
 
 int main() {
-    try {
-        ChessVision vision(0);
-        namedWindow("Chessboard Detection", WINDOW_NORMAL);
-        
-        while (true) {
-            Mat frame;
-            bool success = vision.processFrame(frame);
-            
-            if (!frame.empty()) {
-                imshow("Chessboard Detection", frame);
-            }
-            
-            if (waitKey(1) == 27) break; // ESC to exit
-        }
-        
-        vision.releaseCamera();
-    } catch (const exception& e) {
-        cerr << "Fatal Error: " << e.what() << endl;
-        return 1;
+    ChessVision chessVision(4);
+
+    // Start kamera-feed i separat tråd
+    std::thread cameraThread([&]() {
+        chessVision.showLiveFeed();
+    });
+
+    string input;
+    while (true) {
+        cout << "Tryk Enter for at processere billede ('stop' for afslut): ";
+        getline(cin, input);
+        if (input == "stop" || input == "Stop") break;
+
+        chessVision.processCurrentFrame();
     }
+
+    cameraThread.join();  // Vent på kamera-tråden
     return 0;
 }

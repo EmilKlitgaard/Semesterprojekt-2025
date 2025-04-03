@@ -1,11 +1,12 @@
 {
     "files.associations": {
         "iostream": "cpp",
-        "ostream": "cpp",
-        "*.tcc": "cpp",
-        "deque": "cpp",
+        "chrono": "cpp",
+        "variant": "cpp",
         "vector": "cpp",
+        "sstream": "cpp",
         "stdexcept": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "ostream": "cpp"
     }
 }
