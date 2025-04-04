@@ -5,8 +5,8 @@
 #include <cmath>
 #include <Eigen/Dense>
 #include <string>
+#include <opencv2/highgui/highgui.hpp>
 #include <thread>
-#include <fstream>
 
 #include "Chessboard.h"
 #include "Stockfish.h"
@@ -16,7 +16,6 @@ using namespace ur_rtde;
 using namespace std;
 using namespace Eigen;
 
-using ChessboardPieces = vector<vector<string>>;
 using ChessboardMatrix = vector<vector<char>>;
 using MatrixIndex = pair<int, int>;
 
@@ -28,8 +27,6 @@ RTDEControlInterface rtde_control(robotIp, robotPort);
 RTDEReceiveInterface rtde_receive(robotIp, robotPort);
 
 Chessboard board;
-
-Vector3d transformVector = {0.0, 0.0, 0.1};
 
 /*============================================================
             		   FUNCTIONS
@@ -47,6 +44,34 @@ Matrix3d getRotationMatrixZ(double angleDeg) {
         sin(angleRad),  cos(angleRad),  0,
         0,              0,              1;
     return Rotation;
+}
+
+void showBoardState(const ChessboardMatrix& board) {
+    Mat display(400, 400, CV_8UC3, Scalar(255, 255, 255));
+    float squareSize = 400.0f / 8;
+    
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            Point2f topLeft(j*squareSize, i*squareSize);
+            Point2f bottomRight((j+1)*squareSize, (i+1)*squareSize);
+            
+            // Draw square
+            rectangle(display, topLeft, bottomRight, Scalar(0, 0, 0), 1);
+            
+            // Draw piece
+            if (board[i][j] == 'W') {
+                circle(display, Point(topLeft.x + squareSize/2, topLeft.y + squareSize/2), 
+                       15, Scalar(255, 0, 0), FILLED); // Blue for white
+            }
+            else if (board[i][j] == 'B') {
+                circle(display, Point(topLeft.x + squareSize/2, topLeft.y + squareSize/2), 
+                       15, Scalar(0, 0, 255), FILLED); // Red for black
+            }
+        }
+    }
+    
+    imshow("Detected Board State", display);
+    waitKey(1);
 }
 
 // Convert from Chessboard Frame to Base Frame
@@ -70,7 +95,7 @@ bool isValidMoveFormat(const string& move) {
     return validFirst && validSecond && validThird && validFourth;
 }
 
-Vector3d setChessboardOrigin(bool calibrate = false){
+Vector3d getChessboardOrigin(bool calibrate = false){
     string filename = "calibration_data.txt";
     Vector3d chessboardOrigin;
 
@@ -108,6 +133,7 @@ Vector3d setChessboardOrigin(bool calibrate = false){
     } else {
         cout << "Error saving calibration data!" << endl;
     }
+
     return chessboardOrigin;
 }
 
@@ -135,24 +161,21 @@ void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &che
     // Convert chessboard target to base frame
     Vector3d baseTarget = chessboardToBase(chessboardTarget, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
+
     cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
     rtde_control.moveL(tcpPose, speed, acceleration);
 }
 
-// Check if all positions within the calibrated chessboard are reachable
-bool AllPositionsReachable(const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    vector<Vector3d> allPositions = board.getAllPhysicalCoordinates();
-    for (const auto& position : allPositions) {
-        Vector3d baseTarget = chessboardToBase(position, chessboardOrigin, RotationMatrix);
-        vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2]};
-        auto JntPos = rtde_control.getInverseKinematics(tcpPose);
-        if (JntPos.empty()) {
-            cout << "Target pose" << baseTarget.transpose() << "is not reachable by the robot" << endl;
-            return false;
-        }
+// Placeholder: Simulate camera data retrieval.
+ChessboardMatrix getCameraData(int i) {
+    ChessboardMatrix cameraBoard(8, vector<char>(8, 'e'));
+    // Example simulation:
+    if (i == 1) {
+        cameraBoard[6][2] = 'W';
+    } else {
+        cameraBoard[4][2] = 'W';
     }
-    cout << "All target poses are reachable" << endl;
-    return true;
+    return cameraBoard;
 }
 
 // Compare camera data to determine which cell changed. Returns a pair: {from (row, col), to (row, col)}.
@@ -161,16 +184,10 @@ pair<MatrixIndex, MatrixIndex> determinePlayerMove(const ChessboardMatrix &lastP
     MatrixIndex to = {-1, -1};
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
-            if (lastPositions[i][j] == 'W' && newPositions[i][j] == 'e') {
-                if (from.first != -1 || from.second != -1) return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+            if (lastPositions[i][j] != 'e' && newPositions[i][j] == 'e') {
                 from = {i, j}; // Piece moved away from here.
-            } else if (lastPositions[i][j] == 'B' && newPositions[i][j] == 'W') {
-                if (to.first != -1 || to.second != -1) return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
-                string pieceName = "Test";
-                Vector3d deadPieceLocation = board.getDeadPieceLocation(pieceName, "Robot");
-                to = {i, j}; // Piece moved into here.
-            } else if (lastPositions[i][j] == 'e' && newPositions[i][j] == 'W') {
-                if (to.first != -1 || to.second != -1) return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+            }
+            if (lastPositions[i][j] == 'e' && newPositions[i][j] != 'e' || lastPositions[i][j] == 'W' && newPositions[i][j] == 'B' || lastPositions[i][j] == 'B' && newPositions[i][j] == 'W') {
                 to = {i, j}; // Piece moved into here.
             }
         }
@@ -188,7 +205,7 @@ string stockfishMove(Stockfish &engine, const string &latestMove) {
 }
 
 bool isOccupied(string &toNotation) {
-    ChessboardPieces boardState = board.getBoardState();
+    auto boardState = board.getBoardState();
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
             if (board.getChessNotation({i, j}) == toNotation && boardState[i][j] != "0") { 
@@ -200,142 +217,61 @@ bool isOccupied(string &toNotation) {
     return false;
 }
 
-pair<string, string> getPieceName(string notation) {
-    ChessboardPieces boardState = board.getBoardState();
-    auto [fromIndex, toIndex] = board.getMatrixIndex(notation);    
-    string fromPieceName = boardState[fromIndex.first][fromIndex.second];
-    string toPieceName = boardState[toIndex.first][toIndex.second];
-    return {fromPieceName, toPieceName};
-}
+void moveChessPiece(string &fromNotation, string &toNotation, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
+    // Get the physical coordinates for these cells.
+    Vector3d fromCoordinate = board.getPhysicalCoordinates(fromNotation);
+    Vector3d toCoordinate = board.getPhysicalCoordinates(toNotation);
 
-void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
-    moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    // closeGripper();
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
-}
-
-void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
-    moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    // openGripper();
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
-}
-
-void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    // Get the physical coordinates for the cells.
-    auto [fromCoordinate, toCoordinate] = board.getPhysicalCoordinates(robotMove);
+    Vector3d transformVector = {0.0, 0.0, 0.1};
 
     // Print the robot moves
     cout << "Robot move piece from Coordinate: (" << fromCoordinate.transpose() << "), to Coordinate: (" << toCoordinate.transpose() << ")." << endl;
     
-    // Get the piece names for later use
-    auto [fromPieceName, toPieceName] = getPieceName(robotMove);
-
     // Check if the destination cell is already occupied.
-    string toNotation = robotMove.substr(2, 2);
-    if (isOccupied(toNotation)) {
+    bool toOccupied = isOccupied(toNotation);
+
+    // If the destination cell is occupied, move the piece there to a dead piece location.
+    if (toOccupied) {
         printText("Moving occupying piece to dead piece location...");
-        Vector3d deadPieceLocation = board.getDeadPieceLocation(toPieceName, "Player");
-
-        pickUpPiece(toCoordinate, chessboardOrigin, RotationMatrix);
-        placePiece(deadPieceLocation, chessboardOrigin, RotationMatrix);
+        Vector3d deadPieceLocation = board.getDeadPieceLocation();
+    
+        printText("Moving above toCoordinate...");
+        moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
+        printText("Moving down...");
+        moveToChessboardPoint(toCoordinate, chessboardOrigin, RotationMatrix);
+        printText("Closing gripper to pick up piece...");
+        // closeGripper();
+        printText("Moving up...");
+        moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
+        printText("Moving above deadPieceLocation...");
+        moveToChessboardPoint(deadPieceLocation + transformVector, chessboardOrigin, RotationMatrix);
+        printText("Moving down to place dead piece...");
+        moveToChessboardPoint(deadPieceLocation, chessboardOrigin, RotationMatrix);
+        printText("Opening gripper to let go of piece...");
+        // openGripper();
+        printText("Moving up...");
+        moveToChessboardPoint(deadPieceLocation + transformVector, chessboardOrigin, RotationMatrix);
     }
-
-    // Move the selected piece
-    pickUpPiece(fromCoordinate, chessboardOrigin, RotationMatrix);
-    placePiece(toCoordinate, chessboardOrigin, RotationMatrix);
-
-    // Check for pawn promotion
-    if (robotMove.length() == 5) {
-        printText("Moving current piece to dead piece location...");
-        Vector3d deadPieceLocation = board.getDeadPieceLocation(fromPieceName, "Robot");
-
-        pickUpPiece(toCoordinate, chessboardOrigin, RotationMatrix);
-        placePiece(deadPieceLocation, chessboardOrigin, RotationMatrix);
-
-        printText("Retrieving pawnPromotedPiece from dead piece location...");
-        string promotionType = robotMove.substr(4, 1); 
-        string promotionPieceName;
-        if (promotionType == "q") { 
-            promotionPieceName = "5B";  // Queen
-        } else if (promotionType == "r") { 
-            promotionPieceName = "2B";  // Rook
-        } else if (promotionType == "b") { 
-            promotionPieceName = "4B";  // Bishop
-        } else if (promotionType == "n") { 
-            promotionPieceName = "3B";  // Knight
-        } else {
-            throw invalid_argument("Stockfish pawnPromotion output error. Stockfish output: " + robotMove);
-        }
-        Vector3d promotionPieceLocation = board.searchDeadPieceLocation(promotionPieceName);
-
-        pickUpPiece(promotionPieceLocation, chessboardOrigin, RotationMatrix);
-        placePiece(toCoordinate, chessboardOrigin, RotationMatrix);
-    }
-}
-
-// pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision chessVision) {
-//     while (true) {
-//         // Retrieve camera data before and after player's move.
-//         printText("Place camera in frame and press ENTER...");
-//         cin.get();
-//         ChessboardMatrix lastPositions = chessVision.processCurrentFrame();
-//         printText("Make your move and press ENTER...");
-//         cin.get();
-//         ChessboardMatrix newPositions = chessVision.processCurrentFrame();
-        
-//         // Determine the player's move. Converts camera output matrix(8x8) to move index e.g.: ({2.1}, {2.3}).
-//         auto [playerFromIndex, playerToIndex] = determinePlayerMove(lastPositions, newPositions);
-        
-//         if (playerFromIndex.first != -1 && playerFromIndex.second != -1) {
-//             return {playerFromIndex, playerToIndex};
-//         } else {
-//             printText("Invalid camera data, try again...");
-//         }
-//     }
-// }
-
-pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
-    // Capture the initial reference board state.
-    printText("Getting initial reference board state...");
-    ChessboardMatrix refState = chessVision.getRefVisionBoard();
-
-    while (true) {
-        printText("Make your move and press ENTER...");
-        cin.get();
-        ChessboardMatrix newState1 = chessVision.processCurrentFrame();
-
-        // Determine the player's move comparing the reference to the new state.
-        auto [moveFrom, moveTo] = determinePlayerMove(refState, newState1);
-        
-        // If a valid move is detected...
-        if (moveFrom.first != -1 && moveFrom.second != -1) {
-            printText("Change detected. Verifying redundancy...");
-
-            // Redundancy check 1:
-            printText("Press ENTER for redundancy check 1...");
-            cin.get();
-            ChessboardMatrix newState2 = chessVision.processCurrentFrame();
-
-            // Redundancy check 2:
-            printText("Press ENTER for redundancy check 2...");
-            cin.get();
-            ChessboardMatrix newState3 = chessVision.processCurrentFrame();
-
-            // Check if all three moves are identical.
-            if (newState1 == newState2 && newState2 == newState3) {
-                chessVision.setRefVisionBoard(newState1);
-                return {moveFrom, moveTo};
-            }
-            else {
-                printText("Redundancy check failed. Restarting detection...");
-            }
-        }
-        else {
-            printText("No valid move detected. Waiting for change...");
-        }
-    }
+    
+    // Sequence of movements for picking up the piece:
+    printText("Moving above fromCoordinate...");
+    moveToChessboardPoint(fromCoordinate + transformVector, chessboardOrigin, RotationMatrix);
+    printText("Moving down...");
+    moveToChessboardPoint(fromCoordinate, chessboardOrigin, RotationMatrix);
+    printText("Closing gripper to pick up piece...");
+    // closeGripper();
+    printText("Moving up...");
+    moveToChessboardPoint(fromCoordinate + transformVector, chessboardOrigin, RotationMatrix);
+    
+    // Sequence of movements for moving and placing the piece:
+    printText("Moving above toCoordinate...");
+    moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
+    printText("Moving down...");
+    moveToChessboardPoint(toCoordinate, chessboardOrigin, RotationMatrix);
+    printText("Opening gripper to release piece...");
+    // openGripper();
+    printText("Moving up...");
+    moveToChessboardPoint(toCoordinate + transformVector, chessboardOrigin, RotationMatrix);
 }
 
 /*============================================================
@@ -348,10 +284,10 @@ int main() {
         return -1;
     }
     
-    //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
-    vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
-    rtde_control.setTcp(tcpCalibrationOffset);
-    
+    //   ==========   SET TCP OFFSET   ==========   //
+    vector<double> tcpOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
+    rtde_control.setTcp(tcpOffset);
+
     //   ==========   INITIALIZE COMPUTER VISION   ==========   //
     ChessVision chessVision(4);
 
@@ -359,67 +295,82 @@ int main() {
     std::thread cameraThread([&]() {
         chessVision.showLiveFeed();
     });
-
+    
     //   ==========   SET CHESSBOARD ORIGIN   ==========   //
-    Vector3d chessboardOrigin = setChessboardOrigin(true);
+    Vector3d chessboardOrigin = getChessboardOrigin(true);
     
     // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
     Matrix3d RotationChess = getRotationMatrixZ(22.5 - 90);
-    //cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
-
-    // Check if all positions within the calibrated chessboard are reachable
-    while (!AllPositionsReachable(chessboardOrigin, RotationChess)) {
-        chessboardOrigin = setChessboardOrigin(true);
-    }
-
-    //   ==========   UPDATE TCP OFFSET   ==========   //
-    vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0};
-    rtde_control.setTcp(tcpOffset);
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition();
+
     Vector3d chessboardTarget1(0.0, 0.0, 0.0);
     moveToChessboardPoint(chessboardTarget1, chessboardOrigin, RotationChess);
+    
     Vector3d chessboardTarget2(0.4, 0.4, 0.0);
     moveToChessboardPoint(chessboardTarget2, chessboardOrigin, RotationChess);
+
     moveToAwaitPosition();
 
     //   ==========   BEGIN CHESS GAME   ==========   //
-    printText("Press ENTER to start chess game...");
+    cout << "Press ENTER to start chess game..." << endl;
     cin.get();
-    Stockfish engine("/home/ubuntu/Stockfish/src/stockfish");  
-    printText("\n----- CHESS GAME STARTED -----");
+    Stockfish engine("/usr/games/stockfish");
+    cout << "\n" << "----- CHESS GAME STARTED -----" << endl;
     
     while (true) {
-        auto [playerFromIndex, playerToIndex] = getCameraData(chessVision);
+        // Retrieve camera data before and after player's move.
+        cout << "Place camera in frame and press ENTER..." << endl;
+        cin.get();
+        ChessboardMatrix lastPositions = chessVision.processCurrentFrame();
+        cout << "Make your move and press ENTER..." << endl;
+        cin.get();
+        ChessboardMatrix newPositions = chessVision.processCurrentFrame();
+        
+        // Determine the player's move.
+        auto moveIndices = determinePlayerMove(lastPositions, newPositions);
+        MatrixIndex playerFromIndex = moveIndices.first;
+        MatrixIndex playerToIndex = moveIndices.second;
 
         // Convert into chess notation e.g "e2e4"
-        //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
         string playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
+        
+        //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
         cout << "Player move: " << playerMove << endl;
-        auto [playerFromIdx, playerToIdx] = board.getMatrixIndex(playerMove);
+        string playerFromNotation = playerMove.substr(0, 2);
+        string playerToNotation   = playerMove.substr(2, 2);
+        MatrixIndex playerFromIdx = board.getMatrixIndex(playerFromNotation);
+	    MatrixIndex playerToIdx   = board.getMatrixIndex(playerToNotation);
 
-        // Update internal chessboard with the player's move.
+        // Update our internal chessboard with the player's move.
         board.updateChessboard(playerFromIdx, playerToIdx);
         board.printBoard();
         
-        // Get the move from Stockfish (in chess notation, e.g., "a2a4")
-	    string robotMove = stockfishMove(engine, playerMove);
+        // Get the move from Stockfish (in chess notation, e.g., "A2A4")
+	    string stockfisBesthMove = stockfishMove(engine, playerMove);
+
+        // Convert Stockfish move to from- and to- notations.
+        string fromNotation = stockfisBesthMove.substr(0, 2);
+        string toNotation   = stockfisBesthMove.substr(2, 2);
         
         // Move the chess piece using the robot.
-        moveChessPiece(robotMove, chessboardOrigin, RotationChess);
+        moveChessPiece(fromNotation, toNotation, chessboardOrigin, RotationChess);
         
         // After robot move, update the board accordingly.
-        auto [robotFromIdx, robotToIdx] = board.getMatrixIndex(playerMove);
-	    board.updateChessboard(robotFromIdx, robotToIdx);
+        MatrixIndex fromIdx = board.getMatrixIndex(fromNotation);
+	    MatrixIndex toIdx   = board.getMatrixIndex(toNotation);
+	    board.updateChessboard(fromIdx, toIdx);
         board.printBoard();
         
         moveToAwaitPosition();
 
         if (engine.isCheckmate()) {
-            printText("Game has ended");
+            //moveToAwaitPosition(rtde_control);
+            cout << "Game has ended" << endl;
             return 0;
         }
     }
+
     return 0;
 }

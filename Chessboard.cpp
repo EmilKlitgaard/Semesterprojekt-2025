@@ -2,9 +2,6 @@
 
 Chessboard::Chessboard() {
     initializeBoard();
-    initializePhysicalCoordinates();
-    initializeDeadPieceLocations();
-    initializeReachabilityCheck();
     initializeMappings();
 }
 
@@ -20,73 +17,83 @@ void Chessboard::initializeBoard() {
         {"1W", "1W", "1W", "1W", "1W", "1W", "1W", "1W"}, // White pawns
         {"2W", "3W", "4W", "5W", "6W", "4W", "3W", "2W"}  // White major pieces
     };
-}
 
-// Initialize physical coordinates for each board cell
-void Chessboard::initializePhysicalCoordinates() {
-    const double cellSize = 0.05;
-    const double halfCell = cellSize / 2.0;
+    // Initialize deadPiece board
+    deadRobotPieces = {
+        {"0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"}
+    };
 
+    // Initialize physical coordinates (each cell is 0.05m x 0.05m)
     for (int i = 0; i < 8; i++) {
         vector<pair<double, double>> row;
         for (int j = 0; j < 8; j++) {
-            row.emplace_back((i * cellSize) + halfCell, (j * cellSize) + halfCell);
+            row.emplace_back((i*0.05)+0.025, (j*0.05)+0.025);
         }
         physicalCoordinates.push_back(row);
     }
-}
 
-// Generate coordinates for dead piece locations
-void Chessboard::initializeDeadPieceLocations() {   
-    deadPieceNames.resize(16, "");
-    deadRobotPieceLocationIndex = 0;
-    deadPlayerPieceLocationIndex = 0; 
-    
-    generateDeadPieceLocations(deadRobotPieceLocations, 0.025, 0.475, true);
-    generateDeadPieceLocations(deadPlayerPieceLocations, 0.375, -0.075, false);
-}
-
-// Helper function to generate dead piece locations
-void Chessboard::generateDeadPieceLocations(vector<Vector3d>& locations, double xStart, double yStart, bool isRobot) {
-    const double cellSize = 0.05;
+    // Generate deadPieceLocations coordinates
+    const double cellSize = 0.05; // Each cell is 0.05m x 0.05m
     const double z = 0.0;
-    double y = yStart;
-
+    deadPiecePlayerLocationIndex = 0;
+    const double xStart1 = 0.375;
+    double y1 = -0.075;
     for (int i = 0; i < 2; ++i) {
-        if (i == 1) y += (isRobot ? cellSize : -cellSize);
+        if (i == 1) { y1 -= cellSize; }
         for (int j = 0; j < 8; ++j) {
-            double x = isRobot ? (xStart + j * cellSize) : (xStart - j * cellSize);
-            locations.push_back(Vector3d(x, y, z));
+            double x1 = xStart1 - j * cellSize;
+            deadPiecePlayerLocations.push_back(Vector3d(x1, y1, z));
+        }
+    }
+    deadPieceRobotLocationIndex = 0;
+    const double xStart2 = 0.025;
+    double y2 = 0.475;
+    for (int i = 0; i < 2; ++i) {
+        if (i == 1) { y2 += cellSize; }
+        for (int j = 0; j < 8; ++j) {
+            double x2 = xStart2 + j * cellSize;
+            deadPieceRobotLocations.push_back(Vector3d(x2, y2, z));
         }
     }
 }
 
-// Initialize all reachable positions for movement checks
-void Chessboard::initializeReachabilityCheck() {
-    const double hoverOffset = 0.10;
-    for (const auto& row : physicalCoordinates) {
-        for (const auto& pos : row) {
-            addReachabilityPosition(pos.first, pos.second, hoverOffset);
+// Set the dead piece location at a specific index
+Vector3d Chessboard::setDeadPieceLocation(string player) {
+    Vector3d location;
+    if (player == "robot") {
+        if (deadPiecePlayerLocationIndex < 0 || deadPiecePlayerLocationIndex >= deadPiecePlayerLocations.size()) {
+            throw out_of_range("Index out of range for deadPiecePlayerLocation");
         }
+        location = deadPiecePlayerLocations[deadPiecePlayerLocationIndex];
+        deadPiecePlayerLocationIndex++;
+        cout << "Current deadPiecePlayerLocationIndex: " << deadPiecePlayerLocationIndex << endl;
+    } else {
+        if (deadPieceRobotLocationIndex < 0 || deadPieceRobotLocationIndex >= deadPieceRobotLocations.size()) {
+            throw out_of_range("Index out of range for deadPieceRobotLocation");
+        }
+        location = deadPieceRobotLocations[deadPieceRobotLocationIndex];
+        deadPieceRobotLocationIndex++;
+        cout << "Current deadPieceRobotLocationIndex: " << deadPieceRobotLocationIndex << endl;
     }
-    for (const auto& pos : deadRobotPieceLocations) {
-        addReachabilityPosition(pos[0], pos[1], hoverOffset);
-    }
-    for (const auto& pos : deadPlayerPieceLocations) {
-        addReachabilityPosition(pos[0], pos[1], hoverOffset);
-    }
+
+    //update deadPieces here with the input string 
+    return location;
 }
 
-// Helper function to add a base and hover position
-void Chessboard::addReachabilityPosition(double x, double y, double hoverOffset) {
-    allPhysicalCoordinates.push_back(Vector3d(x, y, 0.0));          // Base position
-    allPhysicalCoordinates.push_back(Vector3d(x, y, hoverOffset));  // Hover position
+// Get the dead piece location at a specific index
+Vector3d Chessboard::getDeadPieceLocation() {
+    if (deadPiecePlayerLocationIndex < 0 || deadPiecePlayerLocationIndex >= deadPiecePlayerLocations.size()) {
+        throw out_of_range("Index out of range for deadPieceLocation");
+    }
+    Vector3d location = deadPiecePlayerLocations[deadPiecePlayerLocationIndex];
+    deadPiecePlayerLocationIndex++;
+    cout << "Current deadPiecePlayerLocationIndex: " << deadPiecePlayerLocationIndex << endl;
+    return location;
 }
 
 // Map chess notation (e.g. "a1") to matrix indices (row, col)
 void Chessboard::initializeMappings() {
-    const string columns = "abcdefgh";
-    
+    string columns = "abcdefgh";
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
             string notation = columns[j] + to_string(8 - i);
@@ -94,45 +101,6 @@ void Chessboard::initializeMappings() {
             indexToNotation[{i, j}] = notation;
         }
     }
-}
-
-vector<Vector3d> Chessboard::getAllPhysicalCoordinates() {
-    return allPhysicalCoordinates;
-}
-
-// Get the next dead piece location
-Vector3d Chessboard::getDeadPieceLocation(const string &pieceName, const string &origin) {
-    if (origin == "Robot") {
-        if (deadRobotPieceLocationIndex < 0 || deadRobotPieceLocationIndex >= deadRobotPieceLocations.size()) {
-            throw out_of_range("Index out of range for deadPieceLocation");
-        }
-        Vector3d location = deadRobotPieceLocations[deadRobotPieceLocationIndex];
-        deadPieceNames[deadRobotPieceLocationIndex] = pieceName;
-        deadRobotPieceLocationIndex++;
-        cout << "Current deadRobotPieceLocationIndex: " << deadRobotPieceLocationIndex << endl;
-        return location;
-    } else if (origin == "Player") {
-        if (deadPlayerPieceLocationIndex < 0 || deadPlayerPieceLocationIndex >= deadPlayerPieceLocations.size()) {
-            throw out_of_range("Index out of range for deadPieceLocation");
-        }
-        Vector3d location = deadPlayerPieceLocations[deadPlayerPieceLocationIndex];
-        deadPlayerPieceLocationIndex++;
-        cout << "Current deadPlayerPieceLocationIndex: " << deadPlayerPieceLocationIndex << endl;
-        return location;
-    } else {
-        throw invalid_argument("Invalid origin");
-    }
-}
-
-// Search for a specific dead piece location
-Vector3d Chessboard::searchDeadPieceLocation(const string &pieceName) {
-    for (int i = 0; i < deadPieceNames.size(); ++i) {
-        if (deadPieceNames[i] == pieceName) {
-            cout << "Found '" << pieceName << "' at index: " << i << ", with coordinate (" << deadRobotPieceLocations[i].x() << ", " << deadRobotPieceLocations[i].y() << ", " << deadRobotPieceLocations[i].z() << ")" << std::endl;
-            return deadRobotPieceLocations[i];
-        }
-    }
-    throw invalid_argument("Piece name not found in dead pieces");
 }
 
 // Convert matrix index to chess notation (e.g., (0,0) -> "a8")
@@ -144,11 +112,9 @@ string Chessboard::getChessNotation(MatrixIndex position1, MatrixIndex position2
     return indexToNotation[position1] + indexToNotation[position2];
 }
 
-// Convert chess notation to matrix index (e.g., "a8a5" -> {0,0}, {0,4}))
-pair<MatrixIndex, MatrixIndex> Chessboard::getMatrixIndex(string& notation) {
-    string fromNotation = notation.substr(0, 2);
-    string toNotation   = notation.substr(2, 2);
-    return {notationToIndex[fromNotation], notationToIndex[toNotation]};
+// Convert chess notation to matrix index (e.g., "a1" -> (0,0))
+MatrixIndex Chessboard::getMatrixIndex(const string& notation) {
+    return notationToIndex[notation];
 }
 
 // Update the board state after a move
@@ -187,14 +153,17 @@ void Chessboard::printBoard(const string &mode) {
 }
 
 // Get the current board state
-ChessboardPieces Chessboard::getBoardState() {
+vector<vector<string>> Chessboard::getBoardState() {
     return board;
 }
 
-// Convert chess notation (e.g., "a2a4") to physical coordinates {(XYZ), (XYZ)}.
-pair<Vector3d, Vector3d> Chessboard::getPhysicalCoordinates(string& notation) {
-    auto [from, to] = getMatrixIndex(notation);
-    auto& [x1, y1] = physicalCoordinates[from.first][from.second];
-    auto& [x2, y2] = physicalCoordinates[to.first][to.second];
-    return { Vector3d(x1, y1, 0.0), Vector3d(x2, y2, 0.0) };
+// Convert chess notation (e.g., "A2") to physical coordinates (XYZ).
+Vector3d Chessboard::getPhysicalCoordinates(const string& notation) {
+    auto indices = getMatrixIndex(notation); // returns {i, j} with i=0 for rank 8, i=7 for rank 1
+    int i = indices.first;
+    int j = indices.second;
+    double x = physicalCoordinates[i][j].first;
+    double y = physicalCoordinates[i][j].second;
+    double z = 0.0;  // constant z height
+    return Eigen::Vector3d(x, y, z);
 }

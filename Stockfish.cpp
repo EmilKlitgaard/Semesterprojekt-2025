@@ -1,7 +1,6 @@
 #include "Stockfish.h"
 
 Stockfish::Stockfish(const string& engine_path) : enginePath(engine_path) {
-    cout << "Starting Stockfish engine..." << endl;
     startEngine();
 }
 
@@ -132,12 +131,12 @@ string Stockfish::getBestMove(const string& latestMove) {
 
     // Send the position command
     sendCommand(positionCommand);
-    sendCommand("go depth 30");
+    sendCommand("go movetime 1000");
 
     string response = readResponse("bestmove");
 
     // Debugging: Print the raw response
-    cout << "Raw Stockfish response: " << response << endl;
+    // cout << "Raw Stockfish response: " << response << endl;
 
     // Extract the best move from the response
     size_t bestmovePos = response.find("bestmove");

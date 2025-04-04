@@ -15,7 +15,6 @@
 using namespace std;
 using namespace Eigen;
 
-using ChessboardPieces = vector<vector<string>>;
 using MatrixIndex = pair<int, int>;
 
 // Custom hash for MatrixIndex
@@ -38,38 +37,28 @@ public:
 
     string getChessNotation(MatrixIndex position);
     string getChessNotation(MatrixIndex position1, MatrixIndex position2);
-    pair<MatrixIndex, MatrixIndex> getMatrixIndex(string& notation);
-    pair<Vector3d, Vector3d> getPhysicalCoordinates(string &notation);
+    MatrixIndex getMatrixIndex(const string& notation);
+    Vector3d getPhysicalCoordinates(const string &notation);
 
-    ChessboardPieces getBoardState();
+    vector<vector<string>> getBoardState();
+    
+    Vector3d getDeadPieceLocation();
+    Vector3d setDeadPieceLocation(string player = "robot");
 
-    Vector3d getDeadPieceLocation(const string &pieceName, const string &origin);
-    Vector3d searchDeadPieceLocation(const string &pieceName);
-
-    vector<Vector3d> getAllPhysicalCoordinates();
+    void updateDeadPieces(MatrixIndex from, MatrixIndex to);
 
 private:
-    void initializeBoard();
-    void initializePhysicalCoordinates();
-    void initializeDeadPieceLocations();
-    void initializeReachabilityCheck();
-    void initializeMappings();
-
-    void addReachabilityPosition(double x, double y, double hoverOffset);
-    void generateDeadPieceLocations(vector<Vector3d>& locations, double xStart, double yStart, bool isRobot);
-
-    ChessboardPieces board;
-
+    vector<vector<string>> board;
+    vector<vector<pair<double, double>>> physicalCoordinates;
     unordered_map<string, MatrixIndex> notationToIndex;
     unordered_map<MatrixIndex, string, PairHash> indexToNotation;
 
-    vector<string> deadPieceNames;
-    vector<Vector3d> deadRobotPieceLocations;
-    vector<Vector3d> deadPlayerPieceLocations;
-    int deadRobotPieceLocationIndex;
-    int deadPlayerPieceLocationIndex;
+    vector<string> deadRobotPieces;
+    vector<Vector3d> deadPiecePlayerLocations;
+    vector<Vector3d> deadPieceRobotLocations;
+    int deadPiecePlayerLocationIndex;
+    int deadPieceRobotLocationIndex;
 
-    vector<vector<pair<double, double>>> physicalCoordinates;
-    vector<Vector3d> allPhysicalCoordinates;
+    void initializeBoard();
+    void initializeMappings();
 };
-
