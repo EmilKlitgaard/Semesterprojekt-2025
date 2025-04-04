@@ -7,6 +7,7 @@ ChessVision::ChessVision(int cameraIndex) {
         cerr << "Error: Camera not opened!" << endl;
         exit(1);
     }
+    initializeVisionBoard();
 }
 
 // Destructor: Releases the camera
@@ -14,16 +15,30 @@ ChessVision::~ChessVision() {
     cap.release();
 }
 
+void ChessVision::initializeVisionBoard() {
+    ChessboardMatrix refVisionBoard(8, vector<char>(8, 'e')); // 8x8 matrix filled with 'e'
+    // Fill the first two rows with 'B' (Black pieces) and last two rows with 'W' (White pieces)
+    for (int row = 0; row < 8; ++row) {
+        if (row < 2) {
+            fill(refVisionBoard[row].begin(), refVisionBoard[row].end(), 'B');
+        } else if (row >= 6) {
+            fill(refVisionBoard[row].begin(), refVisionBoard[row].end(), 'W');
+        }
+    }
+}
+
+ChessboardMatrix ChessVision::getRefVisionBoard() {
+    return refVisionBoard;
+}
+
+void ChessVision::setRefVisionBoard(ChessboardMatrix &newRefVisionBoard) {
+    ChessboardMatrix refVisionBoard = newRefVisionBoard;
+}
+
 // Detects chessboard corners
 bool ChessVision::detectChessboard(Mat& frame) {
     bool found = findChessboardCornersSB(frame, boardSize, corners);
-
-    /*
-    if (found) {
-        drawChessboardCorners(frame, boardSize, corners, found);
-    }
-    */
-   
+    // if (found) drawChessboardCorners(frame, boardSize, corners, found);
     return found;
 }
 

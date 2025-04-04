@@ -2,7 +2,7 @@
 #include <thread>
 
 int main() {
-    ChessVision chessVision(4);
+    ChessVision chessVision(3);
 
     // Start kamera-feed i separat tråd
     std::thread cameraThread([&]() {

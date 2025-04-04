@@ -275,28 +275,68 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
     }
 }
 
-pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision chessVision) {
+// pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision chessVision) {
+//     while (true) {
+//         // Retrieve camera data before and after player's move.
+//         printText("Place camera in frame and press ENTER...");
+//         cin.get();
+//         ChessboardMatrix lastPositions = chessVision.processCurrentFrame();
+//         printText("Make your move and press ENTER...");
+//         cin.get();
+//         ChessboardMatrix newPositions = chessVision.processCurrentFrame();
+        
+//         // Determine the player's move. Converts camera output matrix(8x8) to move index e.g.: ({2.1}, {2.3}).
+//         auto [playerFromIndex, playerToIndex] = determinePlayerMove(lastPositions, newPositions);
+        
+//         if (playerFromIndex.first != -1 && playerFromIndex.second != -1) {
+//             return {playerFromIndex, playerToIndex};
+//         } else {
+//             printText("Invalid camera data, try again...");
+//         }
+//     }
+// }
+
+pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
+    // Capture the initial reference board state.
+    printText("Getting initial reference board state...");
+    ChessboardMatrix refState = chessVision.getRefVisionBoard();
+
     while (true) {
-        // Retrieve camera data before and after player's move.
-        printText("Place camera in frame and press ENTER...");
-        cin.get();
-        ChessboardMatrix lastPositions = chessVision.processCurrentFrame();
         printText("Make your move and press ENTER...");
         cin.get();
-        ChessboardMatrix newPositions = chessVision.processCurrentFrame();
-        
-        // Determine the player's move. Converts camera output matrix(8x8) to move index e.g.: ({2.1}, {2.3}).
-        auto [playerFromIndex, playerToIndex] = determinePlayerMove(lastPositions, newPositions);
-        
-        if (playerFromIndex.first != -1 && playerFromIndex.second != -1) {
-            return {playerFromIndex, playerToIndex};
-        } else {
-            printText("Invalid camera data, try again...");
-        }
+        ChessboardMatrix newState1 = chessVision.processCurrentFrame();
 
+        // Determine the player's move comparing the reference to the new state.
+        auto [moveFrom, moveTo] = determinePlayerMove(refState, newState1);
+        
+        // If a valid move is detected...
+        if (moveFrom.first != -1 && moveFrom.second != -1) {
+            printText("Change detected. Verifying redundancy...");
+
+            // Redundancy check 1:
+            printText("Press ENTER for redundancy check 1...");
+            cin.get();
+            ChessboardMatrix newState2 = chessVision.processCurrentFrame();
+
+            // Redundancy check 2:
+            printText("Press ENTER for redundancy check 2...");
+            cin.get();
+            ChessboardMatrix newState3 = chessVision.processCurrentFrame();
+
+            // Check if all three moves are identical.
+            if (newState1 == newState2 && newState2 == newState3) {
+                chessVision.setRefVisionBoard(newState1);
+                return {moveFrom, moveTo};
+            }
+            else {
+                printText("Redundancy check failed. Restarting detection...");
+            }
+        }
+        else {
+            printText("No valid move detected. Waiting for change...");
+        }
     }
 }
-
 
 /*============================================================
             		    MAIN START
