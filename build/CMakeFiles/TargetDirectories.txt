@@ -1,6 +1,6 @@
-/home/ubuntu/Workspace/test_rtde/build/CMakeFiles/chessRobotExecutable.dir
-/home/ubuntu/Workspace/test_rtde/build/CMakeFiles/visionTestExecutable.dir
-/home/ubuntu/Workspace/test_rtde/build/CMakeFiles/stockfishTestExecutable.dir
-/home/ubuntu/Workspace/test_rtde/build/CMakeFiles/chessTestExecutable.dir
-/home/ubuntu/Workspace/test_rtde/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/Workspace/test_rtde/build/CMakeFiles/rebuild_cache.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessRobotExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/visionTestExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/stockfishTestExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessTestExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/edit_cache.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/rebuild_cache.dir

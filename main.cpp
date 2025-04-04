@@ -36,7 +36,7 @@ Vector3d transformVector = {0.0, 0.0, 0.1};
 ============================================================*/
 // Function to create a rotation matrix in degrees around Z-axis
 void printText(string text) {
-    //cout << text << endl;
+    cout << text << endl;
 }
 
 Matrix3d getRotationMatrixZ(double angleDeg) {
@@ -85,18 +85,19 @@ Vector3d setChessboardOrigin(bool calibrate = false){
             cout << "Loaded calibration data: [" << chessboardOrigin.transpose() << "]" << endl;
             return chessboardOrigin;
         } else {
-            cout << "Calibration file not found! Running calibration..." << endl;
+            printText("Calibration file not found! Running calibration...");
         }
     }
 
     // Perform calibration
     rtde_control.teachMode(); // Enable freemove mode
-    cout << "Freemove mode enabled. Move the robot pointer to the chessboard A1 corner and press ENTER." << endl;
+    printText("Freemove mode enabled. Move the robot pointer to the chessboard A1 corner and press ENTER.");
     cin.get(); // Wait for user input
     rtde_control.endTeachMode(); // Disable freemove mode
-    cout << "Freemove mode disabled. Saving chessboard frame origin." << endl;
+    printText("Freemove mode disabled. Saving chessboard frame origin.");
 
     vector<double> tcpPose = rtde_receive.getActualTCPPose();
+    cout << "Captured TCP pose coordinates: (" << tcpPose[0] << ", " << tcpPose[1] << ", " << tcpPose[2] << ")" << endl;
     chessboardOrigin = Vector3d(tcpPose[0], tcpPose[1], tcpPose[2]);
 
     // Save calibration data
@@ -104,22 +105,22 @@ Vector3d setChessboardOrigin(bool calibrate = false){
     if (outFile.is_open()) {
         outFile << chessboardOrigin.x() << " " << chessboardOrigin.y() << " " << chessboardOrigin.z() << endl;
         outFile.close();
-        cout << "Calibration data saved." << endl;
+        printText("Calibration data saved.");
     } else {
-        cout << "Error saving calibration data!" << endl;
+        printText("Error saving calibration data!");
     }
     return chessboardOrigin;
 }
 
 string inputPlayerMove() {
     string playerMove;
-    cout << "Input your move e.g.: 'e2e4': " << endl;
+    printText("Input your move e.g.: 'e2e4': ");
     while (true) {
         cin >> playerMove;
         if (isValidMoveFormat(playerMove)) {
             return playerMove;
         } else {
-            cout << "Invalid move format. Please enter a move in the format 'e2e4': " << endl;
+            printText("Invalid move format. Please enter a move in the format 'e2e4': ");
         }
     }
 }
@@ -141,13 +142,15 @@ void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &che
 
 // Check if all positions within the calibrated chessboard are reachable
 bool AllPositionsReachable(const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
+    printText("Checking for reachability...");
     vector<Vector3d> allPositions = board.getAllPhysicalCoordinates();
     for (const auto& position : allPositions) {
         Vector3d baseTarget = chessboardToBase(position, chessboardOrigin, RotationMatrix);
         vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2]};
-        auto JntPos = rtde_control.getInverseKinematics(tcpPose);
+        // cout << "Checking reachability for coordinate: (" << tcpPose[0] << ", " << tcpPose[1] << ", " << tcpPose[2] << ")" << endl;
+        vector<double> JntPos = {1,1,1}; // rtde_control.getInverseKinematics(tcpPose);
         if (JntPos.empty()) {
-            cout << "Target pose" << baseTarget.transpose() << "is not reachable by the robot" << endl;
+            cout << "Target pose" << baseTarget.transpose() << " is not reachable by the robot" << endl;
             return false;
         }
     }
@@ -161,18 +164,33 @@ pair<MatrixIndex, MatrixIndex> determinePlayerMove(const ChessboardMatrix &lastP
     MatrixIndex to = {-1, -1};
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
+            printText("START TEST");
+            cout << lastPositions[0][0] << endl;
             if (lastPositions[i][j] == 'W' && newPositions[i][j] == 'e') {
-                if (from.first != -1 || from.second != -1) return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+                if (from.first != -1 || from.second != -1) {
+                    printText("ERROR DETECTED 1");
+                    return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+                }
+                printText("FROM DETECTED");
                 from = {i, j}; // Piece moved away from here.
             } else if (lastPositions[i][j] == 'B' && newPositions[i][j] == 'W') {
-                if (to.first != -1 || to.second != -1) return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+                if (to.first != -1 || to.second != -1) {
+                    printText("ERROR DETECTED 2");
+                    return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+                }
+                printText("TO 1 DETECTED");
                 string pieceName = "Test";
                 Vector3d deadPieceLocation = board.getDeadPieceLocation(pieceName, "Robot");
                 to = {i, j}; // Piece moved into here.
             } else if (lastPositions[i][j] == 'e' && newPositions[i][j] == 'W') {
-                if (to.first != -1 || to.second != -1) return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+                if (to.first != -1 || to.second != -1) {
+                    printText("ERROR DETECTED 3");
+                    return {{-1, -1}, {-1, -1}}; // Error: Multiple moves detected
+                }
+                printText("TO 2 DETECTED");
                 to = {i, j}; // Piece moved into here.
             }
+            printText("END TEST");
         }
     }
     cout << "Player moved from: (" << from.first << "," << from.second << "), to: (" << to.first << "," << to.second << ")." << endl;
@@ -289,7 +307,7 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
 //         auto [playerFromIndex, playerToIndex] = determinePlayerMove(lastPositions, newPositions);
         
 //         if (playerFromIndex.first != -1 && playerFromIndex.second != -1) {
-//             return {playerFromIndex, playerToIndex};
+//             return {playerFromIndex, playerToIndex};­
 //         } else {
 //             printText("Invalid camera data, try again...");
 //         }
@@ -305,7 +323,9 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
         printText("Make your move and press ENTER...");
         cin.get();
         ChessboardMatrix newState1 = chessVision.processCurrentFrame();
-
+        
+        if (newState1.empty()) continue; // Handle empty vision output
+        
         // Determine the player's move comparing the reference to the new state.
         auto [moveFrom, moveTo] = determinePlayerMove(refState, newState1);
         
@@ -353,7 +373,7 @@ int main() {
     rtde_control.setTcp(tcpCalibrationOffset);
     
     //   ==========   INITIALIZE COMPUTER VISION   ==========   //
-    ChessVision chessVision(4);
+    ChessVision chessVision(1);
 
     // Start kamera-feed i separat tråd
     std::thread cameraThread([&]() {
@@ -361,7 +381,7 @@ int main() {
     });
 
     //   ==========   SET CHESSBOARD ORIGIN   ==========   //
-    Vector3d chessboardOrigin = setChessboardOrigin(true);
+    Vector3d chessboardOrigin = setChessboardOrigin(false);
     
     // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
     Matrix3d RotationChess = getRotationMatrixZ(22.5 - 90);

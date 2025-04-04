@@ -108,16 +108,16 @@ Vector3d Chessboard::getDeadPieceLocation(const string &pieceName, const string 
         }
         Vector3d location = deadRobotPieceLocations[deadRobotPieceLocationIndex];
         deadPieceNames[deadRobotPieceLocationIndex] = pieceName;
-        deadRobotPieceLocationIndex++;
         cout << "Current deadRobotPieceLocationIndex: " << deadRobotPieceLocationIndex << endl;
+        deadRobotPieceLocationIndex++;
         return location;
     } else if (origin == "Player") {
         if (deadPlayerPieceLocationIndex < 0 || deadPlayerPieceLocationIndex >= deadPlayerPieceLocations.size()) {
             throw out_of_range("Index out of range for deadPieceLocation");
         }
         Vector3d location = deadPlayerPieceLocations[deadPlayerPieceLocationIndex];
-        deadPlayerPieceLocationIndex++;
         cout << "Current deadPlayerPieceLocationIndex: " << deadPlayerPieceLocationIndex << endl;
+        deadPlayerPieceLocationIndex++;
         return location;
     } else {
         throw invalid_argument("Invalid origin");

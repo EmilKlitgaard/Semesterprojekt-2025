@@ -230,7 +230,7 @@ ChessboardMatrix ChessVision::processCurrentFrame() {
             break;  // Succes
         }
 
-        waitKey(100); // Giv tid mellem forsøg
+        // waitKey(100); // Giv tid mellem forsøg
     }
 
     if (!found) {
@@ -238,7 +238,7 @@ ChessboardMatrix ChessVision::processCurrentFrame() {
     }
 
     imshow("Processeret Billede", frame);
-    waitKey(1);
+    // waitKey(1);
 
     return boardMatrix;
 }
