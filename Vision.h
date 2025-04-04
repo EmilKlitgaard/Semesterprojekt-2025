@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CHESSVISION_H
+#define CHESSVISION_H
 
 #include <opencv2/opencv.hpp>
 #include <iostream>
@@ -22,17 +23,13 @@ public:
     ChessboardMatrix processCurrentFrame();      // Én billed-behandling
     ChessboardMatrix getBoardMatrix(const Mat& frame);  // Returnerer 8x8 matrix
     void printBoard(Mat &frame, ChessboardMatrix &boardMatrix);
-    
-    ChessboardMatrix getRefVisionBoard();
-    void setRefVisionBoard(ChessboardMatrix &newRefVisionBoard);
 
 private:
-    void initializeVisionBoard();
-
     VideoCapture cap;  // Camera object
     Size boardSize = Size(7, 7);  // Chessboard size (7x7 corners)
     vector<Point2f> corners;  // Stores detected corners
     const int targetSize = 1000;  // Target size for transformed board
     Mat currentFrame;  // Gem seneste live-frame
-    ChessboardMatrix refVisionBoard;
 };
+
+#endif // CHESSVISION_H
