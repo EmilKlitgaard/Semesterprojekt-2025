@@ -6,10 +6,12 @@
 #include <Eigen/Dense>
 #include <string>
 #include <opencv2/highgui/highgui.hpp>
-
+#include "PhoneticInput.h"
 #include "Chessboard.h"
 #include "Stockfish.h"
 #include "Vision.h"
+#include "ChessGui.h"
+#include <QtWidgets/QApplication>
 
 using namespace ur_rtde;
 using namespace std;
@@ -240,7 +242,12 @@ void moveChessPiece(string &fromNotation, string &toNotation, const Vector3d &ch
 /*============================================================
             		    MAIN START
 ============================================================*/
-int main() {
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+    
+    ChessGui gui;
+    gui.show();
+
     //   ==========   VALIDATE UR5 CONNECTION   ==========   //
     if (!rtde_control.isConnected() || !rtde_receive.isConnected()) {
         cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;
@@ -354,5 +361,33 @@ int main() {
         }
     }
 
-    return 0;
+    QObject::connect(&gui, &ChessGui::gameStarted, [&]() {
+        // Start game logic
+    });
+
+    QObject::connect(&gui, &ChessGui::boardReset, [&]() {
+        // Reset board logic
+    });
+
+    QObject::connect(&gui, &ChessGui::voiceCommandToggled, [&](bool enabled) {
+        // Toggle voice commands
+    });
+
+    QObject::connect(&gui, &ChessGui::playerFirstToggled, [&](bool playerFirst) {
+        // Set who goes first
+    });
+
+    QObject::connect(&gui, &ChessGui::speedChessToggled, [&](bool enabled) {
+        // Enable/disable speed chess
+    });
+
+    QObject::connect(&gui, &ChessGui::speedChessTimeChanged, [&](int minutes) {
+        // Update speed chess time
+    });
+
+    QObject::connect(&gui, &ChessGui::difficultyChanged, [&](int value) {
+        // Update Stockfish difficulty
+    });
+
+    return app.exec();
 }

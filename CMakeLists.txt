@@ -14,7 +14,7 @@ include_directories(${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
 link_directories(/usr/local/lib)
 
 # Define the executable
-add_executable(ChessRobot main.cpp Chessboard.cpp Stockfish.cpp Vision.cpp)
+add_executable(ChessRobot main.cpp Chessboard.cpp Stockfish.cpp Vision.cpp PhoneticInput.cpp ChessGui.cpp)
 
 # Link against the installed UR RTDE library
 target_link_libraries(ChessRobot rtde pthread ${OpenCV_LIBS})
@@ -24,3 +24,16 @@ add_executable(visionTestExecutable visionTest.cpp Chessboard.cpp Vision.cpp)
 target_link_libraries(visionTestExecutable ${OpenCV_LIBS})
 add_executable(stockfishTestExecutable stockfishTest.cpp Chessboard.cpp Stockfish.cpp) 
 target_link_libraries(stockfishTestExecutable ${OpenCV_LIBS})
+
+# Add Qt components
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
+
+# Enable Qt features
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+# Link libraries
+target_link_libraries(ChessRobot PRIVATE Qt6::Widgets)
+
+include_directories(${Qt6Widgets_INCLUDE_DIRS})
