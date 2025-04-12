@@ -26,7 +26,7 @@ add_executable(stockfishTestExecutable stockfishTest.cpp Chessboard.cpp Stockfis
 target_link_libraries(stockfishTestExecutable ${OpenCV_LIBS})
 
 # Add Qt components
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Core)
 
 # Enable Qt features
 set(CMAKE_AUTOMOC ON)
@@ -34,6 +34,31 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 # Link libraries
-target_link_libraries(ChessRobot PRIVATE Qt6::Widgets)
+target_link_libraries(ChessRobot PRIVATE
+    Qt6::Widgets
+    Qt6::Core
+    ${OpenCV_LIBS}
+)
 
-include_directories(${Qt6Widgets_INCLUDE_DIRS})
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${PORTAUDIO_INCLUDE_DIRS}
+    ${VOSK_INCLUDE_DIRS}
+    ${Qt6Widgets_INCLUDE_DIRS}
+    ${Qt6Core_INCLUDE_DIRS}
+    /usr/local/include/ur_rtde
+    ${EIGEN3_INCLUDE_DIR}
+    ${OpenCV_INCLUDE_DIRS}
+)
+
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(PORTAUDIO REQUIRED portaudio-2.0)
+pkg_check_modules(VOSK REQUIRED vosk)
+
+target_link_libraries(ChessRobot PRIVATE
+    ${PORTAUDIO_LIBRARIES}
+    ${VOSK_LIBRARIES}
+    rtde
+    pthread
+    ${OpenCV_LIBS}
+)
