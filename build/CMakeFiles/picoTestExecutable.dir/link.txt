@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/picoTestExecutable.dir/picoTest.cpp.o -o picoTestExecutable   -L/usr/local/lib 
+/usr/bin/c++ CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o CMakeFiles/picoTestExecutable.dir/picoTest.cpp.o -o picoTestExecutable   -L/home/sammy/ur_rtde/build 

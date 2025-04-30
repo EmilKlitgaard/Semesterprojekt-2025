@@ -1,3 +1,6 @@
+#include<QApplication>
+#include"ChessBotGUI.h"
+
 #include <ur_rtde/rtde_control_interface.h>
 #include <ur_rtde/rtde_receive_interface.h>
 #include <iostream>
@@ -364,7 +367,17 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
 /*============================================================
             		    MAIN START
 ============================================================*/
-int main() {
+int main(int argc, char *argv[]) {
+    // Start GUI in separate thread
+    std::thread guiThread([&]() {
+        int qtArgc = 1;
+        char *qtArgv[] = { argv[0] };
+        QApplication app(qtArgc, qtArgv);
+        ChessBotGUI window;
+        window.show();
+        app.exec();
+    });
+
     //   ==========   TESTING   ==========   //
     gripper.openGripper();
     gripper.closeGripper();

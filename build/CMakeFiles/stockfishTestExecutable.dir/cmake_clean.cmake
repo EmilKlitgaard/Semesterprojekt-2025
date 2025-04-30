@@ -1,10 +1,15 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/stockfishTestExecutable_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/stockfishTestExecutable_autogen.dir/ParseCache.txt"
+  "stockfishTestExecutable_autogen"
   "CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o"
   "CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o.d"
   "CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o"
   "CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o.d"
   "CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o"
   "CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o.d"
+  "CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o.d"
   "stockfishTestExecutable"
   "stockfishTestExecutable.pdb"
 )

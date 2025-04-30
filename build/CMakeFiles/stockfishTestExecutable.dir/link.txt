@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o -o stockfishTestExecutable   -L/usr/local/lib 
+/usr/bin/c++ CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o -o stockfishTestExecutable   -L/home/sammy/ur_rtde/build 

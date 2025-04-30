@@ -1,4 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/chessRobotExecutable_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/chessRobotExecutable_autogen.dir/ParseCache.txt"
+  "chessRobotExecutable_autogen"
+  "CMakeFiles/chessRobotExecutable.dir/ChessBotGUI.cpp.o"
+  "CMakeFiles/chessRobotExecutable.dir/ChessBotGUI.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o"
   "CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o"
@@ -7,6 +12,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o"
   "CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o.d"
+  "CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/main.cpp.o"
   "CMakeFiles/chessRobotExecutable.dir/main.cpp.o.d"
   "chessRobotExecutable"
