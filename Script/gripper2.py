@@ -3,6 +3,8 @@ import time
 import sys
 import select
 
+#SKREVET AF CHATTEN
+
 # PWM output pin setup
 zero_pin = machine.Pin(18)
 pwm_pin = machine.Pin(19)
