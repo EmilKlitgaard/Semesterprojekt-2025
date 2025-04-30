@@ -7,10 +7,12 @@
 #include <string>
 #include <thread>
 #include <fstream>
+#include <chrono>
 
 #include "Chessboard.h"
 #include "Stockfish.h"
 #include "Vision.h"
+#include "Gripper.h"
 
 using namespace ur_rtde;
 using namespace std;
@@ -28,6 +30,7 @@ RTDEControlInterface rtde_control(robotIp, robotPort);
 RTDEReceiveInterface rtde_receive(robotIp, robotPort);
 
 Chessboard board;
+Gripper gripper("/dev/ttyACM0");
 
 Vector3d transformVector = {0.0, 0.0, 0.1};
 
@@ -229,14 +232,14 @@ pair<string, string> getPieceName(string notation) {
 void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
     moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    // closeGripper();
+    gripper.closeGripper();
     moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
 }
 
 void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
     moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    // openGripper();
+    gripper.openGripper();
     moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
 }
 
@@ -362,6 +365,11 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
             		    MAIN START
 ============================================================*/
 int main() {
+    //   ==========   TESTING   ==========   //
+    gripper.openGripper();
+    gripper.closeGripper();
+    gripper.stopGripper();
+
     //   ==========   VALIDATE UR5 CONNECTION   ==========   //
     if (!rtde_control.isConnected() || !rtde_receive.isConnected()) {
         cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;

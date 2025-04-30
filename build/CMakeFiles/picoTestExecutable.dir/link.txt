@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/picoTestExecutable.dir/picoTest.cpp.o -o picoTestExecutable   -L/usr/local/lib 

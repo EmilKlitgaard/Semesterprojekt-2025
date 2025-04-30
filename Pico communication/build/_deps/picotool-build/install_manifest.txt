@@ -1,0 +1,5 @@
+/home/emilklitgaard/Workspace/Semesterprojekt/Pico communication/build/_deps/picotool/picotool
+/home/emilklitgaard/Workspace/Semesterprojekt/Pico communication/build/_deps/picotool/picotoolTargets.cmake
+/home/emilklitgaard/Workspace/Semesterprojekt/Pico communication/build/_deps/picotool/picotoolTargets-release.cmake
+/home/emilklitgaard/Workspace/Semesterprojekt/Pico communication/build/_deps/picotool/picotoolConfig.cmake
+/home/emilklitgaard/Workspace/Semesterprojekt/Pico communication/build/_deps/picotool/picotoolConfigVersion.cmake

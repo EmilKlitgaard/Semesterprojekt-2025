@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o"
   "CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o.d"
+  "CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o"
+  "CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o"
   "CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o"

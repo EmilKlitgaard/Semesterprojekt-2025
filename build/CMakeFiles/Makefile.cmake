@@ -57,4 +57,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/visionTestExecutable.dir/DependInfo.cmake"
   "CMakeFiles/stockfishTestExecutable.dir/DependInfo.cmake"
   "CMakeFiles/chessTestExecutable.dir/DependInfo.cmake"
+  "CMakeFiles/picoTestExecutable.dir/DependInfo.cmake"
   )

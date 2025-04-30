@@ -12,7 +12,7 @@ include_directories(${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
 link_directories(/usr/local/lib)
 
 # Define the executable
-add_executable(chessRobotExecutable main.cpp Chessboard.cpp Stockfish.cpp Vision.cpp)
+add_executable(chessRobotExecutable main.cpp Chessboard.cpp Stockfish.cpp Vision.cpp Gripper.cpp)
 
 # Link against the installed UR RTDE library
 target_link_libraries(chessRobotExecutable rtde pthread ${OpenCV_LIBS})
@@ -24,3 +24,5 @@ add_executable(stockfishTestExecutable stockfishTest.cpp Chessboard.cpp Stockfis
 target_link_libraries(stockfishTestExecutable)
 add_executable(chessTestExecutable mainTest.cpp Chessboard.cpp Stockfish.cpp) 
 target_link_libraries(chessTestExecutable)
+add_executable(picoTestExecutable picoTest.cpp)
+target_link_libraries(picoTestExecutable)

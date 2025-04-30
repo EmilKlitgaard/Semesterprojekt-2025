@@ -168,6 +168,19 @@ chessTestExecutable/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/build
 .PHONY : chessTestExecutable/fast
 
+#=============================================================================
+# Target rules for targets named picoTestExecutable
+
+# Build rule for target.
+picoTestExecutable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picoTestExecutable
+.PHONY : picoTestExecutable
+
+# fast build rule for target.
+picoTestExecutable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/build
+.PHONY : picoTestExecutable/fast
+
 Chessboard.o: Chessboard.cpp.o
 .PHONY : Chessboard.o
 
@@ -200,6 +213,30 @@ Chessboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.s
 .PHONY : Chessboard.cpp.s
+
+Gripper.o: Gripper.cpp.o
+.PHONY : Gripper.o
+
+# target to build an object file
+Gripper.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o
+.PHONY : Gripper.cpp.o
+
+Gripper.i: Gripper.cpp.i
+.PHONY : Gripper.i
+
+# target to preprocess a source file
+Gripper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.i
+.PHONY : Gripper.cpp.i
+
+Gripper.s: Gripper.cpp.s
+.PHONY : Gripper.s
+
+# target to generate assembly for a file
+Gripper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.s
+.PHONY : Gripper.cpp.s
 
 Stockfish.o: Stockfish.cpp.o
 .PHONY : Stockfish.o
@@ -306,6 +343,30 @@ mainTest.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/mainTest.cpp.s
 .PHONY : mainTest.cpp.s
 
+picoTest.o: picoTest.cpp.o
+.PHONY : picoTest.o
+
+# target to build an object file
+picoTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/picoTest.cpp.o
+.PHONY : picoTest.cpp.o
+
+picoTest.i: picoTest.cpp.i
+.PHONY : picoTest.i
+
+# target to preprocess a source file
+picoTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/picoTest.cpp.i
+.PHONY : picoTest.cpp.i
+
+picoTest.s: picoTest.cpp.s
+.PHONY : picoTest.s
+
+# target to generate assembly for a file
+picoTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/picoTest.cpp.s
+.PHONY : picoTest.cpp.s
+
 stockfishTest.o: stockfishTest.cpp.o
 .PHONY : stockfishTest.o
 
@@ -364,11 +425,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... chessRobotExecutable"
 	@echo "... chessTestExecutable"
+	@echo "... picoTestExecutable"
 	@echo "... stockfishTestExecutable"
 	@echo "... visionTestExecutable"
 	@echo "... Chessboard.o"
 	@echo "... Chessboard.i"
 	@echo "... Chessboard.s"
+	@echo "... Gripper.o"
+	@echo "... Gripper.i"
+	@echo "... Gripper.s"
 	@echo "... Stockfish.o"
 	@echo "... Stockfish.i"
 	@echo "... Stockfish.s"
@@ -381,6 +446,9 @@ help:
 	@echo "... mainTest.o"
 	@echo "... mainTest.i"
 	@echo "... mainTest.s"
+	@echo "... picoTest.o"
+	@echo "... picoTest.i"
+	@echo "... picoTest.s"
 	@echo "... stockfishTest.o"
 	@echo "... stockfishTest.i"
 	@echo "... stockfishTest.s"
