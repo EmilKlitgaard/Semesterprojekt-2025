@@ -8,6 +8,7 @@
         "stdexcept": "cpp",
         "*.ipp": "cpp",
         "ostream": "cpp",
-        "qvboxlayout": "cpp"
+        "qvboxlayout": "cpp",
+        "qtcpsocket": "cpp"
     }
 }
