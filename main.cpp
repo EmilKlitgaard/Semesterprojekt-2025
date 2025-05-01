@@ -368,6 +368,7 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
             		    MAIN START
 ============================================================*/
 int main(int argc, char *argv[]) {
+
     // Start GUI in separate thread
     std::thread guiThread([&]() {
         int qtArgc = 1;

@@ -7,6 +7,7 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "*.ipp": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "qvboxlayout": "cpp"
     }
 }
