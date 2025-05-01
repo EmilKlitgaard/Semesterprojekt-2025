@@ -1,10 +1,14 @@
 #include "ChessBotGUI.h"
 #include <QVBoxLayout>
 #include <QWidget>
+#include <QTimer>
 #include <QTime>
 
 #include <ur_rtde/rtde_control_interface.h>
 #include <ur_rtde/rtde_receive_interface.h>
+
+#include "main.cpp"
+
 
 ChessBotGUI::ChessBotGUI(QWidget* parent) : QMainWindow(parent) {
     QWidget* centralWidget = new QWidget(this); // central GUI container
