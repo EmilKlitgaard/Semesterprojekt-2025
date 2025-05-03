@@ -1,5 +1,3 @@
-#include"SocketServer.h"
-
 #include <ur_rtde/rtde_control_interface.h>
 #include <ur_rtde/rtde_receive_interface.h>
 #include <iostream>
@@ -16,6 +14,8 @@
 #include "Vision.h"
 #include "Gripper.h"
 
+#include "ControlBus.h"
+
 using namespace ur_rtde;
 using namespace std;
 using namespace Eigen;
@@ -23,6 +23,8 @@ using namespace Eigen;
 using ChessboardPieces = vector<vector<string>>;
 using ChessboardMatrix = vector<vector<char>>;
 using MatrixIndex = pair<int, int>;
+
+ControlBus bus; // GUI bus
 
 #define DEG_TO_RAD(angle) ((angle) * M_PI / 180.0)
 
@@ -246,6 +248,7 @@ void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, cons
 }
 
 void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
+    bus.setTurn(0); // GUI, display that it's robot's turn to play
     // Get the physical coordinates for the cells.
     auto [fromCoordinate, toCoordinate] = board.getPhysicalCoordinates(robotMove);
 
@@ -377,7 +380,10 @@ int main() {
         cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;
         return -1;
     }
-    
+
+    // set GUI status robot connection 
+    bus.setConnected(rtde_control.isConnected()&&rtde_receive.isConnected());
+
     //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
     vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
     rtde_control.setTcp(tcpCalibrationOffset);

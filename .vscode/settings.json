@@ -9,6 +9,7 @@
         "*.ipp": "cpp",
         "ostream": "cpp",
         "qvboxlayout": "cpp",
-        "qtcpsocket": "cpp"
+        "qtcpsocket": "cpp",
+        "qslider": "cpp"
     }
 }

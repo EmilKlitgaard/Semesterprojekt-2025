@@ -12,6 +12,7 @@ include_directories(
     /home/sammy/ur_rtde/include
     ${EIGEN3_INCLUDE_DIR}
     ${OpenCV_INCLUDE_DIRS}
+    /home/Documents/GitHub/IPC
 )
 
 link_directories(/home/sammy/ur_rtde/build)
