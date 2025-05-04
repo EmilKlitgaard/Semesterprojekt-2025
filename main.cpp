@@ -1,3 +1,5 @@
+#include<QApplication> // must be on top
+
 #include <ur_rtde/rtde_control_interface.h>
 #include <ur_rtde/rtde_receive_interface.h>
 #include <iostream>
@@ -14,7 +16,8 @@
 #include "Vision.h"
 #include "Gripper.h"
 
-#include "ControlBus.h"
+#include "GUI/GUIWindow.h"
+#include "GUI/GUI.h"
 
 using namespace ur_rtde;
 using namespace std;
@@ -24,7 +27,6 @@ using ChessboardPieces = vector<vector<string>>;
 using ChessboardMatrix = vector<vector<char>>;
 using MatrixIndex = pair<int, int>;
 
-ControlBus bus; // GUI bus
 
 #define DEG_TO_RAD(angle) ((angle) * M_PI / 180.0)
 
@@ -248,7 +250,7 @@ void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, cons
 }
 
 void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    bus.setTurn(0); // GUI, display that it's robot's turn to play
+    gui.setTurn(false); 
     // Get the physical coordinates for the cells.
     auto [fromCoordinate, toCoordinate] = board.getPhysicalCoordinates(robotMove);
 
@@ -328,6 +330,7 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
     ChessboardMatrix refState = chessVision.getRefVisionBoard();
 
     while (true) {
+        gui.setTurn(true); 
         printText("Make your move and press ENTER...");
         cin.get();
         ChessboardMatrix newState1 = chessVision.processCurrentFrame();
@@ -369,7 +372,9 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
 /*============================================================
             		    MAIN START
 ============================================================*/
-int main() {
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+
     //   ==========   TESTING   ==========   //
     gripper.openGripper();
     gripper.closeGripper();
@@ -380,9 +385,8 @@ int main() {
         cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;
         return -1;
     }
+    gui.setConnection(rtde_control.isConnected() || rtde_receive.isConnected());
 
-    // set GUI status robot connection 
-    bus.setConnected(rtde_control.isConnected()&&rtde_receive.isConnected());
 
     //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
     vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
@@ -457,5 +461,8 @@ int main() {
             return 0;
         }
     }
-    return 0;
+    GUIWindow window;
+    window.show();
+
+    return app.exec();
 }

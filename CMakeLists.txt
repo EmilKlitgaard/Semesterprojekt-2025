@@ -2,11 +2,12 @@ cmake_minimum_required(VERSION 3.5)
 project(ChessRobot)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_AUTOMOC ON)
 
 # Required packages
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
 
 include_directories(
     /home/sammy/ur_rtde/include
@@ -27,15 +28,17 @@ add_executable(chessRobotExecutable
     Vision.cpp
     Gripper.cpp
     ChessBotGUI.cpp
+    GUI/GUI.cpp
+    GUI/GUIWindow.cpp
 )
 
 target_link_libraries(chessRobotExecutable
     rtde
     pthread
     ${OpenCV_LIBS}
-    Qt5::Core
-    Qt5::Gui
-    Qt5::Widgets
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Widgets
 )
 
 # Tests
