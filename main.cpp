@@ -324,6 +324,8 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
 //     }
 // }
 
+
+
 pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
     // Capture the initial reference board state.
     printText("Getting initial reference board state...");
@@ -427,9 +429,13 @@ int main(int argc, char *argv[]) {
     //   ==========   BEGIN CHESS GAME   ==========   //
     printText("Press ENTER to start chess game...");
     cin.get();
-    engine("/home/ubuntu/Stockfish/src/stockfish");  
+    Stockfish engine("/home/ubuntu/Stockfish/src/stockfish");  
     printText("\n----- CHESS GAME STARTED -----");
     
+    engine.sendCommand("setoption name UCI_LimitStrength value true"); // enables difficulty adjustments
+    engine.sendCommand("setoption name UCI_Elo value 1200"+to_string(gui.getDifficulty())); // passes the dificulty from the GUI into stockfish.
+    gui.setGameActive(1); // whilst game is active the difficulty cant be modified
+
     while (true) {
         auto [playerFromIndex, playerToIndex] = getCameraData(chessVision);
 
@@ -466,3 +472,6 @@ int main(int argc, char *argv[]) {
 
     return app.exec();
 }
+
+
+

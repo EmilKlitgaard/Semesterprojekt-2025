@@ -40,5 +40,3 @@ private:
     
     string readResponse(const string& findString);
 };
-
-extern Stockfish engine;

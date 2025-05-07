@@ -52,7 +52,7 @@ private:
 
     QLabel* cameraLabel;
     QTimer* cameraTimer;
-    Vision camera;
+
 
 };
 

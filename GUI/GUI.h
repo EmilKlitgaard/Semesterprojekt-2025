@@ -1,17 +1,16 @@
 #pragma once
 #include<QApplication>
-#include "Stockfish.h"
 
 class GUI {
 public:
     //set
     void setDifficulty(int value){
         if(!gameActive) {
-            if (value < 0) {
-                difficulty = 1;
+            if (value < 300) {
+                difficulty = 300;
             }
-            if (value > 20) {
-                difficulty = 20;
+            if (value > 3000) {
+                difficulty = 3000;
             }
             difficulty = value;
         }
@@ -20,8 +19,6 @@ public:
         setoption name UCI_LimitStrength value true
         setoption name UCI_Elo value 1200 
         */
-        
-        engine.sendCommand("setoption name UCI_Elo value " + difficulty);
 
     }
     void setGameActive(bool value) {
@@ -32,6 +29,14 @@ public:
     }
     void setConnection(bool value) {
         connection = value; // 1 = connected, 0 = disconnected
+    }
+
+    void setVision() {
+        
+    }
+
+    void getVision() {
+
     }
 
     //get
@@ -46,6 +51,8 @@ private:
     bool connection = false;
     bool gameActive = false;
     int difficulty = 300;
+
+    Stockfish *stockfishRef = nullptr;
 
 };
 
