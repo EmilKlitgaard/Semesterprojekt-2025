@@ -10,6 +10,7 @@
         "ostream": "cpp",
         "qvboxlayout": "cpp",
         "qtcpsocket": "cpp",
-        "qslider": "cpp"
+        "qslider": "cpp",
+        "qapplication": "cpp"
     }
 }

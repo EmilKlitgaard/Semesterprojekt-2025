@@ -2,15 +2,9 @@
 #include "GUI.h" // for access to `gui`
 
 GUIWindow::GUIWindow(QWidget* parent)
-    : QMainWindow(parent),
-      central(this),
-      mainLayout(&central),
-      difficultyLabel(this),
-      difficultySlider(Qt::Horizontal, this),
-      startGame("Start", this),
-      stopGame("Stop", this)
+    : QMainWindow(parent), central(this), mainLayout(&central), difficultyLabel(this), difficultySlider(Qt::Horizontal, this), startGame("Start", this), stopGame("Stop", this)
 {
-    difficultySlider.setRange(1, 20);
+    difficultySlider.setRange(300, 3000);
     difficultySlider.setValue(gui.getDifficulty());
 
     setConnectionStatus(false);

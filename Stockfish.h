@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <cstring>
 #include <stdexcept>
@@ -26,6 +25,8 @@ public:
     void addMoveToHistory(const string& move);
     vector<string> getMoveHistory() const;
 
+    void sendCommand(const string& command);
+
 private:
     string enginePath;
     int engine_stdin = -1;
@@ -36,6 +37,8 @@ private:
 
     void startEngine();
     void stopEngine();
-    void sendCommand(const string& command);
+    
     string readResponse(const string& findString);
 };
+
+extern Stockfish engine;

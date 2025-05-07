@@ -36,3 +36,4 @@ private:
     Mat currentFrame;  // Gem seneste live-frame
     ChessboardMatrix refVisionBoard;
 };
+

@@ -6,6 +6,11 @@
 #include <QLabel>
 #include <QSlider>
 #include <QPushButton>
+#include <QTimer>
+#include <QImage>
+#include "Vision.h"
+
+
 
 class GUIWindow : public QMainWindow {
     Q_OBJECT
@@ -23,22 +28,32 @@ signals:
     void difficultyChanged(int value);
 
 private slots:
-    void handleSliderChanged(int value = 3);
+    void handleSliderChanged(int value);
     void handleStartClicked();
     void handleStopClicked();
 
 private:
     QWidget central;
+
     QVBoxLayout mainLayout;
+
     QHBoxLayout statusLayout;
     QHBoxLayout difficultyLayout;
     QHBoxLayout startStopLayout;
+
     QLabel turnStatus;
     QLabel connectionStatus;
+
     QLabel difficultyLabel;
     QSlider difficultySlider;
+
     QPushButton startGame;
     QPushButton stopGame;
+
+    QLabel* cameraLabel;
+    QTimer* cameraTimer;
+    Vision camera;
+
 };
 
 extern GUIWindow window;

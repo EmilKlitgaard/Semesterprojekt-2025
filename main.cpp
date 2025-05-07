@@ -427,7 +427,7 @@ int main(int argc, char *argv[]) {
     //   ==========   BEGIN CHESS GAME   ==========   //
     printText("Press ENTER to start chess game...");
     cin.get();
-    Stockfish engine("/home/ubuntu/Stockfish/src/stockfish");  
+    engine("/home/ubuntu/Stockfish/src/stockfish");  
     printText("\n----- CHESS GAME STARTED -----");
     
     while (true) {
