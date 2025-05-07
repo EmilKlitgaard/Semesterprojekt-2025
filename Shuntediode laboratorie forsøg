@@ -1,0 +1,24 @@
+Måling af ADC værdi til korresponderend strøm gennem shunte diode. Forsøget er lavet ved at koble en strømforsyning til shuntedioden. Spændingen fastsættes til 24V og strømmen reguleres. ADC-værdien er rå 16-bit værdi
+
+Målinger:
+ADC: 1300, Strøm: 0mA
+ADC: 4000, Strøm: 50mA
+ADC: 7000, Strøm: 100mA
+ADC: 11000, Strøm: 150mA
+ADC: 14000, Strøm: 200mA
+ADC: 17000, Strøm: 250mA
+ADC: 21000, Strøm: 300mA
+ADC: 24000, Strøm: 350mA
+ADC: 28000, Strøm: 400mA
+ADC: 31000, Strøm: 450mA
+ADC: 34000, Strøm: 500mA
+ADC: 38000, Strøm: 550mA
+ADC: 41000, Strøm: 600mA
+ADC: 44000, Strøm: 650mA
+ADC: 47000, Strøm: 700mA
+ADC: 51000, Strøm: 750mA
+ADC: 54000, Strøm: 800mA
+ADC: 57000, Strøm: 850mA
+ADC: 61000, Strøm: 900mA
+ADC: 64000, Strøm: 950mA
+ADC: 65535, Strøm: 1000mA
