@@ -51,9 +51,6 @@ private:
     bool connection = false;
     bool gameActive = false;
     int difficulty = 300;
-
-    Stockfish *stockfishRef = nullptr;
-
 };
 
 extern GUI gui;

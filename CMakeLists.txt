@@ -7,13 +7,12 @@ set(CMAKE_AUTOMOC ON)
 # Required packages
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
 include_directories(
     /home/sammy/ur_rtde/include
     ${EIGEN3_INCLUDE_DIR}
     ${OpenCV_INCLUDE_DIRS}
-    /home/Documents/GitHub/IPC
 )
 
 link_directories(/home/sammy/ur_rtde/build)
@@ -36,8 +35,6 @@ target_link_libraries(chessRobotExecutable
     rtde
     pthread
     ${OpenCV_LIBS}
-    Qt6::Core
-    Qt6::Gui
     Qt6::Widgets
 )
 
