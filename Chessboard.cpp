@@ -108,7 +108,7 @@ Vector3d Chessboard::getDeadPieceLocation(const string &pieceName, const string 
         }
         Vector3d location = deadRobotPieceLocations[deadRobotPieceLocationIndex];
         deadPieceNames[deadRobotPieceLocationIndex] = pieceName;
-        cout << "Current deadRobotPieceLocationIndex: " << deadRobotPieceLocationIndex << endl;
+        cout << "Added: " << pieceName << " to dead pieces. Current deadRobotPieceLocationIndex: " << deadRobotPieceLocationIndex << endl;
         deadRobotPieceLocationIndex++;
         return location;
     } else if (origin == "Player") {
@@ -156,6 +156,26 @@ void Chessboard::updateChessboard(MatrixIndex from, MatrixIndex to) {
     string movedPiece = board[from.first][from.second];
     board[from.first][from.second] = "0"; // Empty original position
     board[to.first][to.second] = movedPiece; // Move piece to new position
+}
+
+// Update the board a single piece. E.g. after pawn promotion
+void Chessboard::updateChessboard(string newPiece, MatrixIndex Idx) {
+    board[Idx.first][Idx.second] = newPiece; // Move piece to new position
+}
+
+string Chessboard::getPieceName(MatrixIndex Idx) {
+    string movedPiece = board[Idx.first][Idx.second];
+    string movedPieceType = movedPiece.substr(0,1);
+    if (movedPieceType == "1") return "Pawn";
+    else if (movedPieceType == "2") return "Rook";
+    else if (movedPieceType == "3") return "Knight";
+    else if (movedPieceType == "4") return "Bishop";
+    else if (movedPieceType == "5") return "Queen";
+    else if (movedPieceType == "6") return "King";
+    else {
+        cerr << "Error: Number does not exist!" << endl;
+        return "Error";
+    }
 }
 
 void Chessboard::printBoard(const string &mode) {

@@ -34,6 +34,7 @@ public:
 
     // Update board state using a move from one cell to another
     void updateChessboard(MatrixIndex from, MatrixIndex to);
+    void updateChessboard(string, MatrixIndex);
     void printBoard(const string &mode = "Default");
 
     string getChessNotation(MatrixIndex position);
@@ -42,6 +43,7 @@ public:
     pair<Vector3d, Vector3d> getPhysicalCoordinates(string &notation);
 
     ChessboardPieces getBoardState();
+    string getPieceName(MatrixIndex Idx);
 
     Vector3d getDeadPieceLocation(const string &pieceName, const string &origin);
     Vector3d searchDeadPieceLocation(const string &pieceName);
@@ -72,4 +74,3 @@ private:
     vector<vector<pair<double, double>>> physicalCoordinates;
     vector<Vector3d> allPhysicalCoordinates;
 };
-

@@ -96,5 +96,3 @@ void Gripper::stopGripper() {
     if (!sendRaw("Stop")) throw runtime_error("Failed to send Open command");
     cout << "Successfully stopped gripper" << endl;
 }
-
-

@@ -16,7 +16,7 @@ ChessVision::~ChessVision() {
 }
 
 void ChessVision::initializeVisionBoard() {
-    ChessboardMatrix refVisionBoard(8, vector<char>(8, 'e')); // 8x8 matrix filled with 'e'
+    refVisionBoard = ChessboardMatrix(8, vector<char>(8, 'e')); // 8x8 matrix filled with 'e'
     // Fill the first two rows with 'B' (Black pieces) and last two rows with 'W' (White pieces)
     for (int row = 0; row < 8; ++row) {
         if (row < 2) {
@@ -27,12 +27,13 @@ void ChessVision::initializeVisionBoard() {
     }
 }
 
+
 ChessboardMatrix ChessVision::getRefVisionBoard() {
     return refVisionBoard;
 }
 
 void ChessVision::setRefVisionBoard(ChessboardMatrix &newRefVisionBoard) {
-    ChessboardMatrix refVisionBoard = newRefVisionBoard;
+    refVisionBoard = newRefVisionBoard;
 }
 
 // Detects chessboard corners
@@ -81,17 +82,17 @@ void ChessVision::detectDots(Mat& frame) {
     cvtColor(frame, hsv, COLOR_BGR2HSV); // HSV (Hue-Saturation-Value) is optimal for isolating specific colors.
 
     // Define HSV ranges for red and blue. Two masks for red because of different shades that can be seen as red.
-    Mat maskRed1, maskRed2, maskBlue;
+    Mat maskRed1, maskRed2, maskGreen;
     inRange(hsv, Scalar(0, 100, 100), Scalar(10, 255, 255), maskRed1); // Light red
     inRange(hsv, Scalar(170, 100, 100), Scalar(180, 255, 255), maskRed2); // Dark red
-    inRange(hsv, Scalar(100, 150, 50), Scalar(140, 255, 255), maskBlue); // Blue
+    inRange(hsv, Scalar(100, 150, 50), Scalar(140, 255, 255), maskGreen); // Blue
 
     Mat maskRed = maskRed1 | maskRed2;  // Combine red masks 
 
     // Finding contours/shapes
     vector<vector<Point>> contoursRed, contoursBlue;
     findContours(maskRed, contoursRed, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
-    findContours(maskBlue, contoursBlue, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+    findContours(maskGreen, contoursBlue, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
 
     // Draw red dots
     for (const auto& contour : contoursRed) { // Looping through every shape found.
@@ -196,7 +197,7 @@ void ChessVision::printBoard(Mat &frame, ChessboardMatrix &boardMatrix) {
             }
             else if (boardMatrix[row][col] == 'B') {
                 Point center((col + 0.5) * (targetSize / 8.0), (row + 0.5) * (targetSize / 8.0));
-                circle(frame, center, 12, Scalar(255, 0, 0), 2); // blå cirkel
+                circle(frame, center, 12, Scalar(0, 255, 0), 2); // Grøn cirkel
             }
         }
     }
@@ -224,7 +225,7 @@ ChessboardMatrix ChessVision::processCurrentFrame() {
                 // Detect farvede prikker og vis resultat i matrix
                 boardMatrix = getBoardMatrix(frame);
 
-                printBoard(frame, boardMatrix);
+                //printBoard(frame, boardMatrix);
             }
 
             break;  // Succes
@@ -252,10 +253,10 @@ ChessboardMatrix ChessVision::getBoardMatrix(const Mat& frame) {
     cvtColor(frame, hsv, COLOR_BGR2HSV);
 
     // Find røde og blå farver i billedet
-    Mat maskRed1, maskRed2, maskBlue;
+    Mat maskRed1, maskRed2, maskGreen;
     inRange(hsv, Scalar(0, 100, 100), Scalar(10, 255, 255), maskRed1);   // Lys rød
     inRange(hsv, Scalar(170, 100, 100), Scalar(180, 255, 255), maskRed2); // Mørk rød
-    inRange(hsv, Scalar(100, 150, 50), Scalar(140, 255, 255), maskBlue);  // Blå
+    inRange(hsv, Scalar(30, 76, 51), Scalar(90, 255, 255), maskGreen);  // Grøn
 
     // Kombiner de to røde masker
     Mat maskRed = maskRed1 | maskRed2;
@@ -263,12 +264,12 @@ ChessboardMatrix ChessVision::getBoardMatrix(const Mat& frame) {
     // Find konturer (områder) for røde og blå prikker
     vector<vector<Point>> contoursRed, contoursBlue;
     findContours(maskRed, contoursRed, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
-    findContours(maskBlue, contoursBlue, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+    findContours(maskGreen, contoursBlue, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
 
     auto markBoard = [&](const vector<vector<Point>>& contours, char symbol) {
         for (const auto& contour : contours) {
             double area = contourArea(contour);
-            if (area < 100 || area > 5000) continue; // Ignorer små konturer (<100 pixels)
+            if (area < 20 || area > 5000) continue; // Ignorer små konturer (<5 pixels)
     
             Rect box = boundingRect(contour);
             Point center = (box.tl() + box.br()) * 0.5;
@@ -286,8 +287,8 @@ ChessboardMatrix ChessVision::getBoardMatrix(const Mat& frame) {
     markBoard(contoursRed, 'W');
     markBoard(contoursBlue, 'B');
 
-    imshow("Rød maske", maskRed);
-    imshow("Blå maske", maskBlue);
+    //imshow("Rød maske", maskRed);
+    //imshow("Grøn maske", maskGreen);
 
     return board;
 }

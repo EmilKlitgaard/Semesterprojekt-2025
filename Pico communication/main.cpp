@@ -5,13 +5,13 @@
 #include "hardware/pwm.h"
 
 #define LED_PIN 25
-#define MOTOR_PIN_1 18
-#define MOTOR_PIN_2 19
+#define MOTOR_PIN_1 19
+#define MOTOR_PIN_2 18
 #define ADC_PIN 26
 
 #define MAX_INPUT_LEN 64
 #define PWM_WRAP 10000
-#define CURRENT_THRESHOLD 0.2f // 0.2 A (adjust as needed)
+#define CURRENT_THRESHOLD 0.25f // 0.2 A (adjust as needed)
 #define CURRENT_TOLERANCE 0.05f // +/- tolerance
 
 void blink(int cnt, int delay, int endDelay = 0) {
@@ -60,24 +60,26 @@ void closeGripper() {
     set_pwm(MOTOR_PIN_1, duty);     // Full speed close
     sleep_ms(3000);                 // Close for 3 seconds
     
-    duty /= 10;
+    duty /= 5;
 
     while (true) {
         float current = read_current();
 
+        printf("Current: %.3f\n", current);
+
         // Adjust PWM based on the current feedback
-        if (current > CURRENT_THRESHOLD + CURRENT_TOLERANCE) {
-            if (duty >= 5) duty -= 5;
-        } else if (current < CURRENT_THRESHOLD - CURRENT_TOLERANCE) {
-            if (duty <= PWM_WRAP - 5) duty += 5;
-        }
+        // if (current > CURRENT_THRESHOLD + CURRENT_TOLERANCE) {
+        //     if (duty >= 5) duty -= 5;
+        // } else if (current < CURRENT_THRESHOLD - CURRENT_TOLERANCE) {
+        //     if (duty <= PWM_WRAP - 5) duty += 5;
+        // }
 
         // Set the new PWM duty
         set_pwm(MOTOR_PIN_1, duty);
 
         // If current is within the threshold, exit loop
         if (current >= CURRENT_THRESHOLD - CURRENT_TOLERANCE && current <= CURRENT_THRESHOLD + CURRENT_TOLERANCE) {
-            break;
+            //break;
         }
 
         sleep_ms(10);

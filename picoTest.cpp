@@ -55,11 +55,13 @@ int main() {
             if (input.find("Ack") != string::npos) {
                 cout << "Found: Ack" << endl;
             }
-
             if (input.find("Ok") != string::npos) {
                 cout << "Found: Ok" << endl;
                 close(serial_fd);
                 return 0;
+            }
+            if (input.find("Current:") != string::npos) {
+                cout << input;
             }
         } else if (n == 0) {
             cout << "[No data yet]" << endl;

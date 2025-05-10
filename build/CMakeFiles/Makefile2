@@ -64,10 +64,6 @@ CMAKE_BINARY_DIR = /home/emilklitgaard/Workspace/Semesterprojekt/build
 
 # The main recursive "all" target.
 all: CMakeFiles/chessRobotExecutable.dir/all
-all: CMakeFiles/visionTestExecutable.dir/all
-all: CMakeFiles/stockfishTestExecutable.dir/all
-all: CMakeFiles/chessTestExecutable.dir/all
-all: CMakeFiles/picoTestExecutable.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,10 +72,6 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/chessRobotExecutable.dir/clean
-clean: CMakeFiles/visionTestExecutable.dir/clean
-clean: CMakeFiles/stockfishTestExecutable.dir/clean
-clean: CMakeFiles/chessTestExecutable.dir/clean
-clean: CMakeFiles/picoTestExecutable.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -107,110 +99,6 @@ chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/rule
 CMakeFiles/chessRobotExecutable.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/clean
 .PHONY : CMakeFiles/chessRobotExecutable.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/visionTestExecutable.dir
-
-# All Build rule for target.
-CMakeFiles/visionTestExecutable.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=17,18,19,20 "Built target visionTestExecutable"
-.PHONY : CMakeFiles/visionTestExecutable.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/visionTestExecutable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/visionTestExecutable.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 0
-.PHONY : CMakeFiles/visionTestExecutable.dir/rule
-
-# Convenience name for target.
-visionTestExecutable: CMakeFiles/visionTestExecutable.dir/rule
-.PHONY : visionTestExecutable
-
-# clean rule for target.
-CMakeFiles/visionTestExecutable.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/clean
-.PHONY : CMakeFiles/visionTestExecutable.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/stockfishTestExecutable.dir
-
-# All Build rule for target.
-CMakeFiles/stockfishTestExecutable.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=13,14,15,16 "Built target stockfishTestExecutable"
-.PHONY : CMakeFiles/stockfishTestExecutable.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/stockfishTestExecutable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/stockfishTestExecutable.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 0
-.PHONY : CMakeFiles/stockfishTestExecutable.dir/rule
-
-# Convenience name for target.
-stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/rule
-.PHONY : stockfishTestExecutable
-
-# clean rule for target.
-CMakeFiles/stockfishTestExecutable.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/clean
-.PHONY : CMakeFiles/stockfishTestExecutable.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/chessTestExecutable.dir
-
-# All Build rule for target.
-CMakeFiles/chessTestExecutable.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=7,8,9,10 "Built target chessTestExecutable"
-.PHONY : CMakeFiles/chessTestExecutable.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/chessTestExecutable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chessTestExecutable.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 0
-.PHONY : CMakeFiles/chessTestExecutable.dir/rule
-
-# Convenience name for target.
-chessTestExecutable: CMakeFiles/chessTestExecutable.dir/rule
-.PHONY : chessTestExecutable
-
-# clean rule for target.
-CMakeFiles/chessTestExecutable.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/clean
-.PHONY : CMakeFiles/chessTestExecutable.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/picoTestExecutable.dir
-
-# All Build rule for target.
-CMakeFiles/picoTestExecutable.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=11,12 "Built target picoTestExecutable"
-.PHONY : CMakeFiles/picoTestExecutable.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/picoTestExecutable.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/picoTestExecutable.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 0
-.PHONY : CMakeFiles/picoTestExecutable.dir/rule
-
-# Convenience name for target.
-picoTestExecutable: CMakeFiles/picoTestExecutable.dir/rule
-.PHONY : picoTestExecutable
-
-# clean rule for target.
-CMakeFiles/picoTestExecutable.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/clean
-.PHONY : CMakeFiles/picoTestExecutable.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

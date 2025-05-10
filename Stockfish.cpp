@@ -1,6 +1,6 @@
 #include "Stockfish.h"
 
-Stockfish::Stockfish(const string& engine_path) : enginePath(engine_path) {
+Stockfish::Stockfish(const string& enginePath) : enginePath(enginePath) {
     cout << "Starting Stockfish engine..." << endl;
     startEngine();
 }
@@ -9,61 +9,37 @@ Stockfish::~Stockfish() {
     stopEngine();
 }
 
+
 void Stockfish::startEngine() {
-    int stdin_pipe[2];
-    int stdout_pipe[2];
-
-    if (pipe(stdin_pipe) != 0 || pipe(stdout_pipe) != 0) {
-        throw runtime_error("Pipe creation failed");
+    process = make_unique<boost::process::child> (enginePath, boost::process::std_in < stockfishIn, boost::process::std_out > stockfishOut);
+    if (!process->running()) {
+        cerr << "Kunne ikke starte Stockfish.\n";
+        throw runtime_error("Start Failed");
     }
-
-    pid_t pid = fork();
-    if (pid == -1) {
-        throw runtime_error("Fork failed");
-    }
-
-    if (pid == 0) {
-        close(stdin_pipe[1]);  // Close write end of stdin pipe
-        close(stdout_pipe[0]); // Close read end of stdout pipe
-
-        dup2(stdin_pipe[0], STDIN_FILENO);
-        dup2(stdout_pipe[1], STDOUT_FILENO);
-        dup2(stdout_pipe[1], STDERR_FILENO);
-
-        execlp(enginePath.c_str(), enginePath.c_str(), (char*)NULL);
-        exit(EXIT_FAILURE);
-    } else {
-        close(stdin_pipe[0]);  // Close read end of stdin pipe
-        close(stdout_pipe[1]); // Close write end of stdout pipe
-
-        // Store pipe file descriptors
-        engine_stdin = stdin_pipe[1];
-        engine_stdout = stdout_pipe[0];
-        engine_pid = pid;
-
-        // Wait for Stockfish to start and print its initial output
-        string response = readResponse("Stockfish");
-        //cout << "Initial output: " << response << endl;
-        
-        sendCommand("uci");
-        //cout << "Waiting for uciok..." << endl;
-        string uciResponse = readResponse("uciok");
-        
-        sendCommand("isready");
-        //cout << "Waiting for readyok..." << endl;
-        string readyResponse = readResponse("readyok");
-        cout << "Stockfish engine started successfully." << endl;
-    }
+    sendCommand("uci");
+    while (readResponse() != "uciok");
+    sendCommand("isready");
+    while (readResponse() != "readyok");
+    cout << "Stockfish succesfully started." << endl;
 }
 
 void Stockfish::stopEngine() {
-    if (engine_pid != -1) {
+    // Afslutter Stockfish motoren pænt
+    if (process && process->running()) {
         sendCommand("quit");
-        close(engine_stdin);
-        close(engine_stdout);
-        waitpid(engine_pid, NULL, 0);
-        engine_pid = -1;
+        process->wait();
     }
+}
+
+void Stockfish::sendCommand(const string& cmd) {
+    stockfishIn << cmd << endl;
+    stockfishIn.flush();
+}
+
+string Stockfish::readResponse() {
+    string response;
+    getline(stockfishOut, response);
+    return response;
 }
 
 // Update the current move history
@@ -76,80 +52,98 @@ vector<string> Stockfish::getMoveHistory() const {
     return moveHistory;
 }
 
-void Stockfish::sendCommand(const string& command) {
-    if (engine_pid == -1) {
-        throw runtime_error("Engine not running");
+// Print the current move history
+void Stockfish::printMoveHistory() const {
+    cout << "Movehistory: ";
+    for (const string& move : moveHistory) {
+        cout << move << " ";
     }
-    // cout << "Sending command: " << command << endl; // Debugging line
-    write(engine_stdin, (command + "\n").c_str(), command.size() + 1);
-}
-
-string Stockfish::readResponse(const string& findString) {
-    char buffer[4096];
-    string response;
-    while (true) {
-        ssize_t bytes_read = read(engine_stdout, buffer, sizeof(buffer) - 1);
-        if (bytes_read <= 0) { break; }
-
-        buffer[bytes_read] = '\0';
-        response += buffer;
-        //cout << "Received chunk: " << buffer << endl; // Debugging line
-
-        // Stop reading if we have a complete response (ends with newline)
-        if (response.find(findString) != string::npos) { break; }
-    }
-    return response;
+    cout << endl;
 }
 
 // Method to check for checkmate
-bool Stockfish::isCheckmate() {    
-    // Set up current position
-    string positionCommand = "position startpos moves";
+bool Stockfish::isCheckmate() { 
+    ostringstream position;
+    position << "position startpos moves";
     for (const string& move : moveHistory) {
-        positionCommand += " " + move;
+        position << " " << move;
     }
-    sendCommand(positionCommand);
+    sendCommand(position.str());
     
     // Request quick analysis
     sendCommand("go depth 1");
-    string response = readResponse("bestmove");
-    
-    // Check for mate indicator
-    return response.find("score mate 0") != string::npos;
+    string response;
+
+    while (true) {
+        response = readResponse();
+        if (response.find("bestmove") == 0) {
+            // Check for mate indicator
+            return response.find("(none)") != string::npos;
+        }
+    }    
 }
 
-// Get the current move history from the Chessboard
-string Stockfish::getBestMove(const string& latestMove) {    
-    addMoveToHistory(latestMove);
+// Check if the move is legal. If the move is legal, add it to the move history
+bool Stockfish::sendMove(const string& move) {
+    ostringstream position;
+    position << "position startpos moves";
+    for (const string& move : moveHistory) {
+        position << " " << move;
+    }
+    sendCommand(position.str());
 
-     // Construct the position command
-    string positionCommand = "position startpos moves";
-    if (!moveHistory.empty()) {
-        for (const string& move : moveHistory) {
-            positionCommand += " " + move;
+    sendCommand("go perft 1");
+
+    vector<string> legalMoves;
+
+    while (true) {
+        string response = readResponse();
+        if (response.empty()) continue;
+
+        size_t colon = response.find(':');
+        if (colon != string::npos) {
+            string legalMove = response.substr(0, colon);
+            legalMove.erase(0, legalMove.find_first_not_of(" \t\r\n"));
+            legalMove.erase(legalMove.find_last_not_of(" \t\r\n") + 1);
+            legalMoves.push_back(legalMove);
+        }
+
+        if (response.find("Nodes searched") != string::npos) {
+            break;
         }
     }
 
-    // Send the position command
-    sendCommand(positionCommand);
-    sendCommand("go depth 30");
-
-    string response = readResponse("bestmove");
-
-    // Debugging: Print the raw response
-    cout << "Raw Stockfish response: " << response << endl;
-
-    // Extract the best move from the response
-    size_t bestmovePos = response.find("bestmove");
-    if (bestmovePos == string::npos) {
-        throw runtime_error("Stockfish did not return a valid move: " + response);
+    if (find(legalMoves.begin(), legalMoves.end(), move) != legalMoves.end()) {
+        addMoveToHistory(move);
+        return true;
     }
 
-    // Extract the move (e.g., "bestmove e7e5")
-    string move = response.substr(bestmovePos + 9, 4);
-    
-    // Update the move history in the Chessboard
-    addMoveToHistory(move);
-    
-    return move;
+    return false;
+}
+
+// Returns the best move from Stockfish
+string Stockfish::getBestMove() {
+    ostringstream position;
+    position << "position startpos moves";
+    for (const auto& move : moveHistory) {
+        position << " " << move;
+    }
+
+    sendCommand(position.str());
+    sendCommand("go depth 20");
+
+    string bestMove;
+
+    while (true) {
+        string response = readResponse();
+        if (response.find("bestmove") == 0) {
+            istringstream iss(response);
+            string tag;
+            iss >> tag >> bestMove;
+
+            addMoveToHistory(bestMove);
+            break;
+        }
+    }
+    return bestMove;
 }
