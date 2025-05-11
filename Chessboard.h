@@ -3,13 +3,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <cmath>
 #include <utility>
 #include <unordered_map>
-#include <sstream>
-#include <unistd.h>
-#include <sys/wait.h>
-#include <fcntl.h>
 #include <Eigen/Dense>
 
 using namespace std;
@@ -21,10 +16,10 @@ using MatrixIndex = pair<int, int>;
 // Custom hash for MatrixIndex
 struct PairHash {
     template <class T1, class T2>
-    size_t operator()(const pair<T1, T2>& p) const {
-         auto h1 = hash<T1>{}(p.first);
-         auto h2 = hash<T2>{}(p.second);
-         return h1 ^ (h2 << 1);
+    size_t operator() (const std::pair<T1, T2>& p) const {
+        auto h1 = std::hash<T1>{}(p.first);
+        auto h2 = std::hash<T2>{}(p.second);
+        return h1 ^ (h2 << 1);
     }
 };
 

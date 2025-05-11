@@ -1,12 +1,8 @@
 #pragma once
 
 #include <string>
-#include <cstring>
 #include <stdexcept>
 #include <iostream>
-#include <unistd.h>
-#include <sys/wait.h>
-#include <fcntl.h>
 #include <vector>
 #include <sstream>
 #include <algorithm>
@@ -19,7 +15,7 @@ public:
     Stockfish(const string& enginePath);
     ~Stockfish();
 
-    bool sendMove(const string& move);
+    bool sendValidMove(const string& move);
     string getBestMove();
 
     bool isCheckmate();

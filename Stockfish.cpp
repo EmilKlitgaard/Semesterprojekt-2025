@@ -84,7 +84,7 @@ bool Stockfish::isCheckmate() {
 }
 
 // Check if the move is legal. If the move is legal, add it to the move history
-bool Stockfish::sendMove(const string& move) {
+bool Stockfish::sendValidMove(const string& move) {
     ostringstream position;
     position << "position startpos moves";
     for (const string& move : moveHistory) {

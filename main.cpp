@@ -5,10 +5,7 @@
 #include <cmath>
 #include <Eigen/Dense>
 #include <string>
-#include <thread>
 #include <fstream>
-#include <chrono>
-
 #include "Chessboard.h"
 #include "Stockfish.h"
 #include "Vision.h"
@@ -21,8 +18,6 @@ using namespace Eigen;
 using ChessboardPieces = vector<vector<string>>;
 using ChessboardMatrix = vector<vector<char>>;
 using MatrixIndex = pair<int, int>;
-
-#define DEG_TO_RAD(angle) ((angle) * M_PI / 180.0)
 
 string robotIp = "192.168.1.54";
 int robotPort = 50002;
@@ -47,8 +42,12 @@ void printText(string text) {
     cout << text << endl;
 }
 
+double degToRad(double angle) {
+    return angle * M_PI / 180.0;
+}
+
 Matrix3d getRotationMatrixZ(double angleDeg) {
-    double angleRad = DEG_TO_RAD(angleDeg);
+    double angleRad = degToRad(angleDeg);
     Matrix3d Rotation;
     Rotation << 
         cos(angleRad),  -sin(angleRad), 0,
@@ -437,14 +436,14 @@ int main() {
         //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
         string playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
     
-        while (!engine.sendMove(playerMove)) {
+        while (!engine.sendValidMove(playerMove)) {
             printText("Invalid move. Make a valid move.");
             sleep(1);
             auto [playerFromIndex, playerToIndex] = getCameraData(chessVision);
             
             // Convert into chess notation e.g "e2e4"
             playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
-        }        
+        }
         cout << "Player move: " << playerMove << endl;
         auto [playerFromIdx, playerToIdx] = board.getMatrixIndex(playerMove);
     

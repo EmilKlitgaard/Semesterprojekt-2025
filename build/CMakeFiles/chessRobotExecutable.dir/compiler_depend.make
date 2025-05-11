@@ -3,29 +3,18 @@
 
 CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp \
   /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.h \
-  /usr/include/aarch64-linux-gnu/asm/bitsperlong.h \
   /usr/include/aarch64-linux-gnu/asm/errno.h \
-  /usr/include/aarch64-linux-gnu/asm/posix_types.h \
-  /usr/include/aarch64-linux-gnu/asm/sigcontext.h \
-  /usr/include/aarch64-linux-gnu/asm/sve_context.h \
-  /usr/include/aarch64-linux-gnu/asm/types.h \
   /usr/include/aarch64-linux-gnu/bits/atomic_wide_counter.h \
   /usr/include/aarch64-linux-gnu/bits/byteswap.h \
-  /usr/include/aarch64-linux-gnu/bits/confname.h \
   /usr/include/aarch64-linux-gnu/bits/cpu-set.h \
   /usr/include/aarch64-linux-gnu/bits/endian.h \
   /usr/include/aarch64-linux-gnu/bits/endianness.h \
-  /usr/include/aarch64-linux-gnu/bits/environments.h \
   /usr/include/aarch64-linux-gnu/bits/errno.h \
-  /usr/include/aarch64-linux-gnu/bits/fcntl-linux.h \
-  /usr/include/aarch64-linux-gnu/bits/fcntl.h \
   /usr/include/aarch64-linux-gnu/bits/floatn-common.h \
   /usr/include/aarch64-linux-gnu/bits/floatn.h \
   /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
   /usr/include/aarch64-linux-gnu/bits/fp-fast.h \
   /usr/include/aarch64-linux-gnu/bits/fp-logb.h \
-  /usr/include/aarch64-linux-gnu/bits/getopt_core.h \
-  /usr/include/aarch64-linux-gnu/bits/getopt_posix.h \
   /usr/include/aarch64-linux-gnu/bits/iscanonical.h \
   /usr/include/aarch64-linux-gnu/bits/libc-header-start.h \
   /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -38,31 +27,12 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Worksp
   /usr/include/aarch64-linux-gnu/bits/mathcalls.h \
   /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
   /usr/include/aarch64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/posix_opt.h \
-  /usr/include/aarch64-linux-gnu/bits/procfs-extra.h \
-  /usr/include/aarch64-linux-gnu/bits/procfs-id.h \
-  /usr/include/aarch64-linux-gnu/bits/procfs-prregset.h \
-  /usr/include/aarch64-linux-gnu/bits/procfs.h \
   /usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h \
   /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/aarch64-linux-gnu/bits/sched.h \
   /usr/include/aarch64-linux-gnu/bits/select.h \
   /usr/include/aarch64-linux-gnu/bits/setjmp.h \
-  /usr/include/aarch64-linux-gnu/bits/sigaction.h \
-  /usr/include/aarch64-linux-gnu/bits/sigcontext.h \
-  /usr/include/aarch64-linux-gnu/bits/sigevent-consts.h \
-  /usr/include/aarch64-linux-gnu/bits/siginfo-arch.h \
-  /usr/include/aarch64-linux-gnu/bits/siginfo-consts-arch.h \
-  /usr/include/aarch64-linux-gnu/bits/siginfo-consts.h \
-  /usr/include/aarch64-linux-gnu/bits/signal_ext.h \
-  /usr/include/aarch64-linux-gnu/bits/signum-arch.h \
-  /usr/include/aarch64-linux-gnu/bits/signum-generic.h \
-  /usr/include/aarch64-linux-gnu/bits/sigstack.h \
-  /usr/include/aarch64-linux-gnu/bits/sigstksz.h \
-  /usr/include/aarch64-linux-gnu/bits/sigthread.h \
-  /usr/include/aarch64-linux-gnu/bits/ss_flags.h \
-  /usr/include/aarch64-linux-gnu/bits/stat.h \
   /usr/include/aarch64-linux-gnu/bits/stdint-intn.h \
   /usr/include/aarch64-linux-gnu/bits/stdint-least.h \
   /usr/include/aarch64-linux-gnu/bits/stdint-uintn.h \
@@ -70,7 +40,6 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Worksp
   /usr/include/aarch64-linux-gnu/bits/stdlib-float.h \
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
-  /usr/include/aarch64-linux-gnu/bits/struct_stat.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/time.h \
   /usr/include/aarch64-linux-gnu/bits/time64.h \
@@ -84,26 +53,17 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Worksp
   /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/__sigval_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/clock_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/error_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/idtype_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/locale_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/sig_atomic_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/sigevent_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/siginfo_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/sigset_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/sigval_t.h \
-  /usr/include/aarch64-linux-gnu/bits/types/stack_t.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_sched_param.h \
-  /usr/include/aarch64-linux-gnu/bits/types/struct_sigstack.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/aarch64-linux-gnu/bits/types/struct_tm.h \
@@ -113,7 +73,6 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Worksp
   /usr/include/aarch64-linux-gnu/bits/typesizes.h \
   /usr/include/aarch64-linux-gnu/bits/uintn-identity.h \
   /usr/include/aarch64-linux-gnu/bits/uio_lim.h \
-  /usr/include/aarch64-linux-gnu/bits/unistd_ext.h \
   /usr/include/aarch64-linux-gnu/bits/waitflags.h \
   /usr/include/aarch64-linux-gnu/bits/waitstatus.h \
   /usr/include/aarch64-linux-gnu/bits/wchar.h \
@@ -134,21 +93,12 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Worksp
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
   /usr/include/aarch64-linux-gnu/sys/cdefs.h \
-  /usr/include/aarch64-linux-gnu/sys/procfs.h \
   /usr/include/aarch64-linux-gnu/sys/select.h \
   /usr/include/aarch64-linux-gnu/sys/single_threaded.h \
-  /usr/include/aarch64-linux-gnu/sys/time.h \
   /usr/include/aarch64-linux-gnu/sys/types.h \
-  /usr/include/aarch64-linux-gnu/sys/ucontext.h \
-  /usr/include/aarch64-linux-gnu/sys/user.h \
-  /usr/include/aarch64-linux-gnu/sys/wait.h \
   /usr/include/alloca.h \
-  /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
-  /usr/include/asm-generic/int-ll64.h \
-  /usr/include/asm-generic/posix_types.h \
-  /usr/include/asm-generic/types.h \
   /usr/include/assert.h \
   /usr/include/c++/13/algorithm \
   /usr/include/c++/13/array \
@@ -482,22 +432,15 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Worksp
   /usr/include/eigen3/Eigen/src/misc/RealSvd2x2.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
-  /usr/include/fcntl.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/limits.h \
-  /usr/include/linux/close_range.h \
   /usr/include/linux/errno.h \
-  /usr/include/linux/falloc.h \
   /usr/include/linux/limits.h \
-  /usr/include/linux/posix_types.h \
-  /usr/include/linux/stddef.h \
-  /usr/include/linux/types.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
-  /usr/include/signal.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdint.h \
   /usr/include/stdio.h \
@@ -505,7 +448,6 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Worksp
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/time.h \
-  /usr/include/unistd.h \
   /usr/include/wchar.h \
   /usr/include/wctype.h \
   /usr/lib/gcc/aarch64-linux-gnu/13/include/arm_bf16.h \
@@ -3096,6 +3038,16 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/bits/struct_mutex.h \
   /usr/include/aarch64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/aarch64-linux-gnu/bits/struct_stat.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-baud.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-c_cc.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-c_cflag.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-c_iflag.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-c_lflag.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-c_oflag.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-misc.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-struct.h \
+  /usr/include/aarch64-linux-gnu/bits/termios-tcflow.h \
+  /usr/include/aarch64-linux-gnu/bits/termios.h \
   /usr/include/aarch64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/aarch64-linux-gnu/bits/time.h \
   /usr/include/aarch64-linux-gnu/bits/time64.h \
@@ -5404,6 +5356,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
+  /usr/include/termios.h \
   /usr/include/time.h \
   /usr/include/unistd.h \
   /usr/include/wchar.h \
@@ -5508,6 +5461,8 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/numeric/conversion/int_float_mixture_enum.hpp:
 
+/usr/include/boost/fusion/iterator/key_of.hpp:
+
 /usr/include/boost/fusion/iterator/detail/segmented_iterator.hpp:
 
 /usr/include/c++/13/tr1/bessel_function.tcc:
@@ -5526,9 +5481,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/fusion/iterator/advance.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/sigthread.h:
-
 /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h:
+
+/usr/include/aarch64-linux-gnu/bits/sigthread.h:
 
 /usr/include/boost/fusion/container/vector/vector_iterator.hpp:
 
@@ -5595,6 +5550,8 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 /usr/include/boost/fusion/container/list/cons_fwd.hpp:
 
 /usr/include/boost/fusion/container/list/cons.hpp:
+
+/usr/include/boost/fusion/iterator/mpl/convert_iterator.hpp:
 
 /usr/include/boost/mpl/aux_/largest_int.hpp:
 
@@ -5700,9 +5657,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/fusion/adapted/std_tuple/detail/at_impl.hpp:
 
-/usr/include/asm-generic/errno.h:
-
 /usr/include/eigen3/Eigen/Dense:
+
+/usr/include/asm-generic/errno.h:
 
 /usr/include/opencv4/opencv2/dnn.hpp:
 
@@ -6282,9 +6239,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/asio/execution/detail/as_operation.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/procfs-id.h:
-
 /usr/include/boost/asio/detail/thread_info_base.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/procfs-id.h:
 
 /usr/include/boost/algorithm/string/detail/replace_storage.hpp:
 
@@ -6320,11 +6277,27 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/fusion/iterator/iterator_adapter.hpp:
 
+/usr/include/boost/fusion/container/deque/deque_fwd.hpp:
+
+/usr/include/boost/fusion/container/vector/vector10.hpp:
+
+/usr/include/boost/fusion/sequence/io.hpp:
+
+/usr/include/asm-generic/int-ll64.h:
+
 /usr/include/boost/fusion/algorithm/query/detail/segmented_find_if.hpp:
 
 /usr/include/boost/preprocessor/facilities/identity.hpp:
 
 /usr/include/arpa/inet.h:
+
+/usr/include/aarch64-linux-gnu/sys/wait.h:
+
+/usr/include/boost/asio/detail/reactive_descriptor_service.hpp:
+
+/usr/include/linux/close_range.h:
+
+/usr/include/boost/mpl/advance.hpp:
 
 /usr/include/boost/asio/detail/throw_error.hpp:
 
@@ -6332,15 +6305,25 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/aarch64-linux-gnu/sys/uio.h:
 
-/usr/include/boost/core/swap.hpp:
-
 /usr/include/boost/utility.hpp:
 
 /usr/include/c++/13/streambuf:
 
+/usr/include/boost/core/swap.hpp:
+
 /usr/include/eigen3/Eigen/src/Core/Block.h:
 
+/usr/include/boost/fusion/mpl/erase_key.hpp:
+
+/usr/include/boost/fusion/container/map/detail/at_impl.hpp:
+
+/usr/include/c++/13/condition_variable:
+
 /usr/include/boost/cerrno.hpp:
+
+/usr/include/aarch64-linux-gnu/sys/procfs.h:
+
+/usr/include/boost/fusion/sequence/comparison/greater_equal.hpp:
 
 /usr/include/boost/move/detail/meta_utils_core.hpp:
 
@@ -6360,297 +6343,17 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/aux_/iter_push_front.hpp:
 
-/usr/include/boost/asio/ip/impl/address_v4.ipp:
+/usr/include/boost/asio/detail/descriptor_ops.hpp:
 
-/usr/include/boost/fusion/container/list/detail/begin_impl.hpp:
+/usr/include/eigen3/Eigen/Cholesky:
 
-/usr/include/boost/mpl/empty_base.hpp:
+/usr/include/boost/preprocessor/control/expr_iif.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/poll.h:
+/usr/include/boost/function/detail/function_iterate.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/netdb.h:
+/usr/include/aarch64-linux-gnu/bits/long-double.h:
 
-/usr/include/aarch64-linux-gnu/bits/ioctls.h:
-
-/usr/include/c++/13/bits/algorithmfwd.h:
-
-/usr/include/boost/fusion/mpl/detail/clear.hpp:
-
-/usr/include/boost/mpl/aux_/single_element_iter.hpp:
-
-/usr/include/boost/asio/detail/initiate_defer.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/in.h:
-
-/usr/include/boost/predef/platform/windows_runtime.h:
-
-/usr/include/c++/13/ext/type_traits.h:
-
-/usr/include/c++/13/ext/aligned_buffer.h:
-
-/usr/include/aarch64-linux-gnu/asm/socket.h:
-
-/usr/local/include/urcl/tcp_server.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/boost/mpl/aux_/has_tag.hpp:
-
-/usr/include/boost/asio/traits/prefer_free.hpp:
-
-/usr/include/boost/mpl/placeholders.hpp:
-
-/usr/include/aarch64-linux-gnu/c++/13/bits/os_defines.h:
-
-/usr/include/boost/mpl/iter_fold_if.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
-
-/usr/include/boost/variant/detail/variant_io.hpp:
-
-/usr/include/boost/algorithm/string/detail/finder.hpp:
-
-/usr/include/boost/asio/detail/base_from_cancellation_state.hpp:
-
-/usr/include/opencv4/opencv2/flann/dist.h:
-
-/usr/include/c++/13/bits/uniform_int_dist.h:
-
-/usr/include/boost/algorithm/string/replace.hpp:
-
-/usr/include/boost/preprocessor/comparison/equal.hpp:
-
-/usr/include/boost/function/function_base.hpp:
-
-/usr/include/boost/type_traits/detail/yes_no_type.hpp:
-
-/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
-
-/usr/include/c++/13/bits/string_view.tcc:
-
-/usr/include/eigen3/Eigen/src/Cholesky/LDLT.h:
-
-/usr/include/boost/fusion/mpl/back.hpp:
-
-/usr/include/boost/fusion/container/generation/ignore.hpp:
-
-/usr/include/boost/system/api_config.hpp:
-
-/usr/include/boost/mpl/aux_/na_assert.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
-
-/usr/include/aarch64-linux-gnu/sys/ioctl.h:
-
-/usr/include/c++/13/bits/stl_vector.h:
-
-/usr/include/boost/function_equal.hpp:
-
-/usr/include/boost/fusion/view/joint_view/detail/value_of_data_impl.hpp:
-
-/usr/include/boost/asio/detail/posix_static_mutex.hpp:
-
-/usr/include/c++/13/sstream:
-
-/usr/include/boost/algorithm/string/detail/formatter.hpp:
-
-/usr/include/boost/process/filesystem.hpp:
-
-/usr/include/asm-generic/sockios.h:
-
-/usr/include/opencv4/opencv2/flann/miniflann.hpp:
-
-/usr/include/c++/13/bits/stl_relops.h:
-
-/usr/include/boost/asio/traits/set_error_free.hpp:
-
-/usr/include/c++/13/bits/utility.h:
-
-/usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
-
-/usr/include/c++/13/bits/stl_algobase.h:
-
-/usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
-
-/usr/include/boost/asio/impl/io_context.hpp:
-
-/usr/include/boost/fusion/support/tag_of.hpp:
-
-/usr/include/boost/fusion/view/single_view/detail/distance_impl.hpp:
-
-/usr/include/boost/process/start_dir.hpp:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/boost/asio/impl/handler_alloc_hook.ipp:
-
-/usr/include/boost/range/difference_type.hpp:
-
-/usr/include/c++/13/bits/sstream.tcc:
-
-/usr/include/boost/mpl/same_as.hpp:
-
-/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
-
-/usr/include/boost/asio/execution/start.hpp:
-
-/usr/include/boost/system/detail/error_category_impl.hpp:
-
-/usr/include/c++/13/bits/refwrap.h:
-
-/usr/include/boost/date_time/posix_time/posix_time_duration.hpp:
-
-/usr/include/boost/range/algorithm/equal.hpp:
-
-/usr/include/boost/fusion/adapted/mpl/mpl_iterator.hpp:
-
-/usr/include/boost/process/detail/posix/child_handle.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/timerfd.h:
-
-/usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h:
-
-/usr/include/boost/fusion/view/reverse_view/detail/advance_impl.hpp:
-
-/usr/include/c++/13/tr1/poly_hermite.tcc:
-
-/usr/include/boost/algorithm/string/formatter.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/locale_t.h:
-
-/usr/include/boost/mpl/int_fwd.hpp:
-
-/usr/include/boost/fusion/iterator/detail/distance.hpp:
-
-/usr/include/boost/asio/traits/schedule_member.hpp:
-
-/usr/include/linux/errno.h:
-
-/usr/include/boost/fusion/sequence/intrinsic_fwd.hpp:
-
-/usr/include/opencv4/opencv2/core/utility.hpp:
-
-/usr/include/aarch64-linux-gnu/asm/types.h:
-
-/usr/include/boost/range/iterator_range_io.hpp:
-
-/usr/include/boost/asio/detail/timer_queue_ptime.hpp:
-
-/usr/include/boost/asio/detail/posix_mutex.hpp:
-
-/usr/include/boost/fusion/sequence/intrinsic/swap.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/stack_t.h:
-
-/usr/include/aarch64-linux-gnu/sys/cdefs.h:
-
-/usr/include/boost/variant/detail/apply_visitor_delayed.hpp:
-
-/usr/include/boost/asio/detail/impl/service_registry.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/c++/13/bits/localefwd.h:
-
-/usr/include/boost/fusion/view/zip_view.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/uio_lim.h:
-
-/usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
-
-/usr/include/boost/fusion/container/list/detail/convert_impl.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/termios-baud.h:
-
-/usr/include/boost/algorithm/string/detail/find_iterator.hpp:
-
-/usr/include/boost/asio/detail/std_fenced_block.hpp:
-
-/usr/include/c++/13/cerrno:
-
-/usr/include/aarch64-linux-gnu/bits/termios-c_cc.h:
-
-/usr/include/boost/token_iterator.hpp:
-
-/usr/include/c++/13/clocale:
-
-/usr/include/boost/asio/execution/any_executor.hpp:
-
-/usr/include/c++/13/new:
-
-/usr/include/boost/variant/visitor_ptr.hpp:
-
-/usr/include/c++/13/debug/assertions.h:
-
-/usr/include/boost/optional/detail/optional_factory_support.hpp:
-
-/usr/include/boost/asio/impl/multiple_exceptions.ipp:
-
-/usr/include/eigen3/Eigen/src/Core/Solve.h:
-
-/usr/include/boost/fusion/view/flatten_view/flatten_view.hpp:
-
-/usr/include/aarch64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/boost/algorithm/string/find_format.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/statx-generic.h:
-
-/usr/include/boost/date_time/gregorian/greg_duration_types.hpp:
-
-/usr/include/c++/13/bits/hashtable.h:
-
-/usr/include/aarch64-linux-gnu/bits/xopen_lim.h:
-
-/usr/include/eigen3/Eigen/Eigenvalues:
-
-/usr/include/boost/mpl/limits/vector.hpp:
-
-/usr/include/c++/13/bits/istream.tcc:
-
-/usr/include/aarch64-linux-gnu/bits/endian.h:
-
-/usr/include/boost/filesystem/operations.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h:
-
-/usr/include/c++/13/bits/exception_defines.h:
-
-/usr/include/c++/13/bits/enable_special_members.h:
-
-/usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
-
-/usr/include/c++/13/bits/cxxabi_forced.h:
-
-/usr/include/aarch64-linux-gnu/bits/local_lim.h:
-
-/usr/include/boost/mpl/aux_/erase_impl.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
-
-/usr/include/boost/algorithm/string/predicate_facade.hpp:
-
-/usr/include/c++/13/ext/numeric_traits.h:
-
-/usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
-
-/usr/include/boost/fusion/algorithm/transformation/pop_front.hpp:
-
-/usr/include/opencv4/opencv2/objdetect.hpp:
-
-/usr/include/c++/13/cassert:
-
-/usr/include/netinet/tcp.h:
-
-/usr/include/c++/13/bits/basic_ios.tcc:
-
-/usr/include/boost/fusion/view/reverse_view/detail/key_of_impl.hpp:
+/usr/include/boost/fusion/view/detail/strictest_traversal.hpp:
 
 /usr/include/boost/fusion/algorithm/iteration/fold.hpp:
 
@@ -6674,65 +6377,487 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/asio/detail/array_fwd.hpp:
 
-/usr/include/aarch64-linux-gnu/sys/eventfd.h:
+/usr/include/eigen3/Eigen/Eigenvalues:
 
-/usr/include/boost/fusion/container/generation/make_deque.hpp:
+/usr/include/aarch64-linux-gnu/bits/xopen_lim.h:
 
-/usr/include/boost/fusion/container/map/detail/end_impl.hpp:
+/usr/include/boost/asio/execution/submit.hpp:
 
-/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
+/usr/include/asm-generic/types.h:
 
-/usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
+/usr/include/opencv4/opencv2/imgproc.hpp:
 
-/usr/include/boost/bind/mem_fn_template.hpp:
+/usr/include/c++/13/tr1/legendre_function.tcc:
 
-/usr/include/boost/asio/detail/conditionally_enabled_mutex.hpp:
+/usr/include/boost/algorithm/string/detail/util.hpp:
 
-/usr/include/boost/mpl/apply_fwd.hpp:
+/usr/include/c++/13/tr1/exp_integral.tcc:
 
-/usr/include/eigen3/Eigen/src/Core/IndexedView.h:
+/usr/include/c++/13/tr1/ell_integral.tcc:
 
-/usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h:
+/usr/include/boost/asio/detail/posix_event.hpp:
 
-/usr/include/boost/mpl/iterator_tags.hpp:
+/usr/include/boost/fusion/mpl/front.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
+/usr/include/boost/process/group.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+/usr/include/boost/asio/detail/buffer_sequence_adapter.hpp:
 
-/usr/include/c++/13/bits/basic_string.tcc:
+/usr/include/eigen3/Eigen/src/Core/Swap.h:
 
-/usr/include/boost/utility/binary.hpp:
+/usr/include/boost/asio/detail/impl/strand_service.hpp:
 
-/usr/include/boost/fusion/view/nview/detail/value_at_impl.hpp:
+/usr/include/boost/preprocessor/logical/bitor.hpp:
 
-/usr/include/c++/13/bit:
+/usr/include/c++/13/pstl/pstl_config.h:
+
+/usr/include/c++/13/iomanip:
+
+/usr/include/opencv4/opencv2/core/cuda_types.hpp:
+
+/usr/include/boost/type_traits/alignment_of.hpp:
+
+/usr/include/eigen3/Eigen/Jacobi:
+
+/usr/include/c++/13/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/13/bits/std_thread.h:
+
+/usr/include/eigen3/Eigen/src/Core/Visitor.h:
+
+/usr/include/boost/algorithm/string/iter_find.hpp:
+
+/usr/include/boost/range/has_range_iterator.hpp:
+
+/usr/include/boost/variant/recursive_wrapper_fwd.hpp:
+
+/usr/include/c++/13/istream:
+
+/usr/include/c++/13/cmath:
+
+/usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
+
+/usr/include/boost/mpl/arg.hpp:
+
+/usr/include/boost/asio/traits/submit_free.hpp:
+
+/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:
+
+/usr/include/c++/13/functional:
+
+/usr/include/boost/fusion/view/transform_view/detail/prior_impl.hpp:
+
+/usr/include/boost/type_traits/has_nothrow_constructor.hpp:
+
+/usr/include/c++/13/ext/type_traits.h:
+
+/usr/include/c++/13/ext/string_conversions.h:
+
+/usr/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
+
+/usr/include/boost/fusion/container/generation.hpp:
+
+/usr/include/boost/type_traits/is_same.hpp:
+
+/usr/include/boost/date_time/int_adapter.hpp:
+
+/usr/include/c++/13/ext/aligned_buffer.h:
+
+/usr/include/aarch64-linux-gnu/asm/socket.h:
+
+/usr/local/include/urcl/tcp_server.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/boost/mpl/aux_/has_tag.hpp:
+
+/usr/include/boost/asio/traits/prefer_free.hpp:
+
+/usr/include/boost/mpl/placeholders.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/os_defines.h:
+
+/usr/include/c++/13/climits:
+
+/usr/include/boost/fusion/container/deque/detail/deque_keyed_values.hpp:
+
+/usr/include/boost/date_time/time_resolution_traits.hpp:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
+
+/usr/include/boost/mpl/iter_fold_if.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/CoreEvaluators.h:
+
+/usr/include/boost/variant/detail/variant_io.hpp:
+
+/usr/include/boost/algorithm/string/detail/finder.hpp:
+
+/usr/include/boost/asio/io_context.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
+
+/usr/include/boost/asio/execution/impl/bad_executor.ipp:
+
+/usr/include/wchar.h:
 
 /usr/include/c++/13/ext/atomicity.h:
 
 /usr/include/c++/13/cstdlib:
 
+/usr/include/boost/fusion/view/nview/detail/value_at_impl.hpp:
+
+/usr/include/c++/13/bit:
+
 /usr/include/eigen3/Eigen/src/Core/ArrayBase.h:
 
-/usr/include/c++/13/bits/cpp_type_traits.h:
+/usr/include/c++/13/cctype:
 
-/home/emilklitgaard/Workspace/Semesterprojekt/Vision.h:
+/usr/include/boost/asio/detail/base_from_cancellation_state.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
+/usr/include/opencv4/opencv2/flann/dist.h:
 
-/usr/include/boost/asio/detail/global.hpp:
+/usr/include/c++/13/bits/uniform_int_dist.h:
 
-/usr/include/aarch64-linux-gnu/sys/wait.h:
+/usr/include/boost/algorithm/string/replace.hpp:
 
-/usr/include/boost/asio/detail/reactive_descriptor_service.hpp:
+/usr/include/boost/preprocessor/comparison/equal.hpp:
 
-/usr/include/boost/asio/detail/thread_group.hpp:
+/usr/include/boost/function/function_base.hpp:
 
-/usr/include/stdio.h:
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
 
-/usr/include/boost/preprocessor/stringize.hpp:
+/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
 
-/usr/include/c++/13/algorithm:
+/usr/include/boost/asio/time_traits.hpp:
+
+/usr/include/boost/date_time/time_system_split.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/termios.h:
+
+/usr/include/c++/13/cerrno:
+
+/usr/include/boost/algorithm/string/detail/find_iterator.hpp:
+
+/usr/include/boost/asio/detail/std_fenced_block.hpp:
+
+/usr/include/c++/13/bits/stringfwd.h:
+
+/usr/include/boost/process/detail/posix/null_in.hpp:
+
+/usr/include/c++/13/bits/string_view.tcc:
+
+/usr/include/eigen3/Eigen/src/Cholesky/LDLT.h:
+
+/usr/include/boost/fusion/mpl/back.hpp:
+
+/usr/include/boost/asio/detail/assert.hpp:
+
+/usr/include/c++/13/tr1/riemann_zeta.tcc:
+
+/usr/include/boost/mpl/long.hpp:
+
+/usr/include/boost/fusion/container/map/map_iterator.hpp:
+
+/usr/include/boost/preprocessor/logical/not.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/util/XprHelper.h:
+
+/usr/include/c++/13/ostream:
+
+/usr/include/boost/fusion/container/generation/ignore.hpp:
+
+/usr/include/boost/system/api_config.hpp:
+
+/usr/include/boost/mpl/aux_/na_assert.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/placeholders.hpp:
+
+/usr/include/c++/13/bits/streambuf.tcc:
+
+/usr/include/c++/13/bits/specfun.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
+
+/usr/include/c++/13/bits/exception_ptr.h:
+
+/usr/include/aarch64-linux-gnu/sys/ioctl.h:
+
+/usr/include/c++/13/bits/stl_vector.h:
+
+/usr/include/boost/function_equal.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/value_of_data_impl.hpp:
+
+/usr/include/boost/asio/detail/posix_static_mutex.hpp:
+
+/usr/include/c++/13/sstream:
+
+/usr/include/boost/algorithm/string/detail/formatter.hpp:
+
+/usr/include/boost/process/filesystem.hpp:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/opencv4/opencv2/flann/miniflann.hpp:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp:
+
+/usr/include/opencv4/opencv2/stitching/warpers.hpp:
+
+/usr/include/c++/13/tr1/beta_function.tcc:
+
+/usr/include/boost/fusion/container/map/detail/map_impl.hpp:
+
+/usr/include/boost/fusion/view/iterator_range/detail/segments_impl.hpp:
+
+/usr/include/boost/core/no_exceptions_support.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Select.h:
+
+/usr/include/boost/fusion/view/joint_view/detail/deref_data_impl.hpp:
+
+/usr/include/boost/asio/traits/set_error_free.hpp:
+
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
+
+/usr/include/c++/13/bits/stl_algobase.h:
+
+/usr/include/aarch64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/eigen3/Eigen/src/Core/PermutationMatrix.h:
+
+/usr/include/boost/asio/impl/io_context.hpp:
+
+/usr/include/boost/fusion/support/tag_of.hpp:
+
+/usr/include/boost/fusion/view/single_view/detail/distance_impl.hpp:
+
+/usr/include/boost/process/start_dir.hpp:
+
+/usr/include/boost/mpl/vector/aux_/iterator.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
+
+/usr/include/c++/13/bits/std_function.h:
+
+/usr/include/boost/asio/impl/handler_alloc_hook.ipp:
+
+/usr/include/boost/range/difference_type.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/__sigval_t.h:
+
+/usr/include/c++/13/cwctype:
+
+/usr/include/boost/mpl/aux_/preprocessor/repeat.hpp:
+
+/usr/include/c++/13/bits/sstream.tcc:
+
+/usr/include/boost/mpl/same_as.hpp:
+
+/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
+
+/usr/include/boost/asio/execution/start.hpp:
+
+/usr/include/boost/system/detail/error_category_impl.hpp:
+
+/usr/include/c++/13/bits/refwrap.h:
+
+/usr/include/boost/date_time/posix_time/posix_time_duration.hpp:
+
+/usr/include/boost/range/algorithm/equal.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/c++/13/tr1/poly_hermite.tcc:
+
+/usr/include/boost/algorithm/string/formatter.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/boost/mpl/int_fwd.hpp:
+
+/usr/include/boost/fusion/iterator/detail/distance.hpp:
+
+/usr/include/boost/asio/traits/schedule_member.hpp:
+
+/usr/include/linux/errno.h:
+
+/usr/include/boost/fusion/sequence/intrinsic_fwd.hpp:
+
+/usr/include/opencv4/opencv2/core/utility.hpp:
+
+/usr/include/c++/13/utility:
+
+/usr/include/c++/13/bits/std_abs.h:
+
+/usr/include/boost/range/iterator_range_io.hpp:
+
+/usr/include/aarch64-linux-gnu/asm/types.h:
+
+/usr/include/boost/asio/detail/posix_mutex.hpp:
+
+/usr/include/boost/fusion/sequence/intrinsic/swap.hpp:
+
+/usr/include/boost/asio/detail/timer_queue_ptime.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/stack_t.h:
+
+/usr/include/aarch64-linux-gnu/sys/cdefs.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
+
+/usr/include/boost/mpl/equal.hpp:
+
+/usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
+
+/usr/include/boost/variant/detail/apply_visitor_delayed.hpp:
+
+/usr/include/boost/asio/detail/impl/service_registry.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/netdb.h:
+
+/usr/include/boost/fusion/adapted/std_tuple/detail/is_view_impl.hpp:
+
+/usr/include/c++/13/bits/nested_exception.h:
+
+/usr/include/boost/range/range_fwd.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
+
+/usr/include/boost/asio/detail/reactor.hpp:
+
+/usr/include/boost/fusion/support/detail/is_native_fusion_sequence.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/c++/13/bits/hashtable.h:
+
+/usr/include/boost/algorithm/string/find_format.hpp:
+
+/usr/include/c++/13/bits/localefwd.h:
+
+/usr/include/boost/fusion/view/zip_view.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/uio_lim.h:
+
+/usr/include/eigen3/Eigen/src/Core/CommaInitializer.h:
+
+/usr/include/boost/fusion/container/list/detail/convert_impl.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/termios-baud.h:
+
+/usr/include/aarch64-linux-gnu/bits/termios-c_cc.h:
+
+/usr/include/boost/token_iterator.hpp:
+
+/usr/include/c++/13/clocale:
+
+/usr/include/c++/13/bits/requires_hosted.h:
+
+/usr/include/boost/iterator/detail/enable_if.hpp:
+
+/usr/include/c++/13/bits/locale_facets.tcc:
+
+/usr/include/boost/fusion/mpl/detail/clear.hpp:
+
+/usr/include/boost/mpl/aux_/single_element_iter.hpp:
+
+/usr/include/boost/fusion/container/deque/detail/value_at_impl.hpp:
+
+/usr/include/boost/asio/detail/reactive_socket_sendto_op.hpp:
+
+/usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/eigen3/Eigen/src/Core/ReturnByValue.h:
+
+/usr/include/net/if.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/idtype_t.h:
+
+/usr/include/boost/preprocessor/comparison/not_equal.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/value_at_impl.hpp:
+
+/usr/include/eigen3/Eigen/src/Geometry/Translation.h:
+
+/usr/include/boost/mpl/aux_/config/gcc.hpp:
+
+/usr/include/c++/13/any:
+
+/usr/include/aarch64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/aarch64-linux-gnu/bits/sigstack.h:
+
+/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
+
+/usr/include/boost/mpl/aux_/push_front_impl.hpp:
+
+/usr/include/boost/asio/detail/impl/timer_queue_ptime.ipp:
+
+/usr/include/boost/asio/traits/submit_member.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/termios-c_cflag.h:
+
+/usr/include/c++/13/tr1/hypergeometric.tcc:
+
+/usr/include/boost/fusion/container/list/detail/equal_to_impl.hpp:
+
+/usr/include/c++/13/bits/locale_facets.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/aarch64-linux-gnu/bits/eventfd.h:
+
+/usr/include/c++/13/new:
+
+/usr/include/boost/asio/execution/any_executor.hpp:
+
+/usr/include/boost/variant/visitor_ptr.hpp:
+
+/usr/include/c++/13/debug/assertions.h:
+
+/usr/include/boost/optional/detail/optional_factory_support.hpp:
+
+/home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.h:
+
+/usr/include/c++/13/cinttypes:
+
+/usr/include/boost/core/enable_if.hpp:
+
+/usr/include/boost/preprocessor/repetition/limits/repeat_256.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h:
+
+/usr/include/aarch64-linux-gnu/bits/posix2_lim.h:
+
+/usr/include/aarch64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/eigen3/Eigen/src/Core/Reshaped.h:
+
+/usr/include/c++/13/bits/cxxabi_forced.h:
+
+/usr/include/aarch64-linux-gnu/bits/local_lim.h:
+
+/usr/include/boost/mpl/aux_/erase_impl.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
+
+/usr/include/boost/algorithm/string/predicate_facade.hpp:
+
+/usr/include/c++/13/ext/numeric_traits.h:
+
+/usr/include/eigen3/Eigen/src/Core/ConditionEstimator.h:
 
 /usr/include/assert.h:
 
@@ -6756,577 +6881,13 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/lib/gcc/aarch64-linux-gnu/13/include/arm_fp16.h:
 
-/usr/include/aarch64-linux-gnu/c++/13/bits/ctype_base.h:
+/usr/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h:
 
-/usr/include/linux/version.h:
+/usr/include/c++/13/bits/stl_pair.h:
 
-/usr/include/boost/asio/detail/type_traits.hpp:
+/usr/include/aarch64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/boost/asio/error.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
-
-/usr/include/boost/fusion/algorithm/transformation/erase_key.hpp:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/boost/fusion/container/set/set_fwd.hpp:
-
-/home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp:
-
-/usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
-
-/usr/include/boost/asio/execution/blocking.hpp:
-
-/usr/include/boost/fusion/view/zip_view/detail/begin_impl.hpp:
-
-/usr/include/boost/core/detail/sp_thread_yield.hpp:
-
-/usr/include/boost/asio/io_context.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
-
-/usr/include/boost/asio/execution/impl/bad_executor.ipp:
-
-/usr/include/wchar.h:
-
-/usr/include/c++/13/cctype:
-
-/usr/include/eigen3/Eigen/src/Geometry/Homogeneous.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
-
-/usr/include/boost/mpl/equal.hpp:
-
-/usr/include/c++/13/bits/stl_tempbuf.h:
-
-/usr/include/boost/fusion/sequence/comparison.hpp:
-
-/usr/include/boost/process/detail/posix/on_exit.hpp:
-
-/usr/include/aarch64-linux-gnu/sys/procfs.h:
-
-/usr/include/boost/fusion/sequence/comparison/greater_equal.hpp:
-
-/usr/include/boost/asio/detail/chrono.hpp:
-
-/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:
-
-/usr/include/boost/asio/streambuf.hpp:
-
-/usr/include/boost/date_time/adjust_functors.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/siginfo-consts.h:
-
-/usr/include/c++/13/ratio:
-
-/usr/include/boost/filesystem/directory.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/error_t.h:
-
-/usr/include/aarch64-linux-gnu/bits/sigstack.h:
-
-/usr/lib/gcc/aarch64-linux-gnu/13/include/stdarg.h:
-
-/usr/include/boost/fusion/adapted/std_tuple/detail/is_view_impl.hpp:
-
-/usr/include/c++/13/bits/nested_exception.h:
-
-/usr/include/boost/range/range_fwd.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/DiagonalMatrix.h:
-
-/usr/include/boost/asio/detail/reactor.hpp:
-
-/usr/include/boost/fusion/support/detail/is_native_fusion_sequence.hpp:
-
-/usr/include/aarch64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/usr/include/c++/13/bits/stl_algo.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/sigval_t.h:
-
-/usr/include/aarch64-linux-gnu/bits/siginfo-arch.h:
-
-/usr/include/boost/fusion/adapted/mpl/detail/end_impl.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/errno.h:
-
-/usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
-
-/usr/include/aarch64-linux-gnu/bits/wordsize.h:
-
-/usr/include/c++/13/unordered_map:
-
-/usr/include/boost/asio/require.hpp:
-
-/usr/include/eigen3/Eigen/src/Geometry/Quaternion.h:
-
-/usr/include/c++/13/functional:
-
-/usr/include/boost/fusion/view/transform_view/detail/prior_impl.hpp:
-
-/usr/include/boost/type_traits/has_nothrow_constructor.hpp:
-
-/usr/include/c++/13/cwctype:
-
-/usr/include/boost/mpl/aux_/preprocessor/repeat.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/__sigval_t.h:
-
-/usr/include/opencv4/opencv2/core/cuda_types.hpp:
-
-/usr/include/boost/type_traits/alignment_of.hpp:
-
-/usr/include/eigen3/Eigen/Jacobi:
-
-/usr/include/boost/fusion/container/generation/cons_tie.hpp:
-
-/usr/include/c++/13/cstring:
-
-/usr/include/boost/asio/ip/resolver_query_base.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/Matrix.h:
-
-/usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/boost/asio/system_context.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h:
-
-/usr/include/boost/fusion/container/deque/detail/is_sequence_impl.hpp:
-
-/usr/include/sched.h:
-
-/usr/include/boost/mpl/times.hpp:
-
-/usr/include/boost/fusion/container/list/detail/equal_to_impl.hpp:
-
-/usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/tr1/hypergeometric.tcc:
-
-/usr/include/eigen3/Eigen/src/Geometry/AlignedBox.h:
-
-/usr/include/boost/mpl/arg.hpp:
-
-/usr/include/c++/13/climits:
-
-/usr/include/boost/fusion/container/deque/detail/deque_keyed_values.hpp:
-
-/usr/include/boost/date_time/time_resolution_traits.hpp:
-
-/usr/include/eigen3/Eigen/src/Eigenvalues/ComplexEigenSolver.h:
-
-/usr/include/c++/13/bits/memoryfwd.h:
-
-/usr/include/boost/preprocessor/facilities/check_empty.hpp:
-
-/usr/include/boost/asio/detail/impl/posix_event.ipp:
-
-/usr/include/boost/fusion/container/deque/front_extended_deque.hpp:
-
-/usr/include/boost/asio/execution/scheduler.hpp:
-
-/usr/include/boost/fusion/view/joint_view/detail/next_impl.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/confname.h:
-
-/usr/include/aarch64-linux-gnu/c++/13/bits/gthr.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h:
-
-/usr/include/boost/asio/impl/execution_context.ipp:
-
-/usr/include/boost/mpl/aux_/traits_lambda_spec.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/signum-arch.h:
-
-/usr/include/boost/fusion/mpl/erase_key.hpp:
-
-/usr/include/boost/fusion/container/map/detail/at_impl.hpp:
-
-/usr/include/c++/13/condition_variable:
-
-/usr/include/boost/process/group.hpp:
-
-/usr/include/boost/asio/detail/posix_event.hpp:
-
-/usr/include/boost/fusion/mpl/front.hpp:
-
-/usr/include/boost/asio/detail/buffer_sequence_adapter.hpp:
-
-/usr/include/boost/range/detail/safe_bool.hpp:
-
-/usr/include/boost/asio/posix/stream_descriptor.hpp:
-
-/usr/include/c++/13/bits/atomic_lockfree_defines.h:
-
-/usr/include/boost/date_time/microsec_time_clock.hpp:
-
-/usr/include/c++/13/cstdarg:
-
-/usr/include/c++/13/bits/std_abs.h:
-
-/usr/include/c++/13/utility:
-
-/usr/include/boost/asio/detail/throw_exception.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/signum-generic.h:
-
-/usr/include/boost/process/detail/posix/terminate.hpp:
-
-/usr/include/boost/asio/detail/signal_set_service.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h:
-
-/usr/include/boost/type_traits/remove_pointer.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/posix2_lim.h:
-
-/usr/include/aarch64-linux-gnu/bits/long-double.h:
-
-/usr/include/eigen3/Eigen/Geometry:
-
-/usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
-
-/usr/include/eigen3/Eigen/src/Core/SolverBase.h:
-
-/usr/include/boost/type_traits/has_minus.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/util/SymbolicIndex.h:
-
-/usr/include/c++/13/bits/specfun.h:
-
-/usr/include/c++/13/bits/exception_ptr.h:
-
-/usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
-
-/usr/include/boost/asio/detail/reactive_socket_recv_op.hpp:
-
-/usr/include/boost/container_hash/hash_fwd.hpp:
-
-/usr/include/boost/utility/result_of.hpp:
-
-/usr/include/boost/fusion/adapted/mpl.hpp:
-
-/usr/include/eigen3/Eigen/LU:
-
-/usr/include/boost/fusion/adapted/mpl/detail/value_at_impl.hpp:
-
-/usr/include/boost/fusion/iterator/equal_to.hpp:
-
-/usr/include/boost/optional/detail/optional_relops.hpp:
-
-/usr/include/boost/mpl/zip_view.hpp:
-
-/usr/include/boost/fusion/sequence.hpp:
-
-/usr/include/boost/filesystem/file_status.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
-
-/usr/include/boost/filesystem/detail/footer.hpp:
-
-/usr/include/c++/13/bits/charconv.h:
-
-/usr/include/boost/fusion/container/list/detail/list_to_cons.hpp:
-
-/usr/include/boost/fusion/container/deque/detail/begin_impl.hpp:
-
-/usr/include/boost/asio/detail/winsock_init.hpp:
-
-/usr/include/boost/fusion/iterator/distance.hpp:
-
-/usr/include/math.h:
-
-/usr/include/boost/asio/detail/reactive_wait_op.hpp:
-
-/usr/local/include/urcl/log.h:
-
-/usr/include/boost/move/detail/type_traits.hpp:
-
-/usr/include/boost/process/detail/posix/wait_group.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/aarch64-linux-gnu/bits/eventfd.h:
-
-/home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.h:
-
-/usr/include/c++/13/cinttypes:
-
-/usr/include/boost/core/enable_if.hpp:
-
-/usr/include/boost/preprocessor/repetition/limits/repeat_256.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctions.h:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/boost/asio/basic_streambuf_fwd.hpp:
-
-/usr/include/boost/fusion/view/filter_view/detail/deref_data_impl.hpp:
-
-/usr/include/boost/preprocessor/list/reverse.hpp:
-
-/usr/include/boost/fusion/support/detail/access.hpp:
-
-/usr/include/boost/fusion/view/zip_view/detail/prior_impl.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/util/Meta.h:
-
-/usr/include/c++/13/compare:
-
-/usr/include/aarch64-linux-gnu/bits/types.h:
-
-/usr/include/aarch64-linux-gnu/sys/select.h:
-
-/usr/include/boost/shared_ptr.hpp:
-
-/usr/include/boost/asio/detail/reactive_null_buffers_op.hpp:
-
-/usr/include/boost/asio/detail/reactive_socket_service.hpp:
-
-/usr/include/boost/fusion/container/vector/detail/as_vector.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
-
-/usr/include/c++/13/bits/predefined_ops.h:
-
-/usr/include/boost/fusion/algorithm/iteration/detail/for_each.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/dirent.h:
-
-/usr/include/boost/asio/detail/resolver_service_base.hpp:
-
-/usr/include/boost/preprocessor/comparison/limits/not_equal_256.hpp:
-
-/usr/include/boost/fusion/container/deque/detail/value_at_impl.hpp:
-
-/usr/include/boost/asio/detail/reactive_socket_sendto_op.hpp:
-
-/usr/include/c++/13/bits/ios_base.h:
-
-/usr/include/boost/fusion/iterator/deref_data.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:
-
-/usr/include/boost/asio/detail/conditionally_enabled_event.hpp:
-
-/usr/include/boost/asio/detail/thread_context.hpp:
-
-/usr/include/boost/function/detail/maybe_include.hpp:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/eigen3/Eigen/src/Core/Fuzzy.h:
-
-/usr/include/boost/fusion/container/vector/detail/equal_to_impl.hpp:
-
-/usr/include/boost/asio/detail/op_queue.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/byteswap.h:
-
-/usr/include/aarch64-linux-gnu/gnu/stubs.h:
-
-/usr/include/boost/asio/wait_traits.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/math-vector.h:
-
-/usr/include/boost/asio/async_result.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/stdint-intn.h:
-
-/usr/include/aarch64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/aarch64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/include/aarch64-linux-gnu/bits/siginfo-consts-arch.h:
-
-/usr/include/aarch64-linux-gnu/bits/environments.h:
-
-/usr/include/boost/mpl/aux_/has_key_impl.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
-
-/usr/include/boost/mpl/list/aux_/size.hpp:
-
-/usr/include/boost/fusion/container/deque/deque_fwd.hpp:
-
-/usr/include/boost/fusion/container/vector/vector10.hpp:
-
-/usr/include/boost/fusion/sequence/io.hpp:
-
-/usr/include/asm-generic/int-ll64.h:
-
-/usr/include/boost/asio/ip/basic_resolver_entry.hpp:
-
-/usr/include/c++/13/cwchar:
-
-/usr/include/boost/preprocessor/seq/enum.hpp:
-
-/usr/include/opencv4/opencv2/flann/allocator.h:
-
-/usr/include/aarch64-linux-gnu/bits/sigcontext.h:
-
-/usr/include/c++/13/bits/move.h:
-
-/usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
-
-/usr/include/opencv4/opencv2/core/operations.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/opencv4/opencv2/flann/lsh_index.h:
-
-/usr/include/boost/asio/ip/basic_resolver_iterator.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/eigen3/Eigen/src/Core/Reshaped.h:
-
-/usr/include/boost/fusion/include/for_each.hpp:
-
-/usr/include/c++/13/complex:
-
-/usr/include/boost/function/detail/function_iterate.hpp:
-
-/usr/include/boost/mpl/vector/aux_/iterator.hpp:
-
-/usr/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/posix1_lim.h:
-
-/usr/include/boost/fusion/view/detail/strictest_traversal.hpp:
-
-/usr/include/boost/fusion/adapted/std_tuple/detail/convert_impl.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
-
-/usr/include/boost/preprocessor/array/data.hpp:
-
-/usr/include/c++/13/bits/range_access.h:
-
-/usr/include/opencv4/opencv2/flann/autotuned_index.h:
-
-/usr/include/boost/type_index/stl_type_index.hpp:
-
-/usr/include/c++/13/bits/requires_hosted.h:
-
-/usr/include/boost/iterator/detail/enable_if.hpp:
-
-/usr/include/c++/13/bits/locale_facets.tcc:
-
-/usr/include/aarch64-linux-gnu/bits/procfs.h:
-
-/usr/include/boost/numeric/conversion/detail/is_subranged.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/boost/call_traits.hpp:
-
-/usr/include/c++/13/bits/locale_classes.h:
-
-/usr/include/aarch64-linux-gnu/bits/fcntl.h:
-
-/home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp:
-
-/usr/include/boost/fusion/view/filter_view/filter_view.hpp:
-
-/usr/include/aarch64-linux-gnu/c++/13/bits/gthr-default.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h:
-
-/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_bf16.h:
-
-/usr/include/aarch64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/aarch64-linux-gnu/sys/timerfd.h:
-
-/usr/include/boost/mpl/pop_front_fwd.hpp:
-
-/usr/include/boost/system/system_error.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
-
-/usr/include/boost/fusion/view/iterator_range/detail/begin_impl.hpp:
-
-/usr/include/c++/13/bits/exception.h:
-
-/usr/include/boost/mpl/integral_c_tag.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/arch/Default/Half.h:
-
-/usr/include/boost/assert.hpp:
-
-/usr/include/boost/fusion/tuple/tuple_tie.hpp:
-
-/usr/include/boost/filesystem/config.hpp:
-
-/usr/include/boost/asio/ip/impl/address_v6.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/aarch64-linux-gnu/bits/locale.h:
-
-/usr/lib/gcc/aarch64-linux-gnu/13/include/stdint.h:
-
-/usr/include/boost/mpl/tag.hpp:
-
-/usr/include/boost/asio/execution/outstanding_work.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/wint_t.h:
-
-/usr/include/boost/asio/execution/set_error.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h:
-
-/usr/include/boost/mpl/aux_/config/static_constant.hpp:
-
-/usr/include/boost/asio/detail/executor_op.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/endianness.h:
-
-/usr/include/boost/fusion/view/reverse_view/detail/at_impl.hpp:
-
-/usr/include/boost/fusion/algorithm/transformation/push_front.hpp:
-
-/usr/include/boost/fusion/view/transform_view/detail/distance_impl.hpp:
-
-/usr/include/boost/function/detail/epilogue.hpp:
-
-/usr/include/boost/mpl/vector/aux_/push_back.hpp:
-
-/usr/include/boost/concept/assert.hpp:
-
-/usr/include/boost/asio/execution/schedule.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/boost/concept/detail/backward_compatibility.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/stat.h:
-
-/usr/include/boost/fusion/support/tag_of_fwd.hpp:
-
-/usr/include/eigen3/Eigen/src/Geometry/Scaling.h:
-
-/usr/include/boost/mpl/aux_/at_impl.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
-
-/usr/include/poll.h:
-
-/usr/include/aarch64-linux-gnu/bits/sigstksz.h:
-
-/usr/include/boost/mpl/list/aux_/empty.hpp:
+/usr/include/boost/mpl/list/aux_/include_preprocessed.hpp:
 
 /usr/include/boost/fusion/view/zip_view/detail/next_impl.hpp:
 
@@ -7338,113 +6899,47 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/aux_/config/compiler.hpp:
 
-/usr/include/aarch64-linux-gnu/asm/sigcontext.h:
+/usr/include/boost/asio/detail/reactive_wait_op.hpp:
 
-/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
+/usr/local/include/urcl/log.h:
 
-/usr/include/boost/asio/execution/detail/void_receiver.hpp:
+/usr/include/boost/move/detail/type_traits.hpp:
 
-/usr/include/c++/13/bits/uses_allocator_args.h:
+/usr/include/boost/process/detail/posix/wait_group.hpp:
 
-/usr/include/boost/mpl/list/aux_/item.hpp:
+/usr/include/boost/fusion/iterator/distance.hpp:
 
-/usr/include/boost/process/detail/posix/handler.hpp:
+/usr/include/math.h:
 
-/usr/include/boost/config/pragma_message.hpp:
+/usr/include/boost/container_hash/hash_fwd.hpp:
 
-/usr/include/c++/13/bits/atomic_base.h:
+/usr/include/boost/fusion/adapted/mpl.hpp:
 
-/usr/include/boost/type_traits/has_nothrow_copy.hpp:
+/usr/include/eigen3/Eigen/LU:
 
-/usr/include/aarch64-linux-gnu/bits/select.h:
+/usr/include/boost/utility/result_of.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
+/usr/include/boost/range/detail/safe_bool.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/arch/NEON/PacketMath.h:
+/usr/include/boost/asio/posix/stream_descriptor.hpp:
 
-/usr/include/c++/13/bits/stl_pair.h:
+/usr/include/c++/13/bits/atomic_lockfree_defines.h:
 
-/usr/include/aarch64-linux-gnu/bits/fp-fast.h:
+/usr/include/boost/date_time/microsec_time_clock.hpp:
 
-/usr/include/boost/mpl/list/aux_/include_preprocessed.hpp:
+/usr/include/c++/13/cstdarg:
 
-/usr/include/linux/close_range.h:
+/usr/include/aarch64-linux-gnu/bits/getopt_core.h:
 
-/usr/include/boost/mpl/advance.hpp:
+/usr/include/aarch64-linux-gnu/sys/timerfd.h:
 
-/usr/include/boost/fusion/algorithm/transformation/push_back.hpp:
+/usr/include/boost/mpl/pop_front_fwd.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/types/siginfo_t.h:
+/usr/include/boost/system/system_error.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/getopt_posix.h:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_bf16.h:
 
-/usr/include/aarch64-linux-gnu/sys/ttydefaults.h:
-
-/usr/include/boost/fusion/adapted/mpl/detail/begin_impl.hpp:
-
-/usr/include/boost/preprocessor/list/detail/limits/fold_left_256.hpp:
-
-/usr/include/eigen3/Eigen/src/misc/Kernel.h:
-
-/usr/include/boost/fusion/container/list/nil.hpp:
-
-/usr/include/boost/fusion/container/vector/detail/value_at_impl.hpp:
-
-/usr/include/eigen3/Eigen/src/Geometry/Translation.h:
-
-/usr/include/boost/mpl/aux_/config/gcc.hpp:
-
-/usr/include/c++/13/any:
-
-/usr/include/c++/13/ext/string_conversions.h:
-
-/usr/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
-
-/usr/include/boost/fusion/container/generation.hpp:
-
-/usr/include/boost/type_traits/is_same.hpp:
-
-/usr/include/boost/date_time/int_adapter.hpp:
-
-/usr/include/c++/13/bits/stl_construct.h:
-
-/usr/include/net/if.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/idtype_t.h:
-
-/usr/include/boost/preprocessor/comparison/not_equal.hpp:
-
-/usr/include/c++/13/bits/functexcept.h:
-
-/usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
-
-/usr/include/eigen3/Eigen/Core:
-
-/usr/include/eigen3/Eigen/src/Core/ReturnByValue.h:
-
-/usr/include/aarch64-linux-gnu/bits/waitflags.h:
-
-/usr/include/eigen3/Eigen/src/LU/InverseImpl.h:
-
-/usr/include/aarch64-linux-gnu/bits/wchar.h:
-
-/usr/include/c++/13/bits/ostream.tcc:
-
-/usr/include/boost/mpl/aux_/type_wrapper.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/clockid_t.h:
-
-/usr/include/boost/fusion/algorithm/iteration/for_each_fwd.hpp:
-
-/usr/include/opencv4/opencv2/stitching/warpers.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/sigevent_t.h:
-
-/usr/include/boost/range/iterator.hpp:
-
-/usr/include/boost/fusion/iterator/mpl/convert_iterator.hpp:
-
-/usr/include/boost/fusion/adapted/std_tuple/detail/is_sequence_impl.hpp:
+/usr/include/aarch64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/boost/fusion/container/list/detail/value_at_impl.hpp:
 
@@ -7472,85 +6967,289 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/features-time64.h:
 
-/usr/include/boost/asio/execution_context.hpp:
+/usr/include/boost/fusion/adapted/mpl/detail/end_impl.hpp:
 
-/usr/include/boost/fusion/container/vector/detail/deref_impl.hpp:
+/usr/include/aarch64-linux-gnu/bits/errno.h:
 
-/usr/include/boost/function/detail/prologue.hpp:
+/usr/include/aarch64-linux-gnu/bits/siginfo-arch.h:
 
-/usr/include/boost/fusion/container/list/detail/value_of_impl.hpp:
+/usr/include/boost/concept/assert.hpp:
 
-/usr/include/termios.h:
+/usr/include/boost/asio/execution/schedule.hpp:
 
-/usr/include/boost/asio/execution/context_as.hpp:
+/usr/include/aarch64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/include/c++/13/atomic:
+/usr/include/eigen3/Eigen/src/Core/util/Meta.h:
 
-/usr/include/aarch64-linux-gnu/sys/stat.h:
+/usr/include/c++/13/compare:
 
-/usr/include/boost/fusion/container/vector/detail/prior_impl.hpp:
+/usr/include/boost/fusion/container/vector/detail/as_vector.hpp:
 
-/usr/include/linux/posix_types.h:
+/usr/include/boost/fusion/algorithm/iteration/detail/for_each.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/DenseBase.h:
+/usr/include/aarch64-linux-gnu/bits/dirent.h:
 
-/usr/include/aarch64-linux-gnu/bits/types/struct_sched_param.h:
+/usr/include/boost/asio/detail/resolver_service_base.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/Assign.h:
+/usr/include/boost/preprocessor/comparison/limits/not_equal_256.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/signal_ext.h:
+/usr/include/c++/13/bits/basic_ios.tcc:
 
-/usr/include/aarch64-linux-gnu/bits/termios-struct.h:
+/usr/include/boost/fusion/view/reverse_view/detail/key_of_impl.hpp:
+
+/usr/include/boost/fusion/include/for_each.hpp:
+
+/usr/include/c++/13/complex:
+
+/usr/include/boost/asio/detail/global.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/eigen3/Eigen/src/Core/IndexedView.h:
+
+/usr/include/eigen3/Eigen/src/Geometry/arch/Geometry_SIMD.h:
+
+/usr/include/boost/mpl/iterator_tags.hpp:
+
+/usr/include/opencv4/opencv2/flann/autotuned_index.h:
+
+/usr/include/boost/type_index/stl_type_index.hpp:
+
+/usr/include/boost/numeric/conversion/detail/is_subranged.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h:
+
+/usr/include/ctype.h:
+
+/usr/include/boost/function/detail/epilogue.hpp:
+
+/usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
+
+/usr/include/boost/mpl/next.hpp:
+
+/usr/include/boost/mpl/vector/aux_/push_back.hpp:
+
+/usr/include/boost/fusion/algorithm/transformation/push_front.hpp:
+
+/usr/include/boost/fusion/view/transform_view/detail/distance_impl.hpp:
+
+/usr/include/boost/fusion/container/generation/cons_tie.hpp:
+
+/usr/include/c++/13/cstring:
+
+/usr/include/boost/asio/ip/resolver_query_base.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:
+
+/usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/boost/asio/system_context.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/util/StaticAssert.h:
+
+/usr/include/aarch64-linux-gnu/bits/endian.h:
+
+/usr/include/boost/filesystem/operations.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/struct_statx_timestamp.h:
 
 /usr/include/c++/13/system_error:
 
-/usr/include/aarch64-linux-gnu/asm/ioctl.h:
+/usr/include/boost/fusion/support/detail/access.hpp:
 
-/usr/include/boost/fusion/container/map/detail/value_at_key_impl.hpp:
+/usr/include/boost/fusion/view/zip_view/detail/prior_impl.hpp:
 
-/usr/include/c++/13/chrono:
+/usr/include/boost/asio/basic_streambuf_fwd.hpp:
 
-/usr/include/boost/asio/detail/impl/strand_service.hpp:
+/usr/include/boost/fusion/view/filter_view/detail/deref_data_impl.hpp:
 
-/usr/include/boost/preprocessor/logical/bitor.hpp:
+/usr/include/boost/preprocessor/list/reverse.hpp:
 
-/usr/include/c++/13/pstl/pstl_config.h:
+/usr/include/eigen3/Eigen/src/Core/functors/UnaryFunctors.h:
 
-/usr/include/c++/13/iomanip:
+/usr/include/boost/mpl/list/aux_/size.hpp:
 
-/usr/include/boost/mpl/multiplies.hpp:
+/usr/include/c++/13/cwchar:
+
+/usr/include/boost/preprocessor/seq/enum.hpp:
+
+/usr/include/opencv4/opencv2/flann/allocator.h:
+
+/usr/include/c++/13/bits/algorithmfwd.h:
+
+/usr/include/aarch64-linux-gnu/bits/ioctls.h:
+
+/usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/eigen3/Eigen/src/Core/SolverBase.h:
+
+/usr/include/boost/type_traits/has_minus.hpp:
+
+/usr/include/eigen3/Eigen/Geometry:
+
+/usr/include/eigen3/Eigen/src/Core/MathFunctionsImpl.h:
+
+/usr/include/boost/fusion/container/list/nil.hpp:
+
+/usr/include/boost/asio/execution/set_error.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+/usr/include/boost/asio/execution/outstanding_work.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/wint_t.h:
+
+/usr/include/boost/mpl/aux_/config/static_constant.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/equal_to_impl.hpp:
+
+/usr/include/boost/asio/detail/op_queue.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_sigstack.h:
 
-/usr/include/boost/algorithm/string/classification.hpp:
+/usr/include/boost/mpl/multiplies.hpp:
 
-/usr/include/boost/fusion/container/set/detail/deref_impl.hpp:
+/usr/include/aarch64-linux-gnu/bits/byteswap.h:
 
-/usr/include/eigen3/Eigen/src/Core/Replicate.h:
+/usr/include/eigen3/Eigen/src/Core/VectorwiseOp.h:
 
-/usr/include/boost/preprocessor/detail/auto_rec.hpp:
+/usr/include/boost/asio/detail/reactive_socket_recv_op.hpp:
+
+/usr/include/boost/fusion/adapted/mpl/detail/value_at_impl.hpp:
+
+/usr/include/boost/fusion/iterator/equal_to.hpp:
+
+/usr/include/boost/optional/detail/optional_relops.hpp:
+
+/usr/include/boost/mpl/zip_view.hpp:
+
+/usr/include/boost/fusion/sequence.hpp:
+
+/usr/include/boost/filesystem/file_status.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/ArrayWrapper.h:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
+
+/usr/include/boost/filesystem/detail/footer.hpp:
+
+/usr/include/c++/13/bits/charconv.h:
+
+/usr/include/boost/fusion/container/list/detail/list_to_cons.hpp:
+
+/usr/include/boost/fusion/container/deque/detail/begin_impl.hpp:
+
+/usr/include/boost/asio/detail/winsock_init.hpp:
+
+/usr/include/boost/process/detail/posix/terminate.hpp:
+
+/usr/include/boost/asio/detail/signal_set_service.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h:
+
+/usr/include/boost/type_traits/remove_pointer.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/boost/assert.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/boost/mpl/tag.hpp:
+
+/usr/include/boost/mpl/aux_/at_impl.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/poll.h:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/c++allocator.h:
+
+/usr/include/boost/mpl/list/aux_/empty.hpp:
+
+/usr/include/boost/asio/detail/initiate_defer.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/in.h:
+
+/usr/include/boost/predef/platform/windows_runtime.h:
+
+/usr/include/boost/asio/detail/impl/posix_event.ipp:
+
+/usr/include/c++/13/bits/stl_algo.h:
+
+/usr/include/boost/asio/detail/executor_op.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/endianness.h:
+
+/usr/include/boost/fusion/view/reverse_view/detail/at_impl.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/math-vector.h:
+
+/usr/include/aarch64-linux-gnu/gnu/stubs.h:
+
+/usr/include/boost/asio/wait_traits.hpp:
+
+/usr/include/eigen3/Eigen/src/Geometry/Scaling.h:
+
+/usr/include/boost/concept/detail/backward_compatibility.hpp:
+
+/usr/include/c++/13/cassert:
+
+/usr/include/boost/filesystem/config.hpp:
+
+/usr/include/boost/asio/ip/impl/address_v6.hpp:
+
+/usr/include/boost/fusion/tuple/tuple_tie.hpp:
+
+/usr/include/netinet/tcp.h:
+
+/usr/include/boost/fusion/algorithm/transformation/pop_front.hpp:
+
+/usr/include/opencv4/opencv2/objdetect.hpp:
+
+/home/emilklitgaard/Workspace/Semesterprojekt/Vision.h:
+
+/usr/include/c++/13/bits/cpp_type_traits.h:
+
+/usr/include/boost/preprocessor/stringize.hpp:
+
+/usr/include/c++/13/algorithm:
+
+/usr/include/boost/fusion/container/deque/detail/is_sequence_impl.hpp:
+
+/usr/include/sched.h:
+
+/usr/include/boost/mpl/times.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/mbstate_t.h:
+
+/usr/include/boost/fusion/view/reverse_view/detail/advance_impl.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/gthr.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/boost/asio/impl/execution_context.ipp:
+
+/usr/include/boost/mpl/aux_/traits_lambda_spec.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/sigevent_t.h:
+
+/usr/include/boost/range/iterator.hpp:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/EigenSolver.h:
+
+/usr/include/opencv4/opencv2/flann/lsh_index.h:
+
+/usr/include/boost/asio/ip/basic_resolver_iterator.hpp:
+
+/usr/include/opencv4/opencv2/core/operations.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/mathcalls.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/eigen3/Eigen/src/Core/StableNorm.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/boost/functional/hash_fwd.hpp:
-
-/usr/include/boost/fusion/support/sequence_base.hpp:
-
-/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
-
-/usr/include/boost/version.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/time_t.h:
-
-/usr/include/c++/13/cmath:
-
-/usr/include/boost/variant/recursive_wrapper_fwd.hpp:
-
-/usr/include/c++/13/istream:
 
 /usr/include/aarch64-linux-gnu/c++/13/bits/messages_members.h:
 
@@ -7559,10 +7258,6 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 /usr/include/boost/mpl/find_if.hpp:
 
 /usr/include/boost/asio/associated_executor.hpp:
-
-/usr/include/opencv4/opencv2/core/check.hpp:
-
-/usr/include/c++/13/bits/locale_classes.tcc:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/times.hpp:
 
@@ -7574,13 +7269,25 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/date_time/date_clock_device.hpp:
 
-/usr/include/boost/mpl/limits/arity.hpp:
+/usr/include/c++/13/bits/stl_construct.h:
 
-/usr/include/boost/asio/execution/mapping.hpp:
+/usr/include/aarch64-linux-gnu/bits/waitflags.h:
 
-/usr/include/eigen3/Eigen/src/Core/MathFunctions.h:
+/usr/include/aarch64-linux-gnu/bits/wchar.h:
 
-/usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
+/usr/include/c++/13/bits/ostream.tcc:
+
+/usr/include/boost/mpl/aux_/type_wrapper.hpp:
+
+/usr/include/boost/fusion/adapted/std_tuple/detail/is_sequence_impl.hpp:
+
+/usr/include/boost/fusion/container/map/map.hpp:
+
+/usr/include/boost/mpl/if.hpp:
+
+/usr/include/eigen3/Eigen/QR:
+
+/usr/include/c++/13/bits/exception_defines.h:
 
 /usr/include/boost/date_time/time_duration.hpp:
 
@@ -7594,43 +7301,55 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/fusion/container/list/detail/next_impl.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/posix_opt.h:
+/usr/include/aarch64-linux-gnu/c++/13/bits/ctype_base.h:
 
-/usr/include/time.h:
+/usr/include/linux/version.h:
+
+/usr/include/boost/asio/detail/type_traits.hpp:
+
+/usr/include/boost/fusion/container/set/set_fwd.hpp:
+
+/home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp:
+
+/usr/include/c++/13/bits/locale_classes.tcc:
+
+/usr/include/opencv4/opencv2/core/check.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/BandMatrix.h:
+
+/usr/include/boost/asio/execution/blocking.hpp:
+
+/usr/include/boost/fusion/view/zip_view/detail/begin_impl.hpp:
+
+/usr/include/boost/core/detail/sp_thread_yield.hpp:
+
+/usr/include/boost/asio/detail/chrono.hpp:
 
 /usr/include/aarch64-linux-gnu/c++/13/bits/cpu_defines.h:
 
-/usr/include/c++/13/ostream:
+/usr/include/aarch64-linux-gnu/bits/sigstksz.h:
 
-/usr/include/c++/13/pstl/glue_algorithm_defs.h:
+/usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h:
 
-/usr/include/c++/13/bits/std_thread.h:
+/usr/include/aarch64-linux-gnu/c++/13/bits/gthr-default.h:
 
-/usr/include/eigen3/Eigen/src/Core/Visitor.h:
+/usr/include/aarch64-linux-gnu/bits/wordsize.h:
 
-/usr/include/boost/algorithm/string/iter_find.hpp:
+/usr/include/c++/13/unordered_map:
 
-/usr/include/boost/range/has_range_iterator.hpp:
+/usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h:
 
-/usr/include/boost/asio/time_traits.hpp:
+/usr/include/aarch64-linux-gnu/bits/types.h:
 
-/usr/include/c++/13/bits/stringfwd.h:
+/usr/include/aarch64-linux-gnu/sys/select.h:
 
-/usr/include/boost/process/detail/posix/null_in.hpp:
+/usr/include/boost/shared_ptr.hpp:
 
-/usr/include/boost/date_time/time_system_split.hpp:
+/usr/include/boost/asio/detail/reactive_null_buffers_op.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/termios.h:
+/usr/include/boost/asio/detail/reactive_socket_service.hpp:
 
-/usr/include/c++/13/bits/shared_ptr.h:
-
-/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:
-
-/usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h:
-
-/usr/include/boost/concept/detail/general.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/Swap.h:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/arm_neon.h:
 
 /usr/include/boost/algorithm/string/detail/classification.hpp:
 
@@ -7640,31 +7359,103 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/c++/13/stdexcept:
 
-/usr/include/c++/13/tr1/beta_function.tcc:
+/usr/include/boost/asio/error.hpp:
 
-/usr/include/boost/fusion/container/map/detail/map_impl.hpp:
+/usr/include/boost/fusion/algorithm/transformation/erase_key.hpp:
 
-/usr/include/boost/fusion/view/iterator_range/detail/segments_impl.hpp:
+/usr/include/asm-generic/errno-base.h:
 
-/usr/include/boost/core/no_exceptions_support.hpp:
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
 
-/usr/include/eigen3/Eigen/src/Core/Select.h:
+/usr/include/c++/13/bits/stl_tempbuf.h:
 
-/usr/include/boost/fusion/view/joint_view/detail/deref_data_impl.hpp:
+/usr/include/boost/fusion/sequence/comparison.hpp:
 
-/usr/include/c++/13/tr1/ell_integral.tcc:
+/usr/include/boost/process/detail/posix/on_exit.hpp:
 
-/usr/include/boost/algorithm/string/detail/util.hpp:
+/usr/include/aarch64-linux-gnu/asm/sigcontext.h:
 
-/usr/include/c++/13/tr1/exp_integral.tcc:
+/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h:
 
-/usr/include/boost/asio/execution/submit.hpp:
+/usr/include/c++/13/bits/basic_string.tcc:
 
-/usr/include/asm-generic/types.h:
+/usr/include/boost/utility/binary.hpp:
 
-/usr/include/opencv4/opencv2/imgproc.hpp:
+/usr/include/aarch64-linux-gnu/bits/types/struct_sched_param.h:
 
-/usr/include/c++/13/tr1/legendre_function.tcc:
+/usr/include/eigen3/Eigen/src/Core/Assign.h:
+
+/usr/include/aarch64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/aarch64-linux-gnu/bits/termios-struct.h:
+
+/usr/include/c++/13/atomic:
+
+/usr/include/aarch64-linux-gnu/sys/stat.h:
+
+/usr/include/boost/fusion/container/vector/detail/prior_impl.hpp:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/eigen3/Eigen/src/Core/DenseBase.h:
+
+/usr/include/boost/fusion/adapted/std_tuple/detail/convert_impl.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/util/Macros.h:
+
+/usr/include/boost/asio/execution/detail/void_receiver.hpp:
+
+/usr/include/c++/13/bits/uses_allocator_args.h:
+
+/usr/include/boost/mpl/list/aux_/item.hpp:
+
+/usr/include/boost/type_traits/has_nothrow_copy.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/select.h:
+
+/usr/include/boost/process/detail/posix/handler.hpp:
+
+/usr/include/boost/config/pragma_message.hpp:
+
+/usr/include/c++/13/bits/atomic_base.h:
+
+/usr/include/stdio.h:
+
+/usr/include/boost/asio/detail/thread_group.hpp:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/aarch64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/eigen3/Eigen/src/Core/StableNorm.h:
+
+/usr/include/aarch64-linux-gnu/sys/eventfd.h:
+
+/usr/include/boost/fusion/container/generation/make_deque.hpp:
+
+/usr/include/boost/fusion/container/map/detail/end_impl.hpp:
+
+/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h:
+
+/usr/include/boost/bind/mem_fn_template.hpp:
+
+/usr/include/boost/asio/detail/conditionally_enabled_mutex.hpp:
+
+/usr/include/boost/mpl/apply_fwd.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
+
+/usr/include/c++/13/bits/shared_ptr.h:
+
+/usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:
+
+/usr/include/eigen3/Eigen/src/Core/SelfCwiseBinaryOp.h:
+
+/usr/include/boost/concept/detail/general.hpp:
+
+/usr/include/boost/iterator/distance.hpp:
 
 /usr/include/boost/fusion/container/deque/deque.hpp:
 
@@ -7682,79 +7473,25 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/aarch64-linux-gnu/bits/timex.h:
 
-/usr/include/boost/asio/detail/assert.hpp:
+/usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/include/c++/13/tr1/riemann_zeta.tcc:
+/usr/lib/gcc/aarch64-linux-gnu/13/include/stdarg.h:
 
-/usr/include/boost/mpl/long.hpp:
+/usr/include/c++/13/bits/enable_special_members.h:
 
-/usr/include/boost/fusion/container/map/map_iterator.hpp:
+/usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
 
-/usr/include/boost/preprocessor/logical/not.hpp:
+/usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/util/XprHelper.h:
+/usr/include/eigen3/Eigen/Core:
 
-/usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h:
+/usr/include/c++/13/bits/functexcept.h:
 
-/usr/include/boost/system/detail/append_int.hpp:
+/usr/include/boost/asio/async_result.hpp:
 
-/usr/include/c++/13/bits/codecvt.h:
+/usr/include/aarch64-linux-gnu/bits/stdint-intn.h:
 
-/usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
-
-/usr/include/boost/asio/handler_invoke_hook.hpp:
-
-/usr/include/boost/asio/posix/basic_stream_descriptor.hpp:
-
-/usr/include/c++/13/tr1/special_function_util.h:
-
-/usr/include/boost/fusion/view/transform_view/detail/equal_to_impl.hpp:
-
-/usr/include/boost/asio/traits/submit_member.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/termios-c_cflag.h:
-
-/usr/include/boost/mpl/pair.hpp:
-
-/usr/include/c++/13/typeinfo:
-
-/usr/include/boost/iterator/distance.hpp:
-
-/usr/include/ctype.h:
-
-/usr/include/eigen3/Eigen/Cholesky:
-
-/usr/include/boost/preprocessor/control/expr_iif.hpp:
-
-/usr/include/boost/fusion/container/map/map.hpp:
-
-/usr/include/boost/mpl/if.hpp:
-
-/usr/include/eigen3/Eigen/QR:
-
-/usr/include/boost/filesystem/detail/path_traits.hpp:
-
-/usr/include/boost/range/distance.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/struct_osockaddr.h:
-
-/usr/include/eigen3/Eigen/SVD:
-
-/usr/include/boost/asio/traits/submit_free.hpp:
-
-/usr/include/eigen3/Eigen/src/Cholesky/LLT.h:
-
-/usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:
-
-/usr/include/boost/mpl/aux_/push_front_impl.hpp:
-
-/usr/include/boost/asio/detail/impl/timer_queue_ptime.ipp:
-
-/usr/include/boost/asio/detail/descriptor_ops.hpp:
-
-/usr/include/boost/mpl/next.hpp:
-
-/usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h:
+/usr/include/boost/mpl/limits/vector.hpp:
 
 /usr/include/boost/fusion/container/set/set.hpp:
 
@@ -7762,23 +7499,39 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/eigen3/Eigen/src/plugins/IndexedViewMethods.h:
 
-/usr/include/eigen3/Eigen/src/Core/Product.h:
-
-/usr/include/boost/asio/detail/scheduler_thread_info.hpp:
-
-/usr/include/boost/asio/consign.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/sig_atomic_t.h:
-
 /usr/include/boost/fusion/algorithm/iteration/detail/segmented_fold.hpp:
 
 /usr/include/boost/process/detail/posix/search_path.hpp:
 
 /usr/include/boost/fusion/support/is_sequence.hpp:
 
+/usr/include/boost/call_traits.hpp:
+
+/usr/include/c++/13/bits/locale_classes.h:
+
+/usr/include/time.h:
+
+/usr/include/aarch64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/boost/fusion/adapted/mpl/mpl_iterator.hpp:
+
+/usr/include/c++/13/bits/range_access.h:
+
+/usr/include/boost/preprocessor/array/data.hpp:
+
+/usr/include/boost/process/detail/posix/child_handle.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/timerfd.h:
+
 /usr/include/eigen3/Eigen/src/Core/ArithmeticSequence.h:
 
 /usr/include/eigen3/Eigen/src/Core/GlobalFunctions.h:
+
+/usr/include/boost/asio/execution/context_as.hpp:
+
+/usr/include/boost/fusion/container/list/detail/value_of_impl.hpp:
+
+/usr/include/termios.h:
 
 /usr/include/eigen3/Eigen/src/Core/Array.h:
 
@@ -7795,6 +7548,22 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 /usr/include/boost/smart_ptr/detail/requires_cxx11.hpp:
 
 /usr/include/eigen3/Eigen/src/Geometry/Transform.h:
+
+/usr/lib/gcc/aarch64-linux-gnu/13/include/stdint.h:
+
+/usr/include/aarch64-linux-gnu/bits/locale.h:
+
+/usr/include/boost/asio/ip/basic_resolver_entry.hpp:
+
+/usr/include/boost/functional/hash_fwd.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/boost/fusion/support/sequence_base.hpp:
+
+/usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h:
+
+/usr/include/boost/version.hpp:
 
 /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp:
 
@@ -7820,6 +7589,12 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h:
 
+/usr/include/boost/asio/ip/impl/address_v4.ipp:
+
+/usr/include/boost/fusion/container/list/detail/begin_impl.hpp:
+
+/usr/include/boost/mpl/empty_base.hpp:
+
 /usr/include/c++/13/limits:
 
 /usr/include/c++/13/bits/chrono.h:
@@ -7836,15 +7611,39 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/limits/list.hpp:
 
+/usr/include/aarch64-linux-gnu/bits/poll.h:
+
 /usr/include/boost/fusion/container/vector/detail/config.hpp:
 
 /usr/include/boost/algorithm/string/detail/sequence.hpp:
+
+/usr/include/c++/13/bits/predefined_ops.h:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseUnaryView.h:
+
+/usr/include/boost/date_time/gregorian/greg_duration_types.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/statx-generic.h:
 
 /usr/include/eigen3/Eigen/src/Core/BooleanRedux.h:
 
 /usr/include/eigen3/Eigen/src/Core/DenseStorage.h:
 
 /usr/include/eigen3/Eigen/src/Core/Dot.h:
+
+/usr/include/boost/function/detail/maybe_include.hpp:
+
+/usr/include/c++/13/bits/basic_string.h:
+
+/usr/include/eigen3/Eigen/src/Core/Fuzzy.h:
+
+/usr/include/boost/fusion/iterator/deref_data.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+/usr/include/boost/asio/detail/conditionally_enabled_event.hpp:
+
+/usr/include/boost/asio/detail/thread_context.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/GeneralProduct.h:
 
@@ -7858,27 +7657,21 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/sequence_tag_fwd.hpp:
 
-/usr/include/boost/asio/write.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/procfs-prregset.h:
-
-/usr/include/boost/mpl/vector/aux_/empty.hpp:
-
-/usr/include/boost/asio/detail/fenced_block.hpp:
-
-/usr/include/c++/13/type_traits:
-
 /usr/include/boost/asio/detail/object_pool.hpp:
 
-/usr/include/boost/fusion/container/set/detail/deref_data_impl.hpp:
+/usr/include/boost/fusion/iterator/mpl.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:
+/usr/include/boost/system/detail/config.hpp:
 
 /usr/local/include/ur_rtde/rtde.h:
 
 /usr/include/boost/numeric/conversion/numeric_cast_traits.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/NumTraits.h:
+
+/usr/include/boost/fusion/container/set/detail/deref_impl.hpp:
+
+/usr/include/boost/algorithm/string/classification.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp:
 
@@ -7891,6 +7684,14 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 /usr/include/boost/mpl/next_prior.hpp:
 
 /usr/include/boost/asio/detail/strand_service.hpp:
+
+/usr/include/boost/fusion/view/flatten_view/flatten_view.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/boost/asio/impl/multiple_exceptions.ipp:
+
+/usr/include/eigen3/Eigen/src/Core/Solve.h:
 
 /usr/include/eigen3/Eigen/src/Core/ProductEvaluators.h:
 
@@ -7908,9 +7709,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/eigen3/Eigen/src/Core/Random.h:
 
-/usr/include/aarch64-linux-gnu/asm/bitsperlong.h:
-
 /usr/include/aarch64-linux-gnu/bits/termios-tcflow.h:
+
+/usr/include/aarch64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/boost/fusion/container/list/detail/deref_impl.hpp:
 
@@ -7964,6 +7765,26 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/c++/13/backward/auto_ptr.h:
 
+/usr/include/aarch64-linux-gnu/bits/environments.h:
+
+/usr/include/aarch64-linux-gnu/bits/siginfo-consts-arch.h:
+
+/usr/include/boost/mpl/aux_/has_key_impl.hpp:
+
+/usr/include/c++/13/bits/exception.h:
+
+/usr/include/boost/mpl/integral_c_tag.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/Default/Half.h:
+
+/usr/include/c++/13/typeinfo:
+
+/usr/include/boost/mpl/pair.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
+
+/usr/include/boost/fusion/view/iterator_range/detail/begin_impl.hpp:
+
 /usr/include/eigen3/Eigen/src/Core/arch/Default/TypeCasting.h:
 
 /usr/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h:
@@ -8005,6 +7826,12 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 /usr/include/boost/fusion/view/nview/detail/distance_impl.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
+
+/usr/include/boost/filesystem/directory.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h:
+
+/usr/include/c++/13/ratio:
 
 /usr/include/eigen3/Eigen/src/Core/util/Constants.h:
 
@@ -8068,7 +7895,21 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/type_traits/is_array.hpp:
 
+/usr/include/boost/asio/require.hpp:
+
+/usr/include/eigen3/Eigen/src/Geometry/Quaternion.h:
+
+/usr/include/c++/13/bits/move.h:
+
+/usr/include/aarch64-linux-gnu/bits/sigcontext.h:
+
 /usr/include/eigen3/Eigen/src/Geometry/RotationBase.h:
+
+/usr/include/boost/fusion/container/map/detail/value_at_key_impl.hpp:
+
+/usr/include/c++/13/chrono:
+
+/usr/include/aarch64-linux-gnu/asm/ioctl.h:
 
 /usr/include/boost/fusion/container/generation/make_cons.hpp:
 
@@ -8154,6 +7995,16 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/eigen3/Eigen/src/SVD/SVDBase.h:
 
+/usr/include/aarch64-linux-gnu/sys/ttydefaults.h:
+
+/usr/include/boost/fusion/adapted/mpl/detail/begin_impl.hpp:
+
+/usr/include/boost/preprocessor/list/detail/limits/fold_left_256.hpp:
+
+/usr/include/eigen3/Eigen/src/misc/Kernel.h:
+
+/usr/include/aarch64-linux-gnu/bits/getopt_posix.h:
+
 /usr/include/boost/asio/detail/io_control.hpp:
 
 /usr/include/boost/core/typeinfo.hpp:
@@ -8168,13 +8019,127 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/asio/detail/initiate_post.hpp:
 
+/usr/include/eigen3/Eigen/src/Geometry/Hyperplane.h:
+
 /usr/include/features.h:
+
+/usr/include/boost/asio/execution/mapping.hpp:
+
+/usr/include/boost/mpl/limits/arity.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/MathFunctions.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/include/boost/asio/streambuf.hpp:
+
+/usr/include/boost/date_time/adjust_functors.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/siginfo-consts.h:
+
+/usr/include/boost/asio/execution/detail/submit_receiver.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/boost/asio/impl/cancellation_signal.ipp:
+
+/usr/include/string.h:
+
+/usr/include/c++/13/bits/stl_deque.h:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/cxxabi_tweaks.h:
+
+/usr/include/boost/process/detail/posix/is_running.hpp:
+
+/home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp:
+
+/usr/include/boost/fusion/view/filter_view/filter_view.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/fcntl.h:
+
+/usr/include/boost/fusion/container/deque/front_extended_deque.hpp:
+
+/usr/include/boost/asio/execution/scheduler.hpp:
+
+/usr/include/boost/fusion/view/joint_view/detail/next_impl.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/confname.h:
+
+/usr/include/eigen3/Eigen/src/Core/Replicate.h:
+
+/usr/include/boost/preprocessor/detail/auto_rec.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/stat.h:
+
+/usr/include/boost/fusion/support/tag_of_fwd.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/Redux.h:
+
+/usr/include/c++/13/bits/hashtable_policy.h:
+
+/usr/include/opencv4/opencv2/opencv_modules.hpp:
+
+/usr/include/boost/fusion/view/reverse_view/detail/value_at_impl.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/termios-c_lflag.h:
+
+/usr/include/boost/fusion/container/list.hpp:
+
+/usr/include/boost/preprocessor/seq/size.hpp:
+
+/usr/include/boost/asio/handler_invoke_hook.hpp:
+
+/usr/include/boost/asio/posix/basic_stream_descriptor.hpp:
+
+/usr/include/c++/13/tr1/special_function_util.h:
+
+/usr/include/boost/fusion/view/transform_view/detail/equal_to_impl.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/boost/system/detail/append_int.hpp:
+
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/boost/asio/execution_context.hpp:
+
+/usr/include/boost/fusion/container/vector/detail/deref_impl.hpp:
+
+/usr/include/boost/function/detail/prologue.hpp:
+
+/usr/include/c++/13/bits/unique_ptr.h:
+
+/usr/include/c++/13/bits/parse_numbers.h:
+
+/usr/include/c++/13/bits/basic_ios.h:
+
+/usr/include/c++/13/ctime:
+
+/usr/include/boost/type_traits/is_member_function_pointer.hpp:
 
 /usr/include/linux/falloc.h:
 
-/usr/include/linux/stddef.h:
+/usr/include/boost/fusion/iterator/detail/segmented_equal_to.hpp:
 
-/usr/include/boost/mpl/vector/aux_/at.hpp:
+/usr/include/boost/fusion/adapted/mpl/detail/at_impl.hpp:
+
+/usr/include/boost/fusion/sequence/comparison/not_equal_to.hpp:
+
+/usr/include/unistd.h:
+
+/usr/include/aarch64-linux-gnu/bits/termios-c_oflag.h:
+
+/usr/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp:
+
+/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
+
+/usr/include/aarch64-linux-gnu/asm/ioctls.h:
+
+/usr/include/eigen3/Eigen/src/LU/InverseImpl.h:
+
+/usr/include/aarch64-linux-gnu/bits/signum-arch.h:
 
 /usr/include/boost/fusion/container/set/detail/begin_impl.hpp:
 
@@ -8192,71 +8157,51 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/linux/ioctl.h:
 
-/usr/include/linux/types.h:
+/usr/include/c++/13/bits/memoryfwd.h:
 
-/usr/include/signal.h:
+/usr/include/boost/preprocessor/facilities/check_empty.hpp:
 
-/usr/include/boost/asio/execution/detail/submit_receiver.hpp:
+/usr/include/boost/asio/write.hpp:
 
-/usr/include/eigen3/Eigen/src/Core/products/TriangularSolverVector.h:
+/usr/include/boost/mpl/vector/aux_/empty.hpp:
 
-/usr/include/stdlib.h:
+/usr/include/boost/asio/detail/fenced_block.hpp:
 
-/usr/include/boost/asio/impl/cancellation_signal.ipp:
+/usr/include/c++/13/type_traits:
 
-/usr/include/string.h:
+/usr/include/aarch64-linux-gnu/bits/procfs-prregset.h:
 
-/usr/include/c++/13/bits/stl_deque.h:
+/usr/include/eigen3/Eigen/src/Core/MatrixBase.h:
 
-/usr/include/boost/fusion/iterator/detail/segmented_equal_to.hpp:
+/usr/include/boost/fusion/container/set/detail/deref_data_impl.hpp:
 
-/usr/include/boost/fusion/adapted/mpl/detail/at_impl.hpp:
+/usr/include/aarch64-linux-gnu/bits/procfs.h:
 
-/usr/include/boost/fusion/sequence/comparison/not_equal_to.hpp:
+/usr/include/boost/asio/detail/throw_exception.hpp:
 
-/usr/include/unistd.h:
+/usr/include/aarch64-linux-gnu/bits/signum-generic.h:
 
-/usr/include/aarch64-linux-gnu/bits/termios-c_oflag.h:
+/usr/include/eigen3/Eigen/src/Core/Product.h:
 
-/usr/include/boost/numeric/conversion/detail/preprocessed/numeric_cast_traits_long_long.hpp:
+/usr/include/boost/asio/detail/scheduler_thread_info.hpp:
 
-/usr/include/aarch64-linux-gnu/c++/13/bits/cxxabi_tweaks.h:
+/usr/include/boost/asio/consign.hpp:
 
-/usr/include/boost/process/detail/posix/is_running.hpp:
+/usr/include/aarch64-linux-gnu/bits/types/sig_atomic_t.h:
 
-/usr/include/eigen3/Eigen/src/Core/Redux.h:
+/usr/include/boost/fusion/algorithm/transformation/push_back.hpp:
 
-/usr/include/c++/13/bits/hashtable_policy.h:
+/usr/include/aarch64-linux-gnu/bits/types/siginfo_t.h:
 
-/usr/include/opencv4/opencv2/opencv_modules.hpp:
+/usr/include/aarch64-linux-gnu/bits/types/sigval_t.h:
 
-/usr/include/boost/fusion/view/reverse_view/detail/value_at_impl.hpp:
+/usr/include/boost/filesystem/detail/path_traits.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/termios-c_lflag.h:
+/usr/include/boost/range/distance.hpp:
 
-/usr/include/boost/fusion/container/list.hpp:
+/usr/include/eigen3/Eigen/SVD:
 
-/usr/include/boost/preprocessor/seq/size.hpp:
-
-/usr/include/c++/13/bits/unique_ptr.h:
-
-/usr/include/c++/13/bits/parse_numbers.h:
-
-/usr/include/c++/13/bits/basic_ios.h:
-
-/usr/include/c++/13/ctime:
-
-/usr/include/boost/type_traits/is_member_function_pointer.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_nullptr_t.hpp:
-
-/usr/include/aarch64-linux-gnu/asm/ioctls.h:
-
-/usr/include/boost/fusion/iterator/key_of.hpp:
-
-/usr/include/boost/fusion/iterator/mpl.hpp:
-
-/usr/include/boost/system/detail/config.hpp:
+/usr/include/aarch64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/boost/fusion/iterator/detail/adapt_value_traits.hpp:
 
@@ -8798,9 +8743,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/insert.hpp:
 
-/usr/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp:
-
 /usr/include/boost/mpl/aux_/is_msvc_eti_arg.hpp:
+
+/usr/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/vector.hpp:
 
@@ -8984,9 +8929,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
 
-/usr/include/c++/13/iosfwd:
-
 /usr/include/boost/bind/mem_fn_cc.hpp:
+
+/usr/include/c++/13/iosfwd:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/unpack_args.hpp:
 
@@ -9048,9 +8993,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/end.hpp:
 
-/usr/include/c++/13/pstl/execution_defs.h:
-
 /usr/include/aarch64-linux-gnu/sys/user.h:
+
+/usr/include/c++/13/pstl/execution_defs.h:
 
 /usr/include/c++/13/deque:
 
@@ -9070,9 +9015,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/mpl/fold.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/sigevent-consts.h:
-
 /usr/include/aarch64-linux-gnu/c++/13/bits/c++locale.h:
+
+/usr/include/aarch64-linux-gnu/bits/sigevent-consts.h:
 
 /usr/include/boost/mpl/front.hpp:
 
@@ -9173,6 +9118,10 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 /usr/include/boost/mpl/unpack_args.hpp:
 
 /usr/include/boost/mpl/vector.hpp:
+
+/usr/include/boost/mpl/vector/aux_/at.hpp:
+
+/usr/include/linux/stddef.h:
 
 /usr/include/boost/mpl/vector/aux_/back.hpp:
 
@@ -9454,9 +9403,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/process/async.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/sockaddr.h:
-
 /usr/include/boost/asio/basic_waitable_timer.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/sockaddr.h:
 
 /usr/include/boost/mpl/erase_fwd.hpp:
 
@@ -9790,9 +9739,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/boost/type_traits/is_lvalue_reference.hpp:
 
-/usr/include/c++/13/bits/stl_function.h:
-
 /usr/include/c++/13/bits/vector.tcc:
+
+/usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/boost/type_traits/is_nothrow_move_assignable.hpp:
 
@@ -9942,6 +9891,8 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 
 /usr/include/linux/stat.h:
 
+/usr/include/linux/types.h:
+
 /usr/include/netdb.h:
 
 /usr/include/boost/mpl/front_fwd.hpp:
@@ -9949,6 +9900,8 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
 /usr/include/netinet/in.h:
 
 /usr/include/rpc/netdb.h:
+
+/usr/include/signal.h:
 
 /usr/include/boost/type_traits/is_integral.hpp:
 

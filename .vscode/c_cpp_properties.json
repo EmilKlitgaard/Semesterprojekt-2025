@@ -5,13 +5,17 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include/eigen3",
+                "/usr/local/include/ur_rtde",
                 "/usr/include/opencv4"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/clang",
+            "defines": [
+                "EIGEN_DONT_VECTORIZE",
+                "EIGEN_NO_DEBUG"
+            ],
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c17",
-            "cppStandard": "c++14",
-            "intelliSenseMode": "linux-clang-arm64"
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-arm64"
         }
     ],
     "version": 4

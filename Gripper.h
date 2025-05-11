@@ -1,6 +1,14 @@
 #pragma once
 
 #include <string>
+#include <fcntl.h>
+#include <termios.h>
+#include <unistd.h>
+#include <iostream>
+#include <cstring>
+#include <chrono>
+#include <thread>
+#include <stdexcept>
 
 class Gripper {
 public:

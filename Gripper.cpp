@@ -1,13 +1,4 @@
 #include "Gripper.h"
-#include <fcntl.h>
-#include <termios.h>
-#include <unistd.h>
-#include <errno.h>
-#include <iostream>
-#include <cstring>
-#include <chrono>
-#include <thread>
-#include <stdexcept>
 
 using namespace std;
 

@@ -30,7 +30,7 @@ int main() {
 
     engine.printMoveHistory();
 
-    if (engine.sendMove("g2g4")) {
+    if (engine.sendValidMove("g2g4")) {
         cout << "Valid move added g2g4" << endl;
     } else {
         cout << "Invalid move" << endl;

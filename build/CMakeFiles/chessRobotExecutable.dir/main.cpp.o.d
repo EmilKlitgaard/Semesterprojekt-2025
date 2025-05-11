@@ -1370,8 +1370,6 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: \
  /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.h \
- /usr/include/aarch64-linux-gnu/sys/wait.h \
- /usr/include/aarch64-linux-gnu/bits/types/idtype_t.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.h \
  /usr/include/boost/process.hpp /usr/include/boost/process/args.hpp \
  /usr/include/boost/process/detail/basic_cmd.hpp \
@@ -1843,6 +1841,8 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: \
  /usr/include/boost/optional/detail/optional_reference_spec.hpp \
  /usr/include/boost/optional/detail/optional_relops.hpp \
  /usr/include/boost/optional/detail/optional_swap.hpp \
+ /usr/include/aarch64-linux-gnu/sys/wait.h \
+ /usr/include/aarch64-linux-gnu/bits/types/idtype_t.h \
  /usr/include/boost/process/detail/posix/is_running.hpp \
  /usr/include/boost/process/detail/posix/child_handle.hpp \
  /usr/include/boost/process/detail/posix/async_in.hpp \
@@ -2290,4 +2290,14 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: \
  /usr/include/opencv4/opencv2/video.hpp \
  /usr/include/opencv4/opencv2/video/tracking.hpp \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
- /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.h
+ /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.h \
+ /usr/include/termios.h /usr/include/aarch64-linux-gnu/bits/termios.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-struct.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-c_cc.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-c_iflag.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-c_oflag.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-baud.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-c_cflag.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-c_lflag.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-tcflow.h \
+ /usr/include/aarch64-linux-gnu/bits/termios-misc.h
