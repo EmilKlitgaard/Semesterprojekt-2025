@@ -38,7 +38,9 @@ public:
     pair<Vector3d, Vector3d> getPhysicalCoordinates(string &notation);
     Vector3d getPhysicalCoordinate(MatrixIndex idx) const;
 
+    ChessboardPieces getStartBoard();
     ChessboardPieces getBoardState();
+    
     string getPieceName(MatrixIndex Idx);
     string getPieceName(string piece);
 
@@ -57,6 +59,7 @@ private:
     void addReachabilityPosition(double x, double y, double hoverOffset);
     void generateDeadPieceLocations(vector<Vector3d>& locations, double xStart, double yStart, bool isRobot);
 
+    ChessboardPieces startBoard;
     ChessboardPieces board;
 
     unordered_map<string, MatrixIndex> notationToIndex;

@@ -10,26 +10,17 @@ Chessboard::Chessboard() {
 
 // Initialize board with standard chess starting positions
 void Chessboard::initializeBoard() {
-    // board = {
-    //     {"2B", "3B", "4B", "5B", "6B", "4B", "3B", "2B"}, // Black major pieces
-    //     {"1B", "1B", "1B", "1B", "1B", "1B", "1B", "1B"}, // Black pawns
-    //     {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
-    //     {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
-    //     {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
-    //     {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
-    //     {"1W", "1W", "1W", "1W", "1W", "1W", "1W", "1W"}, // White pawns
-    //     {"2W", "3W", "4W", "5W", "6W", "4W", "3W", "2W"}  // White major pieces
-    // };
-    board = {
-        {"4B","2B","3B","5B","4B","6B","3B","2B"},
-        {"1B","1B","0","1B","1B","0","1B","1B"},
-        {"0" ,"0" ,"0" ,"0" ,"0" ,"0" ,"0" ,"0" },
-        {"0" ,"0" ,"0" ,"0" ,"0" ,"0" ,"0" ,"0" },
-        {"0" ,"0" ,"1B" ,"0" ,"1B" ,"0" ,"0" ,"0" },
-        {"0" ,"0" ,"0" ,"0" ,"0" ,"0" ,"0" ,"0" },
-        {"1W","1W","1W","1W","1W","1W","1W","1W"},
-        {"2W","3W","4W","5W","6W","4W","3W","2W"}
+    startBoard = {
+        {"2B", "3B", "4B", "5B", "6B", "4B", "3B", "2B"}, // Black major pieces
+        {"1B", "1B", "1B", "1B", "1B", "1B", "1B", "1B"}, // Black pawns
+        {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
+        {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
+        {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
+        {"0",   "0",  "0",  "0",  "0",  "0",  "0",  "0"},
+        {"1W", "1W", "1W", "1W", "1W", "1W", "1W", "1W"}, // White pawns
+        {"2W", "3W", "4W", "5W", "6W", "4W", "3W", "2W"}  // White major pieces
     };
+    board = startBoard;
 }
 
 // Initialize physical coordinates for each board cell
@@ -109,30 +100,9 @@ vector<Vector3d> Chessboard::getAllPhysicalCoordinates() {
     return allPhysicalCoordinates;
 }
 
-// Get the next dead piece location
-// Vector3d Chessboard::getDeadPieceLocation(const string &pieceName, const string &origin) {
-//     if (origin == "Robot") {
-//         if (deadRobotPieceLocationIndex < 0 || deadRobotPieceLocationIndex >= deadRobotPieceLocations.size()) {
-//             throw out_of_range("Index out of range for deadPieceLocation");
-//         }
-//         Vector3d location = deadRobotPieceLocations[deadRobotPieceLocationIndex];
-//         deadRobotPieceNames[deadRobotPieceLocationIndex] = pieceName;
-//         cout << "Added: " << pieceName << " to dead pieces. Current deadRobotPieceLocationIndex: " << deadRobotPieceLocationIndex << endl;
-//         deadRobotPieceLocationIndex++;
-//         return location;
-//     } else if (origin == "Player") {
-//         if (deadPlayerPieceLocationIndex < 0 || deadPlayerPieceLocationIndex >= deadPlayerPieceLocations.size()) {
-//             throw out_of_range("Index out of range for deadPieceLocation");
-//         }
-//         Vector3d location = deadPlayerPieceLocations[deadPlayerPieceLocationIndex];
-//         deadPlayerPieceNames[deadPlayerPieceLocationIndex] = pieceName;
-//         cout << "Added: " << pieceName << " to dead pieces. Current deadPlayerPieceLocationIndex: " << deadPlayerPieceLocationIndex << endl;
-//         deadPlayerPieceLocationIndex++;
-//         return location;
-//     } else {
-//         throw invalid_argument("Invalid origin");
-//     }
-// }
+ChessboardPieces Chessboard::getStartBoard() {
+    return startBoard;
+}
 
 Vector3d Chessboard::getDeadPieceLocation(const string &pieceName, const string &origin) {
     if (origin != "Robot" && origin != "Player") throw invalid_argument("Invalid origin");

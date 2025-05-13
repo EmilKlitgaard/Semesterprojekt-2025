@@ -403,19 +403,11 @@ void resetChessboard() {
     cout << "CHESSBOARD RESET STARTED!" << endl;
     board.printBoard();
 
-    ChessboardPieces desiredBoard = {
-        {"2B","3B","4B","5B","6B","4B","3B","2B"},
-        {"1B","1B","1B","1B","1B","1B","1B","1B"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"1W","1W","1W","1W","1W","1W","1W","1W"},
-        {"2W","3W","4W","5W","6W","4W","3W","2W"}
-    };
     int allMoves = 0;
 
     ChessboardPieces currentBoard = board.getBoardState();
+    ChessboardPieces desiredBoard = board.getStartBoard();
+
     while (currentBoard != desiredBoard) {
         while (true) {
             bool moveFound = false;

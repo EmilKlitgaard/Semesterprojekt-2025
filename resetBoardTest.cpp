@@ -10,146 +10,11 @@ void resetChessboard() {
     cout << "CHESSBOARD RESET STARTED!" << endl;
     board.printBoard();
 
-    struct Move {
-        MatrixIndex from;
-        MatrixIndex to;
-        string piece;
-        bool useBuffer;
-    };
-
-    ChessboardPieces desired = {
-        {"2B","3B","4B","5B","6B","4B","3B","2B"},
-        {"1B","1B","1B","1B","1B","1B","1B","1B"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"1W","1W","1W","1W","1W","1W","1W","1W"},
-        {"2W","3W","4W","5W","6W","4W","3W","2W"}
-    };
-
-    vector<Move> allMoves;
-
-    while (true) {
-        auto current = board.getBoardState();
-        if (current == desired) break;
-
-        // Track claimed destinations
-        vector<vector<bool>> claimed(8, vector<bool>(8, false));
-        map<MatrixIndex, MatrixIndex> perm;
-
-        // Build permutation map with unique destinations
-        for (int r = 0; r < 8; ++r) {
-            for (int c = 0; c < 8; ++c) {
-                const string &p = current[r][c];
-                if (p == "0" || p == desired[r][c]) continue;
-
-                // Find first matching unclaimed destination
-                for (int rr = 0; rr < 8; ++rr) {
-                    for (int cc = 0; cc < 8; ++cc) {
-                        if (!claimed[rr][cc] && 
-                            desired[rr][cc] == p && 
-                            current[rr][cc] != p) {
-                            perm[{r, c}] = {rr, cc};
-                            claimed[rr][cc] = true;
-                            rr = cc = 8;  // break loops
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        if (perm.empty()) break;
-
-        // Decompose into chains + cycles
-        const MatrixIndex bufferIdx{-1,-1};
-        set<MatrixIndex> visited;
-        vector<Move> schedule;
-
-        auto processChain = [&](const vector<MatrixIndex>& chain, bool isCycle) {
-            if (isCycle) {
-                // Buffer first element
-                schedule.push_back({chain[0], bufferIdx, current[chain[0].first][chain[0].second], true});
-                
-                // Rotate cycle
-                for (int i = chain.size()-1; i > 0; --i) {
-                    schedule.push_back({chain[i], chain[i-1], current[chain[i].first][chain[i].second], false});
-                }
-                
-                // Return from buffer
-                schedule.push_back({bufferIdx, chain.back(), current[chain[0].first][chain[0].second], false});
-            } else {
-                // Simple reverse chain
-                for (int i = chain.size()-1; i >= 0; --i) {
-                    if (perm.count(chain[i])) {
-                        schedule.push_back({chain[i], perm[chain[i]], current[chain[i].first][chain[i].second], false});
-                    }
-                }
-            }
-        };
-
-        for (auto &pr : perm) {
-            if (visited.count(pr.first)) continue;
-
-            vector<MatrixIndex> chain;
-            MatrixIndex cur = pr.first;
-            while (perm.count(cur) && !visited.count(cur)) {
-                visited.insert(cur);
-                chain.push_back(cur);
-                cur = perm[cur];
-            }
-
-            bool isCycle = find(chain.begin(), chain.end(), cur) != chain.end();
-            processChain(chain, isCycle);
-        }
-
-        // Execute moves
-        for (auto &mv : schedule) {
-            if (mv.useBuffer) {
-                // Store in buffer
-                board.getDeadPieceLocation(mv.piece, "Player");
-                board.updateChessboard("0", mv.from);
-                cout << "BUFFER: " << mv.piece << " from " << board.getChessNotation(mv.from) << endl;
-                board.printBoard();
-            } 
-            else if (mv.from == bufferIdx) {
-                // Retrieve from buffer
-                Vector3d bufferLoc = board.searchDeadPieceLocation(mv.piece, "Player");
-                board.updateChessboard(mv.piece, mv.to);
-                cout << "RESTORE: " << mv.piece << " to " << board.getChessNotation(mv.to) << endl;
-                board.printBoard();
-            } 
-            else {
-                // Normal move
-                board.updateChessboard(mv.from, mv.to);
-                cout << "MOVE: " << mv.piece << " from " << board.getChessNotation(mv.from) << " to " << board.getChessNotation(mv.to) << endl;
-                board.printBoard();
-            }
-            allMoves.push_back(mv);
-        }
-    }
-    cout << "Reset complete in " << allMoves.size() << " moves" << endl;
-}
-
-void newResetChessboard() {
-    cout << "CHESSBOARD RESET STARTED!" << endl;
-    board.printBoard();
-
-    ChessboardPieces desiredBoard = {
-        {"2B","3B","4B","5B","6B","4B","3B","2B"},
-        {"1B","1B","1B","1B","1B","1B","1B","1B"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"0","0","0","0","0","0","0","0"},
-        {"1W","1W","1W","1W","1W","1W","1W","1W"},
-        {"2W","3W","4W","5W","6W","4W","3W","2W"}
-    };
-
     int allMoves = 0;
 
     ChessboardPieces currentBoard = board.getBoardState();
+    ChessboardPieces desiredBoard = board.getStartBoard();
+
     while (currentBoard != desiredBoard) {
         while (true) {
             bool moveFound = false;
@@ -226,7 +91,6 @@ void newResetChessboard() {
 }
 
 int main() {
-    //resetChessboard();
-    newResetChessboard();
+    resetChessboard();
     return 0;
 }
