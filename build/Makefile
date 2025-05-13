@@ -129,12 +129,26 @@ chessRobotExecutable/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/build
 .PHONY : chessRobotExecutable/fast
 
+#=============================================================================
+# Target rules for targets named resetBoardTestExecutable
+
+# Build rule for target.
+resetBoardTestExecutable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 resetBoardTestExecutable
+.PHONY : resetBoardTestExecutable
+
+# fast build rule for target.
+resetBoardTestExecutable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/build
+.PHONY : resetBoardTestExecutable/fast
+
 Chessboard.o: Chessboard.cpp.o
 .PHONY : Chessboard.o
 
 # target to build an object file
 Chessboard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o
 .PHONY : Chessboard.cpp.o
 
 Chessboard.i: Chessboard.cpp.i
@@ -143,6 +157,7 @@ Chessboard.i: Chessboard.cpp.i
 # target to preprocess a source file
 Chessboard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.i
 .PHONY : Chessboard.cpp.i
 
 Chessboard.s: Chessboard.cpp.s
@@ -151,6 +166,7 @@ Chessboard.s: Chessboard.cpp.s
 # target to generate assembly for a file
 Chessboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.s
 .PHONY : Chessboard.cpp.s
 
 Gripper.o: Gripper.cpp.o
@@ -249,6 +265,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+resetBoardTest.o: resetBoardTest.cpp.o
+.PHONY : resetBoardTest.o
+
+# target to build an object file
+resetBoardTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o
+.PHONY : resetBoardTest.cpp.o
+
+resetBoardTest.i: resetBoardTest.cpp.i
+.PHONY : resetBoardTest.i
+
+# target to preprocess a source file
+resetBoardTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.i
+.PHONY : resetBoardTest.cpp.i
+
+resetBoardTest.s: resetBoardTest.cpp.s
+.PHONY : resetBoardTest.s
+
+# target to generate assembly for a file
+resetBoardTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.s
+.PHONY : resetBoardTest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -258,6 +298,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... chessRobotExecutable"
+	@echo "... resetBoardTestExecutable"
 	@echo "... Chessboard.o"
 	@echo "... Chessboard.i"
 	@echo "... Chessboard.s"
@@ -273,6 +314,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... resetBoardTest.o"
+	@echo "... resetBoardTest.i"
+	@echo "... resetBoardTest.s"
 .PHONY : help
 
 

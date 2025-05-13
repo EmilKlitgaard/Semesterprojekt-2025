@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o -o resetBoardTestExecutable   -L/usr/local/lib 

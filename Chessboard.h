@@ -36,12 +36,14 @@ public:
     string getChessNotation(MatrixIndex position1, MatrixIndex position2);
     pair<MatrixIndex, MatrixIndex> getMatrixIndex(string& notation);
     pair<Vector3d, Vector3d> getPhysicalCoordinates(string &notation);
+    Vector3d getPhysicalCoordinate(MatrixIndex idx) const;
 
     ChessboardPieces getBoardState();
     string getPieceName(MatrixIndex Idx);
+    string getPieceName(string piece);
 
     Vector3d getDeadPieceLocation(const string &pieceName, const string &origin);
-    Vector3d searchDeadPieceLocation(const string &pieceName);
+    Vector3d searchDeadPieceLocation(const string &pieceName, const string &origin);
 
     vector<Vector3d> getAllPhysicalCoordinates();
 
@@ -60,11 +62,10 @@ private:
     unordered_map<string, MatrixIndex> notationToIndex;
     unordered_map<MatrixIndex, string, PairHash> indexToNotation;
 
-    vector<string> deadPieceNames;
+    vector<string> deadRobotPieceNames;
+    vector<string> deadPlayerPieceNames;
     vector<Vector3d> deadRobotPieceLocations;
     vector<Vector3d> deadPlayerPieceLocations;
-    int deadRobotPieceLocationIndex;
-    int deadPlayerPieceLocationIndex;
 
     vector<vector<pair<double, double>>> physicalCoordinates;
     vector<Vector3d> allPhysicalCoordinates;

@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/emilklitgaard/Workspace/Semesterprojekt/build
 
 # The main recursive "all" target.
 all: CMakeFiles/chessRobotExecutable.dir/all
+all: CMakeFiles/resetBoardTestExecutable.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/chessRobotExecutable.dir/clean
+clean: CMakeFiles/resetBoardTestExecutable.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -99,6 +101,32 @@ chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/rule
 CMakeFiles/chessRobotExecutable.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/clean
 .PHONY : CMakeFiles/chessRobotExecutable.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/resetBoardTestExecutable.dir
+
+# All Build rule for target.
+CMakeFiles/resetBoardTestExecutable.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=7,8,9 "Built target resetBoardTestExecutable"
+.PHONY : CMakeFiles/resetBoardTestExecutable.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/resetBoardTestExecutable.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/resetBoardTestExecutable.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles 0
+.PHONY : CMakeFiles/resetBoardTestExecutable.dir/rule
+
+# Convenience name for target.
+resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/rule
+.PHONY : resetBoardTestExecutable
+
+# clean rule for target.
+CMakeFiles/resetBoardTestExecutable.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/clean
+.PHONY : CMakeFiles/resetBoardTestExecutable.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,3 +1,4 @@
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessRobotExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/resetBoardTestExecutable.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/edit_cache.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/rebuild_cache.dir

@@ -6,6 +6,7 @@
 #include <Eigen/Dense>
 #include <string>
 #include <fstream>
+#include <unordered_map>
 #include "Chessboard.h"
 #include "Stockfish.h"
 #include "Vision.h"
@@ -117,19 +118,6 @@ Vector3d setChessboardOrigin(bool calibrate = false){
         printText("Error saving calibration data!");
     }
     return chessboardOrigin;
-}
-
-string inputPlayerMove() {
-    string playerMove;
-    printText("Input your move e.g.: 'e2e4': ");
-    while (true) {
-        cin >> playerMove;
-        if (isValidMoveFormat(playerMove)) {
-            return playerMove;
-        } else {
-            printText("Invalid move format. Please enter a move in the format 'e2e4': ");
-        }
-    }
 }
 
 // Move TCP to the awaiting position
@@ -287,22 +275,22 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
         } else {
             throw invalid_argument("Stockfish pawnPromotion output error. Stockfish output: " + robotMove);
         }
-        Vector3d promotionPieceLocation = board.searchDeadPieceLocation(promotionPieceName);
+        Vector3d promotionPieceLocation = board.searchDeadPieceLocation(promotionPieceName, "Robot");
 
         pickUpPiece(promotionPieceLocation, chessboardOrigin, RotationMatrix);
         placePiece(toCoordinate, chessboardOrigin, RotationMatrix);
     }
 }
 
-pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
+pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
     // Capture the initial reference board state.
     printText("Getting initial reference board state...");
-    ChessboardMatrix refState = chessVision.getRefVisionBoard();
+    ChessboardMatrix refState = camera.getRefVisionBoard();
 
     while (true) {
         //printText("Make your move and press ENTER.");
         //cin.get();
-        ChessboardMatrix newState1 = chessVision.processCurrentFrame();
+        ChessboardMatrix newState1 = camera.processCurrentFrame();
         
         if (newState1.empty()) continue; // Handle empty vision output
         
@@ -315,23 +303,23 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
 
             // Redundancy check 1:
             printText("Redundancy check 1...");
-            ChessboardMatrix newState2 = chessVision.processCurrentFrame();
+            ChessboardMatrix newState2 = camera.processCurrentFrame();
             // Redundancy check 2:
             printText("Redundancy check 2...");
-            ChessboardMatrix newState3 = chessVision.processCurrentFrame();
+            ChessboardMatrix newState3 = camera.processCurrentFrame();
             // Redundancy check 3:
             printText("Redundancy check 3...");
-            ChessboardMatrix newState4 = chessVision.processCurrentFrame();
+            ChessboardMatrix newState4 = camera.processCurrentFrame();
             // Redundancy check 4:
             printText("Redundancy check 4...");
-            ChessboardMatrix newState5 = chessVision.processCurrentFrame();
+            ChessboardMatrix newState5 = camera.processCurrentFrame();
             // Redundancy check 5:
             printText("Redundancy check 5...");
-            ChessboardMatrix newState6 = chessVision.processCurrentFrame();
+            ChessboardMatrix newState6 = camera.processCurrentFrame();
 
             // Check if all three moves are identical.
             if (newState1 == newState2 && newState2 == newState3 && newState3 == newState4 && newState4 == newState5 && newState5 == newState6) {
-                chessVision.setRefVisionBoard(newState1);
+                camera.setRefVisionBoard(newState1);
                 if (deadPieceFound) {
                     board.getDeadPieceLocation(deadPieceName, "Robot");
                     deadPieceFound = false;
@@ -347,6 +335,37 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &chessVision) {
         }
     }
 }
+
+string inputPlayerMove() {
+    string playerMove;
+    printText("Input your move e.g.: 'e2e4': ");
+    while (true) {
+        cin >> playerMove;
+        if (isValidMoveFormat(playerMove)) {
+            return playerMove;
+        } else {
+            printText("Invalid move format. Please enter a move in the format 'e2e4': ");
+        }
+    }
+}
+
+// Get a valid player move from the camera
+string getValidPlayerMove(ChessVision &camera) {
+    string playerMove;
+    do {
+        auto [playerFromIndex, playerToIndex] = getCameraData(camera);
+        playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
+
+        if (!engine.sendValidMove(playerMove)) {
+            printText("Invalid move. Make a valid move.");
+            sleep(1);
+        }
+    } while (!engine.sendValidMove(playerMove));
+
+    cout << "Player move: " << playerMove << endl;
+    return playerMove;
+}
+
 
 string checkPawnPromotion(string &playerMove) {
     if (pieceIdx.first == 0 && board.getPieceName(pieceIdx) == "Pawn") {
@@ -380,6 +399,99 @@ string checkPawnPromotion(string &playerMove) {
     return playerMove;
 }
 
+void resetChessboard() {
+    cout << "CHESSBOARD RESET STARTED!" << endl;
+    board.printBoard();
+
+    ChessboardPieces desiredBoard = {
+        {"2B","3B","4B","5B","6B","4B","3B","2B"},
+        {"1B","1B","1B","1B","1B","1B","1B","1B"},
+        {"0","0","0","0","0","0","0","0"},
+        {"0","0","0","0","0","0","0","0"},
+        {"0","0","0","0","0","0","0","0"},
+        {"0","0","0","0","0","0","0","0"},
+        {"1W","1W","1W","1W","1W","1W","1W","1W"},
+        {"2W","3W","4W","5W","6W","4W","3W","2W"}
+    };
+    int allMoves = 0;
+
+    ChessboardPieces currentBoard = board.getBoardState();
+    while (currentBoard != desiredBoard) {
+        while (true) {
+            bool moveFound = false;
+            for (int fromRow = 0; fromRow < 8; ++fromRow) {
+                for (int fromCol = 0; fromCol < 8; ++fromCol) {
+                    const string &currentPiece = currentBoard[fromRow][fromCol];
+                    if (currentPiece == "0" || currentPiece == desiredBoard[fromRow][fromCol]) continue; // Skip empty or already correct pieces
+                    
+                    // Find the destination for the current piece
+                    for (int toRow = 0; toRow < 8; ++toRow) {
+                        for (int toCol = 0; toCol < 8; ++toCol) {
+                            if (currentPiece == desiredBoard[toRow][toCol] && currentBoard[toRow][toCol] == "0") {
+                                // Move the piece to the destination
+                                MatrixIndex from = {fromRow, fromCol};
+                                MatrixIndex to = {toRow, toCol};
+                                board.updateChessboard(from, to);
+                                cout << "Moved " << currentPiece << " from " << board.getChessNotation({fromRow, fromCol}) << " to " << board.getChessNotation({toRow, toCol}) << endl;
+                                board.printBoard();
+                                currentBoard = board.getBoardState();
+                                moveFound = true;
+                                toRow = toCol = 8; // Break loops
+                                allMoves++;
+                            }
+                        }
+                    }
+                }
+            }
+            if (!moveFound) break;
+        }
+
+        bool moveFound = false;
+        // Look for misplaced pieces and move one to dead piece location
+        for (int row = 0; row < 8; ++row) {
+            for (int col = 0; col < 8; ++col) {
+                const string &currentPiece = currentBoard[row][col];
+                if (currentPiece != desiredBoard[row][col] && currentPiece != "0") {
+                    const string &currentPieceName = board.getPieceName(currentPiece);
+                    string origin = currentPiece.substr(1,1) = "B" ? "Robot" : "Player";
+                    Vector3d deadPieceLocation = board.getDeadPieceLocation(currentPieceName, origin);
+                    MatrixIndex from = {row, col};
+                    board.updateChessboard("0", from);
+                    cout << "Moved " << currentPiece << " from " << board.getChessNotation({row, col}) << " to dead piece location" << endl;
+                    board.printBoard();
+                    currentBoard = board.getBoardState();
+                    allMoves++;
+                    row = col = 8; // Break loops
+                    moveFound = true;
+                }
+            }
+        }
+        // Recover from dead piece location
+        if (!moveFound) {
+            for (int row = 0; row < 8; ++row) {
+                for (int col = 0; col < 8; ++col) {
+                    const string &currentPiece = currentBoard[row][col];
+                    if (currentPiece == "0" && desiredBoard[row][col] != "0") {
+                        const string &desiredPiece = desiredBoard[row][col];
+                        const string &desiredPieceName = board.getPieceName(desiredPiece);
+                        string origin = currentPiece.substr(1,1) = "B" ? "Robot" : "Player";
+                        Vector3d location = board.searchDeadPieceLocation(desiredPieceName, origin);
+                        MatrixIndex to = {row, col};
+                        board.updateChessboard(desiredPiece, to);
+                        cout << "Retrived " << desiredPiece << " from dead piece location, and moved to " << board.getChessNotation({row, col}) << endl;
+                        board.printBoard();
+                        currentBoard = board.getBoardState();
+                        allMoves++;
+                        row = col = 8; // Break loops
+                    }
+                }
+            }
+        }
+    }
+    cout << "Reset complete in " << allMoves << " moves" << endl;
+}
+
+
 /*============================================================
             		    MAIN START
 ============================================================*/
@@ -395,11 +507,11 @@ int main() {
     rtde_control.setTcp(tcpCalibrationOffset);
     
     //   ==========   INITIALIZE COMPUTER VISION   ==========   //
-    ChessVision chessVision(4);
+    ChessVision camera(4);
 
     // Start kamera-feed i separat tråd
     thread cameraThread([&]() {
-        chessVision.showLiveFeed();
+        camera.showLiveFeed();
     });
 
     //   ==========   SET CHESSBOARD ORIGIN   ==========   //
@@ -432,22 +544,12 @@ int main() {
     printText("\n----- CHESS GAME STARTED -----");
     
     while (true) {
-        auto [playerFromIndex, playerToIndex] = getCameraData(chessVision);
+        // Get the player's move from the camera.
+        string playerMove = getValidPlayerMove(camera);
         //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
-        string playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
-    
-        while (!engine.sendValidMove(playerMove)) {
-            printText("Invalid move. Make a valid move.");
-            sleep(1);
-            auto [playerFromIndex, playerToIndex] = getCameraData(chessVision);
-            
-            // Convert into chess notation e.g "e2e4"
-            playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
-        }
-        cout << "Player move: " << playerMove << endl;
+        
+        // Get the index of the piece that was moved. Update internal chessboard with the player's move.
         auto [playerFromIdx, playerToIdx] = board.getMatrixIndex(playerMove);
-    
-        // Update internal chessboard with the player's move.
         board.updateChessboard(playerFromIdx, playerToIdx);
         board.printBoard();
         
