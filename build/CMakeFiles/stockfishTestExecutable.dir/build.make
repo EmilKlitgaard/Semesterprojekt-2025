@@ -69,19 +69,19 @@ include CMakeFiles/stockfishTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/stockfishTestExecutable.dir/flags.make
 
-CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
-CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/stockfishTest.cpp
-CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o -MF CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o.d -o CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/stockfishTest.cpp
+CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
+CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/stockfishTest.cpp
+CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o -MF CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o.d -o CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/stockfishTest.cpp"
 
-CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/stockfishTest.cpp > CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.i
+CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/stockfishTest.cpp" > CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.i
 
-CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/stockfishTest.cpp -o CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.s
+CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/stockfishTest.cpp" -o CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.s
 
 CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
 CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
@@ -113,14 +113,14 @@ CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.s: cmake_force
 
 # Object files for target stockfishTestExecutable
 stockfishTestExecutable_OBJECTS = \
-"CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o" \
+"CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o" \
 "CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o" \
 "CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o"
 
 # External object files for target stockfishTestExecutable
 stockfishTestExecutable_EXTERNAL_OBJECTS =
 
-stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o
+stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/build.make

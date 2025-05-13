@@ -69,38 +69,24 @@ include CMakeFiles/visionTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/visionTestExecutable.dir/flags.make
 
-CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
-CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/visionTest.cpp
-CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o -MF CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/visionTest.cpp
+CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
+CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/visionTest.cpp
+CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o -MF CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/visionTest.cpp"
 
-CMakeFiles/visionTestExecutable.dir/visionTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/visionTestExecutable.dir/visionTest.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/visionTest.cpp > CMakeFiles/visionTestExecutable.dir/visionTest.cpp.i
+CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/visionTest.cpp" > CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.i
 
-CMakeFiles/visionTestExecutable.dir/visionTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/visionTestExecutable.dir/visionTest.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/visionTest.cpp -o CMakeFiles/visionTestExecutable.dir/visionTest.cpp.s
-
-CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
-CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
-CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o -MF CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
-
-CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp > CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.i
-
-CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp -o CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.s
+CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/visionTest.cpp" -o CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.s
 
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Vision.cpp
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/visionTestExecutable.dir/Vision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/visionTestExecutable.dir/Vision.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/Vision.cpp.o -MF CMakeFiles/visionTestExecutable.dir/Vision.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/Vision.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Vision.cpp
 
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.i: cmake_force
@@ -113,15 +99,13 @@ CMakeFiles/visionTestExecutable.dir/Vision.cpp.s: cmake_force
 
 # Object files for target visionTestExecutable
 visionTestExecutable_OBJECTS = \
-"CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o" \
-"CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o" \
+"CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o" \
 "CMakeFiles/visionTestExecutable.dir/Vision.cpp.o"
 
 # External object files for target visionTestExecutable
 visionTestExecutable_EXTERNAL_OBJECTS =
 
-visionTestExecutable: CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o
-visionTestExecutable: CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o
+visionTestExecutable: CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o
 visionTestExecutable: CMakeFiles/visionTestExecutable.dir/Vision.cpp.o
 visionTestExecutable: CMakeFiles/visionTestExecutable.dir/build.make
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_stitching.so.4.6.0
@@ -180,7 +164,7 @@ visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.6.0
 visionTestExecutable: CMakeFiles/visionTestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable visionTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable visionTestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/visionTestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

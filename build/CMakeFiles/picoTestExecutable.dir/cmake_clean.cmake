@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/picoTestExecutable.dir/picoTest.cpp.o"
-  "CMakeFiles/picoTestExecutable.dir/picoTest.cpp.o.d"
+  "CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o"
+  "CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o.d"
   "picoTestExecutable"
   "picoTestExecutable.pdb"
 )

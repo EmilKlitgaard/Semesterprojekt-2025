@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o -o stockfishTestExecutable   -L/usr/local/lib 
+/usr/bin/c++ CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o -o stockfishTestExecutable   -L/usr/local/lib 

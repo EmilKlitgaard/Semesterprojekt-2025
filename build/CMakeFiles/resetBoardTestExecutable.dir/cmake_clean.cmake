@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o"
   "CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o.d"
-  "CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o"
-  "CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o.d"
+  "CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o"
+  "CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o.d"
   "resetBoardTestExecutable"
   "resetBoardTestExecutable.pdb"
 )

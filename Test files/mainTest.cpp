@@ -1,4 +1,5 @@
-#include "Chessboard.h"
+#include "../Chessboard.h"
+
 #include <iostream>
 
 int main() {
@@ -19,7 +20,7 @@ int main() {
 
         // Search for the dead piece location of the Queen.
         // (Note: searchDeadPieceLocation currently searches through deadPieceNames without differentiating origin.)
-        Vector3d queenLocation = board.searchDeadPieceLocation("Queen");
+        Vector3d queenLocation = board.searchDeadPieceLocation("Queen", "Player");
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }

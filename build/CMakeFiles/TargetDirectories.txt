@@ -1,4 +1,9 @@
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessRobotExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/visionTestExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/stockfishTestExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessTestExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/pickupTestExecutable.dir
+/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/picoTestExecutable.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/resetBoardTestExecutable.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/edit_cache.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/rebuild_cache.dir

@@ -11,22 +11,26 @@ include_directories(${EIGEN3_INCLUDE_DIR} ${OpenCV_INCLUDE_DIRS})
 
 link_directories(/usr/local/lib)
 
-# Define the executable
+# Define the executablepickupTest
 add_executable(chessRobotExecutable main.cpp Chessboard.cpp Stockfish.cpp Vision.cpp Gripper.cpp)
-
 # Link against the installed UR RTDE library
 target_link_libraries(chessRobotExecutable rtde pthread ${OpenCV_LIBS})
 
-# For testing
-# add_executable(visionTestExecutable visionTest.cpp Chessboard.cpp Vision.cpp) 
-# target_link_libraries(visionTestExecutable ${OpenCV_LIBS})
-# add_executable(stockfishTestExecutable stockfishTest.cpp Chessboard.cpp Stockfish.cpp) 
-# target_link_libraries(stockfishTestExecutable)
-# add_executable(chessTestExecutable mainTest.cpp Chessboard.cpp Stockfish.cpp) 
-# target_link_libraries(chessTestExecutable)
-# add_executable(pickupTestExecutable pickupTest.cpp Chessboard.cpp Gripper.cpp) 
-# target_link_libraries(pickupTestExecutable rtde)
-# add_executable(picoTestExecutable picoTest.cpp)
-# target_link_libraries(picoTestExecutable)
-add_executable(resetBoardTestExecutable resetBoardTest.cpp Chessboard.cpp)
+# Testing executables
+add_executable(visionTestExecutable Test\ files/visionTest.cpp Vision.cpp) 
+target_link_libraries(visionTestExecutable ${OpenCV_LIBS})
+
+add_executable(stockfishTestExecutable Test\ files/stockfishTest.cpp Chessboard.cpp Stockfish.cpp) 
+target_link_libraries(stockfishTestExecutable)
+
+add_executable(chessTestExecutable Test\ files/mainTest.cpp Chessboard.cpp Stockfish.cpp) 
+target_link_libraries(chessTestExecutable)
+
+add_executable(pickupTestExecutable Test\ files/pickupTest.cpp Chessboard.cpp Gripper.cpp) 
+target_link_libraries(pickupTestExecutable rtde)
+
+add_executable(picoTestExecutable Test\ files/picoTest.cpp)
+target_link_libraries(picoTestExecutable)
+
+add_executable(resetBoardTestExecutable Test\ files/resetBoardTest.cpp Chessboard.cpp)
 target_link_libraries(resetBoardTestExecutable)

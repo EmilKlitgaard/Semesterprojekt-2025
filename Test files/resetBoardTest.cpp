@@ -1,4 +1,5 @@
-#include "Chessboard.h"
+#include "../Chessboard.h"
+
 #include <iostream>
 #include <map>
 #include <set>

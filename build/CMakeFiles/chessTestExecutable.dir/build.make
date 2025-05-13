@@ -69,19 +69,19 @@ include CMakeFiles/chessTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/chessTestExecutable.dir/flags.make
 
-CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
-CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/mainTest.cpp
-CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o -MF CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o.d -o CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/mainTest.cpp
+CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
+CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/mainTest.cpp
+CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o -MF CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o.d -o CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/mainTest.cpp"
 
-CMakeFiles/chessTestExecutable.dir/mainTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chessTestExecutable.dir/mainTest.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/mainTest.cpp > CMakeFiles/chessTestExecutable.dir/mainTest.cpp.i
+CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/mainTest.cpp" > CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.i
 
-CMakeFiles/chessTestExecutable.dir/mainTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chessTestExecutable.dir/mainTest.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/mainTest.cpp -o CMakeFiles/chessTestExecutable.dir/mainTest.cpp.s
+CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/mainTest.cpp" -o CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.s
 
 CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
 CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
@@ -113,14 +113,14 @@ CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.s: cmake_force
 
 # Object files for target chessTestExecutable
 chessTestExecutable_OBJECTS = \
-"CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o" \
+"CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o" \
 "CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o" \
 "CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o"
 
 # External object files for target chessTestExecutable
 chessTestExecutable_EXTERNAL_OBJECTS =
 
-chessTestExecutable: CMakeFiles/chessTestExecutable.dir/mainTest.cpp.o
+chessTestExecutable: CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/build.make

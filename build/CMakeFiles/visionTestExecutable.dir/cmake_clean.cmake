@@ -1,10 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o"
-  "CMakeFiles/visionTestExecutable.dir/Chessboard.cpp.o.d"
+  "CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o"
+  "CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o.d"
   "CMakeFiles/visionTestExecutable.dir/Vision.cpp.o"
   "CMakeFiles/visionTestExecutable.dir/Vision.cpp.o.d"
-  "CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o"
-  "CMakeFiles/visionTestExecutable.dir/visionTest.cpp.o.d"
   "visionTestExecutable"
   "visionTestExecutable.pdb"
 )

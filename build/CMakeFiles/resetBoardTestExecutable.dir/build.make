@@ -69,19 +69,19 @@ include CMakeFiles/resetBoardTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/resetBoardTestExecutable.dir/flags.make
 
-CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/flags.make
-CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/resetBoardTest.cpp
-CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o -MF CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o.d -o CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/resetBoardTest.cpp
+CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/flags.make
+CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/resetBoardTest.cpp
+CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o -MF CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o.d -o CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/resetBoardTest.cpp"
 
-CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/resetBoardTest.cpp > CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.i
+CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/resetBoardTest.cpp" > CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.i
 
-CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/resetBoardTest.cpp -o CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.s
+CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/resetBoardTest.cpp" -o CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.s
 
 CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/flags.make
 CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
@@ -99,13 +99,13 @@ CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.s: cmake_force
 
 # Object files for target resetBoardTestExecutable
 resetBoardTestExecutable_OBJECTS = \
-"CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o" \
+"CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o" \
 "CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o"
 
 # External object files for target resetBoardTestExecutable
 resetBoardTestExecutable_EXTERNAL_OBJECTS =
 
-resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o
+resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o
 resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o
 resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/build.make
 resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/link.txt

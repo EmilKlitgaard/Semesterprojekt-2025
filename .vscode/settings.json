@@ -4,6 +4,7 @@
         "complex": "cpp",
         "iostream": "cpp",
         "stdexcept": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "thread": "cpp"
     }
 }

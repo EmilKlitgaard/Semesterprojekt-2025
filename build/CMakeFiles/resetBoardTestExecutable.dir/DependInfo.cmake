@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp" "CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o" "gcc" "CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o.d"
-  "/home/emilklitgaard/Workspace/Semesterprojekt/resetBoardTest.cpp" "CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o" "gcc" "CMakeFiles/resetBoardTestExecutable.dir/resetBoardTest.cpp.o.d"
+  "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/resetBoardTest.cpp" "CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o" "gcc" "CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

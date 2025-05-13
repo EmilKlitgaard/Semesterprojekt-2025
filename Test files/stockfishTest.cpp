@@ -1,4 +1,5 @@
-#include "Stockfish.h"
+#include "../Stockfish.h"
+
 #include <iostream>
 
 using namespace std;

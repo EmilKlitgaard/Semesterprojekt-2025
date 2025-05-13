@@ -3,8 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o.d"
   "CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o"
   "CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o.d"
-  "CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o"
-  "CMakeFiles/stockfishTestExecutable.dir/stockfishTest.cpp.o.d"
+  "CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o"
+  "CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o.d"
   "stockfishTestExecutable"
   "stockfishTestExecutable.pdb"
 )
