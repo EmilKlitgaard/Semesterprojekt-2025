@@ -37,14 +37,16 @@ int main() {
         cout << "Invalid move" << endl;
     }
 
-    cout << engine.getBestMove() << endl;
+    cout << "Stockfish best move: " << engine.getBestMove() << endl;
 
     // Check for checkmate
     if (engine.isCheckmate()) {
-        cout << "Stockfish best move" << "Checkmate detected! Game over." << endl;
+        cout << "Checkmate detected! Game over." << endl;
     } else {
         cout << "No checkmate detected." << endl;
     }
+
+    engine.printMoveHistory();
 
     return 0;
 }
