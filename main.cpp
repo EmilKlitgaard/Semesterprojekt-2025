@@ -26,10 +26,11 @@ RTDEControlInterface rtde_control(robotIp, robotPort);
 RTDEReceiveInterface rtde_receive(robotIp, robotPort);
 
 Chessboard board;
-Stockfish engine("/usr/games/stockfish");
+Stockfish engine("/usr/local/bin/stockfish");
 Gripper gripper("/dev/ttyACM0");
 
-Vector3d transformVector = {0.0, 0.0, 0.1};
+Vector3d liftTransformVector = {0.0, 0.0, 0.1};
+Vector3d calibrationTransformVector = {0.025, 0.025, 0.0};
 
 MatrixIndex pieceIdx;
 string deadPieceName;
@@ -129,10 +130,43 @@ void moveToAwaitPosition() {
 // Move TCP to a specific chessboard coordinate
 void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 0.5, double acceleration = 0.5) {
     // Convert chessboard target to base frame
-    Vector3d baseTarget = chessboardToBase(chessboardTarget, chessboardOrigin, RotationMatrix);
+    Vector3d baseTarget = chessboardToBase(chessboardTarget + calibrationTransformVector, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
     cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
     rtde_control.moveL(tcpPose, speed, acceleration);
+}
+
+void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, bool pickUp = true) {
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
+    moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
+    if (pickUp) {
+        gripper.closeGripper();
+        gripper.stopGripper();
+    }
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
+}
+
+void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, bool pickUp = true) {
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
+    moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
+    if (pickUp) {
+        gripper.openGripper();
+    }
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
+}
+
+// Function to move the robot to the corners of the chessboard
+void moveToBoardCorners(const Vector3d &chessboardOrigin, const Matrix3d &RotationChess) {
+    moveToAwaitPosition();
+    Vector3d chessboardTarget1(0.0, 0.0, 0.0);
+    pickUpPiece(chessboardTarget1, chessboardOrigin, RotationChess, false);
+    Vector3d chessboardTarget2(0.4, 0.0, 0.0);
+    pickUpPiece(chessboardTarget2, chessboardOrigin, RotationChess, false);
+    Vector3d chessboardTarget3(0.4, 0.4, 0.0);
+    pickUpPiece(chessboardTarget3, chessboardOrigin, RotationChess, false);
+    Vector3d chessboardTarget4(0.0, 0.4, 0.0);
+    pickUpPiece(chessboardTarget4, chessboardOrigin, RotationChess, false);
+    moveToAwaitPosition();
 }
 
 // Check if all positions within the calibrated chessboard are reachable
@@ -212,21 +246,6 @@ pair<string, string> getPieceName(string notation) {
     string fromPieceName = boardState[fromIndex.first][fromIndex.second];
     string toPieceName = boardState[toIndex.first][toIndex.second];
     return {fromPieceName, toPieceName};
-}
-
-void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
-    moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    gripper.closeGripper();
-    gripper.stopGripper();
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
-}
-
-void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
-    moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    gripper.openGripper();
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
 }
 
 void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
@@ -366,7 +385,6 @@ string getValidPlayerMove(ChessVision &camera) {
     return playerMove;
 }
 
-
 string checkPawnPromotion(string &playerMove) {
     if (pieceIdx.first == 0 && board.getPieceName(pieceIdx) == "Pawn") {
         cout << "Pawn promotion has been detected. Enter promotion piece name: [Queen, Knight, Rook, Bishop] " << endl;
@@ -497,14 +515,6 @@ int main() {
     //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
     vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
     rtde_control.setTcp(tcpCalibrationOffset);
-    
-    //   ==========   INITIALIZE COMPUTER VISION   ==========   //
-    ChessVision camera(4);
-
-    // Start kamera-feed i separat tråd
-    thread cameraThread([&]() {
-        camera.showLiveFeed();
-    });
 
     //   ==========   SET CHESSBOARD ORIGIN   ==========   //
     Vector3d chessboardOrigin = setChessboardOrigin(false);
@@ -519,16 +529,19 @@ int main() {
     }
 
     //   ==========   UPDATE TCP OFFSET   ==========   //
-    vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0};
+    vector<double> tcpOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0}; // Should be 0.2
     rtde_control.setTcp(tcpOffset);
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
-    moveToAwaitPosition();
-    Vector3d chessboardTarget1(0.0, 0.0, 0.0);
-    moveToChessboardPoint(chessboardTarget1, chessboardOrigin, RotationChess);
-    Vector3d chessboardTarget2(0.4, 0.4, 0.0);
-    moveToChessboardPoint(chessboardTarget2, chessboardOrigin, RotationChess);
-    moveToAwaitPosition();
+    moveToBoardCorners(chessboardOrigin, RotationChess);
+    
+    //   ==========   INITIALIZE COMPUTER VISION   ==========   //
+    ChessVision camera(1);
+
+    // Start kamera-feed i separat tråd
+    thread cameraThread([&]() {
+        camera.showLiveFeed();
+    });
 
     //   ==========   BEGIN CHESS GAME   ==========   //
     printText("Press ENTER to start chess game...");
