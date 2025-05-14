@@ -1,6 +1,7 @@
 #pragma once
-#include<QApplication>
+#include <QApplication>
 #include <opencv2/opencv.hpp>
+#include <mutex>
 
 
 class GUI {
@@ -14,17 +15,24 @@ public:
 
     void setConnection(bool value);
 
-    // feed livefeed to GUI
-    void setVision(const cv::Mat& image);
+    
+    void setVision(const cv::Mat& image); // livefeed to GUI
 
     //get
     int  getDifficulty() { return difficulty; }
+
     bool getGameActive() { return gameActive; }
+
     bool getTurn() { return turn; }
+
     bool getConnection() { return connection; }    
+    
     cv::Mat getVision() const;
 
 private:
+
+    mutable std::mutex cvMutex;
+
     // param
     cv::Mat cvImage;
     bool turn = true;

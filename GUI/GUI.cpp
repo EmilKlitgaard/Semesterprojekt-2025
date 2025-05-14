@@ -27,6 +27,7 @@ void GUI::setConnection(bool value) {
 
 // feed livefeed to GUI
 void GUI::setVision(const cv::Mat& image) {
+    std::lock_guard<std::mutex> lock(cvMutex);
     cvImage = image.clone();
 }   
 
@@ -40,6 +41,7 @@ bool GUI::getTurn() { return turn; }
 bool GUI::getConnection() { return connection; }    
 
 cv::Mat GUI::getVision() const {
+    std::lock_guard<std::mutex> lock(cvMutex);
     if (cvImage.empty()) return {};
     return cvImage.clone(); 
 }
