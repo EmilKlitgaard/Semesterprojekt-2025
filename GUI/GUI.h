@@ -1,5 +1,7 @@
 #pragma once
 #include<QApplication>
+#include <opencv2/opencv.hpp>
+
 
 class GUI {
 public:
@@ -21,31 +23,37 @@ public:
         */
 
     }
+
     void setGameActive(bool value) {
         gameActive = value;
     }
+
     void setTurn(bool value) {
         turn = value; // 1 = player, 0 = robot
     }
+
     void setConnection(bool value) {
         connection = value; // 1 = connected, 0 = disconnected
     }
 
-    void setVision() {
-        
-    }
-
-    void getVision() {
-
-    }
+    // feed livefeed to GUI
+    void GUI::setVision(const cv::Mat& image) {
+        visionImage = image.clone();
+    }   
 
     //get
     int  getDifficulty() { return difficulty; }
     bool getGameActive() { return gameActive; }
     bool getTurn() { return turn; }
     bool getConnection() { return connection; }    
+    cv::Mat GUI::getVision() const {
+        return visionImage.clone();
+    }
 
 private:
+
+    cv::Mat visionImage; // contain image
+
     // param
     bool turn = true;
     bool connection = false;

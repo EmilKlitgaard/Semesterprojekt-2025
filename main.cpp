@@ -434,7 +434,7 @@ int main(int argc, char *argv[]) {
     
     engine.sendCommand("setoption name UCI_LimitStrength value true"); // enables difficulty adjustments
     engine.sendCommand("setoption name UCI_Elo value 1200"+to_string(gui.getDifficulty())); // passes the dificulty from the GUI into stockfish.
-    gui.setGameActive(1); // whilst game is active the difficulty cant be modified
+    gui.setGameActive(1); // whilst game is active the difficulty cannot be modified
 
     while (true) {
         auto [playerFromIndex, playerToIndex] = getCameraData(chessVision);
