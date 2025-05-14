@@ -152,7 +152,7 @@ string Chessboard::getChessNotation(MatrixIndex position1, MatrixIndex position2
     return indexToNotation[position1] + indexToNotation[position2];
 }
 
-// Convert chess notation to matrix index (e.g., "a8a5" -> {0,0}, {0,4}))
+// Convert chess notation to matrix index (e.g., "a8a5" -> ({0,0}, {0,4}))
 pair<MatrixIndex, MatrixIndex> Chessboard::getMatrixIndex(string& notation) {
     string fromNotation = notation.substr(0, 2);
     string toNotation   = notation.substr(2, 2);

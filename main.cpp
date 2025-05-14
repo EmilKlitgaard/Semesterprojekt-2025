@@ -124,11 +124,11 @@ Vector3d setChessboardOrigin(bool calibrate = false){
 // Move TCP to the awaiting position
 void moveToAwaitPosition() {
     vector<double> awaitPosition = {-1.11701, -0.89012, -1.78024, -0.52360, 1.57080, 0.71558}; 
-    rtde_control.moveJ(awaitPosition, 1.0, 0.3);
+    rtde_control.moveJ(awaitPosition, 2, 2);
 }
 
 // Move TCP to a specific chessboard coordinate
-void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 0.5, double acceleration = 0.5) {
+void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 3, double acceleration = 3) {
     // Convert chessboard target to base frame
     Vector3d baseTarget = chessboardToBase(chessboardTarget + calibrationTransformVector, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
@@ -191,6 +191,14 @@ bool AllPositionsReachable(const Vector3d &chessboardOrigin, const Matrix3d &Rot
 pair<MatrixIndex, MatrixIndex> determinePlayerMove(const ChessboardMatrix lastPositions, const ChessboardMatrix newPositions) {
     MatrixIndex from = {-1, -1};
     MatrixIndex to = {-1, -1};
+
+    // Check for castling
+    if (lastPositions[0][0] == 'W' && newPositions[0][0] == 'e' && lastPositions[0][1] == 'e' && newPositions[0][1] == 'W' && lastPositions[0][2] == 'e' && newPositions[0][2] == 'W' && lastPositions[0][3] == 'W' && newPositions[0][3] == 'e') {
+        return {{0, 3}, {0, 1}};
+    } else if (lastPositions[0][3] == 'W' && newPositions[0][3] == 'e' && lastPositions[0][4] == 'e' && newPositions[0][4] == 'W' && lastPositions[0][5] == 'e' && newPositions[0][5] == 'W' && lastPositions[0][6] == 'e' && newPositions[0][6] == 'e' && lastPositions[0][7] == 'W' && newPositions[0][7] == 'e') {
+        return {{0, 3}, {0, 5}};
+    }
+
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
             if (lastPositions[i][j] == 'W' && newPositions[i][j] == 'e') {
@@ -266,6 +274,17 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
 
         pickUpPiece(toCoordinate, chessboardOrigin, RotationMatrix);
         placePiece(deadPieceLocation, chessboardOrigin, RotationMatrix);
+    }
+
+    cout << "Piece Name: " << fromPieceName << endl;
+
+    // Check for castling
+    if ((robotMove == "dec8" || robotMove == "e8g8") && fromPieceName == "King") {
+        printText("Castling detected. Moving rook...");
+        Vector3d rookFromCoordinate = (robotMove == "dec8" ? board.getPhysicalCoordinate({0, 7}) : board.getPhysicalCoordinate({0, 0}));
+        Vector3d rookToCoordinate = (robotMove == "dec8" ? board.getPhysicalCoordinate({0, 5}) : board.getPhysicalCoordinate({0, 3}));
+        pickUpPiece(rookFromCoordinate, chessboardOrigin, RotationMatrix);
+        placePiece(rookToCoordinate, chessboardOrigin, RotationMatrix);
     }
 
     // Move the selected piece
@@ -368,25 +387,9 @@ string inputPlayerMove() {
     }
 }
 
-// Get a valid player move from the camera
-string getValidPlayerMove(ChessVision &camera) {
-    string playerMove;
-    do {
-        auto [playerFromIndex, playerToIndex] = getCameraData(camera);
-        playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
-
-        if (!engine.sendValidMove(playerMove)) {
-            printText("Invalid move. Make a valid move.");
-            sleep(1);
-        }
-    } while (!engine.sendValidMove(playerMove));
-
-    cout << "Player move: " << playerMove << endl;
-    return playerMove;
-}
-
 string checkPawnPromotion(string &playerMove) {
-    if (pieceIdx.first == 0 && board.getPieceName(pieceIdx) == "Pawn") {
+    auto [fromPieceIdx, toPieceIdx] = board.getMatrixIndex(playerMove);
+    if (fromPieceIdx.first == 0 && board.getPieceName(fromPieceIdx) == "Pawn") {
         cout << "Pawn promotion has been detected. Enter promotion piece name: [Queen, Knight, Rook, Bishop] " << endl;
         string promotionType;
         while (true) {
@@ -412,8 +415,25 @@ string checkPawnPromotion(string &playerMove) {
         }
         playerMove += promotionType;
         cout << "Updated player move: " << playerMove << endl;
-        board.printBoard();
     }
+    return playerMove;
+}
+
+// Get a valid player move from the camera
+string getValidPlayerMove(ChessVision &camera) {
+    string playerMove;
+    do {
+        auto [playerFromIndex, playerToIndex] = getCameraData(camera);
+        playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
+
+        if (!engine.sendValidMove(playerMove)) {
+            printText("Invalid move. Make a valid move.");
+            sleep(1);
+        }
+    } while (!engine.sendValidMove(playerMove));
+
+    playerMove = checkPawnPromotion(playerMove);
+    cout << "Player move: " << playerMove << endl;
     return playerMove;
 }
 
@@ -529,7 +549,7 @@ int main() {
     }
 
     //   ==========   UPDATE TCP OFFSET   ==========   //
-    vector<double> tcpOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0}; // Should be 0.2
+    vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0}; // Should be 0.2
     rtde_control.setTcp(tcpOffset);
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
