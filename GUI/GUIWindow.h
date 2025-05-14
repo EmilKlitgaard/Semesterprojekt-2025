@@ -28,6 +28,7 @@ signals:
     void difficultyChanged(int value);
 
 private slots:
+    void updateVision();
     void handleSliderChanged(int value);
     void handleStartClicked();
     void handleStopClicked();
@@ -50,8 +51,9 @@ private:
     QPushButton startGame;
     QPushButton stopGame;
 
-    QLabel* cameraLabel;
-    QTimer* cameraTimer;
+    QLabel* cvLabel;
+    QTimer cvTimer;
+    QImage cvFeed;
 
 
 };

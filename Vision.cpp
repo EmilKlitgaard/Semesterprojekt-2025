@@ -1,4 +1,5 @@
 #include "Vision.h"
+#include "GUI.h"
 
 // Constructor: Opens the camera
 ChessVision::ChessVision(int cameraIndex) {
@@ -171,6 +172,10 @@ void ChessVision::showLiveFeed() {
         if (frame.empty()) break;
 
         currentFrame = frame.clone();  // Gem til senere brug
+
+        // GUI
+        gui.setVision(frame);
+        // GUI
 
         imshow("Live Kamera", frame);
         int key = waitKey(30);

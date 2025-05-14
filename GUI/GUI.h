@@ -38,7 +38,7 @@ public:
 
     // feed livefeed to GUI
     void GUI::setVision(const cv::Mat& image) {
-        visionImage = image.clone();
+        cvImage = image.clone();
     }   
 
     //get
@@ -46,13 +46,11 @@ public:
     bool getGameActive() { return gameActive; }
     bool getTurn() { return turn; }
     bool getConnection() { return connection; }    
-    cv::Mat GUI::getVision() const {
-        return visionImage.clone();
-    }
+    cv::Mat GUI::getVision() const { return cvImage.clone(); }
 
 private:
 
-    cv::Mat visionImage; // contain image
+    cv::Mat cvImage; // contain image
 
     // param
     bool turn = true;
