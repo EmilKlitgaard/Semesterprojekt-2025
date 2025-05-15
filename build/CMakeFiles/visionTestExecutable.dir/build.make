@@ -69,10 +69,30 @@ include CMakeFiles/visionTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/visionTestExecutable.dir/flags.make
 
+visionTestExecutable_autogen/timestamp: /usr/lib/qt6/libexec/moc
+visionTestExecutable_autogen/timestamp: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target visionTestExecutable"
+	/usr/bin/cmake -E cmake_autogen /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/visionTestExecutable_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/emilklitgaard/Workspace/Semesterprojekt/build/visionTestExecutable_autogen/timestamp
+
+CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
+CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o: visionTestExecutable_autogen/mocs_compilation.cpp
+CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o -MF CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/build/visionTestExecutable_autogen/mocs_compilation.cpp
+
+CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/build/visionTestExecutable_autogen/mocs_compilation.cpp > CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/build/visionTestExecutable_autogen/mocs_compilation.cpp -o CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
 CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/visionTest.cpp
 CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o -MF CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/visionTest.cpp"
 
 CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.i: cmake_force
@@ -86,7 +106,7 @@ CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.s: cmake_force
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Vision.cpp
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/visionTestExecutable.dir/Vision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/visionTestExecutable.dir/Vision.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/Vision.cpp.o -MF CMakeFiles/visionTestExecutable.dir/Vision.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/Vision.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Vision.cpp
 
 CMakeFiles/visionTestExecutable.dir/Vision.cpp.i: cmake_force
@@ -97,16 +117,34 @@ CMakeFiles/visionTestExecutable.dir/Vision.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/visionTestExecutable.dir/Vision.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/Vision.cpp -o CMakeFiles/visionTestExecutable.dir/Vision.cpp.s
 
+CMakeFiles/visionTestExecutable.dir/GUI.cpp.o: CMakeFiles/visionTestExecutable.dir/flags.make
+CMakeFiles/visionTestExecutable.dir/GUI.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+CMakeFiles/visionTestExecutable.dir/GUI.cpp.o: CMakeFiles/visionTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/visionTestExecutable.dir/GUI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/visionTestExecutable.dir/GUI.cpp.o -MF CMakeFiles/visionTestExecutable.dir/GUI.cpp.o.d -o CMakeFiles/visionTestExecutable.dir/GUI.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+
+CMakeFiles/visionTestExecutable.dir/GUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/visionTestExecutable.dir/GUI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp > CMakeFiles/visionTestExecutable.dir/GUI.cpp.i
+
+CMakeFiles/visionTestExecutable.dir/GUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/visionTestExecutable.dir/GUI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp -o CMakeFiles/visionTestExecutable.dir/GUI.cpp.s
+
 # Object files for target visionTestExecutable
 visionTestExecutable_OBJECTS = \
+"CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o" \
-"CMakeFiles/visionTestExecutable.dir/Vision.cpp.o"
+"CMakeFiles/visionTestExecutable.dir/Vision.cpp.o" \
+"CMakeFiles/visionTestExecutable.dir/GUI.cpp.o"
 
 # External object files for target visionTestExecutable
 visionTestExecutable_EXTERNAL_OBJECTS =
 
+visionTestExecutable: CMakeFiles/visionTestExecutable.dir/visionTestExecutable_autogen/mocs_compilation.cpp.o
 visionTestExecutable: CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o
 visionTestExecutable: CMakeFiles/visionTestExecutable.dir/Vision.cpp.o
+visionTestExecutable: CMakeFiles/visionTestExecutable.dir/GUI.cpp.o
 visionTestExecutable: CMakeFiles/visionTestExecutable.dir/build.make
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_stitching.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_alphamat.so.4.6.0
@@ -144,6 +182,7 @@ visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_viz.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_wechat_qrcode.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_xobjdetect.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_xphoto.so.4.6.0
+visionTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_highgui.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_datasets.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_plot.so.4.6.0
@@ -163,8 +202,12 @@ visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_flann.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_photo.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_imgproc.so.4.6.0
 visionTestExecutable: /usr/lib/aarch64-linux-gnu/libopencv_core.so.4.6.0
+visionTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Gui.so.6.4.2
+visionTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2
+visionTestExecutable: /usr/lib/aarch64-linux-gnu/libGLX.so
+visionTestExecutable: /usr/lib/aarch64-linux-gnu/libOpenGL.so
 visionTestExecutable: CMakeFiles/visionTestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable visionTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable visionTestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/visionTestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -175,7 +218,7 @@ CMakeFiles/visionTestExecutable.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/visionTestExecutable.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/visionTestExecutable.dir/clean
 
-CMakeFiles/visionTestExecutable.dir/depend:
+CMakeFiles/visionTestExecutable.dir/depend: visionTestExecutable_autogen/timestamp
 	cd /home/emilklitgaard/Workspace/Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/visionTestExecutable.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/visionTestExecutable.dir/depend
 

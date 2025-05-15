@@ -7,10 +7,15 @@
 #include <string>
 #include <fstream>
 #include <unordered_map>
+#include <QtWidgets/QApplication>
+#include <memory>
+
 #include "Chessboard.h"
 #include "Stockfish.h"
 #include "Vision.h"
 #include "Gripper.h"
+#include "GUI.h"
+#include "GUIWindow.h"
 
 using namespace ur_rtde;
 using namespace std;
@@ -22,12 +27,13 @@ using MatrixIndex = pair<int, int>;
 
 string robotIp = "192.168.1.54";
 int robotPort = 50002;
-RTDEControlInterface rtde_control(robotIp, robotPort);
-RTDEReceiveInterface rtde_receive(robotIp, robotPort);
+unique_ptr<RTDEControlInterface> rtde_control;
+unique_ptr<RTDEReceiveInterface> rtde_receive;
 
 Chessboard board;
 Stockfish engine("/usr/local/bin/stockfish");
-Gripper gripper("/dev/ttyACM0");
+
+unique_ptr<Gripper> gripper;
 
 Vector3d liftTransformVector = {0.0, 0.0, 0.1};
 Vector3d calibrationTransformVector = {0.025, 0.025, 0.0};
@@ -99,13 +105,13 @@ Vector3d setChessboardOrigin(bool calibrate = false){
     }
 
     // Perform calibration
-    rtde_control.teachMode(); // Enable freemove mode
+    rtde_control->teachMode(); // Enable freemove mode
     printText("Freemove mode enabled. Move the robot pointer to the chessboard A1 corner and press ENTER.");
     cin.get(); // Wait for user input
-    rtde_control.endTeachMode(); // Disable freemove mode
+    rtde_control->endTeachMode(); // Disable freemove mode
     printText("Freemove mode disabled. Saving chessboard frame origin.");
 
-    vector<double> tcpPose = rtde_receive.getActualTCPPose();
+    vector<double> tcpPose = rtde_receive->getActualTCPPose();
     cout << "Captured TCP pose coordinates: (" << tcpPose[0] << ", " << tcpPose[1] << ", " << tcpPose[2] << ")" << endl;
     chessboardOrigin = Vector3d(tcpPose[0], tcpPose[1], tcpPose[2]);
 
@@ -124,7 +130,7 @@ Vector3d setChessboardOrigin(bool calibrate = false){
 // Move TCP to the awaiting position
 void moveToAwaitPosition() {
     vector<double> awaitPosition = {-1.11701, -0.89012, -1.78024, -0.52360, 1.57080, 0.71558}; 
-    rtde_control.moveJ(awaitPosition, 2, 2);
+    rtde_control->moveJ(awaitPosition, 2, 2);
 }
 
 // Move TCP to a specific chessboard coordinate
@@ -133,15 +139,15 @@ void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &che
     Vector3d baseTarget = chessboardToBase(chessboardTarget + calibrationTransformVector, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
     cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
-    rtde_control.moveL(tcpPose, speed, acceleration);
+    rtde_control->moveL(tcpPose, speed, acceleration);
 }
 
 void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, bool pickUp = true) {
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
     if (pickUp) {
-        gripper.closeGripper();
-        gripper.stopGripper();
+        gripper->closeGripper();
+        gripper->stopGripper();
     }
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
 }
@@ -150,7 +156,7 @@ void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, cons
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
     if (pickUp) {
-        gripper.openGripper();
+        gripper->openGripper();
     }
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
 }
@@ -177,7 +183,7 @@ bool AllPositionsReachable(const Vector3d &chessboardOrigin, const Matrix3d &Rot
         Vector3d baseTarget = chessboardToBase(position, chessboardOrigin, RotationMatrix);
         vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2]};
         // cout << "Checking reachability for coordinate: (" << tcpPose[0] << ", " << tcpPose[1] << ", " << tcpPose[2] << ")" << endl;
-        vector<double> JntPos = {1,1,1}; // rtde_control.getInverseKinematics(tcpPose);
+        vector<double> JntPos = {1,1,1}; // rtde_control->getInverseKinematics(tcpPose);
         if (JntPos.empty()) {
             cout << "Target pose" << baseTarget.transpose() << " is not reachable by the robot" << endl;
             return false;
@@ -526,15 +532,37 @@ void resetChessboard() {
             		    MAIN START
 ============================================================*/
 int main() {
+    //   ==========   INITIALIZE GUI   ==========   //
+    int argc = 0;
+    char *argv[] = {nullptr};
+    QApplication app(argc, argv);
+
+    GUIWindow window;
+    window.show();
+    cout << "Chessboard GUI initialized." << endl;
+
     //   ==========   VALIDATE UR5 CONNECTION   ==========   //
-    if (!rtde_control.isConnected() || !rtde_receive.isConnected()) {
-        cerr << "Failed to connect to the robot at " << robotIp << ":" << robotPort << endl;
-        return -1;
+    try {
+        rtde_control = make_unique<RTDEControlInterface>(robotIp, robotPort);
+        rtde_receive = make_unique<RTDEReceiveInterface>(robotIp, robotPort);
+        gui.setConnection(true);
+    } catch (const exception& e) {
+        cerr << "Failed to connect to the robot at ip: " << robotIp << ", port: " << robotPort << ". Error: " << e.what() << endl;
+        gui.setConnection(false);
     }
-    
+
+    //   ==========   START GRIPPER COMMUNICATION   ==========   //
+    try {
+        gripper = make_unique<Gripper>("/dev/ttyACM0");
+    } catch (const exception& e) {
+        cerr << "Failed to connect to the gripper. Error: " << e.what() << endl;
+    }
+
+    while (true) {}
+        
     //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
     vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
-    rtde_control.setTcp(tcpCalibrationOffset);
+    rtde_control->setTcp(tcpCalibrationOffset);
 
     //   ==========   SET CHESSBOARD ORIGIN   ==========   //
     Vector3d chessboardOrigin = setChessboardOrigin(false);
@@ -550,7 +578,7 @@ int main() {
 
     //   ==========   UPDATE TCP OFFSET   ==========   //
     vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0}; // Should be 0.2
-    rtde_control.setTcp(tcpOffset);
+    rtde_control->setTcp(tcpOffset);
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToBoardCorners(chessboardOrigin, RotationChess);
@@ -569,6 +597,9 @@ int main() {
     printText("\n----- CHESS GAME STARTED -----");
     
     while (true) {
+        // Set player turn on GUI
+        gui.setTurn(true);
+
         // Get the player's move from the camera.
         string playerMove = getValidPlayerMove(camera);
         //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
@@ -578,6 +609,9 @@ int main() {
         board.updateChessboard(playerFromIdx, playerToIdx);
         board.printBoard();
         
+        // Set robot turn on GUI
+        gui.setTurn(false);
+
         // Get the move from Stockfish (in chess notation, e.g., "a2a4")
         string robotMove = stockfishMove(engine);
         

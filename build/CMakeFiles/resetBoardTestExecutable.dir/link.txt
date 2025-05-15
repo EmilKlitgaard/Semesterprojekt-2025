@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o -o resetBoardTestExecutable   -L/usr/local/lib 
+/usr/bin/c++ CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o -o resetBoardTestExecutable   -L/usr/local/lib 

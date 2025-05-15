@@ -69,10 +69,30 @@ include CMakeFiles/pickupTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/pickupTestExecutable.dir/flags.make
 
+pickupTestExecutable_autogen/timestamp: /usr/lib/qt6/libexec/moc
+pickupTestExecutable_autogen/timestamp: CMakeFiles/pickupTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target pickupTestExecutable"
+	/usr/bin/cmake -E cmake_autogen /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/pickupTestExecutable_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/emilklitgaard/Workspace/Semesterprojekt/build/pickupTestExecutable_autogen/timestamp
+
+CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/pickupTestExecutable.dir/flags.make
+CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o: pickupTestExecutable_autogen/mocs_compilation.cpp
+CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/pickupTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o -MF CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/build/pickupTestExecutable_autogen/mocs_compilation.cpp
+
+CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/build/pickupTestExecutable_autogen/mocs_compilation.cpp > CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/build/pickupTestExecutable_autogen/mocs_compilation.cpp -o CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o: CMakeFiles/pickupTestExecutable.dir/flags.make
 CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/pickupTest.cpp
 CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o: CMakeFiles/pickupTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o -MF CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o.d -o CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/pickupTest.cpp"
 
 CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.i: cmake_force
@@ -86,7 +106,7 @@ CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.s: cmake_force
 CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/pickupTestExecutable.dir/flags.make
 CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/pickupTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o -MF CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o.d -o CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 
 CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.i: cmake_force
@@ -100,7 +120,7 @@ CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.s: cmake_force
 CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o: CMakeFiles/pickupTestExecutable.dir/flags.make
 CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp
 CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o: CMakeFiles/pickupTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o -MF CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o.d -o CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp
 
 CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.i: cmake_force
@@ -111,21 +131,44 @@ CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp -o CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.s
 
+CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o: CMakeFiles/pickupTestExecutable.dir/flags.make
+CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o: CMakeFiles/pickupTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o -MF CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o.d -o CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+
+CMakeFiles/pickupTestExecutable.dir/GUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/pickupTestExecutable.dir/GUI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp > CMakeFiles/pickupTestExecutable.dir/GUI.cpp.i
+
+CMakeFiles/pickupTestExecutable.dir/GUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/pickupTestExecutable.dir/GUI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp -o CMakeFiles/pickupTestExecutable.dir/GUI.cpp.s
+
 # Object files for target pickupTestExecutable
 pickupTestExecutable_OBJECTS = \
+"CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o" \
 "CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o" \
-"CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o"
+"CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o" \
+"CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o"
 
 # External object files for target pickupTestExecutable
 pickupTestExecutable_EXTERNAL_OBJECTS =
 
+pickupTestExecutable: CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o
 pickupTestExecutable: CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o
 pickupTestExecutable: CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o
 pickupTestExecutable: CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o
+pickupTestExecutable: CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o
 pickupTestExecutable: CMakeFiles/pickupTestExecutable.dir/build.make
+pickupTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
+pickupTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Gui.so.6.4.2
+pickupTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2
+pickupTestExecutable: /usr/lib/aarch64-linux-gnu/libGLX.so
+pickupTestExecutable: /usr/lib/aarch64-linux-gnu/libOpenGL.so
 pickupTestExecutable: CMakeFiles/pickupTestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable pickupTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable pickupTestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pickupTestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,7 +179,7 @@ CMakeFiles/pickupTestExecutable.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/pickupTestExecutable.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/pickupTestExecutable.dir/clean
 
-CMakeFiles/pickupTestExecutable.dir/depend:
+CMakeFiles/pickupTestExecutable.dir/depend: pickupTestExecutable_autogen/timestamp
 	cd /home/emilklitgaard/Workspace/Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/pickupTestExecutable.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/pickupTestExecutable.dir/depend
 

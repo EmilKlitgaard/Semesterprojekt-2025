@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/local/include/ur_rtde -I/usr/include/eigen3 -I/usr/include/opencv4
+CXX_INCLUDES = -I/home/emilklitgaard/Workspace/Semesterprojekt/build/resetBoardTestExecutable_autogen/include -I/usr/local/include/ur_rtde -I/usr/include/eigen3 -I/usr/include/opencv4
 
 CXX_FLAGS = -std=gnu++17
 

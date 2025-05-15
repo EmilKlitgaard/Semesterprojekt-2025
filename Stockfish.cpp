@@ -1,4 +1,5 @@
 #include "Stockfish.h"
+#include "GUI.h"
 
 Stockfish::Stockfish(const string& enginePath) : enginePath(enginePath) {
     cout << "Starting Stockfish engine..." << endl;
@@ -20,6 +21,7 @@ void Stockfish::startEngine() {
     while (readResponse() != "uciok");
     sendCommand("isready");
     while (readResponse() != "readyok");
+    sendCommand("setoption UCI_LimitStrength value true");
     cout << "Stockfish succesfully started." << endl;
 }
 
@@ -123,12 +125,13 @@ bool Stockfish::sendValidMove(const string& move) {
 
 // Returns the best move from Stockfish
 string Stockfish::getBestMove() {
+    sendCommand("setoption name UCI_Elo value " + to_string(gui.getDifficulty()));
+
     ostringstream position;
     position << "position startpos moves";
     for (const auto& move : moveHistory) {
         position << " " << move;
     }
-
     sendCommand(position.str());
     sendCommand("go depth 20");
 

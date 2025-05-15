@@ -69,10 +69,30 @@ include CMakeFiles/stockfishTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/stockfishTestExecutable.dir/flags.make
 
+stockfishTestExecutable_autogen/timestamp: /usr/lib/qt6/libexec/moc
+stockfishTestExecutable_autogen/timestamp: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target stockfishTestExecutable"
+	/usr/bin/cmake -E cmake_autogen /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/stockfishTestExecutable_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/emilklitgaard/Workspace/Semesterprojekt/build/stockfishTestExecutable_autogen/timestamp
+
+CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
+CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o: stockfishTestExecutable_autogen/mocs_compilation.cpp
+CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o -MF CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/build/stockfishTestExecutable_autogen/mocs_compilation.cpp
+
+CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/build/stockfishTestExecutable_autogen/mocs_compilation.cpp > CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/build/stockfishTestExecutable_autogen/mocs_compilation.cpp -o CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
 CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/stockfishTest.cpp
 CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o -MF CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o.d -o CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/stockfishTest.cpp"
 
 CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.i: cmake_force
@@ -86,7 +106,7 @@ CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.s: cmake_for
 CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
 CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o -MF CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o.d -o CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 
 CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.i: cmake_force
@@ -100,7 +120,7 @@ CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.s: cmake_force
 CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
 CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp
 CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o -MF CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o.d -o CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp
 
 CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.i: cmake_force
@@ -111,21 +131,44 @@ CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp -o CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.s
 
+CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o: CMakeFiles/stockfishTestExecutable.dir/flags.make
+CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o: CMakeFiles/stockfishTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o -MF CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o.d -o CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+
+CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp > CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.i
+
+CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp -o CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.s
+
 # Object files for target stockfishTestExecutable
 stockfishTestExecutable_OBJECTS = \
+"CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o" \
 "CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o" \
-"CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o"
+"CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o" \
+"CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o"
 
 # External object files for target stockfishTestExecutable
 stockfishTestExecutable_EXTERNAL_OBJECTS =
 
+stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/stockfishTestExecutable_autogen/mocs_compilation.cpp.o
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o
+stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/GUI.cpp.o
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/build.make
+stockfishTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
+stockfishTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Gui.so.6.4.2
+stockfishTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2
+stockfishTestExecutable: /usr/lib/aarch64-linux-gnu/libGLX.so
+stockfishTestExecutable: /usr/lib/aarch64-linux-gnu/libOpenGL.so
 stockfishTestExecutable: CMakeFiles/stockfishTestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable stockfishTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable stockfishTestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/stockfishTestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,7 +179,7 @@ CMakeFiles/stockfishTestExecutable.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/stockfishTestExecutable.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/stockfishTestExecutable.dir/clean
 
-CMakeFiles/stockfishTestExecutable.dir/depend:
+CMakeFiles/stockfishTestExecutable.dir/depend: stockfishTestExecutable_autogen/timestamp
 	cd /home/emilklitgaard/Workspace/Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/stockfishTestExecutable.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/stockfishTestExecutable.dir/depend
 

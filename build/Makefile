@@ -130,82 +130,30 @@ chessRobotExecutable/fast:
 .PHONY : chessRobotExecutable/fast
 
 #=============================================================================
-# Target rules for targets named visionTestExecutable
+# Target rules for targets named chessRobotExecutable_autogen_timestamp_deps
 
 # Build rule for target.
-visionTestExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 visionTestExecutable
-.PHONY : visionTestExecutable
+chessRobotExecutable_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chessRobotExecutable_autogen_timestamp_deps
+.PHONY : chessRobotExecutable_autogen_timestamp_deps
 
 # fast build rule for target.
-visionTestExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/build
-.PHONY : visionTestExecutable/fast
+chessRobotExecutable_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable_autogen_timestamp_deps.dir/build.make CMakeFiles/chessRobotExecutable_autogen_timestamp_deps.dir/build
+.PHONY : chessRobotExecutable_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named stockfishTestExecutable
+# Target rules for targets named chessRobotExecutable_autogen
 
 # Build rule for target.
-stockfishTestExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stockfishTestExecutable
-.PHONY : stockfishTestExecutable
+chessRobotExecutable_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chessRobotExecutable_autogen
+.PHONY : chessRobotExecutable_autogen
 
 # fast build rule for target.
-stockfishTestExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/build
-.PHONY : stockfishTestExecutable/fast
-
-#=============================================================================
-# Target rules for targets named chessTestExecutable
-
-# Build rule for target.
-chessTestExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chessTestExecutable
-.PHONY : chessTestExecutable
-
-# fast build rule for target.
-chessTestExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/build
-.PHONY : chessTestExecutable/fast
-
-#=============================================================================
-# Target rules for targets named pickupTestExecutable
-
-# Build rule for target.
-pickupTestExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pickupTestExecutable
-.PHONY : pickupTestExecutable
-
-# fast build rule for target.
-pickupTestExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/build
-.PHONY : pickupTestExecutable/fast
-
-#=============================================================================
-# Target rules for targets named picoTestExecutable
-
-# Build rule for target.
-picoTestExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picoTestExecutable
-.PHONY : picoTestExecutable
-
-# fast build rule for target.
-picoTestExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/build
-.PHONY : picoTestExecutable/fast
-
-#=============================================================================
-# Target rules for targets named resetBoardTestExecutable
-
-# Build rule for target.
-resetBoardTestExecutable: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 resetBoardTestExecutable
-.PHONY : resetBoardTestExecutable
-
-# fast build rule for target.
-resetBoardTestExecutable/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/build
-.PHONY : resetBoardTestExecutable/fast
+chessRobotExecutable_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable_autogen.dir/build.make CMakeFiles/chessRobotExecutable_autogen.dir/build
+.PHONY : chessRobotExecutable_autogen/fast
 
 Chessboard.o: Chessboard.cpp.o
 .PHONY : Chessboard.o
@@ -213,10 +161,6 @@ Chessboard.o: Chessboard.cpp.o
 # target to build an object file
 Chessboard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o
 .PHONY : Chessboard.cpp.o
 
 Chessboard.i: Chessboard.cpp.i
@@ -225,10 +169,6 @@ Chessboard.i: Chessboard.cpp.i
 # target to preprocess a source file
 Chessboard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.i
 .PHONY : Chessboard.cpp.i
 
 Chessboard.s: Chessboard.cpp.s
@@ -237,11 +177,55 @@ Chessboard.s: Chessboard.cpp.s
 # target to generate assembly for a file
 Chessboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Chessboard.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.s
 .PHONY : Chessboard.cpp.s
+
+GUI.o: GUI.cpp.o
+.PHONY : GUI.o
+
+# target to build an object file
+GUI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o
+.PHONY : GUI.cpp.o
+
+GUI.i: GUI.cpp.i
+.PHONY : GUI.i
+
+# target to preprocess a source file
+GUI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/GUI.cpp.i
+.PHONY : GUI.cpp.i
+
+GUI.s: GUI.cpp.s
+.PHONY : GUI.s
+
+# target to generate assembly for a file
+GUI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/GUI.cpp.s
+.PHONY : GUI.cpp.s
+
+GUIWindow.o: GUIWindow.cpp.o
+.PHONY : GUIWindow.o
+
+# target to build an object file
+GUIWindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o
+.PHONY : GUIWindow.cpp.o
+
+GUIWindow.i: GUIWindow.cpp.i
+.PHONY : GUIWindow.i
+
+# target to preprocess a source file
+GUIWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.i
+.PHONY : GUIWindow.cpp.i
+
+GUIWindow.s: GUIWindow.cpp.s
+.PHONY : GUIWindow.s
+
+# target to generate assembly for a file
+GUIWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.s
+.PHONY : GUIWindow.cpp.s
 
 Gripper.o: Gripper.cpp.o
 .PHONY : Gripper.o
@@ -249,7 +233,6 @@ Gripper.o: Gripper.cpp.o
 # target to build an object file
 Gripper.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o
 .PHONY : Gripper.cpp.o
 
 Gripper.i: Gripper.cpp.i
@@ -258,7 +241,6 @@ Gripper.i: Gripper.cpp.i
 # target to preprocess a source file
 Gripper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.i
 .PHONY : Gripper.cpp.i
 
 Gripper.s: Gripper.cpp.s
@@ -267,7 +249,6 @@ Gripper.s: Gripper.cpp.s
 # target to generate assembly for a file
 Gripper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.s
 .PHONY : Gripper.cpp.s
 
 Stockfish.o: Stockfish.cpp.o
@@ -276,8 +257,6 @@ Stockfish.o: Stockfish.cpp.o
 # target to build an object file
 Stockfish.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o
 .PHONY : Stockfish.cpp.o
 
 Stockfish.i: Stockfish.cpp.i
@@ -286,8 +265,6 @@ Stockfish.i: Stockfish.cpp.i
 # target to preprocess a source file
 Stockfish.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.i
 .PHONY : Stockfish.cpp.i
 
 Stockfish.s: Stockfish.cpp.s
@@ -296,153 +273,7 @@ Stockfish.s: Stockfish.cpp.s
 # target to generate assembly for a file
 Stockfish.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Stockfish.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.s
 .PHONY : Stockfish.cpp.s
-
-Test_files/mainTest.o: Test_files/mainTest.cpp.o
-.PHONY : Test_files/mainTest.o
-
-# target to build an object file
-Test_files/mainTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o
-.PHONY : Test_files/mainTest.cpp.o
-
-Test_files/mainTest.i: Test_files/mainTest.cpp.i
-.PHONY : Test_files/mainTest.i
-
-# target to preprocess a source file
-Test_files/mainTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.i
-.PHONY : Test_files/mainTest.cpp.i
-
-Test_files/mainTest.s: Test_files/mainTest.cpp.s
-.PHONY : Test_files/mainTest.s
-
-# target to generate assembly for a file
-Test_files/mainTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessTestExecutable.dir/build.make CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.s
-.PHONY : Test_files/mainTest.cpp.s
-
-Test_files/pickupTest.o: Test_files/pickupTest.cpp.o
-.PHONY : Test_files/pickupTest.o
-
-# target to build an object file
-Test_files/pickupTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o
-.PHONY : Test_files/pickupTest.cpp.o
-
-Test_files/pickupTest.i: Test_files/pickupTest.cpp.i
-.PHONY : Test_files/pickupTest.i
-
-# target to preprocess a source file
-Test_files/pickupTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.i
-.PHONY : Test_files/pickupTest.cpp.i
-
-Test_files/pickupTest.s: Test_files/pickupTest.cpp.s
-.PHONY : Test_files/pickupTest.s
-
-# target to generate assembly for a file
-Test_files/pickupTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.s
-.PHONY : Test_files/pickupTest.cpp.s
-
-Test_files/picoTest.o: Test_files/picoTest.cpp.o
-.PHONY : Test_files/picoTest.o
-
-# target to build an object file
-Test_files/picoTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o
-.PHONY : Test_files/picoTest.cpp.o
-
-Test_files/picoTest.i: Test_files/picoTest.cpp.i
-.PHONY : Test_files/picoTest.i
-
-# target to preprocess a source file
-Test_files/picoTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.i
-.PHONY : Test_files/picoTest.cpp.i
-
-Test_files/picoTest.s: Test_files/picoTest.cpp.s
-.PHONY : Test_files/picoTest.s
-
-# target to generate assembly for a file
-Test_files/picoTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.s
-.PHONY : Test_files/picoTest.cpp.s
-
-Test_files/resetBoardTest.o: Test_files/resetBoardTest.cpp.o
-.PHONY : Test_files/resetBoardTest.o
-
-# target to build an object file
-Test_files/resetBoardTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o
-.PHONY : Test_files/resetBoardTest.cpp.o
-
-Test_files/resetBoardTest.i: Test_files/resetBoardTest.cpp.i
-.PHONY : Test_files/resetBoardTest.i
-
-# target to preprocess a source file
-Test_files/resetBoardTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.i
-.PHONY : Test_files/resetBoardTest.cpp.i
-
-Test_files/resetBoardTest.s: Test_files/resetBoardTest.cpp.s
-.PHONY : Test_files/resetBoardTest.s
-
-# target to generate assembly for a file
-Test_files/resetBoardTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/resetBoardTestExecutable.dir/build.make CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.s
-.PHONY : Test_files/resetBoardTest.cpp.s
-
-Test_files/stockfishTest.o: Test_files/stockfishTest.cpp.o
-.PHONY : Test_files/stockfishTest.o
-
-# target to build an object file
-Test_files/stockfishTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.o
-.PHONY : Test_files/stockfishTest.cpp.o
-
-Test_files/stockfishTest.i: Test_files/stockfishTest.cpp.i
-.PHONY : Test_files/stockfishTest.i
-
-# target to preprocess a source file
-Test_files/stockfishTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.i
-.PHONY : Test_files/stockfishTest.cpp.i
-
-Test_files/stockfishTest.s: Test_files/stockfishTest.cpp.s
-.PHONY : Test_files/stockfishTest.s
-
-# target to generate assembly for a file
-Test_files/stockfishTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stockfishTestExecutable.dir/build.make CMakeFiles/stockfishTestExecutable.dir/Test_files/stockfishTest.cpp.s
-.PHONY : Test_files/stockfishTest.cpp.s
-
-Test_files/visionTest.o: Test_files/visionTest.cpp.o
-.PHONY : Test_files/visionTest.o
-
-# target to build an object file
-Test_files/visionTest.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.o
-.PHONY : Test_files/visionTest.cpp.o
-
-Test_files/visionTest.i: Test_files/visionTest.cpp.i
-.PHONY : Test_files/visionTest.i
-
-# target to preprocess a source file
-Test_files/visionTest.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.i
-.PHONY : Test_files/visionTest.cpp.i
-
-Test_files/visionTest.s: Test_files/visionTest.cpp.s
-.PHONY : Test_files/visionTest.s
-
-# target to generate assembly for a file
-Test_files/visionTest.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Test_files/visionTest.cpp.s
-.PHONY : Test_files/visionTest.cpp.s
 
 Vision.o: Vision.cpp.o
 .PHONY : Vision.o
@@ -450,7 +281,6 @@ Vision.o: Vision.cpp.o
 # target to build an object file
 Vision.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Vision.cpp.o
 .PHONY : Vision.cpp.o
 
 Vision.i: Vision.cpp.i
@@ -459,7 +289,6 @@ Vision.i: Vision.cpp.i
 # target to preprocess a source file
 Vision.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Vision.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Vision.cpp.i
 .PHONY : Vision.cpp.i
 
 Vision.s: Vision.cpp.s
@@ -468,8 +297,31 @@ Vision.s: Vision.cpp.s
 # target to generate assembly for a file
 Vision.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Vision.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/visionTestExecutable.dir/build.make CMakeFiles/visionTestExecutable.dir/Vision.cpp.s
 .PHONY : Vision.cpp.s
+
+chessRobotExecutable_autogen/mocs_compilation.o: chessRobotExecutable_autogen/mocs_compilation.cpp.o
+.PHONY : chessRobotExecutable_autogen/mocs_compilation.o
+
+# target to build an object file
+chessRobotExecutable_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilation.cpp.o
+.PHONY : chessRobotExecutable_autogen/mocs_compilation.cpp.o
+
+chessRobotExecutable_autogen/mocs_compilation.i: chessRobotExecutable_autogen/mocs_compilation.cpp.i
+.PHONY : chessRobotExecutable_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+chessRobotExecutable_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilation.cpp.i
+.PHONY : chessRobotExecutable_autogen/mocs_compilation.cpp.i
+
+chessRobotExecutable_autogen/mocs_compilation.s: chessRobotExecutable_autogen/mocs_compilation.cpp.s
+.PHONY : chessRobotExecutable_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+chessRobotExecutable_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilation.cpp.s
+.PHONY : chessRobotExecutable_autogen/mocs_compilation.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -503,43 +355,30 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... chessRobotExecutable_autogen"
+	@echo "... chessRobotExecutable_autogen_timestamp_deps"
 	@echo "... chessRobotExecutable"
-	@echo "... chessTestExecutable"
-	@echo "... pickupTestExecutable"
-	@echo "... picoTestExecutable"
-	@echo "... resetBoardTestExecutable"
-	@echo "... stockfishTestExecutable"
-	@echo "... visionTestExecutable"
 	@echo "... Chessboard.o"
 	@echo "... Chessboard.i"
 	@echo "... Chessboard.s"
+	@echo "... GUI.o"
+	@echo "... GUI.i"
+	@echo "... GUI.s"
+	@echo "... GUIWindow.o"
+	@echo "... GUIWindow.i"
+	@echo "... GUIWindow.s"
 	@echo "... Gripper.o"
 	@echo "... Gripper.i"
 	@echo "... Gripper.s"
 	@echo "... Stockfish.o"
 	@echo "... Stockfish.i"
 	@echo "... Stockfish.s"
-	@echo "... Test_files/mainTest.o"
-	@echo "... Test_files/mainTest.i"
-	@echo "... Test_files/mainTest.s"
-	@echo "... Test_files/pickupTest.o"
-	@echo "... Test_files/pickupTest.i"
-	@echo "... Test_files/pickupTest.s"
-	@echo "... Test_files/picoTest.o"
-	@echo "... Test_files/picoTest.i"
-	@echo "... Test_files/picoTest.s"
-	@echo "... Test_files/resetBoardTest.o"
-	@echo "... Test_files/resetBoardTest.i"
-	@echo "... Test_files/resetBoardTest.s"
-	@echo "... Test_files/stockfishTest.o"
-	@echo "... Test_files/stockfishTest.i"
-	@echo "... Test_files/stockfishTest.s"
-	@echo "... Test_files/visionTest.o"
-	@echo "... Test_files/visionTest.i"
-	@echo "... Test_files/visionTest.s"
 	@echo "... Vision.o"
 	@echo "... Vision.i"
 	@echo "... Vision.s"
+	@echo "... chessRobotExecutable_autogen/mocs_compilation.o"
+	@echo "... chessRobotExecutable_autogen/mocs_compilation.i"
+	@echo "... chessRobotExecutable_autogen/mocs_compilation.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

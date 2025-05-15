@@ -69,10 +69,30 @@ include CMakeFiles/chessTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/chessTestExecutable.dir/flags.make
 
+chessTestExecutable_autogen/timestamp: /usr/lib/qt6/libexec/moc
+chessTestExecutable_autogen/timestamp: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target chessTestExecutable"
+	/usr/bin/cmake -E cmake_autogen /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessTestExecutable_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/emilklitgaard/Workspace/Semesterprojekt/build/chessTestExecutable_autogen/timestamp
+
+CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
+CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o: chessTestExecutable_autogen/mocs_compilation.cpp
+CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o -MF CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/build/chessTestExecutable_autogen/mocs_compilation.cpp
+
+CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/build/chessTestExecutable_autogen/mocs_compilation.cpp > CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/build/chessTestExecutable_autogen/mocs_compilation.cpp -o CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
 CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/mainTest.cpp
 CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o -MF CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o.d -o CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/mainTest.cpp"
 
 CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.i: cmake_force
@@ -86,7 +106,7 @@ CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.s: cmake_force
 CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
 CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o -MF CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o.d -o CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 
 CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.i: cmake_force
@@ -100,7 +120,7 @@ CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.s: cmake_force
 CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
 CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp
 CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o -MF CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o.d -o CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp
 
 CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.i: cmake_force
@@ -111,21 +131,44 @@ CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp -o CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.s
 
+CMakeFiles/chessTestExecutable.dir/GUI.cpp.o: CMakeFiles/chessTestExecutable.dir/flags.make
+CMakeFiles/chessTestExecutable.dir/GUI.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+CMakeFiles/chessTestExecutable.dir/GUI.cpp.o: CMakeFiles/chessTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/chessTestExecutable.dir/GUI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessTestExecutable.dir/GUI.cpp.o -MF CMakeFiles/chessTestExecutable.dir/GUI.cpp.o.d -o CMakeFiles/chessTestExecutable.dir/GUI.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+
+CMakeFiles/chessTestExecutable.dir/GUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chessTestExecutable.dir/GUI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp > CMakeFiles/chessTestExecutable.dir/GUI.cpp.i
+
+CMakeFiles/chessTestExecutable.dir/GUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chessTestExecutable.dir/GUI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp -o CMakeFiles/chessTestExecutable.dir/GUI.cpp.s
+
 # Object files for target chessTestExecutable
 chessTestExecutable_OBJECTS = \
+"CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o" \
 "CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o" \
-"CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o"
+"CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o" \
+"CMakeFiles/chessTestExecutable.dir/GUI.cpp.o"
 
 # External object files for target chessTestExecutable
 chessTestExecutable_EXTERNAL_OBJECTS =
 
+chessTestExecutable: CMakeFiles/chessTestExecutable.dir/chessTestExecutable_autogen/mocs_compilation.cpp.o
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/Test_files/mainTest.cpp.o
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/Chessboard.cpp.o
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/Stockfish.cpp.o
+chessTestExecutable: CMakeFiles/chessTestExecutable.dir/GUI.cpp.o
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/build.make
+chessTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
+chessTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Gui.so.6.4.2
+chessTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2
+chessTestExecutable: /usr/lib/aarch64-linux-gnu/libGLX.so
+chessTestExecutable: /usr/lib/aarch64-linux-gnu/libOpenGL.so
 chessTestExecutable: CMakeFiles/chessTestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable chessTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable chessTestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chessTestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -136,7 +179,7 @@ CMakeFiles/chessTestExecutable.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/chessTestExecutable.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/chessTestExecutable.dir/clean
 
-CMakeFiles/chessTestExecutable.dir/depend:
+CMakeFiles/chessTestExecutable.dir/depend: chessTestExecutable_autogen/timestamp
 	cd /home/emilklitgaard/Workspace/Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessTestExecutable.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/chessTestExecutable.dir/depend
 

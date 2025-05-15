@@ -74,6 +74,14 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "qapplication": "cpp",
+        "qmainwindow": "cpp",
+        "qvboxlayout": "cpp",
+        "qhboxlayout": "cpp",
+        "qlabel": "cpp",
+        "qtimer": "cpp",
+        "qpushbutton": "cpp",
+        "regex": "cpp"
     }
 }

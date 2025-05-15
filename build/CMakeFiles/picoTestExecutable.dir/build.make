@@ -69,10 +69,30 @@ include CMakeFiles/picoTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/picoTestExecutable.dir/flags.make
 
+picoTestExecutable_autogen/timestamp: /usr/lib/qt6/libexec/moc
+picoTestExecutable_autogen/timestamp: CMakeFiles/picoTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target picoTestExecutable"
+	/usr/bin/cmake -E cmake_autogen /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/picoTestExecutable_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/emilklitgaard/Workspace/Semesterprojekt/build/picoTestExecutable_autogen/timestamp
+
+CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/picoTestExecutable.dir/flags.make
+CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o: picoTestExecutable_autogen/mocs_compilation.cpp
+CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/picoTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o -MF CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/build/picoTestExecutable_autogen/mocs_compilation.cpp
+
+CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/build/picoTestExecutable_autogen/mocs_compilation.cpp > CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/build/picoTestExecutable_autogen/mocs_compilation.cpp -o CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o: CMakeFiles/picoTestExecutable.dir/flags.make
 CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/picoTest.cpp
 CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o: CMakeFiles/picoTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o -MF CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o.d -o CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/picoTest.cpp"
 
 CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.i: cmake_force
@@ -83,17 +103,40 @@ CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/picoTest.cpp" -o CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.s
 
+CMakeFiles/picoTestExecutable.dir/GUI.cpp.o: CMakeFiles/picoTestExecutable.dir/flags.make
+CMakeFiles/picoTestExecutable.dir/GUI.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+CMakeFiles/picoTestExecutable.dir/GUI.cpp.o: CMakeFiles/picoTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/picoTestExecutable.dir/GUI.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/picoTestExecutable.dir/GUI.cpp.o -MF CMakeFiles/picoTestExecutable.dir/GUI.cpp.o.d -o CMakeFiles/picoTestExecutable.dir/GUI.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
+
+CMakeFiles/picoTestExecutable.dir/GUI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/picoTestExecutable.dir/GUI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp > CMakeFiles/picoTestExecutable.dir/GUI.cpp.i
+
+CMakeFiles/picoTestExecutable.dir/GUI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/picoTestExecutable.dir/GUI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp -o CMakeFiles/picoTestExecutable.dir/GUI.cpp.s
+
 # Object files for target picoTestExecutable
 picoTestExecutable_OBJECTS = \
-"CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o"
+"CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o" \
+"CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o" \
+"CMakeFiles/picoTestExecutable.dir/GUI.cpp.o"
 
 # External object files for target picoTestExecutable
 picoTestExecutable_EXTERNAL_OBJECTS =
 
+picoTestExecutable: CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o
 picoTestExecutable: CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o
+picoTestExecutable: CMakeFiles/picoTestExecutable.dir/GUI.cpp.o
 picoTestExecutable: CMakeFiles/picoTestExecutable.dir/build.make
+picoTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
+picoTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Gui.so.6.4.2
+picoTestExecutable: /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2
+picoTestExecutable: /usr/lib/aarch64-linux-gnu/libGLX.so
+picoTestExecutable: /usr/lib/aarch64-linux-gnu/libOpenGL.so
 picoTestExecutable: CMakeFiles/picoTestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable picoTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable picoTestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/picoTestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -104,7 +147,7 @@ CMakeFiles/picoTestExecutable.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/picoTestExecutable.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/picoTestExecutable.dir/clean
 
-CMakeFiles/picoTestExecutable.dir/depend:
+CMakeFiles/picoTestExecutable.dir/depend: picoTestExecutable_autogen/timestamp
 	cd /home/emilklitgaard/Workspace/Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/picoTestExecutable.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/picoTestExecutable.dir/depend
 

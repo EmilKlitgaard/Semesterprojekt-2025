@@ -69,10 +69,30 @@ include CMakeFiles/resetBoardTestExecutable.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/resetBoardTestExecutable.dir/flags.make
 
+resetBoardTestExecutable_autogen/timestamp: /usr/lib/qt6/libexec/moc
+resetBoardTestExecutable_autogen/timestamp: CMakeFiles/resetBoardTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC for target resetBoardTestExecutable"
+	/usr/bin/cmake -E cmake_autogen /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/resetBoardTestExecutable_autogen.dir/AutogenInfo.json ""
+	/usr/bin/cmake -E touch /home/emilklitgaard/Workspace/Semesterprojekt/build/resetBoardTestExecutable_autogen/timestamp
+
+CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/flags.make
+CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o: resetBoardTestExecutable_autogen/mocs_compilation.cpp
+CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o -MF CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/build/resetBoardTestExecutable_autogen/mocs_compilation.cpp
+
+CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/build/resetBoardTestExecutable_autogen/mocs_compilation.cpp > CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/build/resetBoardTestExecutable_autogen/mocs_compilation.cpp -o CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/flags.make
 CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Test\ files/resetBoardTest.cpp
 CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o -MF CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o.d -o CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o -c "/home/emilklitgaard/Workspace/Semesterprojekt/Test files/resetBoardTest.cpp"
 
 CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.i: cmake_force
@@ -86,7 +106,7 @@ CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.s: cmake_f
 CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/flags.make
 CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o: CMakeFiles/resetBoardTestExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o -MF CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o.d -o CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 
 CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.i: cmake_force
@@ -99,17 +119,19 @@ CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.s: cmake_force
 
 # Object files for target resetBoardTestExecutable
 resetBoardTestExecutable_OBJECTS = \
+"CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o" \
 "CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o"
 
 # External object files for target resetBoardTestExecutable
 resetBoardTestExecutable_EXTERNAL_OBJECTS =
 
+resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/resetBoardTestExecutable_autogen/mocs_compilation.cpp.o
 resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/Test_files/resetBoardTest.cpp.o
 resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/Chessboard.cpp.o
 resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/build.make
 resetBoardTestExecutable: CMakeFiles/resetBoardTestExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable resetBoardTestExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable resetBoardTestExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/resetBoardTestExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -120,7 +142,7 @@ CMakeFiles/resetBoardTestExecutable.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/resetBoardTestExecutable.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/resetBoardTestExecutable.dir/clean
 
-CMakeFiles/resetBoardTestExecutable.dir/depend:
+CMakeFiles/resetBoardTestExecutable.dir/depend: resetBoardTestExecutable_autogen/timestamp
 	cd /home/emilklitgaard/Workspace/Semesterprojekt/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/resetBoardTestExecutable.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/resetBoardTestExecutable.dir/depend
 

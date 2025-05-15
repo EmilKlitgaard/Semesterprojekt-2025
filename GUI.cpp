@@ -1,0 +1,45 @@
+#include "GUI.h"
+
+using namespace std;
+
+GUI gui;
+
+void GUI::setDifficulty(int value){
+    if (value < 300) {
+        difficulty = 300;
+    } else if (value > 3000) {
+        difficulty = 3000;
+    } else {
+        difficulty = value;
+    }
+}
+
+void GUI::setGameActive(bool value) {
+    gameActive = value;
+}
+
+void GUI::setTurn(bool value) {
+    turn = value; // 1 = player, 0 = robot
+}
+
+void GUI::setConnection(bool value) {
+    connection = value; // 1 = connected, 0 = disconnected
+}
+
+// feed livefeed to GUI
+void GUI::setVision(const cv::Mat& image) {
+    lock_guard<mutex> lock(cvMutex);
+    cvImage = image.clone();
+}   
+
+// Getter functions
+int  GUI::getDifficulty() { return difficulty; }
+bool GUI::getGameActive() { return gameActive; }
+bool GUI::getTurn() { return turn; }
+bool GUI::getConnection() { return connection; }    
+
+cv::Mat GUI::getVision() const {
+    lock_guard<mutex> lock(cvMutex);
+    if (cvImage.empty()) return {};
+    return cvImage.clone(); 
+}
