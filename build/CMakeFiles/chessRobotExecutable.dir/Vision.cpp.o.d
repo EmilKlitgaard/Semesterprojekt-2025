@@ -473,4 +473,6 @@ CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o: \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qinputmethod.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
+ /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
+ /usr/include/c++/13/bits/this_thread_sleep.h

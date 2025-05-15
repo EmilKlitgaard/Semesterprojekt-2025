@@ -472,6 +472,8 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
+ /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
+ /usr/include/c++/13/bits/this_thread_sleep.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qmainwindow.h \

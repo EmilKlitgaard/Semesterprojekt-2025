@@ -4,7 +4,7 @@
 #include "GUIWindow.h"
 
 GUIWindow::GUIWindow(QWidget* parent)
-    : QMainWindow(parent), central(this), mainLayout(&central), difficultyLabel(this), difficultySlider(Qt::Horizontal, this), cvLabel(new QLabel(this)), startGame("Start", this), stopGame("Stop", this) {
+    : QMainWindow(parent), central(this), mainLayout(&central), difficultyLabel(this), difficultySlider(Qt::Horizontal, this), cvLabel(new QLabel(this)), startGame("Start", this), resetGame("Reset", this) {
     difficultySlider.setRange(300, 3000);
     difficultySlider.setValue(gui.getDifficulty());
 
@@ -23,7 +23,7 @@ GUIWindow::GUIWindow(QWidget* parent)
     mainLayout.addWidget(cvLabel);
 
     startStopLayout.addWidget(&startGame);
-    startStopLayout.addWidget(&stopGame);
+    startStopLayout.addWidget(&resetGame);
     mainLayout.addLayout(&startStopLayout);
 
     setCentralWidget(&central);
@@ -35,7 +35,7 @@ GUIWindow::GUIWindow(QWidget* parent)
     connect(&cvTimer, &QTimer::timeout, this, &GUIWindow::updateVision);
     connect(&difficultySlider, &QSlider::valueChanged, this, &GUIWindow::handleSliderChanged);
     connect(&startGame, &QPushButton::clicked, this, &GUIWindow::handleStartClicked);
-    connect(&stopGame, &QPushButton::clicked, this, &GUIWindow::handleStopClicked);
+    connect(&resetGame, &QPushButton::clicked, this, &GUIWindow::handleStopClicked);
 }
 
 int GUIWindow::getSliderValue() const { return difficultySlider.value(); }

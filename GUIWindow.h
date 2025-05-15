@@ -49,7 +49,7 @@ class GUIWindow : public QMainWindow {
         QSlider difficultySlider;
 
         QPushButton startGame;
-        QPushButton stopGame;
+        QPushButton resetGame;
 
         QLabel* cvLabel;
         QTimer cvTimer;

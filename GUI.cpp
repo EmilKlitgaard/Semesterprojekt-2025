@@ -18,12 +18,19 @@ void GUI::setGameActive(bool value) {
     gameActive = value;
 }
 
+// Wait for the start button to be clicked
+void GUI::awaitStartGame() {
+    while (!gameActive) {
+        this_thread::sleep_for(chrono::milliseconds(100));
+    }
+}
+
 void GUI::setTurn(bool value) {
-    turn = value; // 1 = player, 0 = robot
+    turn = value; // True = player, False = robot
 }
 
 void GUI::setConnection(bool value) {
-    connection = value; // 1 = connected, 0 = disconnected
+    connection = value; // True = connected, False = disconnected
 }
 
 // feed livefeed to GUI

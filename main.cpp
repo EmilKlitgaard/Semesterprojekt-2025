@@ -541,94 +541,107 @@ int main() {
     window.show();
     cout << "Chessboard GUI initialized." << endl;
 
-    //   ==========   VALIDATE UR5 CONNECTION   ==========   //
-    try {
-        rtde_control = make_unique<RTDEControlInterface>(robotIp, robotPort);
-        rtde_receive = make_unique<RTDEReceiveInterface>(robotIp, robotPort);
-        gui.setConnection(true);
-    } catch (const exception& e) {
-        cerr << "Failed to connect to the robot at ip: " << robotIp << ", port: " << robotPort << ". Error: " << e.what() << endl;
-        gui.setConnection(false);
-    }
+    //   ==========   RUN MAIN CODE IN SEPERATE THREAD   ==========   //
+    thread mainThread ([]() {
+        //   ==========   VALIDATE UR5 CONNECTION   ==========   //
+        do {
+            try {
+                rtde_control = make_unique<RTDEControlInterface>(robotIp, robotPort);
+                rtde_receive = make_unique<RTDEReceiveInterface>(robotIp, robotPort);
+                gui.setConnection(true);
+            } catch (const exception& e) {
+                cerr << "Failed to connect to the robot at ip: " << robotIp << ", port: " << robotPort << ". Error: " << e.what() << endl;
+                gui.setConnection(false);
+                sleep(1);
+            }
+        } while (!rtde_control || !rtde_receive);
 
-    //   ==========   START GRIPPER COMMUNICATION   ==========   //
-    try {
-        gripper = make_unique<Gripper>("/dev/ttyACM0");
-    } catch (const exception& e) {
-        cerr << "Failed to connect to the gripper. Error: " << e.what() << endl;
-    }
+        //   ==========   START GRIPPER COMMUNICATION   ==========   //
+        do {     
+            try {
+                gripper = make_unique<Gripper>("/dev/ttyACM0");
+            } catch (const exception& e) {
+                cerr << "Failed to connect to the gripper. Error: " << e.what() << endl;
+                sleep(1);
+            }
+        } while (!gripper);
 
-    while (true) {}
+        gui.awaitStartGame();
+        return 0;
+            
+        //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
+        vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
+        rtde_control->setTcp(tcpCalibrationOffset);
+
+        //   ==========   SET CHESSBOARD ORIGIN   ==========   //
+        Vector3d chessboardOrigin = setChessboardOrigin(false);
         
-    //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
-    vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
-    rtde_control->setTcp(tcpCalibrationOffset);
+        // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
+        Matrix3d RotationChess = getRotationMatrixZ(22.5 - 90);
+        //cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
 
-    //   ==========   SET CHESSBOARD ORIGIN   ==========   //
-    Vector3d chessboardOrigin = setChessboardOrigin(false);
-    
-    // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
-    Matrix3d RotationChess = getRotationMatrixZ(22.5 - 90);
-    //cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
+        // Check if all positions within the calibrated chessboard are reachable
+        while (!AllPositionsReachable(chessboardOrigin, RotationChess)) {
+            chessboardOrigin = setChessboardOrigin(true);
+        }
 
-    // Check if all positions within the calibrated chessboard are reachable
-    while (!AllPositionsReachable(chessboardOrigin, RotationChess)) {
-        chessboardOrigin = setChessboardOrigin(true);
-    }
+        //   ==========   UPDATE TCP OFFSET   ==========   //
+        vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0}; // Should be 0.2
+        rtde_control->setTcp(tcpOffset);
+        
+        //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
+        moveToBoardCorners(chessboardOrigin, RotationChess);
+        
+        //   ==========   INITIALIZE COMPUTER VISION   ==========   //
+        ChessVision camera(1);
 
-    //   ==========   UPDATE TCP OFFSET   ==========   //
-    vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0}; // Should be 0.2
-    rtde_control->setTcp(tcpOffset);
-    
-    //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
-    moveToBoardCorners(chessboardOrigin, RotationChess);
-    
-    //   ==========   INITIALIZE COMPUTER VISION   ==========   //
-    ChessVision camera(1);
+        // Start kamera-feed i separat tråd
+        thread cameraThread([&]() {
+            camera.showLiveFeed();
+        });
 
-    // Start kamera-feed i separat tråd
-    thread cameraThread([&]() {
-        camera.showLiveFeed();
+        //   ==========   BEGIN CHESS GAME   ==========   //
+        printText("Press ENTER to start chess game...");
+        gui.awaitStartGame();
+        //cin.get();
+        printText("\n----- CHESS GAME STARTED -----");
+        
+        while (true) {
+            // Set player turn on GUI
+            gui.setTurn(true);
+
+            // Get the player's move from the camera.
+            string playerMove = getValidPlayerMove(camera);
+            //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
+            
+            // Get the index of the piece that was moved. Update internal chessboard with the player's move.
+            auto [playerFromIdx, playerToIdx] = board.getMatrixIndex(playerMove);
+            board.updateChessboard(playerFromIdx, playerToIdx);
+            board.printBoard();
+            
+            // Set robot turn on GUI
+            gui.setTurn(false);
+
+            // Get the move from Stockfish (in chess notation, e.g., "a2a4")
+            string robotMove = stockfishMove(engine);
+            
+            // Move the chess piece using the robot.
+            moveChessPiece(robotMove, chessboardOrigin, RotationChess);
+            
+            // After robot move, update the board accordingly.
+            auto [robotFromIdx, robotToIdx] = board.getMatrixIndex(playerMove);
+            board.updateChessboard(robotFromIdx, robotToIdx);
+            board.printBoard();
+            
+            moveToAwaitPosition();
+        
+            if (engine.isCheckmate()) {
+                printText("Game has ended");
+                return 0;
+            }
+        }
+        return 0;
     });
 
-    //   ==========   BEGIN CHESS GAME   ==========   //
-    printText("Press ENTER to start chess game...");
-    cin.get();
-    printText("\n----- CHESS GAME STARTED -----");
-    
-    while (true) {
-        // Set player turn on GUI
-        gui.setTurn(true);
-
-        // Get the player's move from the camera.
-        string playerMove = getValidPlayerMove(camera);
-        //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
-        
-        // Get the index of the piece that was moved. Update internal chessboard with the player's move.
-        auto [playerFromIdx, playerToIdx] = board.getMatrixIndex(playerMove);
-        board.updateChessboard(playerFromIdx, playerToIdx);
-        board.printBoard();
-        
-        // Set robot turn on GUI
-        gui.setTurn(false);
-
-        // Get the move from Stockfish (in chess notation, e.g., "a2a4")
-        string robotMove = stockfishMove(engine);
-        
-        // Move the chess piece using the robot.
-        moveChessPiece(robotMove, chessboardOrigin, RotationChess);
-        
-        // After robot move, update the board accordingly.
-        auto [robotFromIdx, robotToIdx] = board.getMatrixIndex(playerMove);
-        board.updateChessboard(robotFromIdx, robotToIdx);
-        board.printBoard();
-        
-        moveToAwaitPosition();
-    
-        if (engine.isCheckmate()) {
-            printText("Game has ended");
-            return 0;
-        }
-    }
-    return 0;
+    return app.exec();
 }
