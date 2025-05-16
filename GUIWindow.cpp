@@ -38,7 +38,7 @@ GUIWindow::GUIWindow(QWidget* parent)
     connect(&cvTimer, &QTimer::timeout, this, &GUIWindow::updateVision);
     connect(&difficultySlider, &QSlider::valueChanged, this, &GUIWindow::handleSliderChanged);
     connect(&startGame, &QPushButton::clicked, this, &GUIWindow::handleStartClicked);
-    connect(&resetGame, &QPushButton::clicked, this, &GUIWindow::handleStopClicked);
+    connect(&resetGame, &QPushButton::clicked, this, &GUIWindow::handleResetClicked);
 }
 
 int GUIWindow::getSliderValue() const { return difficultySlider.value(); }
@@ -85,7 +85,10 @@ void GUIWindow::handleStartClicked() {
     }
 }
 
-void GUIWindow::handleStopClicked() {
-    gui.setGameActive(false);
-    emit stopClicked();
+void GUIWindow::handleResetClicked() {
+    if (gui.getGameActive()) {
+        gui.setGameActive(false);
+        game.resetChessboard();
+        emit stopClicked();
+    }
 }

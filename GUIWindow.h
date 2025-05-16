@@ -31,7 +31,7 @@ class GUIWindow : public QMainWindow {
         void updateVision();
         void handleSliderChanged(int value);
         void handleStartClicked();
-        void handleStopClicked();
+        void handleResetClicked();
 
     private:
         QWidget central;

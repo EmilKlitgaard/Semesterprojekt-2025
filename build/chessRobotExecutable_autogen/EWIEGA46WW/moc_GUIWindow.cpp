@@ -37,7 +37,7 @@ struct qt_meta_stringdata_GUIWindow_t {
     char stringdata6[13];
     char stringdata7[20];
     char stringdata8[19];
-    char stringdata9[18];
+    char stringdata9[19];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_GUIWindow_t::offsetsAndSizes) + ofs), len 
@@ -52,7 +52,7 @@ Q_CONSTINIT static const qt_meta_stringdata_GUIWindow_t qt_meta_stringdata_GUIWi
         QT_MOC_LITERAL(60, 12),  // "updateVision"
         QT_MOC_LITERAL(73, 19),  // "handleSliderChanged"
         QT_MOC_LITERAL(93, 18),  // "handleStartClicked"
-        QT_MOC_LITERAL(112, 17)   // "handleStopClicked"
+        QT_MOC_LITERAL(112, 18)   // "handleResetClicked"
     },
     "GUIWindow",
     "startClicked",
@@ -63,7 +63,7 @@ Q_CONSTINIT static const qt_meta_stringdata_GUIWindow_t qt_meta_stringdata_GUIWi
     "updateVision",
     "handleSliderChanged",
     "handleStartClicked",
-    "handleStopClicked"
+    "handleResetClicked"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -129,7 +129,7 @@ Q_CONSTINIT const QMetaObject GUIWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'handleStartClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'handleStopClicked'
+        // method 'handleResetClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -147,7 +147,7 @@ void GUIWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 3: _t->updateVision(); break;
         case 4: _t->handleSliderChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 5: _t->handleStartClicked(); break;
-        case 6: _t->handleStopClicked(); break;
+        case 6: _t->handleResetClicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

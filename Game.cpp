@@ -35,6 +35,9 @@ Stockfish engine("/usr/local/bin/stockfish");
 
 unique_ptr<Gripper> gripper;
 
+Vector3d chessboardOrigin;
+Matrix3d RotationMatrix;
+
 Vector3d liftTransformVector = {0.0, 0.0, 0.1};
 Vector3d calibrationTransformVector = {0.025, 0.025, 0.0};
 
@@ -134,7 +137,7 @@ void moveToAwaitPosition() {
 }
 
 // Move TCP to a specific chessboard coordinate
-void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 3, double acceleration = 3) {
+void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 3, double acceleration = 2) {
     // Convert chessboard target to base frame
     Vector3d baseTarget = chessboardToBase(chessboardTarget + calibrationTransformVector, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
@@ -142,36 +145,32 @@ void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &che
     rtde_control->moveL(tcpPose, speed, acceleration);
 }
 
-void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, bool pickUp = true) {
+void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    if (pickUp) {
-        gripper->closeGripper();
-        gripper->stopGripper();
-    }
+    gripper->closeGripper();
+    gripper->stopGripper();
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
 }
 
-void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, bool pickUp = true) {
+void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
-    if (pickUp) {
-        gripper->openGripper();
-    }
+    gripper->openGripper();
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
 }
 
 // Function to move the robot to the corners of the chessboard
-void moveToBoardCorners(const Vector3d &chessboardOrigin, const Matrix3d &RotationChess) {
+void moveToBoardCorners(const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
     moveToAwaitPosition();
     Vector3d chessboardTarget1(0.0, 0.0, 0.0);
-    pickUpPiece(chessboardTarget1, chessboardOrigin, RotationChess, false);
+    moveToChessboardPoint(chessboardTarget1 + liftTransformVector, chessboardOrigin, RotationMatrix);
     Vector3d chessboardTarget2(0.4, 0.0, 0.0);
-    pickUpPiece(chessboardTarget2, chessboardOrigin, RotationChess, false);
+    moveToChessboardPoint(chessboardTarget2 + liftTransformVector, chessboardOrigin, RotationMatrix);
     Vector3d chessboardTarget3(0.4, 0.4, 0.0);
-    pickUpPiece(chessboardTarget3, chessboardOrigin, RotationChess, false);
+    moveToChessboardPoint(chessboardTarget3 + liftTransformVector, chessboardOrigin, RotationMatrix);
     Vector3d chessboardTarget4(0.0, 0.4, 0.0);
-    pickUpPiece(chessboardTarget4, chessboardOrigin, RotationChess, false);
+    moveToChessboardPoint(chessboardTarget4 + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToAwaitPosition();
 }
 
@@ -443,7 +442,7 @@ string getValidPlayerMove(ChessVision &camera) {
     return playerMove;
 }
 
-void resetChessboard() {
+void Game::resetChessboard() {
     cout << "CHESSBOARD RESET STARTED!" << endl;
     board.printBoard();
 
@@ -468,6 +467,10 @@ void resetChessboard() {
                                 MatrixIndex from = {fromRow, fromCol};
                                 MatrixIndex to = {toRow, toCol};
                                 board.updateChessboard(from, to);
+                                Vector3d fromCoordinate = board.getPhysicalCoordinate(from);
+                                Vector3d toCoordinate = board.getPhysicalCoordinate(to);
+                                pickUpPiece(fromCoordinate, chessboardOrigin, RotationMatrix);
+                                placePiece(toCoordinate, chessboardOrigin, RotationMatrix);
                                 cout << "Moved " << currentPiece << " from " << board.getChessNotation({fromRow, fromCol}) << " to " << board.getChessNotation({toRow, toCol}) << endl;
                                 board.printBoard();
                                 currentBoard = board.getBoardState();
@@ -560,46 +563,23 @@ void Game::startGame() {
         rtde_control->setTcp(tcpCalibrationOffset);
 
         //   ==========   SET CHESSBOARD ORIGIN   ==========   //
-        Vector3d chessboardOrigin = setChessboardOrigin(false);
+        chessboardOrigin = setChessboardOrigin(false);
         
         // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
-        Matrix3d RotationChess = getRotationMatrixZ(22.5 - 90);
+        RotationMatrix = getRotationMatrixZ(22.5 - 90);
         //cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
 
         // Check if all positions within the calibrated chessboard are reachable
-        while (!AllPositionsReachable(chessboardOrigin, RotationChess)) {
+        while (!AllPositionsReachable(chessboardOrigin, RotationMatrix)) {
             chessboardOrigin = setChessboardOrigin(true);
         }
 
         //   ==========   UPDATE TCP OFFSET   ==========   //
         const vector<double> tcpOffset = {0.0, 0.0, 0.225, 0.0, 0.0, 0.0}; // Should be 0.225
         rtde_control->setTcp(tcpOffset);
-
-        string move = "e4e5";
-        auto [fromCoordinate, toCoordinate] = board.getPhysicalCoordinates(move);
-        moveToAwaitPosition();
-        moveToChessboardPoint(fromCoordinate + liftTransformVector, chessboardOrigin, RotationChess);
-        moveToChessboardPoint(fromCoordinate, chessboardOrigin, RotationChess);
-        while (true) {
-            gripper->closeGripper();
-            moveToChessboardPoint(fromCoordinate + liftTransformVector, chessboardOrigin, RotationChess);
-            moveToChessboardPoint(toCoordinate + liftTransformVector, chessboardOrigin, RotationChess);
-            moveToChessboardPoint(toCoordinate, chessboardOrigin, RotationChess);
-            gripper->openGripper();
-            moveToChessboardPoint(toCoordinate + liftTransformVector, chessboardOrigin, RotationChess);
-            moveToChessboardPoint(toCoordinate, chessboardOrigin, RotationChess);
-            gripper->closeGripper();
-            moveToChessboardPoint(toCoordinate + liftTransformVector, chessboardOrigin, RotationChess);
-            moveToChessboardPoint(fromCoordinate + liftTransformVector, chessboardOrigin, RotationChess);
-            moveToChessboardPoint(fromCoordinate, chessboardOrigin, RotationChess);
-            gripper->openGripper();
-            moveToChessboardPoint(fromCoordinate + liftTransformVector, chessboardOrigin, RotationChess);
-            moveToChessboardPoint(fromCoordinate, chessboardOrigin, RotationChess);
-        }
-        return 0;
         
         //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
-        moveToBoardCorners(chessboardOrigin, RotationChess);
+        moveToBoardCorners(chessboardOrigin, RotationMatrix);
         
         //   ==========   INITIALIZE COMPUTER VISION   ==========   //
         ChessVision camera(1);
@@ -611,7 +591,6 @@ void Game::startGame() {
 
         //   ==========   BEGIN CHESS GAME   ==========   //
         printText("Press ENTER to start chess game...");
-        gui.awaitStartGame();
         //cin.get();
         printText("\n----- CHESS GAME STARTED -----");
         
@@ -635,7 +614,7 @@ void Game::startGame() {
             string robotMove = stockfishMove(engine);
             
             // Move the chess piece using the robot.
-            moveChessPiece(robotMove, chessboardOrigin, RotationChess);
+            moveChessPiece(robotMove, chessboardOrigin, RotationMatrix);
             
             // After robot move, update the board accordingly.
             auto [robotFromIdx, robotToIdx] = board.getMatrixIndex(playerMove);

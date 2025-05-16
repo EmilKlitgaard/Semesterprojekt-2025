@@ -3,4 +3,5 @@
 class Game {
     public:
         void startGame();
+        void resetChessboard();
 };
