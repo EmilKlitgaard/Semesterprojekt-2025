@@ -18,7 +18,7 @@ class GUIWindow : public QMainWindow {
     public:
         GUIWindow(QWidget* parent = nullptr);
         void setTurnStatus();
-        void setConnectionStatus(bool ok = false);
+        void setConnectionStatus();
         int getSliderValue() const;
         void updateDifficultyLabel(int val);
         
@@ -34,6 +34,9 @@ class GUIWindow : public QMainWindow {
         void handleResetClicked();
 
     private:
+        void updateWindow();
+        QTimer windowUpdateTimer;
+
         QWidget central;
 
         QVBoxLayout mainLayout;

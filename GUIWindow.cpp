@@ -8,10 +8,11 @@ Game game;
 
 GUIWindow::GUIWindow(QWidget* parent)
     : QMainWindow(parent), central(this), mainLayout(&central), difficultyLabel(this), difficultySlider(Qt::Horizontal, this), cvLabel(new QLabel(this)), startGame("Start", this), resetGame("Reset", this) {
+    resize(1000, 300);
+    
     difficultySlider.setRange(300, 3000);
     difficultySlider.setValue(gui.getDifficulty());
 
-    setConnectionStatus(false);
     setTurnStatus();
 
     statusLayout.addWidget(&connectionStatus);
@@ -39,6 +40,15 @@ GUIWindow::GUIWindow(QWidget* parent)
     connect(&difficultySlider, &QSlider::valueChanged, this, &GUIWindow::handleSliderChanged);
     connect(&startGame, &QPushButton::clicked, this, &GUIWindow::handleStartClicked);
     connect(&resetGame, &QPushButton::clicked, this, &GUIWindow::handleResetClicked);
+    
+    windowUpdateTimer.setInterval(100); // Update every 100 ms
+    connect(&windowUpdateTimer, &QTimer::timeout, this, &GUIWindow::updateWindow);
+    windowUpdateTimer.start();
+}
+
+void GUIWindow::updateWindow() {
+    setConnectionStatus();
+    setTurnStatus();
 }
 
 int GUIWindow::getSliderValue() const { return difficultySlider.value(); }
@@ -62,9 +72,9 @@ void GUIWindow::setTurnStatus() {
     turnStatus.setText(gui.getTurn() ? "Turn: Player" : "Turn: Robot");
 }
 
-void GUIWindow::setConnectionStatus(bool ok) {
+void GUIWindow::setConnectionStatus() {
     connectionStatus.setText(gui.getConnection() ? "Connected" : "Disconnected");
-    connectionStatus.setStyleSheet(ok ? "color: green;" : "color: red;");
+    connectionStatus.setStyleSheet(gui.getConnection() ? "color: green;" : "color: red;");
 }
 
 void GUIWindow::updateDifficultyLabel(int value) {
