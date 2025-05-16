@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o"
   "CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o.d"
+  "CMakeFiles/chessRobotExecutable.dir/Game.cpp.o"
+  "CMakeFiles/chessRobotExecutable.dir/Game.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o"
   "CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o.d"
   "CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o"

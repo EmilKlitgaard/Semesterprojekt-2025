@@ -130,6 +130,32 @@ chessRobotExecutable/fast:
 .PHONY : chessRobotExecutable/fast
 
 #=============================================================================
+# Target rules for targets named pickupTestExecutable
+
+# Build rule for target.
+pickupTestExecutable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pickupTestExecutable
+.PHONY : pickupTestExecutable
+
+# fast build rule for target.
+pickupTestExecutable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/build
+.PHONY : pickupTestExecutable/fast
+
+#=============================================================================
+# Target rules for targets named picoTestExecutable
+
+# Build rule for target.
+picoTestExecutable: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picoTestExecutable
+.PHONY : picoTestExecutable
+
+# fast build rule for target.
+picoTestExecutable/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/build
+.PHONY : picoTestExecutable/fast
+
+#=============================================================================
 # Target rules for targets named chessRobotExecutable_autogen_timestamp_deps
 
 # Build rule for target.
@@ -155,12 +181,65 @@ chessRobotExecutable_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable_autogen.dir/build.make CMakeFiles/chessRobotExecutable_autogen.dir/build
 .PHONY : chessRobotExecutable_autogen/fast
 
+#=============================================================================
+# Target rules for targets named pickupTestExecutable_autogen_timestamp_deps
+
+# Build rule for target.
+pickupTestExecutable_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pickupTestExecutable_autogen_timestamp_deps
+.PHONY : pickupTestExecutable_autogen_timestamp_deps
+
+# fast build rule for target.
+pickupTestExecutable_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable_autogen_timestamp_deps.dir/build.make CMakeFiles/pickupTestExecutable_autogen_timestamp_deps.dir/build
+.PHONY : pickupTestExecutable_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named pickupTestExecutable_autogen
+
+# Build rule for target.
+pickupTestExecutable_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pickupTestExecutable_autogen
+.PHONY : pickupTestExecutable_autogen
+
+# fast build rule for target.
+pickupTestExecutable_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable_autogen.dir/build.make CMakeFiles/pickupTestExecutable_autogen.dir/build
+.PHONY : pickupTestExecutable_autogen/fast
+
+#=============================================================================
+# Target rules for targets named picoTestExecutable_autogen_timestamp_deps
+
+# Build rule for target.
+picoTestExecutable_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picoTestExecutable_autogen_timestamp_deps
+.PHONY : picoTestExecutable_autogen_timestamp_deps
+
+# fast build rule for target.
+picoTestExecutable_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable_autogen_timestamp_deps.dir/build.make CMakeFiles/picoTestExecutable_autogen_timestamp_deps.dir/build
+.PHONY : picoTestExecutable_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named picoTestExecutable_autogen
+
+# Build rule for target.
+picoTestExecutable_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 picoTestExecutable_autogen
+.PHONY : picoTestExecutable_autogen
+
+# fast build rule for target.
+picoTestExecutable_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable_autogen.dir/build.make CMakeFiles/picoTestExecutable_autogen.dir/build
+.PHONY : picoTestExecutable_autogen/fast
+
 Chessboard.o: Chessboard.cpp.o
 .PHONY : Chessboard.o
 
 # target to build an object file
 Chessboard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o
 .PHONY : Chessboard.cpp.o
 
 Chessboard.i: Chessboard.cpp.i
@@ -169,6 +248,7 @@ Chessboard.i: Chessboard.cpp.i
 # target to preprocess a source file
 Chessboard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.i
 .PHONY : Chessboard.cpp.i
 
 Chessboard.s: Chessboard.cpp.s
@@ -177,6 +257,7 @@ Chessboard.s: Chessboard.cpp.s
 # target to generate assembly for a file
 Chessboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.s
 .PHONY : Chessboard.cpp.s
 
 GUI.o: GUI.cpp.o
@@ -227,12 +308,37 @@ GUIWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.s
 .PHONY : GUIWindow.cpp.s
 
+Game.o: Game.cpp.o
+.PHONY : Game.o
+
+# target to build an object file
+Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Game.cpp.o
+.PHONY : Game.cpp.o
+
+Game.i: Game.cpp.i
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
 Gripper.o: Gripper.cpp.o
 .PHONY : Gripper.o
 
 # target to build an object file
 Gripper.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o
 .PHONY : Gripper.cpp.o
 
 Gripper.i: Gripper.cpp.i
@@ -241,6 +347,7 @@ Gripper.i: Gripper.cpp.i
 # target to preprocess a source file
 Gripper.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.i
 .PHONY : Gripper.cpp.i
 
 Gripper.s: Gripper.cpp.s
@@ -249,6 +356,7 @@ Gripper.s: Gripper.cpp.s
 # target to generate assembly for a file
 Gripper.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.s
 .PHONY : Gripper.cpp.s
 
 Stockfish.o: Stockfish.cpp.o
@@ -274,6 +382,54 @@ Stockfish.s: Stockfish.cpp.s
 Stockfish.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.s
 .PHONY : Stockfish.cpp.s
+
+Test_files/pickupTest.o: Test_files/pickupTest.cpp.o
+.PHONY : Test_files/pickupTest.o
+
+# target to build an object file
+Test_files/pickupTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o
+.PHONY : Test_files/pickupTest.cpp.o
+
+Test_files/pickupTest.i: Test_files/pickupTest.cpp.i
+.PHONY : Test_files/pickupTest.i
+
+# target to preprocess a source file
+Test_files/pickupTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.i
+.PHONY : Test_files/pickupTest.cpp.i
+
+Test_files/pickupTest.s: Test_files/pickupTest.cpp.s
+.PHONY : Test_files/pickupTest.s
+
+# target to generate assembly for a file
+Test_files/pickupTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.s
+.PHONY : Test_files/pickupTest.cpp.s
+
+Test_files/picoTest.o: Test_files/picoTest.cpp.o
+.PHONY : Test_files/picoTest.o
+
+# target to build an object file
+Test_files/picoTest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.o
+.PHONY : Test_files/picoTest.cpp.o
+
+Test_files/picoTest.i: Test_files/picoTest.cpp.i
+.PHONY : Test_files/picoTest.i
+
+# target to preprocess a source file
+Test_files/picoTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.i
+.PHONY : Test_files/picoTest.cpp.i
+
+Test_files/picoTest.s: Test_files/picoTest.cpp.s
+.PHONY : Test_files/picoTest.s
+
+# target to generate assembly for a file
+Test_files/picoTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/Test_files/picoTest.cpp.s
+.PHONY : Test_files/picoTest.cpp.s
 
 Vision.o: Vision.cpp.o
 .PHONY : Vision.o
@@ -347,6 +503,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/chessRobotExecutable.dir/build.make CMakeFiles/chessRobotExecutable.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+pickupTestExecutable_autogen/mocs_compilation.o: pickupTestExecutable_autogen/mocs_compilation.cpp.o
+.PHONY : pickupTestExecutable_autogen/mocs_compilation.o
+
+# target to build an object file
+pickupTestExecutable_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.o
+.PHONY : pickupTestExecutable_autogen/mocs_compilation.cpp.o
+
+pickupTestExecutable_autogen/mocs_compilation.i: pickupTestExecutable_autogen/mocs_compilation.cpp.i
+.PHONY : pickupTestExecutable_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+pickupTestExecutable_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.i
+.PHONY : pickupTestExecutable_autogen/mocs_compilation.cpp.i
+
+pickupTestExecutable_autogen/mocs_compilation.s: pickupTestExecutable_autogen/mocs_compilation.cpp.s
+.PHONY : pickupTestExecutable_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+pickupTestExecutable_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pickupTestExecutable.dir/build.make CMakeFiles/pickupTestExecutable.dir/pickupTestExecutable_autogen/mocs_compilation.cpp.s
+.PHONY : pickupTestExecutable_autogen/mocs_compilation.cpp.s
+
+picoTestExecutable_autogen/mocs_compilation.o: picoTestExecutable_autogen/mocs_compilation.cpp.o
+.PHONY : picoTestExecutable_autogen/mocs_compilation.o
+
+# target to build an object file
+picoTestExecutable_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.o
+.PHONY : picoTestExecutable_autogen/mocs_compilation.cpp.o
+
+picoTestExecutable_autogen/mocs_compilation.i: picoTestExecutable_autogen/mocs_compilation.cpp.i
+.PHONY : picoTestExecutable_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+picoTestExecutable_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.i
+.PHONY : picoTestExecutable_autogen/mocs_compilation.cpp.i
+
+picoTestExecutable_autogen/mocs_compilation.s: picoTestExecutable_autogen/mocs_compilation.cpp.s
+.PHONY : picoTestExecutable_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+picoTestExecutable_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/picoTestExecutable.dir/build.make CMakeFiles/picoTestExecutable.dir/picoTestExecutable_autogen/mocs_compilation.cpp.s
+.PHONY : picoTestExecutable_autogen/mocs_compilation.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -357,7 +561,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... chessRobotExecutable_autogen"
 	@echo "... chessRobotExecutable_autogen_timestamp_deps"
+	@echo "... pickupTestExecutable_autogen"
+	@echo "... pickupTestExecutable_autogen_timestamp_deps"
+	@echo "... picoTestExecutable_autogen"
+	@echo "... picoTestExecutable_autogen_timestamp_deps"
 	@echo "... chessRobotExecutable"
+	@echo "... pickupTestExecutable"
+	@echo "... picoTestExecutable"
 	@echo "... Chessboard.o"
 	@echo "... Chessboard.i"
 	@echo "... Chessboard.s"
@@ -367,12 +577,21 @@ help:
 	@echo "... GUIWindow.o"
 	@echo "... GUIWindow.i"
 	@echo "... GUIWindow.s"
+	@echo "... Game.o"
+	@echo "... Game.i"
+	@echo "... Game.s"
 	@echo "... Gripper.o"
 	@echo "... Gripper.i"
 	@echo "... Gripper.s"
 	@echo "... Stockfish.o"
 	@echo "... Stockfish.i"
 	@echo "... Stockfish.s"
+	@echo "... Test_files/pickupTest.o"
+	@echo "... Test_files/pickupTest.i"
+	@echo "... Test_files/pickupTest.s"
+	@echo "... Test_files/picoTest.o"
+	@echo "... Test_files/picoTest.i"
+	@echo "... Test_files/picoTest.s"
 	@echo "... Vision.o"
 	@echo "... Vision.i"
 	@echo "... Vision.s"
@@ -382,6 +601,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pickupTestExecutable_autogen/mocs_compilation.o"
+	@echo "... pickupTestExecutable_autogen/mocs_compilation.i"
+	@echo "... pickupTestExecutable_autogen/mocs_compilation.s"
+	@echo "... picoTestExecutable_autogen/mocs_compilation.o"
+	@echo "... picoTestExecutable_autogen/mocs_compilation.i"
+	@echo "... picoTestExecutable_autogen/mocs_compilation.s"
 .PHONY : help
 
 

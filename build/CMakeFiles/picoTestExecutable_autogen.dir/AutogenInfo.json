@@ -197,19 +197,11 @@
 	"CMAKE_SOURCE_DIR" : "/home/emilklitgaard/Workspace/Semesterprojekt",
 	"DEP_FILE" : "/home/emilklitgaard/Workspace/Semesterprojekt/build/picoTestExecutable_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "picoTestExecutable_autogen/timestamp",
-	"HEADERS" : 
-	[
-		[
-			"/home/emilklitgaard/Workspace/Semesterprojekt/GUI.h",
-			"Mu",
-			"EWIEGA46WW/moc_GUI.cpp",
-			null
-		]
-	],
+	"HEADERS" : [],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/emilklitgaard/Workspace/Semesterprojekt/build/picoTestExecutable_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/emilklitgaard/Workspace/Semesterprojekt/build/picoTestExecutable_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : [],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -222,18 +214,13 @@
 		"/usr/local/include/ur_rtde",
 		"/usr/include/eigen3",
 		"/usr/include/opencv4",
-		"/usr/include/aarch64-linux-gnu/qt6/QtWidgets",
-		"/usr/include/aarch64-linux-gnu/qt6",
-		"/usr/include/aarch64-linux-gnu/qt6/QtCore",
-		"/usr/lib/aarch64-linux-gnu/qt6/mkspecs/linux-g++",
-		"/usr/include/aarch64-linux-gnu/qt6/QtGui",
-		"/usr/include",
 		"/usr/include/c++/13",
 		"/usr/include/aarch64-linux-gnu/c++/13",
 		"/usr/include/c++/13/backward",
 		"/usr/lib/gcc/aarch64-linux-gnu/13/include",
 		"/usr/local/include",
-		"/usr/include/aarch64-linux-gnu"
+		"/usr/include/aarch64-linux-gnu",
+		"/usr/include"
 	],
 	"MOC_MACRO_NAMES" : 
 	[
@@ -267,7 +254,6 @@
 	"SETTINGS_FILE" : "/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/picoTestExecutable_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp", "Mu", null ],
 		[
 			"/home/emilklitgaard/Workspace/Semesterprojekt/Test files/picoTest.cpp",
 			"Mu",

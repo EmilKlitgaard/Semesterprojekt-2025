@@ -513,4 +513,5 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qbasictimer.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h \
- /home/emilklitgaard/Workspace/Semesterprojekt/Vision.h
+ /home/emilklitgaard/Workspace/Semesterprojekt/Vision.h \
+ /home/emilklitgaard/Workspace/Semesterprojekt/Game.h

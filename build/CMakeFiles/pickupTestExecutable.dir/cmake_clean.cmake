@@ -4,8 +4,6 @@ file(REMOVE_RECURSE
   "pickupTestExecutable_autogen"
   "CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o"
   "CMakeFiles/pickupTestExecutable.dir/Chessboard.cpp.o.d"
-  "CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o"
-  "CMakeFiles/pickupTestExecutable.dir/GUI.cpp.o.d"
   "CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o"
   "CMakeFiles/pickupTestExecutable.dir/Gripper.cpp.o.d"
   "CMakeFiles/pickupTestExecutable.dir/Test_files/pickupTest.cpp.o"

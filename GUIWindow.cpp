@@ -2,6 +2,9 @@
 
 #include "GUI.h"
 #include "GUIWindow.h"
+#include "Game.h"
+
+Game game;
 
 GUIWindow::GUIWindow(QWidget* parent)
     : QMainWindow(parent), central(this), mainLayout(&central), difficultyLabel(this), difficultySlider(Qt::Horizontal, this), cvLabel(new QLabel(this)), startGame("Start", this), resetGame("Reset", this) {
@@ -75,8 +78,11 @@ void GUIWindow::handleSliderChanged(int value) {
 }
 
 void GUIWindow::handleStartClicked() {
-    gui.setGameActive(true);
-    emit startClicked();
+    if (!gui.getGameActive()) {
+        gui.setGameActive(true);
+        game.startGame();
+        emit startClicked();
+    }
 }
 
 void GUIWindow::handleStopClicked() {

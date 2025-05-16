@@ -66,7 +66,6 @@ include CMakeFiles/pickupTestExecutable_autogen_timestamp_deps.dir/compiler_depe
 # Include the progress variables for this target.
 include CMakeFiles/pickupTestExecutable_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/pickupTestExecutable_autogen_timestamp_deps: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
 CMakeFiles/pickupTestExecutable_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 
 pickupTestExecutable_autogen_timestamp_deps: CMakeFiles/pickupTestExecutable_autogen_timestamp_deps

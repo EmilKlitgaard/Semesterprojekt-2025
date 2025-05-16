@@ -39,7 +39,7 @@ int main() {
     tcsetattr(serial_fd, TCSANOW, &options);
 
     // Write "Open" to Pico to initiate communication
-    string msg = "Close\n";
+    string msg = "Open\n";
     write(serial_fd, msg.c_str(), msg.length());
     tcdrain(serial_fd); // Wait until output is sent
 
@@ -60,7 +60,7 @@ int main() {
                 close(serial_fd);
                 return 0;
             }
-            if (input.find("Current:") != string::npos) {
+            if (input.find("Percent:") != string::npos) {
                 cout << input;
             }
         } else if (n == 0) {

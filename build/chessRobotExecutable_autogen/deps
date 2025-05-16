@@ -6,6 +6,8 @@ chessRobotExecutable_autogen/timestamp: \
 	/home/emilklitgaard/Workspace/Semesterprojekt/GUI.h \
 	/home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.cpp \
 	/home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.h \
+	/home/emilklitgaard/Workspace/Semesterprojekt/Game.cpp \
+	/home/emilklitgaard/Workspace/Semesterprojekt/Game.h \
 	/home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp \
 	/home/emilklitgaard/Workspace/Semesterprojekt/Gripper.h \
 	/home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp \

@@ -121,8 +121,8 @@ CMakeFiles/chessRobotExecutable_autogen_timestamp_deps: /usr/lib/aarch64-linux-g
 CMakeFiles/chessRobotExecutable_autogen_timestamp_deps: /usr/lib/aarch64-linux-gnu/libopencv_superres.so.4.6.0
 CMakeFiles/chessRobotExecutable_autogen_timestamp_deps: /usr/lib/aarch64-linux-gnu/libopencv_tracking.so.4.6.0
 CMakeFiles/chessRobotExecutable_autogen_timestamp_deps: /usr/lib/aarch64-linux-gnu/libopencv_stereo.so.4.6.0
-CMakeFiles/chessRobotExecutable_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/chessRobotExecutable_autogen_timestamp_deps: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
+CMakeFiles/chessRobotExecutable_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 
 chessRobotExecutable_autogen_timestamp_deps: CMakeFiles/chessRobotExecutable_autogen_timestamp_deps
 chessRobotExecutable_autogen_timestamp_deps: CMakeFiles/chessRobotExecutable_autogen_timestamp_deps.dir/build.make

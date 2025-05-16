@@ -32,7 +32,8 @@ RTDEReceiveInterface rtde_receive(robotIp, robotPort);
 Chessboard board;
 Gripper gripper("/dev/ttyACM0");
 
-Vector3d transformVector = {0.0, 0.0, 0.1};
+Vector3d liftTransformVector = {0.0, 0.0, 0.1};
+Vector3d calibrationTransformVector = {0.025, 0.025, 0.0};
 
 /*============================================================
             		   FUNCTIONS
@@ -124,7 +125,7 @@ void moveToAwaitPosition() {
 // Move TCP to a specific chessboard coordinate
 void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 0.5, double acceleration = 0.5) {
     // Convert chessboard target to base frame
-    Vector3d baseTarget = chessboardToBase(chessboardTarget, chessboardOrigin, RotationMatrix);
+    Vector3d baseTarget = chessboardToBase(chessboardTarget + calibrationTransformVector, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
     //cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
     rtde_control.moveL(tcpPose, speed, acceleration);
@@ -149,24 +150,24 @@ bool AllPositionsReachable(const Vector3d &chessboardOrigin, const Matrix3d &Rot
 }
 
 void pickUpPiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
     gripper.closeGripper();
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
 }
 
 void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix) {
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
     gripper.openGripper();
-    moveToChessboardPoint(position + transformVector, chessboardOrigin, RotationMatrix);
+    moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
 }
 
 std::atomic<bool> endLoop(false);
 std::atomic<int> pickUpCnt(0);
 
 void pickUpCycle(const Vector3d &fromCoordinates, const Vector3d &toCoordinates, const Vector3d &chessboardOrigin, const Matrix3d &RotationChess) {
-    while(pickUpCnt <= 100) {
+    while(pickUpCnt <= 50) {
         pickUpPiece(fromCoordinates, chessboardOrigin, RotationChess);
         placePiece(toCoordinates, chessboardOrigin, RotationChess);
         pickUpCnt++;
@@ -186,7 +187,6 @@ void waitForEnter() {
     exit(0);
 }
 
-    
 
 /*============================================================
             		    MAIN START
@@ -215,18 +215,13 @@ int main() {
     }
 
     //   ==========   UPDATE TCP OFFSET   ==========   //
-    vector<double> tcpOffset = {0.0, 0.0, 0.2, 0.0, 0.0, 0.0};
+    vector<double> tcpOffset = {0.0, 0.0, 0.225, 0.0, 0.0, 0.0};
     rtde_control.setTcp(tcpOffset);
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition();
-    Vector3d chessboardTarget1(0.0, 0.0, 0.0);
-    moveToChessboardPoint(chessboardTarget1, chessboardOrigin, RotationChess);
-    Vector3d chessboardTarget2(0.4, 0.4, 0.0);
-    moveToChessboardPoint(chessboardTarget2, chessboardOrigin, RotationChess);
-    moveToAwaitPosition();
 
-    string move = "e3e5";
+    string move = "e4e5";
     auto [fromCoordinate, toCoordinate] = board.getPhysicalCoordinates(move);
    
     //   ==========   BEGIN MOVEMENTS   ==========   //

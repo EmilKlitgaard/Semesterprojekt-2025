@@ -11,7 +11,6 @@ using namespace std;
 
 class GUI {
 public:
-    //set
     void setDifficulty(int value);
     void setGameActive(bool value);
     void setTurn(bool value);
@@ -20,20 +19,17 @@ public:
 
     void awaitStartGame();
 
-    //get
     int  getDifficulty();
     bool getGameActive();
     bool getTurn();
     bool getConnection();
-    
     cv::Mat getVision() const;
 
 private:
-
     mutable mutex cvMutex;
 
-    // param
     cv::Mat cvImage;
+    
     bool turn = true;
     bool connection = false;
     bool gameActive = false;

@@ -20,7 +20,7 @@ Gripper::~Gripper() {
 
 bool Gripper::configurePort() {
     struct termios options;
-    if (tcgetattr(serial_fd, &options) != 0) return false;
+    tcgetattr(serial_fd, &options);
 
     cfsetispeed(&options, B115200);
     cfsetospeed(&options, B115200);
@@ -30,7 +30,7 @@ bool Gripper::configurePort() {
     options.c_cflag |= CS8;                             // 8 data bits
     options.c_cflag &= ~PARENB;                         // No parity
     options.c_cflag &= ~CSTOPB;                         // 1 stop bit
-    options.c_cflag &= ~CRTSCTS;                        // No hardware flow control
+    options.c_cflag &= ~CRTSCTS;                        // No flow control
     options.c_lflag &= ~(ICANON | ECHO | ECHOE | ISIG); // Raw input
     options.c_iflag &= ~(IXON | IXOFF | IXANY);         // No software flow control
     options.c_oflag &= ~OPOST;                          // Raw output
@@ -54,6 +54,9 @@ bool Gripper::waitFor(const string& token, double timeoutSeconds) {
         int n = read(serial_fd, chunk, sizeof(chunk));
         if (n > 0) {
             buffer.append(chunk, n);
+            if (buffer.find("Current:") != string::npos) {
+                cout << buffer;
+            }
             if (buffer.find(token) != string::npos) {
                 return true;
             }

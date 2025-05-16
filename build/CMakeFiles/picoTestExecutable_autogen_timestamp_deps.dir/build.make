@@ -66,7 +66,6 @@ include CMakeFiles/picoTestExecutable_autogen_timestamp_deps.dir/compiler_depend
 # Include the progress variables for this target.
 include CMakeFiles/picoTestExecutable_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/picoTestExecutable_autogen_timestamp_deps: /usr/lib/aarch64-linux-gnu/libQt6Widgets.so.6.4.2
 CMakeFiles/picoTestExecutable_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 
 picoTestExecutable_autogen_timestamp_deps: CMakeFiles/picoTestExecutable_autogen_timestamp_deps

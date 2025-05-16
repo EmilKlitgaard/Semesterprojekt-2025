@@ -103,10 +103,24 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chessRobotExecutable.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/main.cpp -o CMakeFiles/chessRobotExecutable.dir/main.cpp.s
 
+CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: CMakeFiles/chessRobotExecutable.dir/flags.make
+CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Game.cpp
+CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: CMakeFiles/chessRobotExecutable.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Game.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessRobotExecutable.dir/Game.cpp.o -MF CMakeFiles/chessRobotExecutable.dir/Game.cpp.o.d -o CMakeFiles/chessRobotExecutable.dir/Game.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Game.cpp
+
+CMakeFiles/chessRobotExecutable.dir/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chessRobotExecutable.dir/Game.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/emilklitgaard/Workspace/Semesterprojekt/Game.cpp > CMakeFiles/chessRobotExecutable.dir/Game.cpp.i
+
+CMakeFiles/chessRobotExecutable.dir/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chessRobotExecutable.dir/Game.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/emilklitgaard/Workspace/Semesterprojekt/Game.cpp -o CMakeFiles/chessRobotExecutable.dir/Game.cpp.s
+
 CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: CMakeFiles/chessRobotExecutable.dir/flags.make
 CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o: CMakeFiles/chessRobotExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o -MF CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o.d -o CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp
 
 CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.i: cmake_force
@@ -120,7 +134,7 @@ CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.s: cmake_force
 CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o: CMakeFiles/chessRobotExecutable.dir/flags.make
 CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp
 CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o: CMakeFiles/chessRobotExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o -MF CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o.d -o CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.cpp
 
 CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.i: cmake_force
@@ -134,7 +148,7 @@ CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.s: cmake_force
 CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o: CMakeFiles/chessRobotExecutable.dir/flags.make
 CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Vision.cpp
 CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o: CMakeFiles/chessRobotExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o -MF CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o.d -o CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Vision.cpp
 
 CMakeFiles/chessRobotExecutable.dir/Vision.cpp.i: cmake_force
@@ -148,7 +162,7 @@ CMakeFiles/chessRobotExecutable.dir/Vision.cpp.s: cmake_force
 CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o: CMakeFiles/chessRobotExecutable.dir/flags.make
 CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp
 CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o: CMakeFiles/chessRobotExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o -MF CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o.d -o CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp
 
 CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.i: cmake_force
@@ -162,7 +176,7 @@ CMakeFiles/chessRobotExecutable.dir/Gripper.cpp.s: cmake_force
 CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o: CMakeFiles/chessRobotExecutable.dir/flags.make
 CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
 CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o: CMakeFiles/chessRobotExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o -MF CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o.d -o CMakeFiles/chessRobotExecutable.dir/GUI.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/GUI.cpp
 
 CMakeFiles/chessRobotExecutable.dir/GUI.cpp.i: cmake_force
@@ -176,7 +190,7 @@ CMakeFiles/chessRobotExecutable.dir/GUI.cpp.s: cmake_force
 CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: CMakeFiles/chessRobotExecutable.dir/flags.make
 CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.cpp
 CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: CMakeFiles/chessRobotExecutable.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o -MF CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o.d -o CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o -c /home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.cpp
 
 CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.i: cmake_force
@@ -191,6 +205,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.s: cmake_force
 chessRobotExecutable_OBJECTS = \
 "CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/chessRobotExecutable.dir/main.cpp.o" \
+"CMakeFiles/chessRobotExecutable.dir/Game.cpp.o" \
 "CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o" \
 "CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o" \
 "CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o" \
@@ -203,6 +218,7 @@ chessRobotExecutable_EXTERNAL_OBJECTS =
 
 chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilation.cpp.o
 chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/main.cpp.o
+chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/Game.cpp.o
 chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/Chessboard.cpp.o
 chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/Stockfish.cpp.o
 chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/Vision.cpp.o
@@ -271,7 +287,7 @@ chessRobotExecutable: /usr/lib/aarch64-linux-gnu/libQt6Core.so.6.4.2
 chessRobotExecutable: /usr/lib/aarch64-linux-gnu/libGLX.so
 chessRobotExecutable: /usr/lib/aarch64-linux-gnu/libOpenGL.so
 chessRobotExecutable: CMakeFiles/chessRobotExecutable.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable chessRobotExecutable"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable chessRobotExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/chessRobotExecutable.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

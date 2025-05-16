@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <string.h>
+#include <vector>
+#include <numeric>
 #include "pico/stdlib.h"
 #include "hardware/adc.h"
 #include "hardware/pwm.h"
 
 #define LED_PIN 25
-#define MOTOR_PIN_1 19
-#define MOTOR_PIN_2 18
-#define ADC_PIN 26
-
+#define MOTOR_PIN_1 0
+#define MOTOR_PIN_2 1
+#define ADC_PIN 28
 #define MAX_INPUT_LEN 64
-#define PWM_WRAP 10000
-#define CURRENT_THRESHOLD 0.25f // 0.2 A (adjust as needed)
-#define CURRENT_TOLERANCE 0.05f // +/- tolerance
+#define PWM_WRAP 6944 // 90% duty cycle
+#define THRESHOLD 18
+
+#define DUTY_90_PERCENT (uint16_t)(0.9f * (PWM_WRAP + 1))
 
 void blink(int cnt, int delay, int endDelay = 0) {
     for (int i = 0; i < cnt; i++) {
@@ -32,7 +34,8 @@ float read_current() {
 
 void init_pwm(unsigned short pin) {
     gpio_set_function(pin, GPIO_FUNC_PWM);
-    unsigned int slice = pwm_gpio_to_slice_num(pin);
+    uint slice = pwm_gpio_to_slice_num(pin);
+    pwm_set_clkdiv(slice, 1.0f);
     pwm_set_wrap(slice, PWM_WRAP);
     pwm_set_enabled(slice, true);
 }
@@ -47,45 +50,43 @@ void stopMotor() {
 }
 
 void openGripper() {
-    set_pwm(MOTOR_PIN_1, 0);        // Ensure other pin is off
-    set_pwm(MOTOR_PIN_2, PWM_WRAP); // Full speed open
-    sleep_ms(5000);                 // Open for 5 seconds
-    stopMotor();                    // Stop motor
+    set_pwm(MOTOR_PIN_1, 0);                    // Ensure other pin is off
+    set_pwm(MOTOR_PIN_2, DUTY_90_PERCENT);      // Full speed open
+    sleep_ms(2500);                             // Open for 2.5 seconds
+    stopMotor();                                // Stop motor
 }
 
 void closeGripper() {
-    unsigned int duty = PWM_WRAP;
-    
-    set_pwm(MOTOR_PIN_2, 0);        // Ensure other pin is off
-    set_pwm(MOTOR_PIN_1, duty);     // Full speed close
-    sleep_ms(3000);                 // Close for 3 seconds
-    
-    duty /= 5;
+    set_pwm(MOTOR_PIN_2, 0);                    // Ensure other pin is off
+    set_pwm(MOTOR_PIN_1, DUTY_90_PERCENT);      // Full speed close
+
+    int itterations = 0;
+    std::vector<float> averageList(10, 0.0f);  // Initialize with 10 zeros
+    float average = 0.0f;
 
     while (true) {
-        float current = read_current();
+        float current = adc_read();                 // raw 12-bit value
 
-        printf("Current: %.3f\n", current);
+        // Update the rolling buffer
+        averageList.erase(averageList.begin());     // Remove oldest
+        averageList.push_back(current);             // Add newest
+        
+        // Compute average
+        float sum = std::accumulate(averageList.begin(), averageList.end(), 0.0f);
+        average = sum / averageList.size();
 
-        // Adjust PWM based on the current feedback
-        // if (current > CURRENT_THRESHOLD + CURRENT_TOLERANCE) {
-        //     if (duty >= 5) duty -= 5;
-        // } else if (current < CURRENT_THRESHOLD - CURRENT_TOLERANCE) {
-        //     if (duty <= PWM_WRAP - 5) duty += 5;
-        // }
+        float percent = (average / 4095.0f) * 100;  // Converts to 0–100%
+        printf("Percent: %.1f%%\n", percent);       // Print with 1 decimal place
 
-        // Set the new PWM duty
-        set_pwm(MOTOR_PIN_1, duty);
-
-        // If current is within the threshold, exit loop
-        if (current >= CURRENT_THRESHOLD - CURRENT_TOLERANCE && current <= CURRENT_THRESHOLD + CURRENT_TOLERANCE) {
-            //break;
+        // If current is below threshold, stop the motor and break
+        if (percent < THRESHOLD && itterations > 100) {
+            stopMotor();
+            break;
         }
-
-        sleep_ms(10);
+        itterations++;
+        sleep_ms(5);
     }
 }
-
 
 int main() {
     stdio_init_all();
@@ -98,7 +99,7 @@ int main() {
 
     adc_init();
     adc_gpio_init(ADC_PIN);
-    adc_select_input(0);
+    adc_select_input(2);
     
     blink(3, 100, 1000);
 
