@@ -69,7 +69,7 @@ void GUIWindow::updateVision() {
 }
 
 void GUIWindow::setTurnStatus() {
-    turnStatus.setText(gui.getTurn() ? "Turn: Player" : "Turn: Robot");
+    turnStatus.setText(gui.getTurn() == "Robot" ? "Turn: Robot" : "Turn: Player");
 }
 
 void GUIWindow::setConnectionStatus() {

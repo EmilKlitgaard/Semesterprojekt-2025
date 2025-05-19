@@ -54,7 +54,7 @@ bool Gripper::waitFor(const string& token, double timeoutSeconds) {
         int n = read(serial_fd, chunk, sizeof(chunk));
         if (n > 0) {
             buffer.append(chunk, n);
-            if (buffer.find("Current:") != string::npos) {
+            if (buffer.find("Percent:") != string::npos) {
                 cout << buffer;
             }
             if (buffer.find(token) != string::npos) {

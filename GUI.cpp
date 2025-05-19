@@ -25,8 +25,8 @@ void GUI::awaitStartGame() {
     }
 }
 
-void GUI::setTurn(bool value) {
-    turn = value; // True = player, False = robot
+void GUI::setTurn(string value) {
+    turn = value;
 }
 
 void GUI::setConnection(bool value) {
@@ -42,7 +42,7 @@ void GUI::setVision(const cv::Mat& image) {
 // Getter functions
 int  GUI::getDifficulty() { return difficulty; }
 bool GUI::getGameActive() { return gameActive; }
-bool GUI::getTurn() { return turn; }
+string GUI::getTurn() { return turn; }
 bool GUI::getConnection() { return connection; }    
 
 cv::Mat GUI::getVision() const {

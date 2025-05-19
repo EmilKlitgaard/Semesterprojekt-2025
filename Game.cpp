@@ -137,7 +137,7 @@ void moveToAwaitPosition() {
 }
 
 // Move TCP to a specific chessboard coordinate
-void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 3, double acceleration = 2) {
+void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 0.3, double acceleration = 2) {
     // Convert chessboard target to base frame
     Vector3d baseTarget = chessboardToBase(chessboardTarget + calibrationTransformVector, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
@@ -158,6 +158,18 @@ void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, cons
     moveToChessboardPoint(position, chessboardOrigin, RotationMatrix);
     gripper->openGripper();
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
+}
+
+void calibrateGripper() {
+    Vector3d calibrationTransformVector = {-0.025, -0.025, -0.005};
+    moveToChessboardPoint(calibrationTransformVector + liftTransformVector, chessboardOrigin, RotationMatrix);
+    gripper->openGripper();
+    moveToChessboardPoint(calibrationTransformVector, chessboardOrigin, RotationMatrix);
+    gripper->closeGripper();
+    gripper->openGripper();
+    moveToChessboardPoint(calibrationTransformVector + liftTransformVector, chessboardOrigin, RotationMatrix);
+    moveToAwaitPosition();
+    printText("Gripper calibrated.");
 }
 
 // Function to move the robot to the corners of the chessboard
@@ -345,19 +357,19 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
             printText("Change detected. Verifying redundancy...");
 
             // Redundancy check 1:
-            printText("Redundancy check 1...");
+            //printText("Redundancy check 1...");
             ChessboardMatrix newState2 = camera.processCurrentFrame();
             // Redundancy check 2:
-            printText("Redundancy check 2...");
+            //printText("Redundancy check 2...");
             ChessboardMatrix newState3 = camera.processCurrentFrame();
             // Redundancy check 3:
-            printText("Redundancy check 3...");
+            //printText("Redundancy check 3...");
             ChessboardMatrix newState4 = camera.processCurrentFrame();
             // Redundancy check 4:
-            printText("Redundancy check 4...");
+            //printText("Redundancy check 4...");
             ChessboardMatrix newState5 = camera.processCurrentFrame();
             // Redundancy check 5:
-            printText("Redundancy check 5...");
+            //printText("Redundancy check 5...");
             ChessboardMatrix newState6 = camera.processCurrentFrame();
 
             // Check if all three moves are identical.
@@ -367,6 +379,7 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
                     board.getDeadPieceLocation(deadPieceName, "Robot");
                     deadPieceFound = false;
                 }
+                cout << "Move detected: " << board.getChessNotation(moveFrom, moveTo) << endl;
                 return {moveFrom, moveTo};
             }
             else {
@@ -374,7 +387,7 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
             }
         }
         else {
-            printText("No valid move detected. Waiting for change...");
+            // printText("No valid move detected. Waiting for change...");
         }
     }
 }
@@ -427,15 +440,18 @@ string checkPawnPromotion(string &playerMove) {
 // Get a valid player move from the camera
 string getValidPlayerMove(ChessVision &camera) {
     string playerMove;
+    bool validMove = false;
     do {
         auto [playerFromIndex, playerToIndex] = getCameraData(camera);
         playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
 
-        if (!engine.sendValidMove(playerMove)) {
+        validMove = engine.sendValidMove(playerMove);
+
+        if (!validMove) {
             printText("Invalid move. Make a valid move.");
             sleep(1);
         }
-    } while (!engine.sendValidMove(playerMove));
+    } while (!validMove);
 
     playerMove = checkPawnPromotion(playerMove);
     cout << "Player move: " << playerMove << endl;
@@ -535,12 +551,13 @@ void Game::startGame() {
     printText("--- STARTING MAIN LOOP ---");
     
     thread ([]() {
-        //   ==========   VALIDATE UR5 CONNECTION   ==========   //
+        //   ==========   INITIALIZE UR5 CONNECTION   ==========   //
         do {
             try {
                 rtde_control = make_unique<RTDEControlInterface>(robotIp, robotPort);
                 rtde_receive = make_unique<RTDEReceiveInterface>(robotIp, robotPort);
                 gui.setConnection(true);
+                cout << "Successfully connected to the robot." << endl;
             } catch (const exception& e) {
                 cerr << "Failed to connect to the robot at ip: " << robotIp << ", port: " << robotPort << ". Error: " << e.what() << endl;
                 gui.setConnection(false);
@@ -548,16 +565,26 @@ void Game::startGame() {
             }
         } while (!rtde_control || !rtde_receive);
 
-        //   ==========   START GRIPPER COMMUNICATION   ==========   //
+        //   ==========   INITIALIZE GRIPPER COMMUNICATION   ==========   //
         do {     
             try {
                 gripper = make_unique<Gripper>("/dev/ttyACM0");
+                cout << "Successfully connected to the gripper." << endl;
             } catch (const exception& e) {
                 cerr << "Failed to connect to the gripper. Error: " << e.what() << endl;
                 sleep(1);
             }
         } while (!gripper);
-            
+
+        //   ==========   INITIALIZE COMPUTER VISION   ==========   //ChessVision camera(1);
+        ChessVision camera(1);
+
+        // Start kamera-feed i separat tråd
+        thread cameraThread([&]() {
+            camera.showLiveFeed();
+        });
+        sleep(2); // Give the camera some time to initialize
+        
         //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
         vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
         rtde_control->setTcp(tcpCalibrationOffset);
@@ -575,30 +602,25 @@ void Game::startGame() {
         }
 
         //   ==========   UPDATE TCP OFFSET   ==========   //
-        const vector<double> tcpOffset = {0.0, 0.0, 0.225, 0.0, 0.0, 0.0}; // Should be 0.225
+        const vector<double> tcpOffset = {0.0, 0.0, 0.224, 0.0, 0.0, 0.0}; // Should be 0.225
         rtde_control->setTcp(tcpOffset);
         
         //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
-        moveToBoardCorners(chessboardOrigin, RotationMatrix);
+        moveToAwaitPosition();
+        calibrateGripper();
+        // moveToBoardCorners(chessboardOrigin, RotationMatrix);
         
-        //   ==========   INITIALIZE COMPUTER VISION   ==========   //
-        ChessVision camera(1);
-
-        // Start kamera-feed i separat tråd
-        thread cameraThread([&]() {
-            camera.showLiveFeed();
-        });
-
         //   ==========   BEGIN CHESS GAME   ==========   //
-        printText("Press ENTER to start chess game...");
+        //printText("Press ENTER to start chess game...");
         //cin.get();
         printText("\n----- CHESS GAME STARTED -----");
         
         while (true) {
             // Set player turn on GUI
-            gui.setTurn(true);
+            gui.setTurn("Player");
 
             // Get the player's move from the camera.
+
             string playerMove = getValidPlayerMove(camera);
             //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
             
@@ -608,7 +630,7 @@ void Game::startGame() {
             board.printBoard();
             
             // Set robot turn on GUI
-            gui.setTurn(false);
+            gui.setTurn("Robot");
 
             // Get the move from Stockfish (in chess notation, e.g., "a2a4")
             string robotMove = stockfishMove(engine);
@@ -617,7 +639,7 @@ void Game::startGame() {
             moveChessPiece(robotMove, chessboardOrigin, RotationMatrix);
             
             // After robot move, update the board accordingly.
-            auto [robotFromIdx, robotToIdx] = board.getMatrixIndex(playerMove);
+            auto [robotFromIdx, robotToIdx] = board.getMatrixIndex(robotMove);
             board.updateChessboard(robotFromIdx, robotToIdx);
             board.printBoard();
             

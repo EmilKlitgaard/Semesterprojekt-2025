@@ -3,7 +3,7 @@
 
 // Constructor: Opens the camera
 ChessVision::ChessVision(int cameraIndex) {
-    cap.open(cameraIndex);
+    cap.open(cameraIndex, cv::CAP_V4L2);
     if (!cap.isOpened()) {
         cerr << "Error: Camera not opened!" << endl;
         exit(1);
@@ -175,9 +175,7 @@ void ChessVision::showLiveFeed() {
 
         gui.setVision(frame);  // Send frame to GUI
 
-        imshow("Live Kamera", frame);
-        int key = waitKey(30);
-        if (key == 27) break;  // ESC for at afslutte
+        //imshow("Live Kamera", frame);
     }
 }
 
@@ -232,16 +230,13 @@ ChessboardMatrix ChessVision::processCurrentFrame() {
 
             break;  // Succes
         }
-
-        // waitKey(100); // Giv tid mellem forsøg
     }
 
     if (!found) {
         cerr << "Kunne ikke finde skakbrættet." << endl;
     }
 
-    imshow("Processeret Billede", frame);
-    // waitKey(1);
+    //imshow("Processeret Billede", frame);
 
     return boardMatrix;
 }

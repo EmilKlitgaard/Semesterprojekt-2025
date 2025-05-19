@@ -13,7 +13,7 @@ class GUI {
 public:
     void setDifficulty(int value);
     void setGameActive(bool value);
-    void setTurn(bool value);
+    void setTurn(string value);
     void setConnection(bool value);
     void setVision(const cv::Mat& image);
 
@@ -21,7 +21,7 @@ public:
 
     int  getDifficulty();
     bool getGameActive();
-    bool getTurn();
+    string getTurn();
     bool getConnection();
     cv::Mat getVision() const;
 
@@ -30,7 +30,7 @@ private:
 
     cv::Mat cvImage;
     
-    bool turn = true;
+    string turn;
     bool connection = false;
     bool gameActive = false;
     int difficulty = 300;

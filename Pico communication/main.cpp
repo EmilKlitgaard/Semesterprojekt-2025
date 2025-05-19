@@ -12,7 +12,7 @@
 #define ADC_PIN 28
 #define MAX_INPUT_LEN 64
 #define PWM_WRAP 6944 // 90% duty cycle
-#define THRESHOLD 18
+#define THRESHOLD 14
 
 #define DUTY_90_PERCENT (uint16_t)(0.9f * (PWM_WRAP + 1))
 
@@ -24,12 +24,6 @@ void blink(int cnt, int delay, int endDelay = 0) {
         sleep_ms(delay);
     }
     if (endDelay > 0) sleep_ms(endDelay);
-}
-
-// Convert ADC value to current (0-1A)
-float read_current() {
-    uint16_t raw = adc_read();
-    return (raw / 4095.0f) * 1.0f;
 }
 
 void init_pwm(unsigned short pin) {

@@ -89,9 +89,12 @@ bool Stockfish::isCheckmate() {
 bool Stockfish::sendValidMove(const string& move) {
     ostringstream position;
     position << "position startpos moves";
-    for (const string& move : moveHistory) {
-        position << " " << move;
+    for (const string& moves : moveHistory) {
+        position << " " << moves;
     }
+
+    cout << "Stockfish moves: " << position.str() << endl;
+
     sendCommand(position.str());
 
     sendCommand("go perft 1");
@@ -129,8 +132,8 @@ string Stockfish::getBestMove() {
 
     ostringstream position;
     position << "position startpos moves";
-    for (const auto& move : moveHistory) {
-        position << " " << move;
+    for (const auto& moves : moveHistory) {
+        position << " " << moves;
     }
     sendCommand(position.str());
     sendCommand("go depth 20");
