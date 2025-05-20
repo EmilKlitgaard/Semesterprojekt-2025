@@ -1,21 +1,11 @@
-#include <ur_rtde/rtde_control_interface.h>
-#include <ur_rtde/rtde_receive_interface.h>
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <Eigen/Dense>
-#include <string>
-#include <fstream>
-#include <unordered_map>
-#include <QtWidgets/QApplication>
-#include <memory>
-
 #include "Chessboard.h"
 #include "Stockfish.h"
 #include "Vision.h"
 #include "Gripper.h"
 #include "GUI.h"
 #include "Game.h"
+
+Game game;
 
 using namespace ur_rtde;
 using namespace std;
@@ -34,6 +24,7 @@ Chessboard board;
 Stockfish engine("/usr/local/bin/stockfish");
 
 unique_ptr<Gripper> gripper;
+unique_ptr<ChessVision> camera;
 
 Vector3d chessboardOrigin;
 Matrix3d RotationMatrix;
@@ -137,11 +128,11 @@ void moveToAwaitPosition() {
 }
 
 // Move TCP to a specific chessboard coordinate
-void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 0.3, double acceleration = 2) {
+void moveToChessboardPoint(const Vector3d &chessboardTarget, const Vector3d &chessboardOrigin, const Matrix3d &RotationMatrix, double speed = 3, double acceleration = 3) {
     // Convert chessboard target to base frame
     Vector3d baseTarget = chessboardToBase(chessboardTarget + calibrationTransformVector, chessboardOrigin, RotationMatrix);
     vector<double> tcpPose = {baseTarget[0], baseTarget[1], baseTarget[2], 0.0, M_PI, 0.0};
-    cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
+    // cout << "Moving TCP to Chessboard Point: [" << chessboardTarget.transpose() << "]" << endl;
     rtde_control->moveL(tcpPose, speed, acceleration);
 }
 
@@ -282,18 +273,19 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
     
     // Get the piece names for later use
     auto [fromPieceName, toPieceName] = getPieceName(robotMove);
+    fromPieceName = board.getPieceName(fromPieceName);
 
     // Check if the destination cell is already occupied.
     string toNotation = robotMove.substr(2, 2);
     if (isOccupied(toNotation)) {
         printText("Moving occupying piece to dead piece location...");
+        
+        toPieceName = board.getPieceName(toPieceName);
         Vector3d deadPieceLocation = board.getDeadPieceLocation(toPieceName, "Player");
 
         pickUpPiece(toCoordinate, chessboardOrigin, RotationMatrix);
         placePiece(deadPieceLocation, chessboardOrigin, RotationMatrix);
     }
-
-    cout << "Piece Name: " << fromPieceName << endl;
 
     // Check for castling
     if ((robotMove == "dec8" || robotMove == "e8g8") && fromPieceName == "King") {
@@ -320,13 +312,13 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
         string promotionType = robotMove.substr(4, 1); 
         string promotionPieceName;
         if (promotionType == "q") { 
-            promotionPieceName = "5B";  // Queen
+            promotionPieceName = "Queen";
         } else if (promotionType == "r") { 
-            promotionPieceName = "2B";  // Rook
+            promotionPieceName = "Rook";
         } else if (promotionType == "b") { 
-            promotionPieceName = "4B";  // Bishop
+            promotionPieceName = "Bishop"; 
         } else if (promotionType == "n") { 
-            promotionPieceName = "3B";  // Knight
+            promotionPieceName = "Knight";
         } else {
             throw invalid_argument("Stockfish pawnPromotion output error. Stockfish output: " + robotMove);
         }
@@ -340,11 +332,11 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
 pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
     // Capture the initial reference board state.
     printText("Getting initial reference board state...");
-    ChessboardMatrix refState = camera.getRefVisionBoard();
+    ChessboardMatrix refState = board.getRefVisionBoard();
 
     while (true) {
-        //printText("Make your move and press ENTER.");
-        //cin.get();
+        if (!gui.getGameActive()) return {{-1, -1}, {-1, -1}}; // Exit if game is not running
+
         ChessboardMatrix newState1 = camera.processCurrentFrame();
         
         if (newState1.empty()) continue; // Handle empty vision output
@@ -374,10 +366,8 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
 
             // Check if all three moves are identical.
             if (newState1 == newState2 && newState2 == newState3 && newState3 == newState4 && newState4 == newState5 && newState5 == newState6) {
-                camera.setRefVisionBoard(newState1);
                 if (deadPieceFound) {
                     board.getDeadPieceLocation(deadPieceName, "Robot");
-                    deadPieceFound = false;
                 }
                 cout << "Move detected: " << board.getChessNotation(moveFrom, moveTo) << endl;
                 return {moveFrom, moveTo};
@@ -387,8 +377,9 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
             }
         }
         else {
-            // printText("No valid move detected. Waiting for change...");
+            //printText("No valid move detected. Waiting for change...");
         }
+        deadPieceFound = false;
     }
 }
 
@@ -443,6 +434,8 @@ string getValidPlayerMove(ChessVision &camera) {
     bool validMove = false;
     do {
         auto [playerFromIndex, playerToIndex] = getCameraData(camera);
+        if (playerFromIndex.first == -1 || playerToIndex.first == -1) return "Cancelled";
+
         playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
 
         validMove = engine.sendValidMove(playerMove);
@@ -459,169 +452,196 @@ string getValidPlayerMove(ChessVision &camera) {
 }
 
 void Game::resetChessboard() {
-    cout << "CHESSBOARD RESET STARTED!" << endl;
-    board.printBoard();
+    thread ([] {
+        while (gui.getGameActive()) {
+            this_thread::sleep_for(chrono::milliseconds(100));
+        }
 
-    int allMoves = 0;
+        cout << "CHESSBOARD RESET STARTED!" << endl;
+        board.printBoard();
 
-    ChessboardPieces currentBoard = board.getBoardState();
-    ChessboardPieces desiredBoard = board.getStartBoard();
+        int allMoves = 0;
 
-    while (currentBoard != desiredBoard) {
-        while (true) {
-            bool moveFound = false;
-            for (int fromRow = 0; fromRow < 8; ++fromRow) {
-                for (int fromCol = 0; fromCol < 8; ++fromCol) {
-                    const string &currentPiece = currentBoard[fromRow][fromCol];
-                    if (currentPiece == "0" || currentPiece == desiredBoard[fromRow][fromCol]) continue; // Skip empty or already correct pieces
-                    
-                    // Find the destination for the current piece
-                    for (int toRow = 0; toRow < 8; ++toRow) {
-                        for (int toCol = 0; toCol < 8; ++toCol) {
-                            if (currentPiece == desiredBoard[toRow][toCol] && currentBoard[toRow][toCol] == "0") {
-                                // Move the piece to the destination
-                                MatrixIndex from = {fromRow, fromCol};
-                                MatrixIndex to = {toRow, toCol};
-                                board.updateChessboard(from, to);
-                                Vector3d fromCoordinate = board.getPhysicalCoordinate(from);
-                                Vector3d toCoordinate = board.getPhysicalCoordinate(to);
-                                pickUpPiece(fromCoordinate, chessboardOrigin, RotationMatrix);
-                                placePiece(toCoordinate, chessboardOrigin, RotationMatrix);
-                                cout << "Moved " << currentPiece << " from " << board.getChessNotation({fromRow, fromCol}) << " to " << board.getChessNotation({toRow, toCol}) << endl;
-                                board.printBoard();
-                                currentBoard = board.getBoardState();
-                                moveFound = true;
-                                toRow = toCol = 8; // Break loops
-                                allMoves++;
+        ChessboardPieces currentBoard = board.getBoardState();
+        ChessboardPieces desiredBoard = board.getStartBoard();
+
+        while (currentBoard != desiredBoard) {
+            while (true) {
+                bool moveFound = false;
+                for (int fromRow = 0; fromRow < 8; ++fromRow) {
+                    for (int fromCol = 0; fromCol < 8; ++fromCol) {
+                        const string &currentPiece = currentBoard[fromRow][fromCol];
+                        if (currentPiece == "0" || currentPiece == desiredBoard[fromRow][fromCol]) continue; // Skip empty or already correct pieces
+                        
+                        // Find the destination for the current piece
+                        for (int toRow = 0; toRow < 8; ++toRow) {
+                            for (int toCol = 0; toCol < 8; ++toCol) {
+                                if (currentPiece == desiredBoard[toRow][toCol] && currentBoard[toRow][toCol] == "0") {
+                                    // Move the piece to the destination
+                                    MatrixIndex from = {fromRow, fromCol};
+                                    MatrixIndex to = {toRow, toCol};
+                                    board.updateChessboard(from, to);
+                                    Vector3d fromCoordinate = board.getPhysicalCoordinate(from);
+                                    Vector3d toCoordinate = board.getPhysicalCoordinate(to);
+                                    pickUpPiece(fromCoordinate, chessboardOrigin, RotationMatrix);
+                                    placePiece(toCoordinate, chessboardOrigin, RotationMatrix);
+                                    cout << "Moved " << currentPiece << " from " << board.getChessNotation({fromRow, fromCol}) << " to " << board.getChessNotation({toRow, toCol}) << endl;
+                                    board.printBoard();
+                                    currentBoard = board.getBoardState();
+                                    moveFound = true;
+                                    toRow = toCol = 8; // Break loops
+                                    allMoves++;
+                                }
                             }
                         }
                     }
                 }
+                if (!moveFound) break;
             }
-            if (!moveFound) break;
-        }
 
-        bool moveFound = false;
-        // Look for misplaced pieces and move one to dead piece location
-        for (int row = 0; row < 8; ++row) {
-            for (int col = 0; col < 8; ++col) {
-                const string &currentPiece = currentBoard[row][col];
-                if (currentPiece != desiredBoard[row][col] && currentPiece != "0") {
-                    const string &currentPieceName = board.getPieceName(currentPiece);
-                    string origin = currentPiece.substr(1,1) = "B" ? "Robot" : "Player";
-                    Vector3d deadPieceLocation = board.getDeadPieceLocation(currentPieceName, origin);
-                    MatrixIndex from = {row, col};
-                    board.updateChessboard("0", from);
-                    cout << "Moved " << currentPiece << " from " << board.getChessNotation({row, col}) << " to dead piece location" << endl;
-                    board.printBoard();
-                    currentBoard = board.getBoardState();
-                    allMoves++;
-                    row = col = 8; // Break loops
-                    moveFound = true;
-                }
-            }
-        }
-        // Recover from dead piece location
-        if (!moveFound) {
+            bool moveFound = false;
+            // Look for misplaced pieces and move one to dead piece location
             for (int row = 0; row < 8; ++row) {
                 for (int col = 0; col < 8; ++col) {
                     const string &currentPiece = currentBoard[row][col];
-                    if (currentPiece == "0" && desiredBoard[row][col] != "0") {
-                        const string &desiredPiece = desiredBoard[row][col];
-                        const string &desiredPieceName = board.getPieceName(desiredPiece);
-                        string origin = currentPiece.substr(1,1) = "B" ? "Robot" : "Player";
-                        Vector3d location = board.searchDeadPieceLocation(desiredPieceName, origin);
-                        MatrixIndex to = {row, col};
-                        board.updateChessboard(desiredPiece, to);
-                        cout << "Retrived " << desiredPiece << " from dead piece location, and moved to " << board.getChessNotation({row, col}) << endl;
+                    if (currentPiece != desiredBoard[row][col] && currentPiece != "0") {
+                        const string &currentPieceName = board.getPieceName(currentPiece);
+                        string origin = currentPiece.substr(1,1) == "B" ? "Robot" : "Player";
+                        Vector3d deadPieceLocation = board.getDeadPieceLocation(currentPieceName, origin);
+                        MatrixIndex from = {row, col};
+                        board.updateChessboard("0", from);
+                        cout << "Moved " << currentPiece << " from " << board.getChessNotation({row, col}) << " to dead piece location" << endl;
                         board.printBoard();
                         currentBoard = board.getBoardState();
                         allMoves++;
                         row = col = 8; // Break loops
+                        moveFound = true;
+                    }
+                }
+            }
+            // Recover from dead piece location
+            if (!moveFound) {
+                for (int row = 0; row < 8; ++row) {
+                    for (int col = 0; col < 8; ++col) {
+                        const string &currentPiece = currentBoard[row][col];
+                        if (currentPiece == "0" && desiredBoard[row][col] != "0") {
+                            const string &desiredPiece = desiredBoard[row][col];
+                            const string &desiredPieceName = board.getPieceName(desiredPiece);
+                            string origin = currentPiece.substr(1,1) == "B" ? "Robot" : "Player";
+                            MatrixIndex to = {row, col};
+                            Vector3d fromCoordinate = board.searchDeadPieceLocation(desiredPieceName, origin);
+                            Vector3d toCoordinate = board.getPhysicalCoordinate(to);
+                            pickUpPiece(fromCoordinate, chessboardOrigin, RotationMatrix);
+                            placePiece(toCoordinate, chessboardOrigin, RotationMatrix);
+                            board.updateChessboard(desiredPiece, to);
+                            cout << "Retrived " << desiredPiece << " from dead piece location, and moved to " << board.getChessNotation({row, col}) << endl;
+                            board.printBoard();
+                            currentBoard = board.getBoardState();
+                            allMoves++;
+                            row = col = 8; // Break loops
+                        }
                     }
                 }
             }
         }
+        moveToAwaitPosition();
+        engine.resetMoveHistory();
+        gui.setGameResetting(false);
+        cout << "Reset complete in " << allMoves << " moves" << endl;
+    }).detach();
+}
+
+void Game::initializeGame() {
+    printText("--- INITIALIZING GAME ---");
+
+    //   ==========   INITIALIZE UR5 CONNECTION   ==========   //
+    do {
+        try {
+            rtde_control = make_unique<RTDEControlInterface>(robotIp, robotPort);
+            rtde_receive = make_unique<RTDEReceiveInterface>(robotIp, robotPort);
+            gui.setConnection(true);
+            cout << "Successfully connected to the robot." << endl;
+        } catch (const exception& e) {
+            cerr << "Failed to connect to the robot at ip: " << robotIp << ", port: " << robotPort << ". Error: " << e.what() << endl;
+            gui.setConnection(false);
+            sleep(1);
+        }
+    } while (!rtde_control || !rtde_receive);
+
+    //   ==========   INITIALIZE GRIPPER COMMUNICATION   ==========   //
+    do {
+        try {
+            gripper = make_unique<Gripper>("/dev/ttyACM0");
+            cout << "Successfully connected to the gripper." << endl;
+        } catch (const exception& e) {
+            cerr << "Failed to connect to the gripper. Error: " << e.what() << endl;
+            sleep(1);
+        }
+    } while (!gripper);
+
+    //   ==========   INITIALIZE COMPUTER VISION   ==========   //
+    do {     
+        try {
+            camera = make_unique<ChessVision>(1); // Initialize ChessVision with camera index 1
+            cout << "Successfully connected to the camera." << endl;
+        } catch (const exception& e) {
+            cerr << "Failed to connect to the camera. Error: " << e.what() << endl;
+            sleep(1); // Retry after 1 second
+        }
+    } while (!camera);
+
+    // Start kamera-feed i separat tråd
+    thread cameraThread([&]() {
+        try {
+            camera->showLiveFeed();
+        } catch (const exception& e) {
+            cerr << "Error in camera feed thread: " << e.what() << endl;
+        }
+    });
+    cameraThread.detach();
+    sleep(2); // Give the camera some time to initialize
+    
+    //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
+    vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
+    rtde_control->setTcp(tcpCalibrationOffset);
+
+    //   ==========   SET CHESSBOARD ORIGIN   ==========   //
+    chessboardOrigin = setChessboardOrigin(false);
+    
+    // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
+    RotationMatrix = getRotationMatrixZ(22.5 - 90);
+    //cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
+
+    // Check if all positions within the calibrated chessboard are reachable
+    while (!AllPositionsReachable(chessboardOrigin, RotationMatrix)) {
+        chessboardOrigin = setChessboardOrigin(true);
     }
-    cout << "Reset complete in " << allMoves << " moves" << endl;
+
+    //   ==========   UPDATE TCP OFFSET   ==========   //
+    const vector<double> tcpOffset = {0.0, 0.0, 0.224, 0.0, 0.0, 0.0}; // Should be 0.225
+    rtde_control->setTcp(tcpOffset);
+    
+    //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
+    moveToAwaitPosition();
+    // calibrateGripper();
+    // moveToBoardCorners(chessboardOrigin, RotationMatrix);
+    gui.setGameInitialized(true);
+    startGame();
 }
 
 //   ==========   RUN MAIN CODE IN SEPERATE THREAD   ==========   //
 void Game::startGame() {
-    printText("--- STARTING MAIN LOOP ---");
+    printText("--- STARTING GAME ---");
     
-    thread ([]() {
-        //   ==========   INITIALIZE UR5 CONNECTION   ==========   //
-        do {
-            try {
-                rtde_control = make_unique<RTDEControlInterface>(robotIp, robotPort);
-                rtde_receive = make_unique<RTDEReceiveInterface>(robotIp, robotPort);
-                gui.setConnection(true);
-                cout << "Successfully connected to the robot." << endl;
-            } catch (const exception& e) {
-                cerr << "Failed to connect to the robot at ip: " << robotIp << ", port: " << robotPort << ". Error: " << e.what() << endl;
-                gui.setConnection(false);
-                sleep(1);
-            }
-        } while (!rtde_control || !rtde_receive);
-
-        //   ==========   INITIALIZE GRIPPER COMMUNICATION   ==========   //
-        do {     
-            try {
-                gripper = make_unique<Gripper>("/dev/ttyACM0");
-                cout << "Successfully connected to the gripper." << endl;
-            } catch (const exception& e) {
-                cerr << "Failed to connect to the gripper. Error: " << e.what() << endl;
-                sleep(1);
-            }
-        } while (!gripper);
-
-        //   ==========   INITIALIZE COMPUTER VISION   ==========   //ChessVision camera(1);
-        ChessVision camera(1);
-
-        // Start kamera-feed i separat tråd
-        thread cameraThread([&]() {
-            camera.showLiveFeed();
-        });
-        sleep(2); // Give the camera some time to initialize
-        
-        //   ==========   SET CALIBRATION TOOL TCP OFFSET   ==========   //
-        vector<double> tcpCalibrationOffset = {0.0, 0.0, 0.1, 0.0, 0.0, 0.0};
-        rtde_control->setTcp(tcpCalibrationOffset);
-
-        //   ==========   SET CHESSBOARD ORIGIN   ==========   //
-        chessboardOrigin = setChessboardOrigin(false);
-        
-        // Define rotation matrix for chessboard frame (22.5° base offset and -90° alignment)
-        RotationMatrix = getRotationMatrixZ(22.5 - 90);
-        //cout << "Chessboard Frame Origin (Base Frame): [" << chessboardOrigin.transpose() << "]" << endl;
-
-        // Check if all positions within the calibrated chessboard are reachable
-        while (!AllPositionsReachable(chessboardOrigin, RotationMatrix)) {
-            chessboardOrigin = setChessboardOrigin(true);
-        }
-
-        //   ==========   UPDATE TCP OFFSET   ==========   //
-        const vector<double> tcpOffset = {0.0, 0.0, 0.224, 0.0, 0.0, 0.0}; // Should be 0.225
-        rtde_control->setTcp(tcpOffset);
-        
-        //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
-        moveToAwaitPosition();
-        calibrateGripper();
-        // moveToBoardCorners(chessboardOrigin, RotationMatrix);
-        
-        //   ==========   BEGIN CHESS GAME   ==========   //
-        //printText("Press ENTER to start chess game...");
-        //cin.get();
-        printText("\n----- CHESS GAME STARTED -----");
-        
-        while (true) {
+    gameThread = thread ([this]() {
+        while (gui.getGameActive()) {
             // Set player turn on GUI
             gui.setTurn("Player");
 
             // Get the player's move from the camera.
-
-            string playerMove = getValidPlayerMove(camera);
+            string playerMove = getValidPlayerMove(*camera);
+            if (playerMove == "Cancelled") break;
+            
             //string playerMove = inputPlayerMove(); // Manually input playermove in chess notation e.g.: "e2e4"
             
             // Get the index of the piece that was moved. Update internal chessboard with the player's move.
@@ -650,6 +670,8 @@ void Game::startGame() {
                 return 0;
             }
         }
+        gui.setGameActive(false);
+        printText("--- GAME STOPPED ---");
         return 0;
-    }).detach();
+    });
 }

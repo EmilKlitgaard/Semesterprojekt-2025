@@ -63,6 +63,11 @@ void Stockfish::printMoveHistory() const {
     cout << endl;
 }
 
+// Reset the move history
+void Stockfish::resetMoveHistory() {
+    moveHistory.clear();
+}
+
 // Method to check for checkmate
 bool Stockfish::isCheckmate() { 
     ostringstream position;
@@ -92,8 +97,6 @@ bool Stockfish::sendValidMove(const string& move) {
     for (const string& moves : moveHistory) {
         position << " " << moves;
     }
-
-    cout << "Stockfish moves: " << position.str() << endl;
 
     sendCommand(position.str());
 

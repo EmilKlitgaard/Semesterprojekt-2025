@@ -1,10 +1,6 @@
-#include <opencv2/opencv.hpp>
-
 #include "GUI.h"
 #include "GUIWindow.h"
 #include "Game.h"
-
-Game game;
 
 GUIWindow::GUIWindow(QWidget* parent)
     : QMainWindow(parent), central(this), mainLayout(&central), difficultyLabel(this), difficultySlider(Qt::Horizontal, this), cvLabel(new QLabel(this)), startGame("Start", this), resetGame("Reset", this) {
@@ -26,9 +22,9 @@ GUIWindow::GUIWindow(QWidget* parent)
     cvTimer.setInterval(30);
     mainLayout.addWidget(cvLabel);
 
-    startStopLayout.addWidget(&startGame);
-    startStopLayout.addWidget(&resetGame);
-    mainLayout.addLayout(&startStopLayout);
+    startresetLayout.addWidget(&startGame);
+    startresetLayout.addWidget(&resetGame);
+    mainLayout.addLayout(&startresetLayout);
 
     setCentralWidget(&central);
 
@@ -88,17 +84,20 @@ void GUIWindow::handleSliderChanged(int value) {
 }
 
 void GUIWindow::handleStartClicked() {
-    if (!gui.getGameActive()) {
-        gui.setGameActive(true);
-        game.startGame();
+    cout << "Start game pressed" << endl;
+    if (!gui.getGameActive() && !gui.getGameResetting()) {
+        cout << "GAME NOT ACTIVE" << endl;
+        gui.changeState("Start");
         emit startClicked();
     }
 }
 
 void GUIWindow::handleResetClicked() {
+    cout << "Reset game pressed" << endl;
     if (gui.getGameActive()) {
-        gui.setGameActive(false);
-        game.resetChessboard();
-        emit stopClicked();
+        cout << "GAME ACTIVE" << endl;
+        gui.changeState("Reset");
+        gui.awaitStartGame();
+        emit resetClicked();
     }
 }

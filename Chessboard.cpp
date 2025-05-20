@@ -221,6 +221,19 @@ void Chessboard::printBoard(const string &mode) {
     cout << endl;
 }
 
+ChessboardMatrix Chessboard::getRefVisionBoard() {
+    ChessboardPieces boardState = getBoardState();
+    ChessboardMatrix refVisionBoard(8, vector<char>(8, 'e')); // Initialize an 8x8 matrix with 'e'
+    for (int i = 0; i < boardState.size(); ++i) {
+        for (int j = 0; j < boardState[i].size(); ++j) {
+            if (boardState[i][j] != "0") {
+                refVisionBoard[i][j] = boardState[i][j][1]; // Extract the second character (e.g., 'B' or 'W')
+            }
+        }
+    }
+    return refVisionBoard;
+}
+
 // Get the current board state
 ChessboardPieces Chessboard::getBoardState() {
     return board;

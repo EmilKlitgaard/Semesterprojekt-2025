@@ -9,6 +9,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtCore/QTimer>
 #include <QtGui/QImage>
+#include <opencv2/opencv.hpp>
 
 #include "Vision.h"
 
@@ -24,7 +25,7 @@ class GUIWindow : public QMainWindow {
         
     signals:
         void startClicked();
-        void stopClicked();
+        void resetClicked();
         void difficultyChanged(int value);
 
     private slots:
@@ -43,7 +44,7 @@ class GUIWindow : public QMainWindow {
 
         QHBoxLayout statusLayout;
         QHBoxLayout difficultyLayout;
-        QHBoxLayout startStopLayout;
+        QHBoxLayout startresetLayout;
 
         QLabel turnStatus;
         QLabel connectionStatus;

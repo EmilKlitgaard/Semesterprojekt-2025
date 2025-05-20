@@ -23,6 +23,7 @@ public:
     void addMoveToHistory(const string& move);
     vector<string> getMoveHistory() const;
     void printMoveHistory() const;
+    void resetMoveHistory();
 
 private:
     string enginePath;

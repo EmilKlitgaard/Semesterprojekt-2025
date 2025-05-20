@@ -11,6 +11,7 @@ using namespace std;
 using namespace Eigen;
 
 using ChessboardPieces = vector<vector<string>>;
+using ChessboardMatrix = vector<vector<char>>;
 using MatrixIndex = pair<int, int>;
 
 // Custom hash for MatrixIndex
@@ -40,6 +41,8 @@ public:
 
     ChessboardPieces getStartBoard();
     ChessboardPieces getBoardState();
+
+    ChessboardMatrix getRefVisionBoard();
     
     string getPieceName(MatrixIndex Idx);
     string getPieceName(string piece);

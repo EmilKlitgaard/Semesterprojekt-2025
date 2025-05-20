@@ -55,7 +55,7 @@ bool Gripper::waitFor(const string& token, double timeoutSeconds) {
         if (n > 0) {
             buffer.append(chunk, n);
             if (buffer.find("Percent:") != string::npos) {
-                cout << buffer;
+                // cout << buffer;
             }
             if (buffer.find(token) != string::npos) {
                 return true;

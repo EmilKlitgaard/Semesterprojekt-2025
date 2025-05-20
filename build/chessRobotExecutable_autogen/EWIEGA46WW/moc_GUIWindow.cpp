@@ -31,7 +31,7 @@ struct qt_meta_stringdata_GUIWindow_t {
     char stringdata0[10];
     char stringdata1[13];
     char stringdata2[1];
-    char stringdata3[12];
+    char stringdata3[13];
     char stringdata4[18];
     char stringdata5[6];
     char stringdata6[13];
@@ -46,18 +46,18 @@ Q_CONSTINIT static const qt_meta_stringdata_GUIWindow_t qt_meta_stringdata_GUIWi
         QT_MOC_LITERAL(0, 9),  // "GUIWindow"
         QT_MOC_LITERAL(10, 12),  // "startClicked"
         QT_MOC_LITERAL(23, 0),  // ""
-        QT_MOC_LITERAL(24, 11),  // "stopClicked"
-        QT_MOC_LITERAL(36, 17),  // "difficultyChanged"
-        QT_MOC_LITERAL(54, 5),  // "value"
-        QT_MOC_LITERAL(60, 12),  // "updateVision"
-        QT_MOC_LITERAL(73, 19),  // "handleSliderChanged"
-        QT_MOC_LITERAL(93, 18),  // "handleStartClicked"
-        QT_MOC_LITERAL(112, 18)   // "handleResetClicked"
+        QT_MOC_LITERAL(24, 12),  // "resetClicked"
+        QT_MOC_LITERAL(37, 17),  // "difficultyChanged"
+        QT_MOC_LITERAL(55, 5),  // "value"
+        QT_MOC_LITERAL(61, 12),  // "updateVision"
+        QT_MOC_LITERAL(74, 19),  // "handleSliderChanged"
+        QT_MOC_LITERAL(94, 18),  // "handleStartClicked"
+        QT_MOC_LITERAL(113, 18)   // "handleResetClicked"
     },
     "GUIWindow",
     "startClicked",
     "",
-    "stopClicked",
+    "resetClicked",
     "difficultyChanged",
     "value",
     "updateVision",
@@ -117,7 +117,7 @@ Q_CONSTINIT const QMetaObject GUIWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<GUIWindow, std::true_type>,
         // method 'startClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'stopClicked'
+        // method 'resetClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'difficultyChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
@@ -142,7 +142,7 @@ void GUIWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         (void)_t;
         switch (_id) {
         case 0: _t->startClicked(); break;
-        case 1: _t->stopClicked(); break;
+        case 1: _t->resetClicked(); break;
         case 2: _t->difficultyChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 3: _t->updateVision(); break;
         case 4: _t->handleSliderChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
@@ -161,7 +161,7 @@ void GUIWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         }
         {
             using _t = void (GUIWindow::*)();
-            if (_t _q_method = &GUIWindow::stopClicked; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &GUIWindow::resetClicked; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
@@ -213,7 +213,7 @@ void GUIWindow::startClicked()
 }
 
 // SIGNAL 1
-void GUIWindow::stopClicked()
+void GUIWindow::resetClicked()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }

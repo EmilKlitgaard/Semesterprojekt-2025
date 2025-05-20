@@ -1,8 +1,9 @@
 #include "GUI.h"
-
-using namespace std;
+#include "Game.h"
 
 GUI gui;
+
+using namespace std;
 
 void GUI::setDifficulty(int value){
     if (value < 300) {
@@ -16,6 +17,14 @@ void GUI::setDifficulty(int value){
 
 void GUI::setGameActive(bool value) {
     gameActive = value;
+}
+
+void GUI::setGameInitialized(bool value) {
+    gameInitialized = value;
+}
+
+void GUI::setGameResetting(bool value) {
+    resettingActive = value;
 }
 
 // Wait for the start button to be clicked
@@ -39,9 +48,25 @@ void GUI::setVision(const cv::Mat& image) {
     cvImage = image.clone();
 }   
 
+void GUI::changeState(string state) {
+    cout << "State: " << state << endl;
+    if (state == "Start" && !gameActive && !gameInitialized) {
+        gameActive = true;
+        game.initializeGame();
+    } else if (state == "Start" && !gameActive && gameInitialized) {
+        gameActive = true;
+        game.startGame();
+    } else if (state == "Reset" && !resettingActive && gameInitialized) {
+        gameActive = false;
+        resettingActive = true;
+        game.resetChessboard();
+    }
+}
+
 // Getter functions
 int  GUI::getDifficulty() { return difficulty; }
 bool GUI::getGameActive() { return gameActive; }
+bool GUI::getGameResetting() { return resettingActive; }
 string GUI::getTurn() { return turn; }
 bool GUI::getConnection() { return connection; }    
 
