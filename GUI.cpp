@@ -27,11 +27,8 @@ void GUI::setGameResetting(bool value) {
     resettingActive = value;
 }
 
-// Wait for the start button to be clicked
-void GUI::awaitStartGame() {
-    while (!gameActive) {
-        this_thread::sleep_for(chrono::milliseconds(100));
-    }
+void GUI::setGameRunning(bool value) {
+    gameRunning = value;
 }
 
 void GUI::setTurn(string value) {
@@ -59,6 +56,8 @@ void GUI::changeState(string state) {
     } else if (state == "Reset" && !resettingActive && gameInitialized) {
         gameActive = false;
         resettingActive = true;
+        while (gameRunning) this_thread::sleep_for(chrono::milliseconds(10));
+        game.stopGame();
         game.resetChessboard();
     }
 }
@@ -67,6 +66,7 @@ void GUI::changeState(string state) {
 int  GUI::getDifficulty() { return difficulty; }
 bool GUI::getGameActive() { return gameActive; }
 bool GUI::getGameResetting() { return resettingActive; }
+bool GUI::getGameRunning() { return gameRunning; }
 string GUI::getTurn() { return turn; }
 bool GUI::getConnection() { return connection; }    
 

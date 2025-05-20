@@ -97,7 +97,6 @@ void GUIWindow::handleResetClicked() {
     if (gui.getGameActive()) {
         cout << "GAME ACTIVE" << endl;
         gui.changeState("Reset");
-        gui.awaitStartGame();
         emit resetClicked();
     }
 }

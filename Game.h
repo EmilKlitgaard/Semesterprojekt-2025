@@ -19,6 +19,7 @@ class Game {
     public:
         void initializeGame();
         void startGame();
+        void stopGame();
 
         void resetChessboard();
 

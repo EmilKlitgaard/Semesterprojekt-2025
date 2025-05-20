@@ -634,6 +634,8 @@ void Game::startGame() {
     printText("--- STARTING GAME ---");
     
     gameThread = thread ([this]() {
+        gui.setGameRunning(true);
+
         while (gui.getGameActive()) {
             // Set player turn on GUI
             gui.setTurn("Player");
@@ -670,8 +672,14 @@ void Game::startGame() {
                 return 0;
             }
         }
-        gui.setGameActive(false);
+        gui.setGameRunning(false);
         printText("--- GAME STOPPED ---");
         return 0;
     });
+}
+
+void Game::stopGame() {
+    if (gameThread.joinable()) {
+        gameThread.join();
+    }
 }
