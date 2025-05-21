@@ -559,7 +559,7 @@ void Game::resetChessboard() {
 
 void Game::initializeGame() {
     printText("--- INITIALIZING GAME ---");
- /*
+
     //   ==========   INITIALIZE UR5 CONNECTION   ==========   //
     do {
         try {
@@ -629,7 +629,7 @@ void Game::initializeGame() {
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition();
-    // moveToBoardCorners(chessboardOrigin, RotationMatrix);*/
+    // moveToBoardCorners(chessboardOrigin, RotationMatrix);
     gui.setGameInitialized(true);
     startGame();
 }
@@ -644,14 +644,6 @@ void Game::calibrate() {
 //   ==========   RUN MAIN CODE IN SEPERATE THREAD   ==========   //
 void Game::startGame() {
     printText("--- STARTING GAME ---");
-    
-    string test = window->selectPawnPromotion();
-    cout << test << endl;
-    sleep(3);
-    sleep(3);
-    string test1 = window->selectPawnPromotion();
-    cout << test1 << endl;
-    sleep(3);
     
     gameThread = thread ([this]() {
         gui.setGameRunning(true);
