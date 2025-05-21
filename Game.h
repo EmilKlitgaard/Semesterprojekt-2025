@@ -18,10 +18,12 @@ using namespace std;
 class Game {
     public:
         void initializeGame();
+        void calibrate();
         void startGame();
         void stopGame();
 
         void resetChessboard();
+        void calibrateGripper();
 
     private:
         thread cameraThread;

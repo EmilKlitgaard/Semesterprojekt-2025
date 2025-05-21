@@ -117,8 +117,8 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/c++/13/pstl/glue_memory_defs.h \
  /usr/include/c++/13/pstl/execution_defs.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/build/chessRobotExecutable_autogen/EWIEGA46WW/../../../GUIWindow.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qapplication.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qtguiglobal.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qglobal.h \
@@ -190,7 +190,14 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qtguiexports.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qwidget.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qobjectdefs.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qnamespace.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qstring.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qchar.h \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
@@ -213,8 +220,6 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qstringview.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qbytearray.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qrefcount.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qnamespace.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qarraydata.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qpair.h /usr/include/string.h \
  /usr/include/strings.h \
@@ -264,11 +269,6 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qanystringview.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qutf8stringview.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qstringtokenizer.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qobjectdefs.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qobject.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qlist.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qhashfunctions.h \
  /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
@@ -297,11 +297,18 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qbindingstorage.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qnativeinterface.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qstringconverter_base.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qmargins.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qkeysequence.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qicon.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qsize.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qpixmap.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qpaintdevice.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qrect.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qpoint.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qcolor.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qrgb.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qrgba64.h \
  /usr/lib/gcc/aarch64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/aarch64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h /usr/include/aarch64-linux-gnu/bits/posix1_lim.h \
@@ -313,48 +320,38 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qsharedpointer.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qshareddata.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qmap.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qset.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qhash.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qpoint.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qsize.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qmargins.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qcursor.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qpixmap.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qpaintdevice.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qrect.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qcolor.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qrgb.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qrgba64.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qpixelformat.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qpolygon.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qregion.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qline.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qinputmethod.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qwidget.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qkeysequence.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qicon.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qstringconverter_base.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qmap.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qset.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qhash.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qpalette.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qbrush.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfont.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontmetrics.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontinfo.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qcursor.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qfont.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qpicture.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevice.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qtextdocument.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qurl.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
@@ -362,13 +359,20 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qpicture.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevice.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qtextdocument.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qurl.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qapplication.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qnativeinterface.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qinputmethod.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qlocale.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QSlider \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qslider.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
@@ -380,6 +384,20 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qbasictimer.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qobjectdefs.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
+ /usr/include/c++/13/future /usr/include/c++/13/mutex \
+ /usr/include/c++/13/bits/std_mutex.h \
+ /usr/include/c++/13/bits/unique_lock.h \
+ /usr/include/c++/13/condition_variable \
+ /usr/include/c++/13/bits/atomic_futex.h \
+ /usr/include/c++/13/bits/std_thread.h \
  /usr/include/opencv4/opencv2/opencv.hpp \
  /usr/include/opencv4/opencv2/opencv_modules.hpp \
  /usr/include/opencv4/opencv2/core.hpp \
@@ -420,9 +438,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
  /usr/include/c++/13/bits/ostream.tcc \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc \
- /usr/include/opencv4/opencv2/core/utility.hpp /usr/include/c++/13/mutex \
- /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h \
+ /usr/include/opencv4/opencv2/core/utility.hpp \
  /usr/include/opencv4/opencv2/core/optim.hpp \
  /usr/include/opencv4/opencv2/core/ovx.hpp \
  /usr/include/opencv4/opencv2/core/cvdef.h \

@@ -3,6 +3,7 @@
 #include "Vision.h"
 #include "Gripper.h"
 #include "GUI.h"
+#include "GUIWindow.h"
 #include "Game.h"
 
 Game game;
@@ -151,7 +152,7 @@ void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, cons
     moveToChessboardPoint(position + liftTransformVector, chessboardOrigin, RotationMatrix);
 }
 
-void calibrateGripper() {
+void Game::calibrateGripper() {
     Vector3d calibrationTransformVector = {-0.025, -0.025, -0.005};
     moveToChessboardPoint(calibrationTransformVector + liftTransformVector, chessboardOrigin, RotationMatrix);
     gripper->openGripper();
@@ -402,7 +403,8 @@ string checkPawnPromotion(string &playerMove) {
         cout << "Pawn promotion has been detected. Enter promotion piece name: [Queen, Knight, Rook, Bishop] " << endl;
         string promotionType;
         while (true) {
-            cin >> promotionType;
+            string promotionType = window->selectPawnPromotion();
+            //cin >> promotionType;
             if (promotionType == "Queen") {
                 promotionType = "q";
                 board.updateChessboard("5W", pieceIdx);
@@ -451,11 +453,15 @@ string getValidPlayerMove(ChessVision &camera) {
     return playerMove;
 }
 
+void pauseGame() {
+    gui.setGamePaused(true);
+    while (gui.getCalibrating()) this_thread::sleep_for(chrono::milliseconds(100));
+    gui.setGamePaused(false);
+}
+
 void Game::resetChessboard() {
     thread ([] {
-        while (gui.getGameActive()) {
-            this_thread::sleep_for(chrono::milliseconds(100));
-        }
+        while (gui.getGameActive()) this_thread::sleep_for(chrono::milliseconds(100));
 
         cout << "CHESSBOARD RESET STARTED!" << endl;
         board.printBoard();
@@ -554,6 +560,7 @@ void Game::resetChessboard() {
 void Game::initializeGame() {
     printText("--- INITIALIZING GAME ---");
 
+    /*
     //   ==========   INITIALIZE UR5 CONNECTION   ==========   //
     do {
         try {
@@ -618,15 +625,22 @@ void Game::initializeGame() {
     }
 
     //   ==========   UPDATE TCP OFFSET   ==========   //
-    const vector<double> tcpOffset = {0.0, 0.0, 0.224, 0.0, 0.0, 0.0}; // Should be 0.225
+    const vector<double> tcpOffset = {0.0, 0.0, 0.224, 0.0, 0.0, 0.0}; // Should be 0.224
     rtde_control->setTcp(tcpOffset);
     
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition();
-    // calibrateGripper();
     // moveToBoardCorners(chessboardOrigin, RotationMatrix);
+    */
     gui.setGameInitialized(true);
     startGame();
+}
+
+void Game::calibrate() {
+    gui.setCalibrating(true);
+    while (!gui.getGamePaused()) this_thread::sleep_for(chrono::milliseconds(100));
+    calibrateGripper();
+    gui.setCalibrating(false);
 }
 
 //   ==========   RUN MAIN CODE IN SEPERATE THREAD   ==========   //
@@ -671,6 +685,8 @@ void Game::startGame() {
                 printText("Game has ended");
                 return 0;
             }
+
+            if (gui.getCalibrating()) pauseGame();
         }
         gui.setGameRunning(false);
         printText("--- GAME STOPPED ---");

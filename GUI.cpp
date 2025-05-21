@@ -31,6 +31,14 @@ void GUI::setGameRunning(bool value) {
     gameRunning = value;
 }
 
+void GUI::setGamePaused(bool value) {
+    gamePaused = value;
+}
+
+void GUI::setCalibrating(bool value) {
+    calibrating = value;
+}
+
 void GUI::setTurn(string value) {
     turn = value;
 }
@@ -59,6 +67,10 @@ void GUI::changeState(string state) {
         while (gameRunning) this_thread::sleep_for(chrono::milliseconds(10));
         game.stopGame();
         game.resetChessboard();
+    } else if (state == "Calibrate" && !gameRunning && gameInitialized) {
+        game.calibrateGripper();
+    } else if (state == "Calibrate" && gameRunning && gameInitialized) {
+        game.calibrate();
     }
 }
 
@@ -67,6 +79,8 @@ int  GUI::getDifficulty() { return difficulty; }
 bool GUI::getGameActive() { return gameActive; }
 bool GUI::getGameResetting() { return resettingActive; }
 bool GUI::getGameRunning() { return gameRunning; }
+bool GUI::getGamePaused() { return gamePaused; }
+bool GUI::getCalibrating() { return calibrating; }
 string GUI::getTurn() { return turn; }
 bool GUI::getConnection() { return connection; }    
 

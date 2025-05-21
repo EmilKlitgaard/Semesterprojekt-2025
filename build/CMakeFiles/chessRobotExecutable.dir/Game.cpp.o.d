@@ -2172,6 +2172,58 @@ CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qlocale.h \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
+ /home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qwidget.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qkeysequence.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qicon.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qpalette.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qbrush.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qfont.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontmetrics.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontinfo.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qfont.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qpicture.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevice.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qtextdocument.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qurl.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QSlider \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qslider.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QPushButton \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QTimer \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qtimer.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qbasictimer.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qobjectdefs.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/Game.h \
  /usr/local/include/ur_rtde/rtde_control_interface.h \
  /usr/local/include/ur_rtde/rtde.h \

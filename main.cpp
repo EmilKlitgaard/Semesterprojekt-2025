@@ -1,4 +1,4 @@
-#include <QtWidgets/QApplication>
+#include <QApplication>
 #include <iostream>
 
 #include "Game.h"
@@ -6,17 +6,16 @@
 
 using namespace std;
 
-/*============================================================
-            		    MAIN START
-============================================================*/
-int main() {
-    //   ==========   INITIALIZE GUI   ==========   //
-    int argc = 0;
-    char *argv[] = {nullptr};
+GUIWindow* window = nullptr;
+
+//   ==========   INITIALIZE GUI   ==========   //
+int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 
-    GUIWindow window;
-    window.show();
+    GUIWindow mainWindow;
+    window = &mainWindow;
+    window->show();
+
     cout << "GUI initialized." << endl;
     return app.exec();
 }

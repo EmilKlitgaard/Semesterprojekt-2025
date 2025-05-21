@@ -121,6 +121,9 @@ chessRobotExecutable_autogen/timestamp: /home/emilklitgaard/Workspace/Semesterpr
   /usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qanystringview.h \
@@ -149,7 +152,9 @@ chessRobotExecutable_autogen/timestamp: /home/emilklitgaard/Workspace/Semesterpr
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdatastream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -207,6 +212,7 @@ chessRobotExecutable_autogen/timestamp: /home/emilklitgaard/Workspace/Semesterpr
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtypeinfo.h \
@@ -215,6 +221,7 @@ chessRobotExecutable_autogen/timestamp: /home/emilklitgaard/Workspace/Semesterpr
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qversiontagging.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
@@ -246,6 +253,7 @@ chessRobotExecutable_autogen/timestamp: /home/emilklitgaard/Workspace/Semesterpr
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
@@ -258,6 +266,7 @@ chessRobotExecutable_autogen/timestamp: /home/emilklitgaard/Workspace/Semesterpr
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
@@ -426,6 +435,7 @@ chessRobotExecutable_autogen/timestamp: /home/emilklitgaard/Workspace/Semesterpr
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/functional \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -3072,6 +3082,9 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qanystringview.h \
@@ -3100,7 +3113,9 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdatastream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -3158,6 +3173,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtypeinfo.h \
@@ -3166,6 +3182,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qversiontagging.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
@@ -3197,6 +3214,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
@@ -3209,6 +3227,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
@@ -4126,6 +4145,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_futex.h \
   /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
@@ -4237,6 +4257,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
   /usr/include/c++/13/complex \
+  /usr/include/c++/13/condition_variable \
   /usr/include/c++/13/csignal \
   /usr/include/c++/13/cstdarg \
   /usr/include/c++/13/cstddef \
@@ -4261,6 +4282,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -4666,6 +4688,7 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: /home/emilklitgaard/Workspa
 CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: /home/emilklitgaard/Workspace/Semesterprojekt/Game.cpp \
   /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.h \
   /home/emilklitgaard/Workspace/Semesterprojekt/GUI.h \
+  /home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.h \
   /home/emilklitgaard/Workspace/Semesterprojekt/Game.h \
   /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.h \
   /home/emilklitgaard/Workspace/Semesterprojekt/Stockfish.h \
@@ -4838,6 +4861,10 @@ CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qanystringview.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qarraydata.h \
@@ -4846,6 +4873,7 @@ CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qatomic.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qatomic_cxx11.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qbasicatomic.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qbindingstorage.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qbytearray.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
@@ -4864,7 +4892,9 @@ CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdatastream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -4873,6 +4903,7 @@ CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qglobalstatic.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qhash.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qhashfunctions.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevice.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevicebase.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qiterable.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qiterator.h \
@@ -4921,36 +4952,73 @@ CMakeFiles/chessRobotExecutable.dir/Game.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtypeinfo.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qurl.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qutf8stringview.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qversiontagging.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qbrush.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qcolor.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qcursor.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfont.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontinfo.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontmetrics.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qicon.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qinputmethod.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qkeysequence.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qpaintdevice.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qpalette.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qpicture.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qpixelformat.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qpixmap.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qpolygon.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qregion.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qrgb.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qrgba64.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/qtextdocument.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtgui-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtguiexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtguiglobal.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QPushButton \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QSlider \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qapplication.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qslider.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qwidget.h \
   /usr/include/aarch64-linux-gnu/sys/cdefs.h \
   /usr/include/aarch64-linux-gnu/sys/epoll.h \
   /usr/include/aarch64-linux-gnu/sys/eventfd.h \
@@ -10190,6 +10258,9 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qanystringview.h \
@@ -10218,7 +10289,9 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdatastream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -10276,6 +10349,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtypeinfo.h \
@@ -10284,6 +10358,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qversiontagging.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
@@ -10319,6 +10394,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
@@ -10331,6 +10407,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
@@ -10363,6 +10440,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_futex.h \
   /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
@@ -10423,6 +10501,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/c++/13/bits/std_abs.h \
   /usr/include/c++/13/bits/std_function.h \
   /usr/include/c++/13/bits/std_mutex.h \
+  /usr/include/c++/13/bits/std_thread.h \
   /usr/include/c++/13/bits/stl_algo.h \
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
@@ -10469,6 +10548,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
   /usr/include/c++/13/complex \
+  /usr/include/c++/13/condition_variable \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdio \
@@ -10489,6 +10569,7 @@ CMakeFiles/chessRobotExecutable.dir/chessRobotExecutable_autogen/mocs_compilatio
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/functional \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -10833,6 +10914,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qanystringview.h \
@@ -10861,7 +10945,9 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdatastream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -10919,6 +11005,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtypeinfo.h \
@@ -10927,6 +11014,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qversiontagging.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
@@ -10958,6 +11046,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
@@ -10970,6 +11059,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
@@ -11887,6 +11977,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/c++/13/bits/allocated_ptr.h \
   /usr/include/c++/13/bits/allocator.h \
   /usr/include/c++/13/bits/atomic_base.h \
+  /usr/include/c++/13/bits/atomic_futex.h \
   /usr/include/c++/13/bits/atomic_lockfree_defines.h \
   /usr/include/c++/13/bits/basic_ios.h \
   /usr/include/c++/13/bits/basic_ios.tcc \
@@ -11998,6 +12089,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
   /usr/include/c++/13/complex \
+  /usr/include/c++/13/condition_variable \
   /usr/include/c++/13/csignal \
   /usr/include/c++/13/cstdarg \
   /usr/include/c++/13/cstddef \
@@ -12022,6 +12114,7 @@ CMakeFiles/chessRobotExecutable.dir/main.cpp.o: /home/emilklitgaard/Workspace/Se
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/fstream \
   /usr/include/c++/13/functional \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \
@@ -12433,8 +12526,6 @@ chessRobotExecutable_autogen/EWIEGA46WW/moc_GUIWindow.cpp:
 
 chessRobotExecutable_autogen/mocs_compilation.cpp:
 
-/usr/include/c++/13/future:
-
 /usr/include/boost/utility/result_of.hpp:
 
 /usr/include/boost/utility/enable_if.hpp:
@@ -12687,8 +12778,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/boost/mpl/vector/aux_/push_back.hpp:
 
-/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp:
-
 /usr/include/boost/mpl/vector/aux_/item.hpp:
 
 /usr/include/boost/mpl/vector/aux_/include_preprocessed.hpp:
@@ -12766,10 +12855,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 /usr/include/boost/iterator/advance.hpp:
 
 /usr/include/boost/io_fwd.hpp:
-
-/usr/include/boost/process/error.hpp:
-
-/usr/include/boost/io/quoted.hpp:
 
 /usr/include/boost/io/ios_state.hpp:
 
@@ -12911,21 +12996,19 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/boost/fusion/view/iterator_range/detail/size_impl.hpp:
 
-/usr/include/boost/mpl/vector/aux_/pop_front.hpp:
+/usr/include/boost/fusion/view/iterator_range/detail/segmented_iterator_range.hpp:
 
-/usr/include/boost/asio/detail/reactive_socket_accept_op.hpp:
+/usr/include/boost/fusion/view/iterator_range/detail/is_segmented_impl.hpp:
 
-/usr/include/boost/asio/detail/posix_thread.hpp:
+/usr/include/boost/fusion/view/iterator_range/detail/begin_impl.hpp:
 
-/usr/include/aarch64-linux-gnu/qt6/QtCore/qset.h:
+/usr/include/boost/fusion/view/iterator_range/detail/at_impl.hpp:
 
-/usr/include/aarch64-linux-gnu/qt6/QtGui/qtextformat.h:
+/usr/include/boost/fusion/view/iterator_range.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/sigaction.h:
+/usr/include/boost/fusion/view/identity_view/identity_view.hpp:
 
-/usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
-
-/usr/include/boost/asio/detail/posix_global.hpp:
+/usr/include/boost/fusion/view/flatten_view/flatten_view_iterator.hpp:
 
 /usr/include/boost/asio/detail/operation.hpp:
 
@@ -12937,9 +13020,9 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/boost/asio/detail/limits.hpp:
 
-/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:
-
 /usr/include/aarch64-linux-gnu/bits/setjmp.h:
+
+/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:
 
 /usr/include/boost/fusion/algorithm/query/detail/find_if.hpp:
 
@@ -13007,8 +13090,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/boost/asio/detail/config.hpp:
 
-/usr/include/boost/asio/basic_streambuf.hpp:
-
 /usr/include/boost/asio/detail/concurrency_hint.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/SolveTriangular.h:
@@ -13038,6 +13119,12 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 /usr/include/c++/13/iterator:
 
 /usr/include/boost/asio/associated_allocator.hpp:
+
+/usr/include/boost/process/error.hpp:
+
+/usr/include/boost/io/quoted.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop:
 
 /usr/include/opencv4/opencv2/flann/saving.h:
 
@@ -13257,10 +13344,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/eigen3/Eigen/src/Core/arch/NEON/TypeCasting.h:
 
-/usr/include/boost/asio/detail/posix_mutex.hpp:
-
-/usr/include/boost/fusion/sequence/intrinsic/swap.hpp:
-
 /usr/include/eigen3/Eigen/src/Core/arch/NEON/MathFunctions.h:
 
 /usr/include/eigen3/Eigen/src/Core/arch/Default/GenericPacketMathFunctionsFwd.h:
@@ -13298,6 +13381,10 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 /usr/include/boost/asio/impl/multiple_exceptions.ipp:
 
 /usr/include/eigen3/Eigen/src/Core/Solve.h:
+
+/usr/include/boost/fusion/view/flatten_view/flatten_view.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/c++config.h:
 
 /usr/include/eigen3/Eigen/src/Core/ReturnByValue.h:
 
@@ -13470,8 +13557,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 /usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake:
 
 /usr/include/opencv4/opencv2/videoio.hpp:
-
-/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake:
 
 /usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:
 
@@ -13863,8 +13948,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/eigen3/Eigen/src/Core/arch/Default/Settings.h:
 
-/usr/include/boost/fusion/view/iterator_range/detail/begin_impl.hpp:
-
 /usr/include/boost/process/detail/posix/fd.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/NestByValue.h:
@@ -13897,15 +13980,31 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevice.h:
 
-/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h:
+/usr/lib/aarch64-linux-gnu/cmake/Qt6/QtPublicDependencyHelpers.cmake:
 
-/usr/include/aarch64-linux-gnu/qt6/QtWidgets/QVBoxLayout:
+/usr/bin/cmake:
 
-/usr/include/boost/fusion/mpl/detail/clear.hpp:
+/usr/include/c++/13/bits/istream.tcc:
 
-/usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h:
+/usr/include/opencv4/opencv2/flann/index_testing.h:
 
-/usr/include/boost/preprocessor/control/detail/limits/while_256.hpp:
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/boost/process/detail/posix/sigchld_service.hpp:
+
+/usr/include/opencv4/opencv2/flann/heap.h:
+
+/usr/include/boost/range/end.hpp:
+
+/usr/include/boost/asio/detail/cstddef.hpp:
+
+/usr/lib/aarch64-linux-gnu/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
+
+/usr/include/boost/variant/detail/config.hpp:
+
+/usr/include/opencv4/opencv2/flann/ground_truth.h:
+
+/usr/include/boost/asio/associated_immediate_executor.hpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel:
 
@@ -13928,14 +14027,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 /usr/include/boost/fusion/sequence/comparison/less.hpp:
 
 /usr/include/boost/asio/detail/impl/socket_ops.ipp:
-
-/usr/include/boost/range/end.hpp:
-
-/usr/include/boost/asio/detail/cstddef.hpp:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6/Qt6ConfigVersionImpl.cmake:
-
-/usr/include/boost/variant/detail/config.hpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtGui/qrgb.h:
 
@@ -13971,8 +14062,6 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qtconfigmacros.h:
 
-/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractslider.h:
-
 /usr/include/boost/variant/detail/apply_visitor_delayed.hpp:
 
 /usr/include/boost/asio/detail/impl/service_registry.hpp:
@@ -14004,6 +14093,14 @@ chessRobotExecutable_autogen/mocs_compilation.cpp:
 /usr/include/boost/preprocessor/logical/bool.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/timerfd.h:
+
+/usr/include/boost/fusion/mpl/detail/clear.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h:
+
+/usr/include/boost/preprocessor/control/detail/limits/while_256.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/QVBoxLayout:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qurl.h:
 
@@ -14047,6 +14144,18 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/13/bits/cxxabi_forced.h:
 
+/usr/include/boost/asio/basic_streambuf.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qset.h:
+
+/usr/include/aarch64-linux-gnu/qt6/QtGui/qtextformat.h:
+
+/usr/include/aarch64-linux-gnu/bits/sigaction.h:
+
+/usr/include/boost/asio/detail/posix_thread.hpp:
+
+/usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
+
 /usr/include/c++/13/cctype:
 
 /usr/lib/aarch64-linux-gnu/cmake/Qt6DBus/Qt6DBusMacros.cmake:
@@ -14065,7 +14174,13 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/boost/mpl/equal.hpp:
 
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qnamespace.h:
+
 /usr/include/aarch64-linux-gnu/sys/un.h:
+
+/usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qrefcount.h:
 
 /usr/include/eigen3/Eigen/src/Core/DenseCoeffsBase.h:
 
@@ -14087,8 +14202,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qtaggedpointer.h:
 
-/usr/include/boost/fusion/mpl/front.hpp:
-
 /usr/include/boost/fusion/view/zip_view/detail/begin_impl.hpp:
 
 /usr/include/boost/asio/execution/blocking.hpp:
@@ -14098,8 +14211,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/include/aarch64-linux-gnu/qt6/QtGui/qkeysequence.h:
 
 /usr/include/boost/numeric/conversion/converter.hpp:
-
-/usr/include/boost/asio/detail/signal_set_service.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/arch/NEON/Complex.h:
 
@@ -14141,16 +14252,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qiterator.h:
 
-/usr/include/boost/asio/consign.hpp:
-
-/usr/include/aarch64-linux-gnu/bits/types/sig_atomic_t.h:
-
-/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
-
-/usr/include/c++/13/bits/sstream.tcc:
-
-/usr/include/boost/mpl/same_as.hpp:
-
 /usr/lib/aarch64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsTargets.cmake:
 
 /usr/include/boost/asio/traits/prefer_member.hpp:
@@ -14178,6 +14279,10 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/lib/aarch64-linux-gnu/cmake/Qt6Core/Qt6CoreConfigExtras.cmake:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcoreexports.h:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h:
+
+/usr/include/boost/asio/detail/winsock_init.hpp:
 
 /usr/include/boost/mpl/front_inserter.hpp:
 
@@ -14207,17 +14312,25 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qstring.h:
 
-/usr/include/opencv4/opencv2/flann/all_indices.h:
-
-/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h:
-
-/usr/include/boost/asio/basic_signal_set.hpp:
-
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qcontainertools_impl.h:
 
 /usr/include/boost/fusion/container/vector/vector_fwd.hpp:
 
 /usr/include/boost/fusion/view/filter_view/filter_view_iterator.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h:
+
+/usr/include/c++/13/bits/ostream_insert.h:
+
+/usr/include/boost/preprocessor/config/limits.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/gthr-default.h:
+
+/usr/include/boost/detail/call_traits.hpp:
+
+/usr/include/boost/process/detail/posix/use_vfork.hpp:
+
+/usr/include/boost/fusion/container/vector.hpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qconfig.h:
 
@@ -14265,7 +14378,33 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qcontainerinfo.h:
 
+/usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/lib/aarch64-linux-gnu/cmake/Qt6DBus/Qt6DBusConfig.cmake:
+
 /usr/include/aarch64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/boost/fusion/sequence/intrinsic/swap.hpp:
+
+/usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector20.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox:
+
+/usr/include/linux/types.h:
+
+/usr/include/boost/system/is_error_condition_enum.hpp:
+
+/usr/include/aarch64-linux-gnu/sys/time.h:
+
+/usr/include/boost/fusion/mpl/erase_key.hpp:
+
+/usr/include/c++/13/pstl/glue_numeric_defs.h:
+
+/usr/include/boost/asio/detail/resolve_op.hpp:
+
+/usr/include/c++/13/concepts:
+
+/usr/include/boost/fusion/tuple/tuple.hpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtGui/qtguiexports.h:
 
@@ -14277,12 +14416,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/13/bits/localefwd.h:
 
-/usr/include/aarch64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/include/aarch64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6DBus/Qt6DBusConfig.cmake:
-
 /home/emilklitgaard/Workspace/Semesterprojekt/Chessboard.cpp:
 
 /usr/include/boost/fusion/container/set/set_fwd.hpp:
@@ -14292,10 +14425,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/include/boost/asio/detail/array.hpp:
 
 /usr/include/c++/13/tr1/exp_integral.tcc:
-
-/usr/include/boost/process/detail/posix/sigchld_service.hpp:
-
-/usr/include/opencv4/opencv2/flann/heap.h:
 
 /usr/include/aarch64-linux-gnu/bits/sched.h:
 
@@ -14334,6 +14463,8 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/include/boost/fusion/container/map/detail/at_impl.hpp:
 
 /usr/include/opencv4/opencv2/core/cvstd.inl.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/QThread:
 
 /usr/include/eigen3/Eigen/src/Core/DenseStorage.h:
 
@@ -14384,14 +14515,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/include/boost/mpl/aux_/find_if_pred.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/boost/asio/detail/posix_event.hpp:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6Gui/Qt6GuiTargets.cmake:
-
-/usr/include/c++/13/pstl/glue_numeric_defs.h:
-
-/usr/include/boost/asio/detail/resolve_op.hpp:
 
 /usr/include/c++/13/bits/stl_queue.h:
 
@@ -14475,6 +14598,14 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/boost/date_time/posix_time/time_period.hpp:
 
+/usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h:
+
+/usr/include/boost/asio/detail/thread_group.hpp:
+
+/usr/lib/aarch64-linux-gnu/cmake/Qt6/QtPublicTestHelpers.cmake:
+
+/usr/include/stdio.h:
+
 /usr/include/aarch64-linux-gnu/sys/wait.h:
 
 /usr/include/boost/asio/detail/reactive_descriptor_service.hpp:
@@ -14494,20 +14625,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/include/boost/mpl/size_fwd.hpp:
 
 /usr/lib/aarch64-linux-gnu/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
-
-/usr/bin/cmake:
-
-/usr/include/c++/13/bits/istream.tcc:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6/QtPublicDependencyHelpers.cmake:
-
-/usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6/QtPublicTestHelpers.cmake:
-
-/usr/include/stdio.h:
-
-/usr/include/boost/asio/detail/thread_group.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
 
@@ -14532,6 +14649,18 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qstringliteral.h:
 
 /usr/include/boost/date_time/time_defs.hpp:
+
+/usr/include/c++/13/bits/locale_facets_nonio.tcc:
+
+/usr/include/aarch64-linux-gnu/qt6/QtGui/QFont:
+
+/usr/include/boost/mpl/vector/aux_/empty.hpp:
+
+/usr/include/boost/asio/detail/fenced_block.hpp:
+
+/usr/lib/aarch64-linux-gnu/cmake/Qt6/QtFeatureCommon.cmake:
+
+/usr/include/c++/13/type_traits:
 
 /usr/include/boost/asio/execution/outstanding_work.hpp:
 
@@ -14588,8 +14717,6 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 /usr/lib/aarch64-linux-gnu/cmake/Qt6Gui/Qt6GuiDependencies.cmake:
 
 /usr/include/boost/preprocessor/punctuation/comma.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
 
 /usr/include/asm-generic/posix_types.h:
 
@@ -14661,9 +14788,19 @@ CMakeFiles/3.28.3/CMakeCXXCompiler.cmake:
 
 /usr/include/c++/13/variant:
 
-/usr/include/c++/13/bits/ostream_insert.h:
+/usr/include/boost/asio/consign.hpp:
 
-/usr/include/boost/preprocessor/config/limits.hpp:
+/usr/include/aarch64-linux-gnu/bits/types/sig_atomic_t.h:
+
+/usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h:
+
+/usr/include/c++/13/bits/sstream.tcc:
+
+/usr/include/boost/mpl/same_as.hpp:
+
+/usr/include/c++/13/memory:
+
+/usr/include/boost/fusion/container/set/detail/value_of_impl.hpp:
 
 /usr/include/boost/mpl/vector/aux_/size.hpp:
 
@@ -14727,16 +14864,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/config/detail/select_stdlib_config.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/termios-struct.h:
-
-/usr/include/aarch64-linux-gnu/bits/signal_ext.h:
-
-/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractbutton.h:
-
-/usr/include/boost/integer_fwd.hpp:
-
-/usr/include/c++/13/bits/allocated_ptr.h:
-
 /usr/include/aarch64-linux-gnu/qt6/QtGui/qtgui-config.h:
 
 /usr/include/boost/algorithm/string/formatter.hpp:
@@ -14791,9 +14918,9 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/opencv4/opencv2/stitching.hpp:
 
-/usr/include/opencv4/opencv2/core/traits.hpp:
+/usr/include/boost/type_traits/is_member_pointer.hpp:
 
-/usr/include/c++/13/bits/deque.tcc:
+/usr/include/boost/mpl/aux_/arithmetic_op.hpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qarraydataops.h:
 
@@ -14815,8 +14942,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/aarch64-linux-gnu/bits/wordsize.h:
 
-/usr/include/boost/asio/detail/winsock_init.hpp:
-
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qprocessordetection.h:
 
 /usr/include/boost/fusion/iterator/prior.hpp:
@@ -14828,6 +14953,20 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/boost/bind/mem_fn_cc.hpp:
 
 /usr/include/c++/13/iosfwd:
+
+/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h:
+
+/usr/include/boost/asio/execution/schedule.hpp:
+
+/usr/include/aarch64-linux-gnu/bits/waitflags.h:
+
+/usr/include/boost/fusion/view/transform_view/detail/next_impl.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
+
+/usr/include/c++/13/ext/concurrence.h:
 
 /home/emilklitgaard/Workspace/Semesterprojekt/Gripper.cpp:
 
@@ -14854,6 +14993,36 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/boost/preprocessor/facilities/check_empty.hpp:
 
 /usr/local/include/ur_rtde/rtde_receive_interface.h:
+
+/usr/include/c++/13/bits/std_function.h:
+
+/usr/include/boost/fusion/container/list/detail/empty_impl.hpp:
+
+/usr/include/boost/mpl/distance_fwd.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject:
+
+/usr/include/boost/fusion/algorithm/transformation/push_back.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
+
+/usr/include/c++/13/ext/string_conversions.h:
+
+/usr/lib/aarch64-linux-gnu/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
+
+/usr/include/boost/date_time/int_adapter.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h:
+
+/usr/include/c++/13/bits/codecvt.h:
+
+/usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/boost/system/detail/append_int.hpp:
+
+/usr/lib/aarch64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-none.cmake:
+
+/usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/boost/asio/detail/executor_function.hpp:
 
@@ -14917,14 +15086,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/type_traits/is_empty.hpp:
 
-/usr/include/aarch64-linux-gnu/bits/waitflags.h:
-
-/usr/include/boost/fusion/view/transform_view/detail/next_impl.hpp:
-
-/usr/include/eigen3/Eigen/src/Core/CwiseUnaryOp.h:
-
-/usr/include/c++/13/ext/concurrence.h:
-
 /usr/include/aarch64-linux-gnu/bits/wchar.h:
 
 /usr/include/c++/13/bits/ostream.tcc:
@@ -14948,26 +15109,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake:
 
 /usr/include/opencv4/opencv2/flann/defines.h:
-
-/usr/include/eigen3/Eigen/src/Core/arch/NEON/GeneralBlockPanelKernel.h:
-
-/usr/include/c++/13/ext/string_conversions.h:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
-
-/usr/include/boost/date_time/int_adapter.hpp:
-
-/usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h:
-
-/usr/include/c++/13/bits/codecvt.h:
-
-/usr/include/aarch64-linux-gnu/bits/types/struct_iovec.h:
-
-/usr/include/boost/system/detail/append_int.hpp:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-none.cmake:
-
-/usr/include/c++/13/bits/stl_tree.h:
 
 /usr/include/boost/range/value_type.hpp:
 
@@ -15003,20 +15144,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/aarch64-linux-gnu/bits/types/__fpos64_t.h:
 
-/usr/include/boost/process/detail/traits/decl.hpp:
-
-/usr/include/boost/asio/detail/reactive_socket_connect_op.hpp:
-
-/usr/include/aarch64-linux-gnu/c++/13/bits/gthr-default.h:
-
-/usr/include/c++/13/bits/locale_facets_nonio.tcc:
-
-/usr/include/boost/detail/call_traits.hpp:
-
-/usr/include/boost/process/detail/posix/use_vfork.hpp:
-
-/usr/include/boost/fusion/container/vector.hpp:
-
 /usr/include/aarch64-linux-gnu/c++/13/bits/atomic_word.h:
 
 /usr/include/boost/fusion/container/vector/detail/distance_impl.hpp:
@@ -15026,10 +15153,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/aarch64-linux-gnu/sys/syscall.h:
 
 /usr/include/boost/type_traits/remove_reference.hpp:
-
-/usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h:
-
-/usr/include/boost/fusion/view.hpp:
 
 /usr/include/aarch64-linux-gnu/sys/single_threaded.h:
 
@@ -15041,9 +15164,11 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtwidgetsglobal.h:
 
-/usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h:
+/usr/include/aarch64-linux-gnu/qt6/QtGui/qguiapplication_platform.h:
 
-/usr/include/aarch64-linux-gnu/qt6/QtWidgets/QSlider:
+/usr/include/boost/fusion/view.hpp:
+
+/usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h:
 
 /usr/include/eigen3/Eigen/Dense:
 
@@ -15054,12 +15179,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/aarch64-linux-gnu/bits/types.h:
 
 /usr/include/aarch64-linux-gnu/sys/select.h:
-
-/usr/include/boost/asio/detail/reactive_null_buffers_op.hpp:
-
-/usr/include/boost/shared_ptr.hpp:
-
-/usr/include/boost/asio/detail/reactive_socket_service.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/arch/Default/BFloat16.h:
 
@@ -15095,11 +15214,47 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qalgorithms.h:
 
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/QSlider:
+
+/usr/include/c++/13/bits/allocated_ptr.h:
+
+/usr/include/aarch64-linux-gnu/bits/termios-struct.h:
+
+/usr/include/aarch64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractbutton.h:
+
+/usr/include/boost/integer_fwd.hpp:
+
+/usr/include/eigen3/Eigen/src/Core/util/BlasUtil.h:
+
+/usr/include/c++/13/bits/deque.tcc:
+
+/usr/include/opencv4/opencv2/core/traits.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractslider.h:
+
+/usr/include/opencv4/opencv2/flann/all_indices.h:
+
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h:
+
+/usr/include/boost/asio/basic_signal_set.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h:
+
+/usr/include/aarch64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h:
+
+/usr/lib/aarch64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake:
+
+/usr/include/aarch64-linux-gnu/bits/termios-tcflow.h:
+
 /usr/local/include/ur_rtde/rtde_utility.h:
 
-/usr/include/boost/mpl/limits/arity.hpp:
-
 /usr/include/boost/asio/execution/mapping.hpp:
+
+/usr/include/boost/mpl/limits/arity.hpp:
 
 /usr/include/eigen3/Eigen/src/Core/MathFunctions.h:
 
@@ -15157,6 +15312,14 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/mpl/size.hpp:
 
+/usr/include/c++/13/future:
+
+/usr/include/boost/range/detail/common.hpp:
+
+/usr/include/boost/asio/detail/io_object_impl.hpp:
+
+/usr/include/boost/system/is_error_code_enum.hpp:
+
 /usr/include/c++/13/bits/basic_ios.tcc:
 
 /usr/include/eigen3/Eigen/src/Core/products/TriangularMatrixMatrix.h:
@@ -15168,12 +15331,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/boost/function/detail/maybe_include.hpp:
 
 /usr/include/c++/13/bits/basic_string.tcc:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/boost/fusion/container/list/detail/empty_impl.hpp:
-
-/usr/include/boost/mpl/distance_fwd.hpp:
 
 /home/emilklitgaard/Workspace/Semesterprojekt/Vision.h:
 
@@ -15369,19 +15526,15 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/c++/13/bits/stl_algo.h:
 
-/usr/include/opencv4/opencv2/flann/ground_truth.h:
-
-/usr/include/boost/asio/associated_immediate_executor.hpp:
-
-/usr/include/boost/mpl/aux_/arithmetic_op.hpp:
-
-/usr/include/boost/type_traits/is_member_pointer.hpp:
-
 /usr/include/opencv4/opencv2/core/operations.hpp:
 
 /usr/include/aarch64-linux-gnu/bits/mathcalls.h:
 
 /usr/lib/aarch64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
+
+/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:
+
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
 
 /usr/include/boost/fusion/sequence/comparison/equal_to.hpp:
 
@@ -15475,12 +15628,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/mpl/list/aux_/item.hpp:
 
-/usr/include/c++/13/bits/utility.h:
-
-/usr/include/aarch64-linux-gnu/qt6/QtCore/qrefcount.h:
-
-/usr/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
-
 /usr/include/c++/13/bits/stringfwd.h:
 
 /usr/include/c++/13/cerrno:
@@ -15501,21 +15648,11 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/aarch64-linux-gnu/c++/13/bits/c++io.h:
 
-/usr/include/boost/system/is_error_condition_enum.hpp:
-
-/usr/include/aarch64-linux-gnu/sys/time.h:
-
-/usr/include/boost/fusion/mpl/erase_key.hpp:
-
-/usr/include/c++/13/concepts:
-
-/usr/include/boost/fusion/tuple/tuple.hpp:
+/usr/include/opencv4/opencv2/flann/flann_base.hpp:
 
 /usr/include/math.h:
 
 /usr/include/boost/fusion/iterator/distance.hpp:
-
-/usr/include/opencv4/opencv2/flann/flann_base.hpp:
 
 /usr/include/boost/fusion/iterator/deref_data.hpp:
 
@@ -15582,10 +15719,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/aarch64-linux-gnu/qt6/QtGui/qtextcursor.h:
 
 /usr/include/opencv4/opencv2/core/cvstd.hpp:
-
-/usr/include/c++/13/memory:
-
-/usr/include/boost/fusion/container/set/detail/value_of_impl.hpp:
 
 /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow:
 
@@ -15673,14 +15806,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/function_equal.hpp:
 
-/usr/include/boost/mpl/vector/aux_/empty.hpp:
-
-/usr/include/boost/asio/detail/fenced_block.hpp:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6/QtFeatureCommon.cmake:
-
-/usr/include/c++/13/type_traits:
-
 /usr/include/boost/predef/make.h:
 
 /usr/include/eigen3/Eigen/src/Core/MapBase.h:
@@ -15729,6 +15854,18 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/opencv4/opencv2/core/ovx.hpp:
 
+/usr/include/boost/asio/detail/impl/null_event.ipp:
+
+/usr/include/boost/mpl/assert.hpp:
+
+/usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h:
+
+/usr/include/opencv4/opencv2/flann/dist.h:
+
+/usr/include/boost/asio/detail/base_from_cancellation_state.hpp:
+
+/usr/include/opencv4/opencv2/core/persistence.hpp:
+
 /usr/include/aarch64-linux-gnu/qt6/QtCore/qcontiguouscache.h:
 
 /usr/include/boost/asio/traits/equality_comparable.hpp:
@@ -15736,8 +15873,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/boost/asio/execution/impl/bad_executor.ipp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
-
-/usr/include/boost/fusion/view/identity_view/identity_view.hpp:
 
 /usr/include/opencv4/opencv2/core/types.hpp:
 
@@ -15783,25 +15918,31 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/mpl/void_fwd.hpp:
 
-/usr/include/boost/asio/detail/impl/null_event.ipp:
+/usr/lib/aarch64-linux-gnu/cmake/Qt6Gui/Qt6GuiTargets.cmake:
 
-/usr/include/boost/mpl/assert.hpp:
+/usr/include/boost/asio/detail/posix_event.hpp:
 
-/usr/include/opencv4/opencv2/core/persistence.hpp:
+/usr/include/boost/fusion/mpl/front.hpp:
 
-/usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h:
+/usr/include/boost/asio/detail/posix_global.hpp:
 
-/usr/include/opencv4/opencv2/flann/dist.h:
+/usr/include/boost/asio/detail/posix_mutex.hpp:
 
-/usr/include/boost/asio/detail/base_from_cancellation_state.hpp:
+/usr/include/boost/asio/detail/signal_set_service.hpp:
 
-/usr/include/boost/preprocessor/arithmetic/add.hpp:
+/usr/include/boost/shared_ptr.hpp:
 
-/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:
+/usr/include/boost/asio/detail/reactive_socket_service.hpp:
 
-/usr/include/aarch64-linux-gnu/qt6/QtCore/qnamespace.h:
+/usr/include/boost/asio/detail/reactive_null_buffers_op.hpp:
 
-/usr/include/opencv4/opencv2/flann/index_testing.h:
+/usr/include/boost/mpl/vector/aux_/pop_front.hpp:
+
+/usr/include/boost/asio/detail/reactive_socket_accept_op.hpp:
+
+/usr/include/boost/process/detail/traits/decl.hpp:
+
+/usr/include/boost/asio/detail/reactive_socket_connect_op.hpp:
 
 /usr/include/boost/asio/detail/reactive_socket_recvmsg_op.hpp:
 
@@ -15987,8 +16128,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/asio/ip/resolver_query_base.hpp:
 
-/usr/include/boost/asio/execution/schedule.hpp:
-
 /usr/include/boost/asio/execution/scheduler.hpp:
 
 /usr/include/boost/asio/execution/sender.hpp:
@@ -16079,8 +16218,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/asio/is_applicable_property.hpp:
 
-/usr/include/boost/fusion/view/iterator_range/detail/segmented_iterator_range.hpp:
-
 /usr/include/boost/asio/is_contiguous_iterator.hpp:
 
 /usr/include/boost/asio/is_executor.hpp:
@@ -16116,10 +16253,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 /usr/include/boost/asio/traits/set_done_free.hpp:
 
 /usr/include/boost/asio/traits/bulk_execute_member.hpp:
-
-/usr/include/aarch64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/boost/fusion/view/flatten_view/flatten_view.hpp:
 
 /usr/include/boost/asio/traits/connect_free.hpp:
 
@@ -16541,10 +16674,6 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/mpl/aux_/na_fwd.hpp:
 
-/usr/include/c++/13/bits/atomic_futex.h:
-
-/usr/include/boost/mpl/aux_/na_spec.hpp:
-
 /usr/include/c++/13/bits/uses_allocator.h:
 
 /usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
@@ -16813,6 +16942,14 @@ chessRobotExecutable_autogen/moc_predefs.h:
 
 /usr/include/boost/preprocessor/arithmetic/detail/maximum_number.hpp:
 
+/usr/include/boost/fusion/view/iterator_range/detail/end_impl.hpp:
+
+/usr/include/boost/variant/detail/over_sequence.hpp:
+
+/usr/include/boost/fusion/include/filter_if.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/inc.hpp:
+
 /usr/include/boost/preprocessor/arithmetic/limits/inc_256.hpp:
 
 /usr/include/c++/13/bits/range_access.h:
@@ -17040,12 +17177,6 @@ CMakeFiles/3.28.3/CMakeSystem.cmake:
 /usr/include/boost/type_traits/add_rvalue_reference.hpp:
 
 /usr/include/boost/type_traits/is_destructible.hpp:
-
-/usr/include/boost/range/detail/common.hpp:
-
-/usr/include/boost/asio/detail/io_object_impl.hpp:
-
-/usr/include/boost/system/is_error_code_enum.hpp:
 
 /usr/include/boost/throw_exception.hpp:
 
@@ -17291,8 +17422,6 @@ CMakeFiles/3.28.3/CMakeSystem.cmake:
 
 /usr/include/linux/stddef.h:
 
-/usr/include/linux/types.h:
-
 /usr/include/aarch64-linux-gnu/c++/13/bits/ctype_base.h:
 
 /usr/include/c++/13/bits/ranges_algobase.h:
@@ -17339,11 +17468,11 @@ CMakeFiles/3.28.3/CMakeSystem.cmake:
 
 /usr/local/include/urcl/log.h:
 
+/usr/include/boost/mpl/aux_/na_spec.hpp:
+
+/usr/include/c++/13/bits/atomic_futex.h:
+
 /usr/include/aarch64-linux-gnu/bits/termios-c_cflag.h:
-
-/usr/lib/aarch64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake:
-
-/usr/include/aarch64-linux-gnu/bits/termios-tcflow.h:
 
 /usr/include/boost/date_time/time_system_split.hpp:
 
@@ -17616,8 +17745,6 @@ CMakeFiles/3.28.3/CMakeSystem.cmake:
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/boost/fusion/algorithm/transformation/erase_key.hpp:
-
-/usr/include/boost/fusion/algorithm/transformation/push_back.hpp:
 
 /usr/include/boost/fusion/algorithm/transformation/push_front.hpp:
 
@@ -17926,19 +18053,3 @@ CMakeFiles/3.28.3/CMakeSystem.cmake:
 /usr/include/c++/13/bits/fstream.tcc:
 
 /usr/include/boost/fusion/view/filter_view/detail/value_of_data_impl.hpp:
-
-/usr/include/boost/fusion/view/flatten_view/flatten_view_iterator.hpp:
-
-/usr/include/boost/fusion/view/iterator_range.hpp:
-
-/usr/include/boost/fusion/view/iterator_range/detail/at_impl.hpp:
-
-/usr/include/boost/variant/detail/over_sequence.hpp:
-
-/usr/include/boost/fusion/include/filter_if.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/inc.hpp:
-
-/usr/include/boost/fusion/view/iterator_range/detail/end_impl.hpp:
-
-/usr/include/boost/fusion/view/iterator_range/detail/is_segmented_impl.hpp:

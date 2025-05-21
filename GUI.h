@@ -16,6 +16,8 @@ public:
     void setGameInitialized(bool value);
     void setGameResetting(bool value);
     void setGameRunning(bool value);
+    void setGamePaused(bool value);
+    void setCalibrating(bool value);
     void setTurn(string value);
     void setConnection(bool value);
     void setVision(const cv::Mat& image);
@@ -25,6 +27,8 @@ public:
     bool getGameActive();
     bool getGameResetting();
     bool getGameRunning();
+    bool getGamePaused();
+    bool getCalibrating();
     string getTurn();
     bool getConnection();
     cv::Mat getVision() const;
@@ -39,6 +43,8 @@ private:
     bool gameActive = false;
     bool resettingActive = false;
     bool gameRunning = false;
+    bool gamePaused = false;
+    bool calibrating = false;
     bool gameInitialized = false;
     int difficulty = 300;
 };

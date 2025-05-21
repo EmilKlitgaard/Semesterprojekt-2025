@@ -100,6 +100,9 @@
   /usr/include/aarch64-linux-gnu/c++/13/bits/time_members.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs-lp64.h \
   /usr/include/aarch64-linux-gnu/gnu/stubs.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qanystringview.h \
@@ -128,7 +131,9 @@
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdatastream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qdebug.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qflags.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qforeach.h \
@@ -186,6 +191,7 @@
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qtypeinfo.h \
@@ -194,6 +200,7 @@
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvariant.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qvarlengtharray.h \
   /usr/include/aarch64-linux-gnu/qt6/QtCore/qversiontagging.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qbitmap.h \
@@ -225,6 +232,7 @@
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qtransform.h \
   /usr/include/aarch64-linux-gnu/qt6/QtGui/qwindowdefs.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
@@ -237,6 +245,7 @@
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
   /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayoutitem.h \
@@ -405,6 +414,7 @@
   /usr/include/c++/13/ext/string_conversions.h \
   /usr/include/c++/13/ext/type_traits.h \
   /usr/include/c++/13/functional \
+  /usr/include/c++/13/future \
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/iomanip \
   /usr/include/c++/13/ios \

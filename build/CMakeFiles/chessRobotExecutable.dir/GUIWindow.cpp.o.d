@@ -475,8 +475,9 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: \
  /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/GUIWindow.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QGroupBox \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgroupbox.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qwidget.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qaction.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qkeysequence.h \
@@ -487,7 +488,14 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontmetrics.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qfontinfo.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qsizepolicy.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/QFont \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qfont.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qpicture.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevice.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtGui/qtextdocument.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qurl.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QVBoxLayout \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlayout.h \
@@ -495,13 +503,10 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qboxlayout.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qgridlayout.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QHBoxLayout \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QLabel \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qlabel.h \
- /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qframe.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qpicture.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qiodevice.h \
- /usr/include/aarch64-linux-gnu/qt6/QtGui/qtextdocument.h \
- /usr/include/aarch64-linux-gnu/qt6/QtCore/qurl.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QApplication \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QMainWindow \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/QSlider \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qslider.h \
  /usr/include/aarch64-linux-gnu/qt6/QtWidgets/qabstractslider.h \
@@ -513,6 +518,16 @@ CMakeFiles/chessRobotExecutable.dir/GUIWindow.cpp.o: \
  /usr/include/aarch64-linux-gnu/qt6/QtCore/qbasictimer.h \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/QImage \
  /usr/include/aarch64-linux-gnu/qt6/QtGui/qimage.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QEventLoop \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qeventloop.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QMetaObject \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qobjectdefs.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/QThread \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qthread.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
+ /usr/include/aarch64-linux-gnu/qt6/QtCore/qelapsedtimer.h \
+ /usr/include/c++/13/future /usr/include/c++/13/condition_variable \
+ /usr/include/c++/13/bits/atomic_futex.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/Vision.h \
  /home/emilklitgaard/Workspace/Semesterprojekt/Game.h \
  /usr/local/include/ur_rtde/rtde_control_interface.h \
