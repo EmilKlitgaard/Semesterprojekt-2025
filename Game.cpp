@@ -18,14 +18,14 @@ using MatrixIndex = pair<int, int>;
 
 string robotIp = "192.168.1.54";
 int robotPort = 50002;
+
 unique_ptr<RTDEControlInterface> rtde_control;
 unique_ptr<RTDEReceiveInterface> rtde_receive;
-
-Chessboard board;
-Stockfish engine("/usr/local/bin/stockfish");
-
+unique_ptr<Stockfish> engine;
 unique_ptr<Gripper> gripper;
 unique_ptr<ChessVision> camera;
+
+Chessboard board;
 
 Vector3d chessboardOrigin;
 Matrix3d RotationMatrix;
@@ -237,9 +237,9 @@ pair<MatrixIndex, MatrixIndex> determinePlayerMove(const ChessboardMatrix lastPo
 }
 
 // Returns a move string in chess notation, e.g., "e2e4".
-string stockfishMove(Stockfish &engine) {
+string stockfishMove() {
     cout << "Stockfish is calculating the best move..." << endl;
-    string bestMove = engine.getBestMove();
+    string bestMove = engine->getBestMove();
     cout << "Stockfish best move: " << bestMove << endl;
     return bestMove;
 }
@@ -440,7 +440,7 @@ string getValidPlayerMove(ChessVision &camera) {
 
         playerMove = board.getChessNotation(playerFromIndex, playerToIndex);
 
-        validMove = engine.sendValidMove(playerMove);
+        validMove = engine->sendValidMove(playerMove);
 
         if (!validMove) {
             printText("Invalid move. Make a valid move.");
@@ -551,7 +551,7 @@ void Game::resetChessboard() {
             }
         }
         moveToAwaitPosition();
-        engine.resetMoveHistory();
+        engine->resetMoveHistory();
         gui.setGameResetting(false);
         cout << "Reset complete in " << allMoves << " moves" << endl;
     }).detach();
@@ -559,6 +559,15 @@ void Game::resetChessboard() {
 
 void Game::initializeGame() {
     printText("--- INITIALIZING GAME ---");
+
+    //   ==========   INITIALIZE STOCKFISH ENGINE   ==========   //
+    do {
+        try {
+            engine = make_unique<Stockfish>("/usr/local/bin/stockfish");
+        } catch (const exception& e) {
+            cerr << "Failed to initialize Stockfish. Error: " << e.what() << endl;
+        }
+    } while (!engine);
 
     //   ==========   INITIALIZE UR5 CONNECTION   ==========   //
     do {
@@ -667,7 +676,7 @@ void Game::startGame() {
             gui.setTurn("Robot");
 
             // Get the move from Stockfish (in chess notation, e.g., "a2a4")
-            string robotMove = stockfishMove(engine);
+            string robotMove = stockfishMove();
             
             // Move the chess piece using the robot.
             moveChessPiece(robotMove, chessboardOrigin, RotationMatrix);
@@ -679,7 +688,7 @@ void Game::startGame() {
             
             moveToAwaitPosition();
         
-            if (engine.isCheckmate()) {
+            if (engine->isCheckmate()) {
                 printText("Game has ended");
                 return 0;
             }
