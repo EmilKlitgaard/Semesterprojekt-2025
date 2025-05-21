@@ -2,11 +2,27 @@
 #include "GUIWindow.h"
 #include "Game.h"
 
+// Define box styling
+static const char* boxStyle =
+    "QGroupBox {"
+    "  border: 1px solid gray;"
+    "  border-radius: 10px;"
+    "  padding: 10px;"
+    "  margin: 20px;"
+    "  margin-top: 1ex;"
+    "}"
+    "QGroupBox::title {"
+    "  subcontrol-origin: margin;"
+    "  subcontrol-position: top left;"
+    "  left: 20px;"
+    "  padding: 0 3px;"
+    "}";
+
 GUIWindow::GUIWindow(QWidget* parent)
     : QMainWindow(parent), central(this), mainLayout(&central), headerLabel("Chess Robot", this), difficultyLabel(this), difficultySlider(Qt::Horizontal, this), startGame("Start", this), resetGame("Reset", this), calibrateTool("Calibrate Tool", this) { // cvLabel(new QLabel(this)),
     // Window setup
     setWindowTitle("Chess Robot Control");
-    resize(1000, 400);
+    resize(1000, 600);
 
     setStyleSheet("background-color: #ffffff;");
 
@@ -17,15 +33,6 @@ GUIWindow::GUIWindow(QWidget* parent)
     headerLabel.setFont(headerFont);
     headerLabel.setAlignment(Qt::AlignCenter);
     mainLayout.addWidget(&headerLabel);
-
-    // Common box style
-    const QString boxStyle =
-        "QGroupBox {"
-        "  border: 1px solid gray;"
-        "  border-radius: 10px;"
-        "  padding: 10px;"
-        "  margin-top: 1ex;"
-        "}";
 
     // ===== Status Box =====
     QGroupBox* statusBox = new QGroupBox("Status", this);
@@ -152,15 +159,13 @@ string GUIWindow::selectPawnPromotion() {
   
   QString GUIWindow::selectPawnPromotionImpl() {
     if (promotionBox) return {};
-  
-    const QString boxStyle = "QGroupBox{ border:1px solid gray; border-radius:10px; padding:10px; margin-top:1ex; background:#f8f8f8; }";
-  
+    
     promotionBox = new QGroupBox("Pawn Promotion", this);
     promotionBox->setStyleSheet(boxStyle);
     auto *promoLayout = new QVBoxLayout(promotionBox);
   
-    auto *prompt = new QLabel("Select promotion type", promotionBox);
-    prompt->setAlignment(Qt::AlignCenter);
+    auto *prompt = new QLabel("Select promotion type:", promotionBox);
+    prompt->setAlignment(Qt::AlignLeft);
     promoLayout->addWidget(prompt);
   
     QHBoxLayout *buttonsLayout = new QHBoxLayout;
