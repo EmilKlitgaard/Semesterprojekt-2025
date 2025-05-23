@@ -33,9 +33,13 @@ Matrix3d RotationMatrix;
 Vector3d liftTransformVector = {0.0, 0.0, 0.1};
 Vector3d calibrationTransformVector = {0.025, 0.025, 0.0};
 
-MatrixIndex pieceIdx;
-string deadPieceName;
+bool castlingFound = false;
+MatrixIndex castlingFromIdx;
+MatrixIndex castlingToIdx; 
+
 bool deadPieceFound = false;
+string deadPieceName;
+MatrixIndex pieceIdx;
 
 /*============================================================
             		   FUNCTIONS
@@ -155,12 +159,14 @@ void placePiece(const Vector3d &position, const Vector3d &chessboardOrigin, cons
 void Game::calibrateGripper() {
     Vector3d calibrationTransformVector = {-0.025, -0.025, -0.005};
     moveToChessboardPoint(calibrationTransformVector + liftTransformVector, chessboardOrigin, RotationMatrix);
+    gripper->closeGripper();
     gripper->openGripper();
     moveToChessboardPoint(calibrationTransformVector, chessboardOrigin, RotationMatrix);
     gripper->closeGripper();
     gripper->openGripper();
     moveToChessboardPoint(calibrationTransformVector + liftTransformVector, chessboardOrigin, RotationMatrix);
     moveToAwaitPosition();
+    gui.setCalibrating(false);
     printText("Gripper calibrated.");
 }
 
@@ -202,10 +208,18 @@ pair<MatrixIndex, MatrixIndex> determinePlayerMove(const ChessboardMatrix lastPo
     MatrixIndex to = {-1, -1};
 
     // Check for castling
-    if (lastPositions[0][0] == 'W' && newPositions[0][0] == 'e' && lastPositions[0][1] == 'e' && newPositions[0][1] == 'W' && lastPositions[0][2] == 'e' && newPositions[0][2] == 'W' && lastPositions[0][3] == 'W' && newPositions[0][3] == 'e') {
-        return {{0, 3}, {0, 1}};
-    } else if (lastPositions[0][3] == 'W' && newPositions[0][3] == 'e' && lastPositions[0][4] == 'e' && newPositions[0][4] == 'W' && lastPositions[0][5] == 'e' && newPositions[0][5] == 'W' && lastPositions[0][6] == 'e' && newPositions[0][6] == 'e' && lastPositions[0][7] == 'W' && newPositions[0][7] == 'e') {
-        return {{0, 3}, {0, 5}};
+    if (lastPositions[7][7] == 'W' && newPositions[7][7] == 'e' && lastPositions[7][6] == 'e' && newPositions[7][6] == 'W' && lastPositions[7][5] == 'e' && newPositions[7][5] == 'W' && lastPositions[4][7] == 'W' && newPositions[7][4] == 'e') {
+        cout << "Castling Right Detected" << endl;
+        castlingFound = true;
+        castlingFromIdx = MatrixIndex{7, 7};
+        castlingToIdx = MatrixIndex{7, 5};
+        return {{7, 4}, {7, 6}};
+    } else if (lastPositions[7][0] == 'W' && newPositions[7][0] == 'e' && lastPositions[7][1] == 'e' && newPositions[7][1] == 'e' && lastPositions[7][2] == 'e' && newPositions[7][2] == 'W' && lastPositions[7][3] == 'e' && newPositions[7][3] == 'W' && lastPositions[7][4] == 'W' && newPositions[7][4] == 'e') {
+        cout << "Castling Left Detected" << endl;
+        castlingFound = true;
+        castlingFromIdx = MatrixIndex{7, 0};
+        castlingToIdx = MatrixIndex{7, 5};
+        return {{7, 4}, {7, 2}};
     }
 
     for (int i = 0; i < 8; ++i) {
@@ -289,12 +303,16 @@ void moveChessPiece(string &robotMove, const Vector3d &chessboardOrigin, const M
     }
 
     // Check for castling
-    if ((robotMove == "dec8" || robotMove == "e8g8") && fromPieceName == "King") {
+    if ((robotMove == "d8c8" || robotMove == "e8g8") && fromPieceName == "King") {
         printText("Castling detected. Moving rook...");
-        Vector3d rookFromCoordinate = (robotMove == "dec8" ? board.getPhysicalCoordinate({0, 7}) : board.getPhysicalCoordinate({0, 0}));
-        Vector3d rookToCoordinate = (robotMove == "dec8" ? board.getPhysicalCoordinate({0, 5}) : board.getPhysicalCoordinate({0, 3}));
+        MatrixIndex rookFromIdx = (robotMove == "d8c8" ? MatrixIndex{0, 0} : MatrixIndex{0, 7});
+        MatrixIndex rookToIdx   = (robotMove == "d8c8" ? MatrixIndex{0, 3} : MatrixIndex{0, 5});
+        Vector3d rookFromCoordinate = board.getPhysicalCoordinate(rookFromIdx);
+        Vector3d rookToCoordinate = board.getPhysicalCoordinate(rookToIdx);
         pickUpPiece(rookFromCoordinate, chessboardOrigin, RotationMatrix);
         placePiece(rookToCoordinate, chessboardOrigin, RotationMatrix);
+        board.updateChessboard(rookFromIdx, rookToIdx);
+        board.printBoard();
     }
 
     // Move the selected piece
@@ -367,6 +385,10 @@ pair<MatrixIndex, MatrixIndex> getCameraData(ChessVision &camera) {
 
             // Check if all three moves are identical.
             if (newState1 == newState2 && newState2 == newState3 && newState3 == newState4 && newState4 == newState5 && newState5 == newState6) {
+                if (castlingFound) {
+                    board.updateChessboard(castlingFromIdx, castlingToIdx);
+                    board.printBoard();
+                }
                 if (deadPieceFound) {
                     board.getDeadPieceLocation(deadPieceName, "Robot");
                 }
@@ -639,6 +661,8 @@ void Game::initializeGame() {
     //   ==========   BEGIN PRE-GAME MOVEMENTS   ==========   //
     moveToAwaitPosition();
     // moveToBoardCorners(chessboardOrigin, RotationMatrix);
+
+    if (gui.getCalibrating()) calibrateGripper();
     gui.setGameInitialized(true);
     startGame();
 }
@@ -647,7 +671,6 @@ void Game::calibrate() {
     gui.setCalibrating(true);
     while (!gui.getGamePaused()) this_thread::sleep_for(chrono::milliseconds(100));
     calibrateGripper();
-    gui.setCalibrating(false);
 }
 
 //   ==========   RUN MAIN CODE IN SEPERATE THREAD   ==========   //
@@ -693,6 +716,7 @@ void Game::startGame() {
                 return 0;
             }
 
+            // Check for calibration
             if (gui.getCalibrating()) pauseGame();
         }
         gui.setGameRunning(false);

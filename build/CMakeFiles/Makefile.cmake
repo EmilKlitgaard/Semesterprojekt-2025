@@ -158,8 +158,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/chessRobotExecutable_autogen.dir/AutogenInfo.json"
-  "CMakeFiles/pickupTestExecutable_autogen.dir/AutogenInfo.json"
-  "CMakeFiles/picoTestExecutable_autogen.dir/AutogenInfo.json"
   ".qt/QtDeploySupport.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
@@ -167,12 +165,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/chessRobotExecutable.dir/DependInfo.cmake"
-  "CMakeFiles/pickupTestExecutable.dir/DependInfo.cmake"
-  "CMakeFiles/picoTestExecutable.dir/DependInfo.cmake"
   "CMakeFiles/chessRobotExecutable_autogen_timestamp_deps.dir/DependInfo.cmake"
   "CMakeFiles/chessRobotExecutable_autogen.dir/DependInfo.cmake"
-  "CMakeFiles/pickupTestExecutable_autogen_timestamp_deps.dir/DependInfo.cmake"
-  "CMakeFiles/pickupTestExecutable_autogen.dir/DependInfo.cmake"
-  "CMakeFiles/picoTestExecutable_autogen_timestamp_deps.dir/DependInfo.cmake"
-  "CMakeFiles/picoTestExecutable_autogen.dir/DependInfo.cmake"
   )

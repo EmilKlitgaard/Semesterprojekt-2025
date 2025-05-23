@@ -3425,7 +3425,6 @@ CMakeFiles/PicoCommunication.dir/main.cpp.o: /home/emilklitgaard/Workspace/Semes
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
-  /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pwm.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/resets.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
@@ -3436,7 +3435,6 @@ CMakeFiles/PicoCommunication.dir/main.cpp.o: /home/emilklitgaard/Workspace/Semes
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/m0plus.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/nvic.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pads_bank0.h \
-  /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pwm.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/resets.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/scb.h \
   /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
@@ -3449,7 +3447,6 @@ CMakeFiles/PicoCommunication.dir/main.cpp.o: /home/emilklitgaard/Workspace/Semes
   /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
   /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
   /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
-  /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pwm.h \
   /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_resets/include/hardware/resets.h \
   /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
   /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
@@ -3602,12 +3599,6 @@ CMakeFiles/PicoCommunication.dir/main.cpp.o: /home/emilklitgaard/Workspace/Semes
 /usr/include/newlib/c++/13.2.1/bit:
 
 /usr/include/newlib/c++/13.2.1/backward/binders.h:
-
-/home/emilklitgaard/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pwm.h:
-
-/home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pwm.h:
-
-/home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pwm.h:
 
 /home/emilklitgaard/Workspace/Semesterprojekt/Pico\ communication/main.cpp:
 

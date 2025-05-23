@@ -71,6 +71,8 @@ void GUI::changeState(string state) {
         game.calibrateGripper();
     } else if (state == "Calibrate" && gameRunning && gameInitialized) {
         game.calibrate();
+    } else if (state == "Calibrate" && !gameRunning && !gameInitialized) {
+        calibrating = true;
     }
 }
 

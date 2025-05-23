@@ -4,17 +4,13 @@
 #include <numeric>
 #include "pico/stdlib.h"
 #include "hardware/adc.h"
-#include "hardware/pwm.h"
 
 #define LED_PIN 25
-#define MOTOR_PIN_1 0
-#define MOTOR_PIN_2 1
-#define ADC_PIN 28
+#define MOTOR_PIN_1 18
+#define MOTOR_PIN_2 19
+#define ADC_PIN 26
 #define MAX_INPUT_LEN 64
-#define PWM_WRAP 6944 // 90% duty cycle
-#define THRESHOLD 14
-
-#define DUTY_90_PERCENT (uint16_t)(0.9f * (PWM_WRAP + 1))
+#define THRESHOLD 44
 
 void blink(int cnt, int delay, int endDelay = 0) {
     for (int i = 0; i < cnt; i++) {
@@ -26,36 +22,24 @@ void blink(int cnt, int delay, int endDelay = 0) {
     if (endDelay > 0) sleep_ms(endDelay);
 }
 
-void init_pwm(unsigned short pin) {
-    gpio_set_function(pin, GPIO_FUNC_PWM);
-    uint slice = pwm_gpio_to_slice_num(pin);
-    pwm_set_clkdiv(slice, 1.0f);
-    pwm_set_wrap(slice, PWM_WRAP);
-    pwm_set_enabled(slice, true);
-}
-
-void set_pwm(unsigned short pin, unsigned int duty) {
-    pwm_set_gpio_level(pin, duty);
-}
-
 void stopMotor() {
-    set_pwm(MOTOR_PIN_1, 0);
-    set_pwm(MOTOR_PIN_2, 0);
+    gpio_put(MOTOR_PIN_1, 0);
+    gpio_put(MOTOR_PIN_2, 0);
 }
 
 void openGripper() {
-    set_pwm(MOTOR_PIN_1, 0);                    // Ensure other pin is off
-    set_pwm(MOTOR_PIN_2, DUTY_90_PERCENT);      // Full speed open
-    sleep_ms(2500);                             // Open for 2.5 seconds
-    stopMotor();                                // Stop motor
+    gpio_put(MOTOR_PIN_1, 0);       // Ensure other pin is off
+    gpio_put(MOTOR_PIN_2, 1);       // Full speed open
+    sleep_ms(1250);                 // Open for 1.25 seconds
+    stopMotor();                    // Stop motor
 }
 
 void closeGripper() {
-    set_pwm(MOTOR_PIN_2, 0);                    // Ensure other pin is off
-    set_pwm(MOTOR_PIN_1, DUTY_90_PERCENT);      // Full speed close
+    gpio_put(MOTOR_PIN_1, 1);       // Full speed close
+    gpio_put(MOTOR_PIN_2, 0);       // Ensure other pin is off
 
     int itterations = 0;
-    std::vector<float> averageList(10, 0.0f);  // Initialize with 10 zeros
+    std::vector<float> averageList(10, 0.0f);       // Initialize with 10 zeros
     float average = 0.0f;
 
     while (true) {
@@ -73,12 +57,12 @@ void closeGripper() {
         printf("Percent: %.1f%%\n", percent);       // Print with 1 decimal place
 
         // If current is below threshold, stop the motor and break
-        if (percent < THRESHOLD && itterations > 100) {
+        if (percent > THRESHOLD && itterations > 50) {
             stopMotor();
             break;
         }
         itterations++;
-        sleep_ms(5);
+        sleep_ms(10);
     }
 }
 
@@ -86,14 +70,16 @@ int main() {
     stdio_init_all();
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
+    gpio_init(MOTOR_PIN_1);
+    gpio_set_dir(MOTOR_PIN_1, GPIO_OUT);
+    gpio_init(MOTOR_PIN_2);
+    gpio_set_dir(MOTOR_PIN_2, GPIO_OUT);
 
-    init_pwm(MOTOR_PIN_1);
-    init_pwm(MOTOR_PIN_2);
     stopMotor();
 
     adc_init();
     adc_gpio_init(ADC_PIN);
-    adc_select_input(2);
+    adc_select_input(0);
     
     blink(3, 100, 1000);
 

@@ -19,9 +19,11 @@ void Stockfish::startEngine() {
     }
     sendCommand("uci");
     while (readResponse() != "uciok");
+    sendCommand("setoption UCI_LimitStrength value true");
+    sendCommand("setoption name UCI_Elo value " + to_string(gui.getDifficulty()));
     sendCommand("isready");
     while (readResponse() != "readyok");
-    sendCommand("setoption UCI_LimitStrength value true");
+
     cout << "Stockfish succesfully started." << endl;
 }
 
@@ -131,7 +133,10 @@ bool Stockfish::sendValidMove(const string& move) {
 
 // Returns the best move from Stockfish
 string Stockfish::getBestMove() {
-    sendCommand("setoption name UCI_Elo value " + to_string(gui.getDifficulty()));
+    // sendCommand("setoption name UCI_LimitStrength value true");
+    // sendCommand("setoption name UCI_Elo value " + to_string(gui.getDifficulty()));
+    // sendCommand("isready");
+    // while (readResponse() != "readyok");
 
     ostringstream position;
     position << "position startpos moves";

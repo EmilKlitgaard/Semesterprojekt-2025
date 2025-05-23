@@ -30,11 +30,11 @@ target_link_libraries(chessRobotExecutable rtde pthread ${OpenCV_LIBS} Qt6::Widg
 #add_executable(chessTestExecutable Test\ files/mainTest.cpp Chessboard.cpp Stockfish.cpp) 
 #target_link_libraries(chessTestExecutable)
 
-add_executable(pickupTestExecutable Test\ files/pickupTest.cpp Chessboard.cpp Gripper.cpp) 
-target_link_libraries(pickupTestExecutable rtde)
+#add_executable(pickupTestExecutable Test\ files/pickupTest.cpp Chessboard.cpp Gripper.cpp) 
+#target_link_libraries(pickupTestExecutable rtde)
 
-add_executable(picoTestExecutable Test\ files/picoTest.cpp)
-target_link_libraries(picoTestExecutable)
+#add_executable(picoTestExecutable Test\ files/picoTest.cpp)
+#target_link_libraries(picoTestExecutable)
 
 #add_executable(resetBoardTestExecutable Test\ files/resetBoardTest.cpp Chessboard.cpp)
 #target_link_libraries(resetBoardTestExecutable)

@@ -118,7 +118,4 @@ CMakeFiles/PicoCommunication.dir/main.cpp.o: \
  /home/emilklitgaard/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
  /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_adc/include/hardware/adc.h \
  /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/adc.h \
- /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h \
- /home/emilklitgaard/pico-sdk/src/rp2_common/hardware_pwm/include/hardware/pwm.h \
- /home/emilklitgaard/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pwm.h \
- /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pwm.h
+ /home/emilklitgaard/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/adc.h

@@ -1,11 +1,5 @@
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessRobotExecutable.dir
-/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/pickupTestExecutable.dir
-/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/picoTestExecutable.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/edit_cache.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/rebuild_cache.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessRobotExecutable_autogen_timestamp_deps.dir
 /home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/chessRobotExecutable_autogen.dir
-/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/pickupTestExecutable_autogen_timestamp_deps.dir
-/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/pickupTestExecutable_autogen.dir
-/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/picoTestExecutable_autogen_timestamp_deps.dir
-/home/emilklitgaard/Workspace/Semesterprojekt/build/CMakeFiles/picoTestExecutable_autogen.dir
