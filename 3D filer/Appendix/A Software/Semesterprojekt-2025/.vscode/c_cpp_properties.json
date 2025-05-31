@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/include/eigen3",
+                "/usr/local/include/ur_rtde",
+                "/usr/include/opencv4",
+                "/usr/include/aarch64-linux-gnu/qt6",
+                "/usr/include/aarch64-linux-gnu/qt6/QtWidgets",
+                "/usr/include/aarch64-linux-gnu/qt6/QtCore",
+                "/usr/include/aarch64-linux-gnu/qt6/QtGui"
+            ],
+            "defines": [
+                "EIGEN_DONT_VECTORIZE",
+                "EIGEN_NO_DEBUG"
+            ],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-arm64"
+        }
+    ],
+    "version": 4
+}
